@@ -17,7 +17,7 @@ class IconFactory extends Factory
     public function definition()
     {
         return [
-            'icon' => 'test.jpg',
+            'icon' => 'https://loremflickr.com/320/240',
         ];
     }
 }
