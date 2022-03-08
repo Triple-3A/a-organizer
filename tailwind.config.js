@@ -1,3 +1,4 @@
+const tailwindcss = require('tailwindcss');
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
@@ -13,9 +14,17 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                poppings: ['Poppings', ...defaultTheme.fontFamily.sans],
+            },
+            colors: {
+                azul: '#5f90b9',
+                amarillo: '#eadaa2',
+                noNegro: '#4A5251',
+                rojo: '#F66957',
             },
         },
+        plugins: [
+            require('@tailwindcss/typography'),
+        ]
     },
-
-    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 };
