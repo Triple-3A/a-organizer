@@ -11,8 +11,10 @@ class Task extends Model
     
     protected $fillable = [
         'id',
+        'repeatable',
         'date',
         'time',
+        'done',
     ];
 
     public function descriptions()

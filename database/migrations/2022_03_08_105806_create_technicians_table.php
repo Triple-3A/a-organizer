@@ -13,17 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('associations', function (Blueprint $table) {
+        Schema::create('technicians', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
 
-            $table->unsignedBigInteger('technician_id');
-            $table->unsignedBigInteger('pacient_id');
+            $table->unsignedBigInteger('user_id');
 
-            $table->foreign('technician_id')->references('id')->on('users');
-            $table->foreign('pacient_id')->references('id')->on('roles');
-
-            // ->cascadeOnDelete()
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -34,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('associations');
+        Schema::dropIfExists('technicians');
     }
 };

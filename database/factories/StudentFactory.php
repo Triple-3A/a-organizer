@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Role>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Student>
  */
-class RoleFactory extends Factory
+class StudentFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,7 @@ class RoleFactory extends Factory
     public function definition()
     {
         return [
-            'role' => $this->faker->numberBetween(1,4),
+            //
         ];
     }
 }
