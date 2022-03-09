@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
             'name' => "standBy",
             'email' => "standBy@gmail.com",
             'email_verified_at' => now(),
-            'password' => 'standBy',
+            'password' => '$2y$10$s.ReCUJHJq8TpVTg.ls5SukjrY34OUyXMzgC01KFomMaBRiRKPM7i',
             'remember_token' => Str::random(10),
         ));
 
@@ -33,7 +33,7 @@ class UserSeeder extends Seeder
             'name' => "admin",
             'email' => "admin@gmail.com",
             'email_verified_at' => now(),
-            'password' => 'admin',
+            'password' => '$2y$10$s.ReCUJHJq8TpVTg.ls5SukjrY34OUyXMzgC01KFomMaBRiRKPM7i',
             'remember_token' => Str::random(10),
         ));
 
@@ -43,7 +43,7 @@ class UserSeeder extends Seeder
             'name' => "technician",
             'email' => "technician@gmail.com",
             'email_verified_at' => now(),
-            'password' => 'technician',
+            'password' => '$2y$10$s.ReCUJHJq8TpVTg.ls5SukjrY34OUyXMzgC01KFomMaBRiRKPM7i',
             'remember_token' => Str::random(10),
         ));
 
@@ -53,7 +53,7 @@ class UserSeeder extends Seeder
             'name' => "student",
             'email' => "student@gmail.com",
             'email_verified_at' => now(),
-            'password' => 'student',
+            'password' => '$2y$10$s.ReCUJHJq8TpVTg.ls5SukjrY34OUyXMzgC01KFomMaBRiRKPM7i',
             'remember_token' => Str::random(10),
         ));
 
