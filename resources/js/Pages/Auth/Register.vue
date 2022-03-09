@@ -15,35 +15,35 @@
 
         <form @submit.prevent="submit">
           <div>
-            <jet-label for="name" value="Name" />
             <jet-input
               id="name"
+              placeholder="Nombre"
               type="text"
-              class="mt-1 block w-full"
+              class="mt-1 block w-full py-2" 
               v-model="form.name"
               required
-              autofocus
               autocomplete="name"
             />
           </div>
 
           <div class="mt-4">
-            <jet-label for="email" value="Email" />
+
             <jet-input
               id="email"
+              placeholder="Email"
               type="email"
-              class="mt-1 block w-full"
+              class="mt-1 block w-full py-2"
               v-model="form.email"
               required
             />
           </div>
 
           <div class="mt-4">
-            <jet-label for="password" value="Password" />
             <jet-input
               id="password"
+              placeholder="Contraseña"
               type="password"
-              class="mt-1 block w-full"
+              class="mt-1 block w-full py-2"
               v-model="form.password"
               required
               autocomplete="new-password"
@@ -51,11 +51,11 @@
           </div>
 
           <div class="mt-4">
-            <jet-label for="password_confirmation" value="Confirm Password" />
             <jet-input
               id="password_confirmation"
+               placeholder="Confirmar contraseña"
               type="password"
-              class="mt-1 block w-full"
+              class="mt-1 block w-full py-2"
               v-model="form.password_confirmation"
               required
               autocomplete="new-password"
@@ -99,7 +99,7 @@
               :href="route('login')"
               class="underline text-sm text-gray-600 hover:text-gray-900 font-bold"
             >
-             Ya estás registrado?
+             ¿Ya estás registrado?
             </Link>
 
             <jet-button

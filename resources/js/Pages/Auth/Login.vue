@@ -5,7 +5,8 @@
         <div class="flex justify-center my-4 ">
             <p>
                 <span class="font-black text-azul">Iniciar sesión</span> / <Link
-                    pref="route('register')"
+                    pref="route('register')" 
+                    :href="route('register')"
                     class="font-thin"
                     >Registrarse</Link
                 >
@@ -21,19 +22,19 @@
 
                 <form @submit.prevent="submit">
                     <div>
-                        <jet-label for="email" value="Email" />
-                        <jet-input id="email" type="email" class="mt-1 block w-full border-amarillo" v-model="form.email" required/>
+                        <jet-input id="email"  placeholder="Email" type="email" class="mt-1 block w-full 
+                        border-amarillo py-2" v-model="form.email" required/>
+
                     </div>
 
                     <div class="mt-4">
-                        <jet-label for="password" value="Password" />
-                        <jet-input id="password" type="password" class="mt-1 block w-full border-amarillo" v-model="form.password" required autocomplete="current-password" />
+                        <jet-input id="password"  placeholder="Contraseña" type="password" class="mt-1 block w-full border-amarillo py-2" v-model="form.password" required autocomplete="current-password" />
                     </div>
 
                     <div class="block mt-4">
                         <label class="flex items-center">
                             <jet-checkbox class="border-amarillo" name="remember" v-model:checked="form.remember" />
-                            <span class="ml-2 text-sm text-gray-600">Recuerdame</span>
+                            <span class="ml-2 text-sm text-gray-600">Recuérdame</span>
                         </label>
                     </div>
 
