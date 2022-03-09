@@ -19,7 +19,7 @@
               id="name"
               placeholder="Nombre"
               type="text"
-              class="mt-1 block w-full py-2" 
+              class="mt-1 block w-full py-2 text-center" 
               v-model="form.name"
               required
               autocomplete="name"
@@ -32,7 +32,7 @@
               id="email"
               placeholder="Email"
               type="email"
-              class="mt-1 block w-full py-2"
+              class="mt-1 block w-full py-2 text-center"
               v-model="form.email"
               required
             />
@@ -43,7 +43,7 @@
               id="password"
               placeholder="Contraseña"
               type="password"
-              class="mt-1 block w-full py-2"
+              class="mt-1 block w-full py-2 text-center"
               v-model="form.password"
               required
               autocomplete="new-password"
@@ -55,7 +55,7 @@
               id="password_confirmation"
                placeholder="Confirmar contraseña"
               type="password"
-              class="mt-1 block w-full py-2"
+              class="mt-1 block w-full py-2 text-center"
               v-model="form.password_confirmation"
               required
               autocomplete="new-password"

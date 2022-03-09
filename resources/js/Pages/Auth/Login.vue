@@ -23,12 +23,12 @@
                 <form @submit.prevent="submit">
                     <div>
                         <jet-input id="email"  placeholder="Email" type="email" class="mt-1 block w-full 
-                        border-amarillo py-2" v-model="form.email" required/>
+                        border-amarillo py-2 text-center" v-model="form.email" required/>
 
                     </div>
 
                     <div class="mt-4">
-                        <jet-input id="password"  placeholder="Contraseña" type="password" class="mt-1 block w-full border-amarillo py-2" v-model="form.password" required autocomplete="current-password" />
+                        <jet-input id="password"  placeholder="Contraseña" type="password" class="mt-1 block w-full border-amarillo py-2 text-center" v-model="form.password" required autocomplete="current-password" />
                     </div>
 
                     <div class="block mt-4">
