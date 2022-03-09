@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('descriptions', function (Blueprint $table) {
             $table->id();
-            $table->boolean('done');
             $table->longText('description');
             $table->timestamps();
         });
