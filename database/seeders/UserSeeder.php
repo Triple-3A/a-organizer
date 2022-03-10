@@ -4,7 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
@@ -17,6 +19,17 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::factory(10)->create();
+
+        for ($id = 1; $id <= 10; $id++) {
+
+            DB::table('role_user')->insert(
+                [
+                    'role_id' => Role::select('id')->orderByRaw("RAND()")->first()->id,
+                    'user_id' => User::select('id')->where('id', $id)->first()->id,
+                ]
+            );
+
+        }
 
         $standBy = User::create(array(
             'name' => "standBy",
