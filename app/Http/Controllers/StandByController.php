@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
-class AdminController extends Controller
+class StandByController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,16 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Admin');
+        return Inertia::render('StandBy');
+    }
+
+    public function attachRole(Request $request)
+    {   
+        $user_id = $request->route('id');
+        $role = Auth::role();
+        $role->users()->attach($user_id);
+
+        return Redirect::route('standBy');
     }
 
     /**
