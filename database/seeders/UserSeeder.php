@@ -7,6 +7,8 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Role;
+use App\Models\Technician;
+use App\Models\Student;
 use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
@@ -30,6 +32,9 @@ class UserSeeder extends Seeder
             );
 
         }
+        
+        Technician::factory(10)->create();
+        Student::factory(10)->create();
 
         $standBy = User::create(array(
             'name' => "standBy",
