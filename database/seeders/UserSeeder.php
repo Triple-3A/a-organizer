@@ -17,8 +17,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::factory(10)->create();
-        // User::factory()->roles(1, ['skills' => 'draw'])->create();
-        
+
         $standBy = User::create(array(
             'name' => "standBy",
             'email' => "standBy@gmail.com",
@@ -28,7 +27,7 @@ class UserSeeder extends Seeder
         ));
 
         $standBy->roles()->sync([1]);
-        
+
         $admin = User::create(array(
             'name' => "admin",
             'email' => "admin@gmail.com",
@@ -38,7 +37,7 @@ class UserSeeder extends Seeder
         ));
 
         $admin->roles()->sync([2]);
-        
+
         $technician = User::create(array(
             'name' => "technician",
             'email' => "technician@gmail.com",
@@ -48,7 +47,7 @@ class UserSeeder extends Seeder
         ));
 
         $technician->roles()->sync([3]);
-        
+
         $student = User::create(array(
             'name' => "student",
             'email' => "student@gmail.com",
