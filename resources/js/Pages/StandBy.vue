@@ -11,8 +11,8 @@
                 <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
                     <body class="flex items-center justify-center">
                         <div class="p-10 bg-white rounded-lg ">
-                            <h1 class="text-xl font-bold ">Bienvenido, te encuentras en la vista de StandBy!!!</h1> <br>
-                            <h2 class="">Espere a que se le asigne un rol</h2>
+                            <h1 class="text-xl font-bold ">Bienvido</h1> <br>
+                            <h2 class="">a la espera</h2>
                         </div>
                     </body>
                 </div>
