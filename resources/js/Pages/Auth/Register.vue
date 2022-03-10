@@ -1,7 +1,7 @@
 <template>
   <Head title="Register" />
 
-  <div class="h-full align-middle">
+  <div class="h-full align-middle py-24">
     <div class="flex justify-center my-4">
       <h2>
         <Link class="font-medium" :href="route('login')">Iniciar sesión</Link> / <span class="font-bold text-azul"
