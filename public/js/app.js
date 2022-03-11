@@ -26550,7 +26550,7 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
   "class": "text-xl font-semibold leading-tight text-azul text-center pt-4"
 }, " Hola Aroa "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-xl font-semibold leading-tight text-gray-800 text-center pt-2 pb-4"
+  "class": "font-semibold leading-tight text-gray-800 text-center pt-2 pb-4"
 }, " Selecciona que quieres hacer ")], -1
 /* HOISTED */
 );

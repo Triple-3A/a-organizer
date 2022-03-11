@@ -4,7 +4,7 @@
             <h1 class="text-xl font-semibold leading-tight text-azul text-center pt-4">
                 Hola Aroa
             </h1>
-            <p class="text-xl font-semibold leading-tight text-gray-800 text-center pt-2 pb-4">
+            <p class="font-semibold leading-tight text-gray-800 text-center pt-2 pb-4">
                 Selecciona que quieres hacer
             </p>
         </div>
