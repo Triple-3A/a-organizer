@@ -1,7 +1,7 @@
 <template>
     <Head title="Log in" />
 
-    <div class="h-full align-middle">
+    <div class="h-full align-middle py-24">
         <div class="flex justify-center my-4 ">
             <p>
                 <span class="font-black text-azul">Iniciar sesión</span> / <Link
