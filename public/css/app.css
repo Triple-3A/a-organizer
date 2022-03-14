@@ -460,6 +460,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .col-span-6 {
   grid-column: span 6 / span 6;
 }
+.float-left {
+  float: left;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -540,8 +543,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 .-mt-px {
   margin-top: -1px;
 }
+.ml-8 {
+  margin-left: 2rem;
+}
+.ml-16 {
+  margin-left: 4rem;
+}
+.ml-32 {
+  margin-left: 8rem;
+}
 .block {
   display: block;
+}
+.inline {
+  display: inline;
 }
 .flex {
   display: flex;
@@ -632,6 +647,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-20 {
   width: 5rem;
+}
+.w-1 {
+  width: 0.25rem;
 }
 .min-w-0 {
   min-width: 0px;
@@ -905,6 +923,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(95 144 185 / var(--tw-bg-opacity));
 }
+.bg-amarillo {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 218 162 / var(--tw-bg-opacity));
+}
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }
@@ -1025,6 +1047,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-8 {
   padding-top: 2rem;
+}
+.pr-8 {
+  padding-right: 2rem;
 }
 .text-left {
   text-align: left;
@@ -1175,6 +1200,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-azul {
   --tw-text-opacity: 1;
   color: rgb(95 144 185 / var(--tw-text-opacity));
+}
+.text-amarillo {
+  --tw-text-opacity: 1;
+  color: rgb(234 218 162 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
