@@ -546,17 +546,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ml-8 {
   margin-left: 2rem;
 }
-.ml-16 {
-  margin-left: 4rem;
-}
 .ml-32 {
   margin-left: 8rem;
 }
 .block {
   display: block;
-}
-.inline {
-  display: inline;
 }
 .flex {
   display: flex;
@@ -647,9 +641,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-20 {
   width: 5rem;
-}
-.w-1 {
-  width: 0.25rem;
 }
 .min-w-0 {
   min-width: 0px;
@@ -865,7 +856,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .border-amarillo {
   --tw-border-opacity: 1;
-  border-color: rgb(234 218 162 / var(--tw-border-opacity));
+  border-color: rgb(241 197 82 / var(--tw-border-opacity));
 }
 .border-azul {
   --tw-border-opacity: 1;
@@ -923,10 +914,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(95 144 185 / var(--tw-bg-opacity));
 }
-.bg-amarillo {
-  --tw-bg-opacity: 1;
-  background-color: rgb(234 218 162 / var(--tw-bg-opacity));
-}
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }
@@ -949,11 +936,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-6 {
   padding: 1.5rem;
 }
-.p-8 {
-  padding: 2rem;
-}
 .p-10 {
   padding: 2.5rem;
+}
+.p-8 {
+  padding: 2rem;
 }
 .px-4 {
   padding-left: 1rem;
@@ -1047,9 +1034,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-8 {
   padding-top: 2rem;
-}
-.pr-8 {
-  padding-right: 2rem;
 }
 .text-left {
   text-align: left;
@@ -1197,13 +1181,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
 }
+.text-amarillo {
+  --tw-text-opacity: 1;
+  color: rgb(241 197 82 / var(--tw-text-opacity));
+}
 .text-azul {
   --tw-text-opacity: 1;
   color: rgb(95 144 185 / var(--tw-text-opacity));
-}
-.text-amarillo {
-  --tw-text-opacity: 1;
-  color: rgb(234 218 162 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;

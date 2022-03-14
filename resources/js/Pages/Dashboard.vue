@@ -2,7 +2,7 @@
     <app-layout title="Dashboard">
         <div class="ml-8 ">
             <div>
-             <a href="./TutorDashboard" class="text-azul ml-32">
+             <a href="./TutorDashboard" class="text-amarillo ml-32">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 float-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" >
                             <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg></a>
             </div>
