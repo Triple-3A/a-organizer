@@ -22909,42 +22909,32 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
-  el: '#dashboard_container',
-  data: {
-    fakedata: [{
-      name: 'Chiquito de la Calzada',
-      email: 'chiquito99@gmail.com'
-    }, {
-      name: 'Don Omar',
-      email: 'donomar@gmail.com'
-    }, {
-      name: 'Ash Ketchup',
-      email: 'pueblo_paleta_kid@gmail.com'
-    }, {
-      name: 'Cuphead Red',
-      email: 'cuphead-original@gmail.com'
-    }, {
-      name: 'Aloy Horizon',
-      email: 'Imzerodown@gmail.com'
-    }]
+  el: "#dashboard_container",
+  data: function data() {
+    return {
+      fakedata: [{
+        name: "Chiquito de la Calzada",
+        email: "chiquito99@gmail.com"
+      }, {
+        name: "Don Omar",
+        email: "donomar@gmail.com"
+      }, {
+        name: "Ash Ketchup",
+        email: "pueblo_paleta_kid@gmail.com"
+      }, {
+        name: "Cuphead Red",
+        email: "cuphead-original@gmail.com"
+      }, {
+        name: "Aloy Horizon",
+        email: "Imzerodown@gmail.com"
+      }]
+    };
   },
   components: {
     AppLayout: _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     Welcome: _Jetstream_Welcome_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }
-})); // const app = new Vue({
-
-/*     el: '#dashboard_container',
-    data: {
-        fakedata:[
-            { name: 'Chiquito de la Calzada', email: 'chiquito99@gmail.com'},
-            { name: 'Don Omar', email: 'donomar@gmail.com'},
-            { name: 'Ash Ketchup', email: 'pueblo_paleta_kid@gmail.com'},
-            { name: 'Cuphead Red', email: 'cuphead-original@gmail.com'},
-            { name: 'Aloy Horizon', email: 'Imzerodown@gmail.com'},
-        ]
-    },
-    }); */
+}));
 
 /***/ }),
 
@@ -26780,38 +26770,62 @@ var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
 
 var _hoisted_3 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
-    "class": "font-semibold text-xl text-gray-800 leading-tight"
-  }, " Dashboard ", -1
+    "class": "font-bold text-xl text-gray-800 leading-tight"
+  }, " Control de roles ", -1
   /* HOISTED */
   );
 });
 
 var _hoisted_4 = {
-  "class": "table-auto"
+  "class": "table-auto mb-4"
 };
 
 var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
-    colsan: "3",
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", {
+    "class": "mb-4"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+    colspan: "3",
     "class": "bg-amber-400 text-white font-bold table-auto tabla_prueba"
-  }, "Técnicos"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th")])], -1
+  }, " Técnicos "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th")])], -1
   /* HOISTED */
   );
 });
 
 var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", {
-    "class": "text-black font-bold"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Nombre"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Técnico"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Usuario")], -1
+    "class": "text-black font-bold flex flex-row justify-between mb-4"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Nombre")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Técnico"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Usuario")])], -1
   /* HOISTED */
   );
 });
 
 var _hoisted_7 = {
-  "class": "text-black font-bold"
+  "class": "flex flex-col"
 };
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<table data-v-097ba13b><tr data-v-097ba13b><td class=\"bg-amber-400 text-white font-bold\" data-v-097ba13b>Usuarios</td></tr><tr class=\"text-black font-bold\" data-v-097ba13b><td data-v-097ba13b>Nombre</td><td data-v-097ba13b>Técnico</td><td data-v-097ba13b>Usuario</td></tr></table><table data-v-097ba13b><tr data-v-097ba13b><td class=\"bg-amber-400 text-white font-bold\" data-v-097ba13b>Pendiente</td></tr><tr class=\"text-black font-bold\" data-v-097ba13b><td data-v-097ba13b>Nombre</td><td data-v-097ba13b>Técnico</td><td data-v-097ba13b>Usuario</td></tr></table><button class=\"bg-blue-800 hover:bg-blue-700 text-white-300 font-bold py-2 px-4 rounded float-left\" data-v-097ba13b> Aceptar </button>", 3);
+var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "form-check form-check-inline"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "class": "form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer",
+    type: "radio",
+    name: "inlineRadioOptions",
+    id: "inlineRadio1",
+    value: "option1"
+  })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "form-check form-check-inline"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "class": "form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer",
+    type: "radio",
+    name: "inlineRadioOptions",
+    id: "inlineRadio1",
+    value: "option1"
+  })])])], -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<table data-v-097ba13b><tr data-v-097ba13b><td colspan=\"3\" class=\"bg-amber-400 text-white font-bold\" data-v-097ba13b> Usuarios </td></tr><tr class=\"text-black font-bold\" data-v-097ba13b><td data-v-097ba13b>Nombre</td><td data-v-097ba13b>Técnico</td><td data-v-097ba13b>Usuario</td></tr></table><table data-v-097ba13b><tr data-v-097ba13b><td colspan=\"3\" class=\"bg-amber-400 text-white font-bold\" data-v-097ba13b> Pendiente </td></tr><tr class=\"text-black font-bold\" data-v-097ba13b><td data-v-097ba13b>Nombre</td><td data-v-097ba13b>Técnico</td><td data-v-097ba13b>Usuario</td></tr></table><button class=\"bg-blue-800 hover:bg-blue-700 text-white-300 font-bold py-2 px-4 rounded float-left\" data-v-097ba13b> Aceptar </button>", 3);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
@@ -26825,17 +26839,18 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_4, [_hoisted_5, _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_7, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.fakedata, function (person, index) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", {
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_4, [_hoisted_5, _hoisted_6, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.fakedata, function (person, index) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
+      "class": "text-black font-bold flex flex-row justify-between mb-2",
       key: index
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(person.name), 1
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(person.name), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(person.email), 1
+    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(person.email), 1
     /* TEXT */
-    )]);
+    )])]), _hoisted_8]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])]), _hoisted_8])], 64
+  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("             <tr class=\"text-black font-bold basis-0 flex-col\">\n                <td v-for=\"(person, index) in fakedata\" :key=\"index\">\n                    <strong> {{person.name}} </strong> {{person.email}}\n                </td>\n            </tr> ")]), _hoisted_9])], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -28318,7 +28333,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.dashboard_container[data-v-097ba13b]{\n        display: flex;\n        flex-direction: column;\n        width: 80%;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.dashboard_container[data-v-097ba13b] {\n    display: flex;\n    flex-direction: column;\n    width: 85%;\n    margin-left: auto;\n    margin-right: auto;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
