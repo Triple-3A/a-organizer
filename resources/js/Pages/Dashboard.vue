@@ -24,21 +24,35 @@
         </h2>
 
 
-        <table>
-            <tr>
-                <td class="bg-amber-400 text-white font-bold">Técnicos</td>
+        <table class="table-auto">
+            <thead>
+                <tr>
+                <th colsan=3 class="bg-amber-400 text-white font-bold table-auto tabla_prueba" >Técnicos</th>
+                <th></th>
+                <th></th>
+                </tr>
+            </thead>
+            <tr class="text-black font-bold">
+                <td>Nombre</td>
+                <td>Técnico</td>
+                <td>Usuario</td>
             </tr>
-            <tr>
-                <td>Celda 4</td>
+            <tr class="text-black font-bold">
+                <td>Nombre</td>
+                <td>Técnico</td>
+                <td>Usuario</td>
             </tr>
+
         </table>
 
         <table>
             <tr>
                 <td class="bg-amber-400 text-white font-bold">Usuarios</td>
             </tr>
-            <tr>
-                <td>Tablaqui</td>
+            <tr class="text-black font-bold">
+                <td>Nombre</td>
+                <td>Técnico</td>
+                <td>Usuario</td>
             </tr>
         </table>
 
@@ -46,8 +60,10 @@
             <tr>
                 <td class="bg-amber-400 text-white font-bold">Pendiente</td>
             </tr>
-            <tr>
-                <td>Tablaqui</td>
+            <tr class="text-black font-bold">
+                <td>Nombre</td>
+                <td>Técnico</td>
+                <td>Usuario</td>
             </tr>
         </table>
 
@@ -72,8 +88,9 @@
 
 <style scoped>
 
-    .dashboard_container{
+   .dashboard_container{
         display: flex;
         flex-direction: column;
+        width: 80%;
     }
 </style>
