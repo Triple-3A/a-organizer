@@ -22,8 +22,6 @@ return new class extends Migration
 
             $table->foreign('task_id')->references('id')->on('tasks');
             $table->foreign('title_id')->references('id')->on('titles');
-
-            // ->cascadeOnDelete()
         });
     }
 
