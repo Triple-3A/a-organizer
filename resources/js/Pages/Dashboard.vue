@@ -14,6 +14,7 @@
             </div>
         </div> -->
     </app-layout>
+
     <div class="dashboard_container">
         <button class="bg-white hover:bg-gray-300 text-amber-300 font-bold py-2 px-4 rounded float-right">
         Asignación Técnico ->
@@ -38,11 +39,10 @@
                 <td>Usuario</td>
             </tr>
             <tr class="text-black font-bold">
-                <td>Nombre</td>
-                <td>Técnico</td>
-                <td>Usuario</td>
+                <td v-for="(person, index) in fakedata" :key="index">
+                    <strong> {{person.name}} </strong> {{person.email}}
+                </td>
             </tr>
-
         </table>
 
         <table>
@@ -78,12 +78,36 @@
     import AppLayout from '@/Layouts/AppLayout.vue'
     import Welcome from '@/Jetstream/Welcome.vue'
 
+
     export default defineComponent({
+        el: '#dashboard_container',
+        data: {
+            fakedata:[
+                { name: 'Chiquito de la Calzada', email: 'chiquito99@gmail.com'},
+                { name: 'Don Omar', email: 'donomar@gmail.com'},
+                { name: 'Ash Ketchup', email: 'pueblo_paleta_kid@gmail.com'},
+                { name: 'Cuphead Red', email: 'cuphead-original@gmail.com'},
+                { name: 'Aloy Horizon', email: 'Imzerodown@gmail.com'},
+            ]
+    },
         components: {
             AppLayout,
             Welcome,
         },
-    })
+    });
+
+   // const app = new Vue({
+/*     el: '#dashboard_container',
+    data: {
+        fakedata:[
+            { name: 'Chiquito de la Calzada', email: 'chiquito99@gmail.com'},
+            { name: 'Don Omar', email: 'donomar@gmail.com'},
+            { name: 'Ash Ketchup', email: 'pueblo_paleta_kid@gmail.com'},
+            { name: 'Cuphead Red', email: 'cuphead-original@gmail.com'},
+            { name: 'Aloy Horizon', email: 'Imzerodown@gmail.com'},
+        ]
+    },
+    }); */
 </script>
 
 <style scoped>
