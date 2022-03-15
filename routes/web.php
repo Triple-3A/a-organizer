@@ -32,7 +32,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function() {
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/attach', [AttachRoleController::class, 'index'])->name('attach');
 
-// Route::middleware(['auth:sanctum', 'verified', 'admin'])->get('/admin', [AdminController::class, 'index'])->name('admin');
+//FAke
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+
 
 // Route::middleware(['auth:sanctum', 'verified', 'standBy'])->get('/standBy', [StandByController::class, 'index'])->name('standBy');
 
