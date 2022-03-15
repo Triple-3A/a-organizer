@@ -1,26 +1,15 @@
 <template>
     <app-layout title="Dashboard">
-        <!--  <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Dashboard
-            </h2>
-        </template>
-
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <welcome />
-                </div>
-            </div>
-        </div> -->
     </app-layout>
 
     <div class="dashboard_container">
-        <button
-            class="bg-white hover:bg-gray-300 text-amber-300 font-bold py-2 px-4 rounded float-right"
-        >
-            Asignación Técnico ->
-        </button>
+        <div class="flex self-end">
+            <button
+                class="bg-white hover:bg-gray-300 text-amber-300 font-bold py-2 px-3 rounded flex flex-row w-6/12"
+            >
+                Asignación Técnico ->
+            </button>
+        </div>
 
         <h2 class="font-bold text-xl text-gray-800 leading-tight">
             Control de roles
@@ -36,7 +25,7 @@
                     <th></th>
                 </tr>
             </thead>
-            <tr class="text-black font-bold flex flex-row justify-between mb-4">
+            <tr class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto">
                 <div>
                     <td>Nombre</td>
                 </div>
@@ -47,7 +36,7 @@
                 
             </tr>
             <tr
-                class="text-black font-bold flex flex-row justify-between mb-2"
+                class="text-black font-bold flex flex-row justify-between mb-2 w-11/12 mx-auto"
                 v-for="(person, index) in fakedata"
                 :key="index"
             >
@@ -57,11 +46,11 @@
                         <div> {{ person.email }} </div>
                     </td>
                 </div>
-                <div>
+                <div class="flex flex-row">
                     <td>
-                        <div class="form-check form-check-inline">
+                        <div class="form-check"> <!-- form-check-inline -->
                             <input
-                                class="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                                class="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-azul checked:border-azul focus:outline-none transition duration-100 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2"
                                 type="radio"
                                 name="inlineRadioOptions"
                                 id="inlineRadio1"
@@ -72,7 +61,7 @@
                     <td>
                         <div class="form-check form-check-inline">
                             <input
-                                class="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                                class="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-azul checked:border-azul focus:outline-none transition duration-100 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                                 type="radio"
                                 name="inlineRadioOptions"
                                 id="inlineRadio1"
@@ -117,8 +106,7 @@
         </table>
 
         <button
-            class="bg-blue-800 hover:bg-blue-700 text-white-300 font-bold py-2 px-4 rounded float-left"
-        >
+            class="bg-azul hover:bg-azul/80 text-white-300 font-bold py-2 px-4 rounded float-left w-3/5 mx-auto">
             Aceptar
         </button>
     </div>
