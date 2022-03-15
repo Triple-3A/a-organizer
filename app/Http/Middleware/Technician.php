@@ -17,19 +17,16 @@ class Technician
      */
     public function handle(Request $request, Closure $next)
     {
-        switch(Auth::user()->role){
-            case ('technician'):
-                return $next($request);
-                break;
-            case ('student'):
-                return redirect('student');
-                break;
-            case ('admin'):
-                return redirect('admin');
-                break;
-            case ('standBy'):
-                return redirect('standBy');
-                break;
+        $roles = Auth::user()->role->pluck('role')->toArray();
+
+        if (in_array('technician', $roles)) {
+            return $next($request);
+        } elseif (in_array('admin', $roles)) {
+            return redirect('admin');
+        } elseif (in_array('student', $roles)) {
+            return redirect('student');
+        } elseif (in_array('standBy', $roles)) {
+            return redirect('standBy');
         }
     }
 }

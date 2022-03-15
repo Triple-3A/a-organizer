@@ -17,19 +17,16 @@ class StandBy
      */
     public function handle(Request $request, Closure $next)
     {
-        switch(Auth::user()->role){
-            case ('standBy'):
-                return $next($request);
-                break;
-            case ('student'):
-                return redirect('student');
-                break;
-            case ('technician'):
-                return redirect('technician');
-                break;
-            case ('admin'):
-                return redirect('admin');
-                break;
+        $roles = Auth::user()->role->pluck('role')->toArray();
+
+        if (in_array('standBy', $roles)) {
+            return $next($request);
+        } elseif (in_array('student', $roles)) {
+            return redirect('student');
+        } elseif (in_array('technician', $roles)) {
+            return redirect('technician');
+        } elseif (in_array('admin', $roles)) {
+            return redirect('admin');
         }
     }
 }

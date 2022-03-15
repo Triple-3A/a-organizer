@@ -18,16 +18,7 @@ class StandByController extends Controller
     {
         return Inertia::render('StandBy');
     }
-
-    public function attachRole(Request $request)
-    {   
-        $user_id = $request->route('id');
-        $role = Auth::role();
-        $role->users()->attach($user_id);
-
-        return Redirect::route('standBy');
-    }
-
+    
     /**
      * Show the form for creating a new resource.
      *

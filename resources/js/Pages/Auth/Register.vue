@@ -46,7 +46,7 @@
                     Already registered?
                 </Link>
 
-                <jet-button class="ml-4" value="standBy" :href="route('attachRole')" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <jet-button class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Register
                 </jet-button>
             </div>
