@@ -22,6 +22,13 @@ module.exports = {
                 noNegro: '#4A5251',
                 rojo: '#F66957',
             },
+            fontSize: {
+                'sm': '18px',
+                'base': '20px',
+                'lg': '24px',
+                
+            }
+        
         },
         plugins: [
             require('@tailwindcss/typography'),
