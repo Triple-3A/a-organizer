@@ -30,6 +30,13 @@ module.exports = {
                 '5': '32px',
                 '6': '48px',
               },
+            fontSize: {
+                'xs': '16px',
+                'sm': '18px',
+                'base': '20px',
+                'lg': '24px',
+                'xl': '30px',
+            },
         },
         plugins: [
             require('@tailwindcss/typography'),
