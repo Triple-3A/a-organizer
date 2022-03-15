@@ -4,10 +4,10 @@
             <div>
                 <!-- La ruta tendrá que ir a TutorDsahboard -->
              <Link class="font-medium" :href="route('login')">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="text-amarillo h-12 w-12 float-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" >
+                            <svg xmlns="http://www.w3.org/2000/svg" class="text-amarillo pl-8 h-20 w-20 float-left" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" >
                             <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg></Link>
             </div>
-            <div>
+            <div class= "text-center">
                                                                                                     
                         
             <h1 class="text-3xl font-bold leading-tight text-azul text-center">
@@ -20,18 +20,23 @@
         </div>
         
             <div>
-                <div class="mx-auto max-w-7xl sm:px-6 lg:px-60">
+                <div class="mx-auto max-w-6xl sm:px-6 lg:px-60">
                <!-- La ruta tendrá que ir a tareas básicas  -->
             <body>
                         <div class="flex items-center justify-center py-2 border-4 border-amarillo rounded-lg">
                             <div class="p-6 rounded-lg">
                                 <Link class="font-medium" :href="route('login')">
                                 <center><svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-azul" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-</svg>
-</center>
-                                <h1 class="text-xl font-bold text-center">Tareas Básicas</h1></Link> 
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                </center>
+                                <h1 class="text-xl font-bold text-center">Tareas Básicas</h1>
+                               </Link> 
                             </div>
+                              <Link class="font-medium" :href="route('login')"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 float-right text-azul" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+</svg> </Link> 
+
                         </div>
 
                     <div class="py-4">
@@ -43,6 +48,11 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg></center>
                                 <h1 class="text-xl font-bold text-center">Tareas Instrumentales</h1></Link>
                             </div>
+                            <Link class="font-medium" :href="route('login')">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 float-right text-azul" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+</svg> </Link>
+
                         </div>
 
                     </div>
@@ -60,6 +70,10 @@
                                 </center>
                                 <h1 class="text-xl font-bold text-center">Tareas Avanzadas</h1></Link>
                             </div>
+                            <Link class="font-medium" :href="route('login')"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 float-right text-azul" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+</svg></Link>
+
                         </div>
 
                     
