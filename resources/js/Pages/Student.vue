@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import AppLayout from "@/Layouts/AppLayout.vue";
+import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 export default {
     components: {
