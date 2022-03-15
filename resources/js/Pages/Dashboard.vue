@@ -29,7 +29,7 @@
         <table class="table-auto mb-4">
             <thead>
                 <tr class="mb-4">
-                    <th colspan="3" class="bg-amber-400 text-white font-bold table-auto tabla_prueba">
+                    <th colspan="3" class="bg-amarillo text-white font-bold table-auto tabla_prueba">
                         Técnicos
                     </th>
                     <th></th>
@@ -92,7 +92,7 @@
 
         <table>
             <tr>
-                <td colspan="3" class="bg-amber-400 text-white font-bold">
+                <td colspan="3" class="bg-amarillo text-white font-bold">
                     Usuarios
                 </td>
             </tr>
@@ -105,7 +105,7 @@
 
         <table>
             <tr>
-                <td colspan="3" class="bg-amber-400 text-white font-bold">
+                <td colspan="3" class="bg-amarillo text-white font-bold">
                     Pendiente
                 </td>
             </tr>
