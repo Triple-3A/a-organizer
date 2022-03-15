@@ -838,7 +838,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .border-amarillo {
   --tw-border-opacity: 1;
-  border-color: rgb(234 218 162 / var(--tw-border-opacity));
+  border-color: rgb(241 197 82 / var(--tw-border-opacity));
 }
 .bg-white {
   --tw-bg-opacity: 1;
@@ -890,7 +890,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .bg-azul {
   --tw-bg-opacity: 1;
-  background-color: rgb(95 144 185 / var(--tw-bg-opacity));
+  background-color: rgb(95 144 186 / var(--tw-bg-opacity));
 }
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
@@ -1154,7 +1154,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .text-azul {
   --tw-text-opacity: 1;
-  color: rgb(95 144 185 / var(--tw-text-opacity));
+  color: rgb(95 144 186 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;

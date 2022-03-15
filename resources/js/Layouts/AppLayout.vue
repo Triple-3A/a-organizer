@@ -233,7 +233,6 @@
 
 <script>
     import { defineComponent } from 'vue'
-    import JetApplicationMark from '@/Jetstream/ApplicationMark.vue'
     import JetBanner from '@/Jetstream/Banner.vue'
     import JetDropdown from '@/Jetstream/Dropdown.vue'
     import JetDropdownLink from '@/Jetstream/DropdownLink.vue'
@@ -248,7 +247,6 @@
 
         components: {
             Head,
-            JetApplicationMark,
             JetBanner,
             JetDropdown,
             JetDropdownLink,

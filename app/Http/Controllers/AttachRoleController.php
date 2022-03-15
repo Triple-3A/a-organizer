@@ -13,9 +13,9 @@ class AttachRoleController extends Controller
         if(!$user->roles()->wherePivot('user_id', $user->id)->exists()){
             $user = auth()->user();
             $user->roles()->attach(1);
-            return Inertia::render('Dashboard');
+            return Inertia::render('StandBy');
         }else{
-            return Inertia::render('Dashboard');
+            return Inertia::render('StandBy');
         }
         
     }
