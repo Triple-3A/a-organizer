@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TechnicianController;
 use App\Http\Controllers\StandByController;
+use App\Http\Controllers\TitleController;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Redirect;
@@ -39,7 +40,10 @@ Route::middleware(['auth:sanctum', 'verified', 'standBy'])->get('/standBy', [Sta
 Route::middleware(['auth:sanctum', 'verified', 'student'])->get('/student', [StudentController::class, 'index'])->name('student');
 
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/technician', [TechnicianController::class, 'index'])->name('technician');
-
+Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/categories', [TechnicianController::class, 'categories'])->name('categories');
+Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/basicTasks', [TitleController::class, 'basicTasks'])->name('basicTasks');
+Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/instrumentalTasks', [TitleController::class, 'instrumentalTasks'])->name('instrumentalTasks');
+Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/advancedTasks', [TitleController::class, 'advancedTasks'])->name('advancedTasks');
 
 // Views
 

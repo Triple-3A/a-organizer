@@ -14,15 +14,14 @@ class TechnicianController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Technician');
+        $username = auth()->user()->name;
+        return Inertia::render('TechnicianIndex', compact('username'));
     }
 
-    public function gestion(){
-
-        return Inertia::render('TechnicianGestion');
+    public function categories()
+    {
+        return Inertia::render('TechnicianCategories');
     }
-
-
     /**
      * Show the form for creating a new resource.
      *

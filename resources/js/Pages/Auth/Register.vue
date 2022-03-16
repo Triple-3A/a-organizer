@@ -1,7 +1,7 @@
 <template>
   <Head title="Register" />
 
-  <div class="h-full align-middle">
+  <div class="h-full align-middle py-24">
     <div class="flex justify-center my-4">
       <h2>
         <Link class="font-medium" :href="route('login')">Iniciar sesión</Link> / <span class="font-bold text-azul"
@@ -97,7 +97,7 @@
           <div class="flex items-center justify-end mt-4">
             <Link
               :href="route('login')"
-              class="underline text-sm text-gray-600 hover:text-gray-900 font-bold"
+              class="underline text-sm text-azul hover:text-gray-900 font-bold"
             >
              ¿Ya estás registrado?
             </Link>
