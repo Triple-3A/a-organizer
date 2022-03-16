@@ -1686,6 +1686,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: grid;
   }
 
+  .md\:w-auto {
+    width: auto;
+  }
+
+  .md\:w-32 {
+    width: 8rem;
+  }
+
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1710,6 +1718,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:col-span-4 {
     grid-column: span 4 / span 4;
+  }
+
+  .lg\:w-48 {
+    width: 12rem;
   }
 
   .lg\:px-8 {

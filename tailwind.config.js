@@ -36,6 +36,7 @@ module.exports = {
                 'base': '20px',
                 'lg': '24px',
                 'xl': '30px',
+                'xxl':'36px',
             },
         },
         plugins: [

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AttachRoleController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TechnicianController;
 use App\Http\Controllers\StandByController;
