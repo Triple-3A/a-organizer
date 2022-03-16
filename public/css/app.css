@@ -460,6 +460,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .col-span-6 {
   grid-column: span 6 / span 6;
 }
+.float-right {
+  float: right;
+}
 .float-left {
   float: left;
 }
@@ -1028,6 +1031,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-8 {
   padding-top: 2rem;
+}
+.pl-8 {
+  padding-left: 2rem;
 }
 .text-left {
   text-align: left;
