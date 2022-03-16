@@ -11,12 +11,12 @@
         <td>
             <div class="inline-flex">
                 <button
-                    class="bg-azul-800 text-gray-800 font-bold py-2 px-4 rounded-l"
+                    class="bg-azul600 text-white font-bold py-2 px-4 rounded-l cursor-default"
                 >
                     Tecn.
                 </button>
                 <button
-                    class="bg-azul hover:bg-azul/80 text-white-300 font-bold py-2 px-4 rounded-r"
+                    class="bg-azul hover:bg-azul/80 text-white font-bold py-2 px-4 rounded-r"
                 >
                     Estu.
                 </button>

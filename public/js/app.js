@@ -24673,9 +24673,9 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "inline-flex"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "bg-azul-800 text-gray-800 font-bold py-2 px-4 rounded-l"
+  "class": "bg-azul600 text-white font-bold py-2 px-4 rounded-l cursor-default"
 }, " Tecn. "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "bg-azul hover:bg-azul/80 text-white-300 font-bold py-2 px-4 rounded-r"
+  "class": "bg-azul hover:bg-azul/80 text-white font-bold py-2 px-4 rounded-r"
 }, " Estu. ")])])], -1
 /* HOISTED */
 );
