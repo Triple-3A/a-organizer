@@ -34,6 +34,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/attach', [AttachRoleContr
 
 //FAke
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/assigned', [AdminController::class, 'assigned'])->name('assigned');
 
 
 // Route::middleware(['auth:sanctum', 'verified', 'standBy'])->get('/standBy', [StandByController::class, 'index'])->name('standBy');

@@ -17,6 +17,11 @@ class AdminController extends Controller
         return Inertia::render('Admin');
     }
 
+    public function assigned()
+    {
+        return Inertia::render('Assigned');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
