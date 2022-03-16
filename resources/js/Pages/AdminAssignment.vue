@@ -2,14 +2,19 @@
     <app-layout>
       
         <div class="flex justify-center my-4 mt-20 text-lg">
-            <p>
-                <span class="font-black text-azul">Asignación Técnicos</span> / <Link
-                    pref="route('register')" 
-                    :href="route('register')"
-                    class="font-thin"
-                    >Asignados</Link
-                >
-            </p>
+              <div class="flex justify-center my-4">
+                    <p>
+                        <span class="text-lg  font-medium"
+                            >Asignación técnico</span
+                        >
+                        /
+                        <Link
+                            :href="route('assigned')"
+                            class="text-lg font-bold text-azul"
+                            >Asignados</Link
+                        >
+                    </p>
+                </div>
         </div>
         
         <div className="mt-20 flex justify-center">

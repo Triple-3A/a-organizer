@@ -16,6 +16,11 @@ class AdminController extends Controller
     {
         return Inertia::render('Admin');
     }
+   
+    public function assignment()
+    {
+        return Inertia::render('AdminAssignment');
+    }
 
     public function assigned()
     {
