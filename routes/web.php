@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AttachRoleController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TechnicianController;
 use App\Http\Controllers\StandByController;
@@ -32,8 +33,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function() {
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/attach', [AttachRoleController::class, 'index'])->name('attach');
 
-//FAke
-Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+
+Route::get('/assignment', [AssignmentController::class, 'index'])->name('assignment');
 
 
 // Route::middleware(['auth:sanctum', 'verified', 'standBy'])->get('/standBy', [StandByController::class, 'index'])->name('standBy');
