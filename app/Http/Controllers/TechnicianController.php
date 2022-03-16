@@ -17,6 +17,12 @@ class TechnicianController extends Controller
         return Inertia::render('Technician');
     }
 
+    public function gestion(){
+
+        return Inertia::render('TechnicianGestion');
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

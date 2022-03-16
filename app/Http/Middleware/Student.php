@@ -17,7 +17,7 @@ class Student
      */
     public function handle(Request $request, Closure $next)
     {
-        $roles = Auth::user()->role->pluck('role')->toArray();
+        $roles = Auth::user()->roles->pluck('role')->toArray();
 
         if (in_array('student', $roles)) {
             return $next($request);

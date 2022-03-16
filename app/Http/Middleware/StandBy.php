@@ -17,7 +17,7 @@ class StandBy
      */
     public function handle(Request $request, Closure $next)
     {
-        $roles = Auth::user()->role->pluck('role')->toArray();
+        $roles = Auth::user()->roles->pluck('role')->toArray();
 
         if (in_array('standBy', $roles)) {
             return $next($request);
