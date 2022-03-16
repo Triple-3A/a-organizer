@@ -38,6 +38,15 @@ module.exports = {
                 'xl': '30px',
                 'xxl':'36px',
             },
+            margin: {
+                '10px': '10px',
+                '20px': '20px',
+                '30px': '30px',
+                '40px': '40px',
+                '60px': '60px',
+                '80px': '80px',
+
+              }
         },
         plugins: [
             require('@tailwindcss/typography'),
