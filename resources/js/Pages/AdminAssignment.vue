@@ -1,7 +1,17 @@
 <template>
     <app-layout>
-      
-        <div class="flex justify-center my-4 mt-20 text-lg">
+
+        <div class="ml-10px mt-3" >
+            <Link
+                :href="route('admin')"
+                class=" mr-2.5 font-bold text-amarillo rounded-lg text-sm py-2.5 text-center flex items-center">
+                <svg class=" fill-amarillo mr-1 ml-2 -mr-1 w-5 h-5 rotate-180" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                Control de Roles</Link
+                        >
+        </div>
+
+        <div class="flex justify-center my-4 mt-10 text-lg">
               <div class="flex justify-center my-4">
                     <p>
                         <span class="text-lg  font-medium"
@@ -17,7 +27,7 @@
                 </div>
         </div>
         
-        <div className="mt-20 flex justify-center">
+        <div className="mt-10 flex justify-center">
            <div class="mb-3 w-250">
                 <Label forInput="role" value="Role" />
                     <select
@@ -31,7 +41,6 @@
                         <option class ="bg-orange-100 font-bold text-xs" value="">Técnicos</option>
                         <option 
                         class ="text-xs text-bold  bg-orange-100" 
-                        :value="item.id" 
                         v-for="item in technicians" :key="item.id" >{{ item.name }} - {{item.mail}}
                         </option> 
                     </select>
@@ -52,7 +61,6 @@
                         <option class ="bg-orange-100 font-bold text-xs" value="">Usuarios</option>
                         <option 
                         class ="text-xs bg-orange-100" 
-                        :value="item.id" 
                         v-for="item in users" :key="item.id" >{{ item.name }} - {{item.mail}}
                         </option> 
                     </select>
@@ -74,40 +82,8 @@ import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 import JetButton from "@/Jetstream/Button.vue";
 import { defineComponent } from "@vue/runtime-core";
+
 export default defineComponent( {
-     data(){
-        return {
-            selectedTechnician : '',
-            technicians :[ 
-                {
-                name: "Omar",
-                mail: "omar@technicians.com",
-                },
-                {
-                name: "María",
-                mail: "María@technicians.com",
-                },
-                {
-                name: "Francisco",
-                mail: "francisco@technicians.com",
-                },
-            ],
-            users :[ 
-                {
-                name: "Ruben",
-                mail: "omar@users.com",
-                },
-                {
-                name: "Elena",
-                mail: "María@users.com",
-                },
-                {
-                name: "Carla",
-                mail: "francisco@users.com",
-                },
-            ],
-        }
-    },
     components: {
         AppLayout,
         JetButton,
