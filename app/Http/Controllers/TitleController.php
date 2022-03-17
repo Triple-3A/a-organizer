@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Title;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class TitleController extends Controller
 {
@@ -12,10 +13,21 @@ class TitleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function basicTasks()
     {
-        //
+        return Inertia::render('TechBasicTasks');
     }
+
+    public function instrumentalTasks()
+    {
+        return Inertia::render('TechInstrumentalTasks');
+    }
+
+    public function advancedTasks()
+    {
+        return Inertia::render('TechAdvancedTasks');
+    }
+
 
     /**
      * Show the form for creating a new resource.

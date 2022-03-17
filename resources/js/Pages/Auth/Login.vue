@@ -1,7 +1,7 @@
 <template>
     <Head title="Log in" />
 
-    <div class="h-full align-middle mt-6">
+    <div class="h-full py-24 align-middle">
         <div class="flex justify-center my-4 ">
             <p>
                 <span class="font-black text-azul">Iniciar sesión</span> / <Link
@@ -13,22 +13,21 @@
             </p>
         </div>
         <div class="flex justify-center">
-            <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
+            <div class="block max-w-sm p-6 bg-white rounded-lg shadow-lg">
                 <jet-validation-errors class="mb-4" />
 
-                <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
+                <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
                     {{ status }}
                 </div>
 
                 <form @submit.prevent="submit">
                     <div>
-                        <jet-input id="email"  placeholder="Email" type="email" class="mt-1 block w-full 
-                        border-amarillo py-2 text-center" v-model="form.email" required/>
+                        <jet-input id="email"  placeholder="Email" type="email" class="block w-full py-2 mt-1 text-center border-amarillo" v-model="form.email" required/>
 
                     </div>
 
                     <div class="mt-4">
-                        <jet-input id="password"  placeholder="Contraseña" type="password" class="mt-1 block w-full border-amarillo py-2 text-center" v-model="form.password" required autocomplete="current-password" />
+                        <jet-input id="password"  placeholder="Contraseña" type="password" class="block w-full py-2 mt-1 text-center border-amarillo" v-model="form.password" required autocomplete="current-password" />
                     </div>
 
                     <div class="block mt-4">
@@ -39,7 +38,7 @@
                     </div>
 
                     <div class="flex items-center justify-end mt-4">
-                        <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">
+                        <Link v-if="canResetPassword" :href="route('password.request')" class="text-sm text-gray-600 underline hover:text-gray-900">
                             Recordar contraseña
                         </Link>
 

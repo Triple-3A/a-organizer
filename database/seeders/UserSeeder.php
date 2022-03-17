@@ -4,11 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use App\Models\User;
-use App\Models\Role;
-use App\Models\Technician;
-use App\Models\Student;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 
@@ -23,19 +19,11 @@ class UserSeeder extends Seeder
     {
         User::factory(10)->create();
 
-        for ($id = 1; $id <= 10; $id++) {
-
-            DB::table('role_user')->insert(
-                [
-                    'role_id' => Role::select('id')->orderByRaw("RAND()")->first()->id,
-                    'user_id' => User::select('id')->where('id', $id)->first()->id,
-                ]
-            );
-
-        }
-        
-        Technician::factory(10)->create();
-        Student::factory(10)->create();
+        $this->call([
+            StandBySeeder::class,
+            TechnicianSeeder::class,
+            StudentSeeder::class,
+        ]);
 
         $standBy = User::create(array(
             'name' => "standBy",

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
-class TechnicianController extends Controller
+class StandByController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,14 +16,9 @@ class TechnicianController extends Controller
      */
     public function index()
     {
-        $username = auth()->user()->name;
-        return Inertia::render('TechnicianIndex', compact('username'));
+        return Inertia::render('StandBy');
     }
-
-    public function categories()
-    {
-        return Inertia::render('TechnicianCategories');
-    }
+    
     /**
      * Show the form for creating a new resource.
      *
