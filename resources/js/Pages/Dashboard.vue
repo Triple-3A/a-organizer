@@ -39,7 +39,11 @@
                 v-for="(person, index) in fakedata"
                 :key="index"
             >
-                <jet-role-table-cell :email="person.email" :name="person.name">
+                <jet-role-table-cell
+                    :email="person.email"
+                    :name="person.name"
+                    :id="person.id"
+                >
                 </jet-role-table-cell>
             </tr>
 
@@ -73,7 +77,11 @@
                 v-for="(person, index) in fakedata"
                 :key="index"
             >
-                <jet-role-table-cell :email="person.email" :name="person.name">
+                <jet-role-table-cell
+                    :email="person.email"
+                    :name="person.name"
+                    :id="person.id"
+                >
                 </jet-role-table-cell>
             </tr>
         </table>
@@ -101,7 +109,11 @@
                 v-for="(person, index) in fakedata"
                 :key="index"
             >
-                <jet-role-table-cell :email="person.email" :name="person.name">
+                <jet-role-table-cell
+                    :email="person.email"
+                    :name="person.name"
+                    :id="person.id"
+                >
                 </jet-role-table-cell>
             </tr>
         </table>
@@ -120,15 +132,16 @@ export default defineComponent({
     props: {
         email: String,
         name: String,
+        id: Number,
     },
 
     data: () => ({
         fakedata: [
-            { name: "Chiquito de la Calzada", email: "chiquito99@gmail.com" },
-            { name: "Don Omar", email: "donomar@gmail.com" },
-            { name: "Ash Ketchup", email: "pueblo_paleta_kid@gmail.com" },
-            { name: "Cuphead Red", email: "cuphead-original@gmail.com" },
-            { name: "Aloy Horizon", email: "Imzerodown@gmail.com" },
+            { name: "Chiquito de la Calzada", email: "chiquito99@gmail.com", id: 1 },
+            { name: "Don Omar", email: "donomar@gmail.com", id: 2 },
+            { name: "Ash Ketchup", email: "pueblo_paleta_kid@gmail.com", id: 3 },
+            { name: "Cuphead Red", email: "cuphead-original@gmail.com", id: 4 },
+            { name: "Aloy Horizon", email: "Imzerodown@gmail.com", id: 5 },
         ],
     }),
 

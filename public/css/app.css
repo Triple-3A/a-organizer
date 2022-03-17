@@ -1198,9 +1198,6 @@ select {
 .cursor-pointer {
   cursor: pointer;
 }
-.cursor-auto {
-  cursor: auto;
-}
 .list-inside {
   list-style-position: inside;
 }
@@ -1406,13 +1403,13 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
-.bg-azul {
-  --tw-bg-opacity: 1;
-  background-color: rgb(95 144 186 / var(--tw-bg-opacity));
-}
 .bg-azul600 {
   --tw-bg-opacity: 1;
   background-color: rgb(135 155 171 / var(--tw-bg-opacity));
+}
+.bg-azul {
+  --tw-bg-opacity: 1;
+  background-color: rgb(95 144 186 / var(--tw-bg-opacity));
 }
 .bg-sky-600 {
   --tw-bg-opacity: 1;
