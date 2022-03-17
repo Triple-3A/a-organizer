@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -14,7 +15,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Admin');
+        $technicianUsers = Role::where('role','technician')->first()->users()->get();
+        $studentUsers = Role::where('role', 'student')->first()->users()->get();
+        $standByUsers = Role::where('role', 'standBy')->first()->users()->get();
+        return Inertia::render('Admin', compact('technicianUsers', 'studentUsers', 'standByUsers'));
     }
 
     /**
