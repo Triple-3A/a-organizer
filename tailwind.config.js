@@ -1,4 +1,5 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
+const tailwindcss = require('tailwindcss');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
     content: [
@@ -38,6 +39,9 @@ module.exports = {
                 xl: "30px",
             },
         },
+        plugins: [
+            require('@tailwindcss/typography'),
+        ]
     },
 
     plugins: [
