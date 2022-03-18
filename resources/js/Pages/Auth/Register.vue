@@ -4,13 +4,13 @@
   <div class="h-full align-middle py-24">
     <div class="flex justify-center my-4">
       <h2>
-        <Link class="font-medium" :href="route('login')">Iniciar sesión</Link> / <span class="font-bold text-azul"
+        <Link class="font-medium text-azul" :href="route('login')">Iniciar sesión</Link> / <span class="font-bold "
           >Registrarse</span
         >
       </h2>
     </div>
     <div class="flex justify-center">
-      <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
+      <div class="block max-w-sm p-6 bg-white rounded-lg shadow-lg">
         <jet-validation-errors class="mb-4" />
 
         <form @submit.prevent="submit">
@@ -19,7 +19,7 @@
               id="name"
               placeholder="Nombre"
               type="text"
-              class="mt-1 block w-full py-2 text-center" 
+              class="block w-full py-2 mt-1 text-center" 
               v-model="form.name"
               required
               autocomplete="name"
@@ -32,7 +32,7 @@
               id="email"
               placeholder="Email"
               type="email"
-              class="mt-1 block w-full py-2 text-center"
+              class="block w-full py-2 mt-1 text-center"
               v-model="form.email"
               required
             />
@@ -43,7 +43,7 @@
               id="password"
               placeholder="Contraseña"
               type="password"
-              class="mt-1 block w-full py-2 text-center"
+              class="block w-full py-2 mt-1 text-center"
               v-model="form.password"
               required
               autocomplete="new-password"
@@ -55,7 +55,7 @@
               id="password_confirmation"
                placeholder="Confirmar contraseña"
               type="password"
-              class="mt-1 block w-full py-2 text-center"
+              class="block w-full py-2 mt-1 text-center"
               v-model="form.password_confirmation"
               required
               autocomplete="new-password"
@@ -79,14 +79,14 @@
                   <a
                     target="_blank"
                     :href="route('terms.show')"
-                    class="underline text-sm text-gray-600 hover:text-gray-900"
+                    class="text-sm text-gray-600 underline hover:text-gray-900"
                     >Terms of Service</a
                   >
                   and
                   <a
                     target="_blank"
                     :href="route('policy.show')"
-                    class="underline text-sm text-gray-600 hover:text-gray-900"
+                    class="text-sm text-gray-600 underline hover:text-gray-900"
                     >Privacy Policy</a
                   >
                 </div>

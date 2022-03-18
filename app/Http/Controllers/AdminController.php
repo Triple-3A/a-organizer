@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Role;
 use App\Models\User;
+use App\Models\Student;
+use App\Models\Technician;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
 class AdminController extends Controller
@@ -28,6 +31,27 @@ class AdminController extends Controller
         $user = auth()->user();
         $user->roles()->detach();
         $user->roles()->attach($roleId);
+    }
+   
+    public function assignment()
+    {
+        $roleTech = Role::find(3);
+        $technicians = $roleTech->users;
+
+        $roleStudents = Role::find(4);
+        $students = $roleStudents->users;
+
+        return Inertia::render('AdminAssignment', compact('technicians', 'students'));
+    }
+
+    public function assignTechToStudent($technician){
+        dd($technician);
+        return Redirect::route('Admin');
+    }
+
+    public function assigned()
+    {
+        return Inertia::render('Assigned');
     }
 
     /**

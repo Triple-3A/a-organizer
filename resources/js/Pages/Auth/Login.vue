@@ -4,10 +4,10 @@
     <div class="h-full py-24 align-middle">
         <div class="flex justify-center my-4 ">
             <p>
-                <span class="font-black text-azul">Iniciar sesión</span> / <Link
+                <span class="font-black ">Iniciar sesión</span> / <Link
                     pref="route('register')" 
                     :href="route('register')"
-                    class="font-thin"
+                    class="font-medium text-azul"
                     >Registrarse</Link
                 >
             </p>

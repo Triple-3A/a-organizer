@@ -32,12 +32,22 @@ module.exports = {
                 6: "48px",
             },
             fontSize: {
-                xs: "16px",
-                sm: "18px",
-                base: "20px",
-                lg: "24px",
-                xl: "30px",
+                'xs': '16px',
+                'sm': '18px',
+                'base': '20px',
+                'lg': '24px',
+                'xl': '30px',
+                'xxl':'36px',
             },
+            margin: {
+                '10px': '10px',
+                '20px': '20px',
+                '30px': '30px',
+                '40px': '40px',
+                '60px': '60px',
+                '80px': '80px',
+
+              }
         },
         plugins: [
             require('@tailwindcss/typography'),
