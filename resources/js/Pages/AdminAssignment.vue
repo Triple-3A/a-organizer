@@ -16,23 +16,21 @@
                     </p>
                 </div>
         </div>
-        
+
         <div className="mt-20 flex justify-center">
            <div class="mb-3 w-250">
-                <Label forInput="role" value="Role" />
+                <label forInput="role" value="Role" />
                     <select
-                    v-model="selectedTechnician"
                     name="role"
                     id="role"
                     class="px-3
                     py-1.5 bg-amarillo text-base font-bold  mt-1 
                     rounded select w-96"
                     >
-                        <option class ="bg-orange-100 font-bold text-xs" value="">Técnicos</option>
+                        <option class ="bg-orange-100 font-bold text-xs" value="Técnicos">Técnicos</option>
                         <option 
                         class ="text-xs text-bold  bg-orange-100" 
-                        :value="item.id" 
-                        v-for="item in technicians" :key="item.id" >{{ item.name }} - {{item.mail}}
+                        v-for="technician in technicians" :key="technician.id" :value="technician.id">{{ technician.name }} - {{technician.email}}
                         </option> 
                     </select>
            </div>
@@ -40,9 +38,8 @@
 
         <div className="mt-3 flex justify-center">
            <div class="mb-3 w-250">
-                <Label forInput="role" value="Role" />
+                <label forInput="role" value="Role" />
                     <select
-                    v-model="selectedTechnician"
                     name="role"
                     id="role"
                     class="px-3
@@ -51,18 +48,17 @@
                     >
                         <option class ="bg-orange-100 font-bold text-xs" value="">Usuarios</option>
                         <option 
-                        class ="text-xs bg-orange-100" 
-                        :value="item.id" 
-                        v-for="item in users" :key="item.id" >{{ item.name }} - {{item.mail}}
+                        class ="text-xs bg-orange-100"
+                         v-for="student in students" :key="student.id" :value="student.id">{{ student.name }} - {{student.email}}
                         </option> 
                     </select>
            </div>
        </div>  
         <div className="mt-4 flex flex-col justify-center items-center">
-            <jet-button class=" ml-4 mt-3 bg-azul px-5" :class= "opacity-25" >
+            <jet-button class=" ml-4 mt-3 bg-azul px-5"  >
                                     Asignar
                 </jet-button>
-            <jet-button class="ml-4 mt-4 bg-rojo"  :class= "opacity-25" >
+            <jet-button class="ml-4 mt-4 bg-rojo">
                                     Cancelar
                 </jet-button>
         </div>
@@ -73,46 +69,16 @@
 import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 import JetButton from "@/Jetstream/Button.vue";
-import { defineComponent } from "@vue/runtime-core";
-export default defineComponent( {
-     data(){
-        return {
-            selectedTechnician : '',
-            technicians :[ 
-                {
-                name: "Omar",
-                mail: "omar@technicians.com",
-                },
-                {
-                name: "María",
-                mail: "María@technicians.com",
-                },
-                {
-                name: "Francisco",
-                mail: "francisco@technicians.com",
-                },
-            ],
-            users :[ 
-                {
-                name: "Ruben",
-                mail: "omar@users.com",
-                },
-                {
-                name: "Elena",
-                mail: "María@users.com",
-                },
-                {
-                name: "Carla",
-                mail: "francisco@users.com",
-                },
-            ],
-        }
+export default {
+    props:{
+        technicians: Array,
+        students: Array,
     },
-    components: {
+    components:{
         AppLayout,
         JetButton,
         Head,
         Link,
-    },
-});
+    }
+};
 </script>

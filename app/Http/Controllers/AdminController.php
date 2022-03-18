@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
 class AdminController extends Controller
@@ -19,7 +21,18 @@ class AdminController extends Controller
    
     public function assignment()
     {
-        return Inertia::render('AdminAssignment');
+        $roleTech = Role::find(3);
+        $technicians = $roleTech->users;
+
+        $roleStudents = Role::find(4);
+        $students = $roleStudents->users;
+
+        return Inertia::render('AdminAssignment', compact('technicians', 'students'));
+    }
+
+    public function assignTechToStudent($technician, $student){
+        dd($technician, $student);
+        return Redirect::route('AdminAssignment');
     }
 
     public function assigned()
