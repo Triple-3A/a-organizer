@@ -40,7 +40,7 @@
                     <div class="flex justify-center  mt-4">
                         
 
-                        <jet-button class="ml-4 bg-azul" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                        <jet-button class="bg-azul" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                             Acceder
                         </jet-button>
                     </div>
