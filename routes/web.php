@@ -50,6 +50,9 @@ Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/basicTasks'
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/instrumentalTasks', [TitleController::class, 'instrumentalTasks'])->name('instrumentalTasks');
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/advancedTasks', [TitleController::class, 'advancedTasks'])->name('advancedTasks');
 
+
+
+
 // Views
 
 // -Login ~

@@ -22,6 +22,9 @@ class TechnicianController extends Controller
     {
         return Inertia::render('TechnicianCategories');
     }
+
+   
+
     /**
      * Show the form for creating a new resource.
      *
