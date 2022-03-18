@@ -45,6 +45,11 @@ Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/basicTasks'
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/instrumentalTasks', [TitleController::class, 'instrumentalTasks'])->name('instrumentalTasks');
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/advancedTasks', [TitleController::class, 'advancedTasks'])->name('advancedTasks');
 
+
+
+/*Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/categories', [TechnicianController::class, 'categories'])->name('technicianUsers'); comentado Frank y Ana para preguntar*/
+
+
 // Views
 
 // -Login ~
