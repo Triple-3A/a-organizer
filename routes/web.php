@@ -47,8 +47,6 @@ Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/advancedTas
 
 
 
-/*Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/categories', [TechnicianController::class, 'categories'])->name('technicianUsers'); comentado Frank y Ana para preguntar*/
-
 
 // Views
 

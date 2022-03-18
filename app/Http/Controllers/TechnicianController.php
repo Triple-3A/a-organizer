@@ -23,11 +23,7 @@ class TechnicianController extends Controller
         return Inertia::render('TechnicianCategories');
     }
 
-    /**public function categoriesUsers()
-    {
-        return Inertia::render('TechnicianUsers');
-    } comentado Frank y Ana para preguntar!! */
-
+   
 
     /**
      * Show the form for creating a new resource.
