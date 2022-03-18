@@ -34,6 +34,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function() {
 Route::middleware(['auth:sanctum', 'verified'])->get('/attach', [AttachRoleController::class, 'index'])->name('attach');
 
 Route::middleware(['auth:sanctum', 'verified', 'admin'])->get('/admin', [AdminController::class, 'index'])->name('admin');
+// Route::middleware(['auth:sanctum', 'verified', 'admin'])->post('/reassignRole', [AdminController::class, 'reassignRole'])->name('reassignRole');
 
 Route::middleware(['auth:sanctum', 'verified', 'standBy'])->get('/standBy', [StandByController::class, 'index'])->name('standBy');
 
@@ -56,3 +57,5 @@ Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/advancedTas
 
 // -Tutoras (Gestión->Tareas / Tareas generales / Tarea (1 de las 3) CRUD (De los títulos de tareas e iconos)
 //                  ->Usuarios / Tareas generales / Tarea (1 de las 3) CRUD (De la descripciones y tarea conjunta))
+
+// Route::middleware(['auth:sanctum', 'verified', 'admin'])->post('/reassignRole', [AdminController::class, 'reassignRole'])->name('reassignRole');

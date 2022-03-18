@@ -116,6 +116,7 @@
                     :name="user.name"
                     :id="user.id"
                     :role="user.pivot.role_id"
+                    :newRoleId="1"
                 >
                 </jet-role-table-cell>
             </tr>
@@ -136,6 +137,7 @@ export default defineComponent({
         technicianUsers: Array,
         studentUsers: Array,
         standByUsers: Array,
+        newRoleId: Number,
     },
 
     data: () => ({
