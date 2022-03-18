@@ -36,7 +36,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/attach', [AttachRoleContr
 //FAke
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::get('/assignment', [AdminController::class, 'assignment'])->name('assignment');
-Route::get('/assignTechToStudent/{id}', [AdminController::class, 'assignTechToStudent'])->name('assignTechToStudent');
+Route::get('/assignTechToStudent/{id}', [AdminController::class, 'assignTechToStudent'])->name('assignTechToStudent'); //Cambiar a ruta post y nombre store asignment
 Route::get('/assigned', [AdminController::class, 'assigned'])->name('assigned');
 
 

@@ -26,25 +26,7 @@
             </div>
         </div>
 
-        <div className="mt-2 flex justify-center">
-           <div class="mb-3 w-250">
-                <Label forInput="role" value="Role" />
-                    <select
-                    v-model="selectedTechnician"
-                    name="role"
-                    id="role"
-                    class="px-3
-                    py-1.5 bg-amarillo text-base font-bold  mt-1 
-                    rounded select w-96"
-                    >
-                        <option class ="bg-orange-100 font-bold text-xs" value="">Técnicos</option>
-                        <option 
-                        class ="text-xs text-bold  bg-orange-100" 
-                        v-for="item in technicians" :key="item.id" >{{ item.name }} - {{item.mail}}
-                        </option> 
-                    </select>
-           </div>
-       </div>  
+       
     </app-layout>
 </template>
 

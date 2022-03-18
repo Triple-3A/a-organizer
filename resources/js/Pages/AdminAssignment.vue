@@ -46,15 +46,13 @@
                     class="px-3 py-1.5 bg-amarillo text-base font-bold mt-1 rounded select w-96"
                 >
                     <option
-                        class="bg-orange-100 font-bold text-xs"
-                        :value="Técnicos"
-                    >
+                        class="bg-orange-100 font-bold text-xs" value="">
                         Técnicos
                     </option>
                     <option
                         class="text-xs text-bold bg-orange-100"
                         v-for="technician in technicians"
-                        :value="technician"
+                        :value="technician.id"
                         :selected="technician.id"
                         :key="technician.id"
                     >
@@ -71,6 +69,7 @@
                     :v-model="student"
                     name="student"
                     id="student"
+                    :value="student"
                     class="px-3 py-1.5 bg-amarillo text-base font-bold mt-1 rounded select w-96"
                 >
                     <option class="bg-orange-100 font-bold text-xs" value="">
@@ -81,6 +80,7 @@
                         v-for="student in students"
                         :key="student.id"
                         :selected="student.id"
+                        :value="student.id"
                     >
                         {{ student.name }} - {{ student.email }}
                     </option>
@@ -90,10 +90,11 @@
         <div className="mt-4 flex flex-col justify-center items-center">
             <!-- <Link
                 class="ml-4 mt-3 bg-azul px-5"
-                :href="route('assignTechToStudent', technician.id)"
+                :href="route('assignTechToStudent', technician)"
             >
                 Asignar
             </Link> -->
+            <jet-button class="ml-4 mt-4 px-7 bg-azul"> Aceptar </jet-button>
             <jet-button class="ml-4 mt-4 bg-rojo"> Cancelar </jet-button>
         </div>
     </app-layout>
@@ -114,14 +115,12 @@ export default {
         Head,
         Link,
     },
-
-    // method: {
-    //     assign: function(technician) {
-    //         this.$inertia.get(this.route('assignTechToStudent', this.technician ))
-    //     }
-    // }
-};
+    data() {
+        // retornar data del form
+    },
+    method: {
+        // mandar la data con un submit
+ 
+    },
+}
 </script>
-
-
-// :href="route('assignTechToStudent', technician.id)"
