@@ -33,18 +33,14 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function() {
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/attach', [AttachRoleController::class, 'index'])->name('attach');
+Route::middleware(['auth:sanctum', 'verified', 'standBy'])->get('/standBy', [StandByController::class, 'index'])->name('standBy');
 
 Route::middleware(['auth:sanctum', 'verified', 'admin'])->get('/admin', [AdminController::class, 'index'])->name('admin');
 // Route::middleware(['auth:sanctum', 'verified', 'admin'])->post('/reassignRole', [AdminController::class, 'reassignRole'])->name('reassignRole');
+Route::middleware(['auth:sanctum', 'verified', 'admin'])->get('/assignment', [AdminController::class, 'assignment'])->name('assignment');
+Route::middleware(['auth:sanctum', 'verified', 'admin'])->get('/assignTechToStudent/{id}', [AdminController::class, 'assignTechToStudent'])->name('assignTechToStudent'); //Cambiar a ruta post y nombre store asignment
+Route::middleware(['auth:sanctum', 'verified', 'admin'])->get('/assigned', [AdminController::class, 'assigned'])->name('assigned');
 
-//FAke
-Route::get('/admin', [AdminController::class, 'index'])->name('admin');
-Route::get('/assignment', [AdminController::class, 'assignment'])->name('assignment');
-Route::get('/assignTechToStudent/{id}', [AdminController::class, 'assignTechToStudent'])->name('assignTechToStudent'); //Cambiar a ruta post y nombre store asignment
-Route::get('/assigned', [AdminController::class, 'assigned'])->name('assigned');
-
-
-Route::middleware(['auth:sanctum', 'verified', 'standBy'])->get('/standBy', [StandByController::class, 'index'])->name('standBy');
 
 Route::middleware(['auth:sanctum', 'verified', 'student'])->get('/student', [StudentController::class, 'index'])->name('student');
 

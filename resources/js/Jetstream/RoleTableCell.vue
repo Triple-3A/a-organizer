@@ -14,15 +14,14 @@
                     <button
                         :class="technicianButtonClass"
                         :type="technicianButtonType"
-                        :href="route('reassignRole', 1)"
-
+                  
                     >
                         Tecn.
                     </button>
                     <button
                         :class="studentButtonClass"
                         :type="studentButtonType"
-                        :href="route('reassignRole', 2)"
+                        
                     >
                         Estu.
                     </button>
@@ -44,14 +43,7 @@ export default defineComponent({
             studentButtonClass: "",
             technicianButtonType: "",
             studentButtonType: "",
-
-            form: this.$inertia.form({
-                newRoleId: this.newRoleId,
-            }),
-        };
-        // const form = reactive({
-        //     newRole: 1,
-        // });
+        }; 
     },
 
     mounted() {

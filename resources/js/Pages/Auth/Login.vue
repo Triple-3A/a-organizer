@@ -13,7 +13,7 @@
             </p>
         </div>
         <div class="flex justify-center">
-            <div class="block max-w-sm p-6 bg-white rounded-lg shadow-lg">
+            <div class="block max-w-sm p-12 bg-white rounded-lg shadow-lg">
                 <jet-validation-errors class="mb-4" />
 
                 <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
@@ -31,16 +31,14 @@
                     </div>
 
                     <div class="block mt-4">
-                        <label class="flex items-center">
+                        <label class="flex justify-center">
                             <jet-checkbox class="border-amarillo" name="remember" v-model:checked="form.remember" />
                             <span class="ml-2 text-sm text-gray-600">Recuérdame</span>
                         </label>
                     </div>
 
-                    <div class="flex items-center justify-end mt-4">
-                        <Link v-if="canResetPassword" :href="route('password.request')" class="text-sm text-gray-600 underline hover:text-gray-900">
-                            Recordar contraseña
-                        </Link>
+                    <div class="flex justify-center  mt-4">
+                        
 
                         <jet-button class="ml-4 bg-azul" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                             Acceder
