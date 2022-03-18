@@ -466,6 +466,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .float-left {
   float: left;
 }
+.m-24 {
+  margin: 6rem;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -477,6 +480,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .my-4 {
   margin-top: 24px;
   margin-bottom: 24px;
+}
+.mx-24 {
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+.mx-32 {
+  margin-left: 8rem;
+  margin-right: 8rem;
 }
 .ml-3 {
   margin-left: 16px;
@@ -552,6 +563,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mb-2 {
   margin-bottom: 12px;
+}
+.ml-24 {
+  margin-left: 6rem;
 }
 .block {
   display: block;
@@ -739,6 +753,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .items-center {
   align-items: center;
 }
+.items-stretch {
+  align-items: stretch;
+}
 .justify-start {
   justify-content: flex-start;
 }
@@ -750,6 +767,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .justify-between {
   justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
 }
 .justify-items-center {
   justify-items: center;
@@ -1014,21 +1034,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
 }
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
 .py-24 {
   padding-top: 6rem;
   padding-bottom: 6rem;
 }
-.py-16 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
-.px-12 {
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-.px-16 {
-  padding-left: 4rem;
-  padding-right: 4rem;
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .pt-6 {
   padding-top: 48px;
@@ -1062,6 +1082,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-8 {
   padding-top: 2rem;
+}
+.pt-16 {
+  padding-top: 4rem;
 }
 .text-left {
   text-align: left;
@@ -1215,6 +1238,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-azul {
   --tw-text-opacity: 1;
   color: rgb(95 144 186 / var(--tw-text-opacity));
+}
+.text-rojo {
+  --tw-text-opacity: 1;
+  color: rgb(246 105 87 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
