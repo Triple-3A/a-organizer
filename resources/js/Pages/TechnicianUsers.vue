@@ -22,12 +22,12 @@
             <h1
                 class="my-2 text-3xl font-bold leading-tight text-center text-azul"
             >
-                Categoria de Tareas
+                usuarios
             </h1>
             <p
                 class="pt-2 pb-4 mb-2 font-semibold leading-tight text-center text-gray-800"
             >
-                Estas son tus tareas predeterminadas
+                usuarios
             </p>
         </div>
 
@@ -60,7 +60,7 @@
                                     </svg>
                                 </center>
                                 <h1 class="text-xl font-bold text-center">
-                                    Tareas Básicas
+                                usuarios
                                 </h1></Link
                             >
                         </div>
@@ -92,7 +92,7 @@
                                         </svg>
                                     </center>
                                     <h1 class="text-xl font-bold text-center">
-                                        Tareas Instrumentales
+                                        usuarios
                                     </h1></Link
                                 >
                             </div>
@@ -126,7 +126,7 @@
                                     </svg>
                                 </center>
                                 <h1 class="text-xl font-bold text-center">
-                                    Tareas Avanzadas
+                                usuarios
                                 </h1></Link
                             >
                         </div>
@@ -141,6 +141,11 @@
 import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 export default {
+     props: {
+    
+        studentUsers: Array,
+    },
+
     components: {
         AppLayout,
         Head,

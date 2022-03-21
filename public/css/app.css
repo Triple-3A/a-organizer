@@ -1170,6 +1170,9 @@ select {
 .w-96 {
   width: 24rem;
 }
+.w-14 {
+  width: 3.5rem;
+}
 .min-w-0 {
   min-width: 0px;
 }
@@ -1588,6 +1591,14 @@ select {
   padding-left: 1.75rem;
   padding-right: 1.75rem;
 }
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
 .py-24 {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -1785,6 +1796,10 @@ select {
 .text-amarillo {
   --tw-text-opacity: 1;
   color: rgb(241 197 82 / var(--tw-text-opacity));
+}
+.text-rojo {
+  --tw-text-opacity: 1;
+  color: rgb(246 105 87 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;

@@ -23,6 +23,15 @@ class TechnicianController extends Controller
         return Inertia::render('TechnicianCategories');
     }
 
+
+    public function tusers()
+
+    {
+        $studentUsers = Role::where('role', 'student')->first()->users()->get();
+        
+        return Inertia::render('TechnicianUsers', compact('studentUsers'));
+        
+    }
    
 
     /**
