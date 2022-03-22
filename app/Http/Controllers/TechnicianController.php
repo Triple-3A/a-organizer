@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
+use App\Models\Technician;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -25,12 +27,11 @@ class TechnicianController extends Controller
 
 
     public function tusers()
-
     {
-        $studentUsers = Role::where('role', 'student')->first()->users()->get();
-        
-        return Inertia::render('TechnicianUsers', compact('studentUsers'));
-        
+        $user = auth()->user();
+        $technician = Technician::where('user_id', $user->id)->value('id');
+        $studentsUsers = Student::where('technician_id', $technician)->get();
+        return Inertia::render('TechnicianUsers', compact('studentsUsers'));
     }
    
 
