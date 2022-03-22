@@ -26,7 +26,31 @@
             </div>
         </div>
 
-       
+        <div class="dashboard_container mt-3">
+           
+            <table >
+                <thead class="block md:table-header-group">
+                    <tr class="border md:border-none block md:table-row absolute -top-full md:top-auto -left-full md:left-auto  md:relative ">
+                        <th class="bg-amarillo p-2 text-white text-base font-bold md:border md:border-white text-left block md:table-cell">Técnico</th>
+                        <th class="bg-amarillo p-2 text-white text-base font-bold md:border md:border-white text-left block md:table-cell">Email</th>
+                        <th class="bg-amarillo p-2 text-white text-base font-bold md:border md:border-white  block md:table-cell">Usuarios Asignados</th>
+                    
+                    </tr>
+                </thead>
+                <tbody class="block md:table-row-group">
+                    <tr class="border border-azul-500 md:border-none block md:table-row">
+                        <td class="p-2 md:border md:border-azul-500 font-bold text-left block md:table-cell">Francisco García</td>
+                        <td class="p-2 md:border md:border-azul-500 text-left block md:table-cell">francisco@tecnician.com</td>
+                        <td class="p-2 md:border md:border-azul-500 text-left block md:table-cell">Laura (laura@user.com) <p>Laura (laura@user.com)</p></td>
+                    </tr>
+                    <!-- <tr class="border border-azul-500 md:border-none block md:table-row">
+                        <td class="p-2 md:border md:border-azul-500 font-bold text-left block md:table-cell">{{name}}</td>
+                        <td class="p-2 md:border md:border-azul-500 text-left block md:table-cell">{{email}}</td>
+                        <td class="p-2 md:border md:border-azul-500 text-left block md:table-cell">{{student.technician}}</td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
     </app-layout>
 </template>
 
@@ -41,3 +65,15 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.dashboard_container {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+
+
