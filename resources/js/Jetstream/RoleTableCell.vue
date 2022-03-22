@@ -4,7 +4,13 @@
             <div>
                 <strong> {{ name }} </strong>
             </div>
-            <div>{{ email }} {{ id }}</div>
+            <div>
+                <p
+                    class="text-grey font-bold flex flex-row justify-between mb-2 w-11/12 mx-auto"
+                >
+                    {{ email }} {{ id }}
+                </p>
+            </div>
         </td>
     </div>
     <div class="flex flex-row justify-between">
@@ -14,24 +20,29 @@
                     <button
                         :class="technicianButtonClass"
                         :type="technicianButtonType"
-                  
                     >
                         Tecn.
                     </button>
                     <button
                         :class="studentButtonClass"
                         :type="studentButtonType"
-                        
                     >
                         Estu.
                     </button>
                 </div>
+                <Link
+                    :href="route('reassignRole', id, name)"
+                    class="text-lg font-bold text-azul"
+                >
+                    Asignados
+                </Link>
             </form>
         </td>
     </div>
 </template>
 
 <script>
+import { Link } from "@inertiajs/inertia-vue3";
 import { defineComponent } from "vue";
 
 export default defineComponent({
@@ -43,7 +54,12 @@ export default defineComponent({
             studentButtonClass: "",
             technicianButtonType: "",
             studentButtonType: "",
-        }; 
+
+            form: {
+                userId: this.id,
+                roleId: "",
+            },
+        };
     },
 
     mounted() {
@@ -54,6 +70,7 @@ export default defineComponent({
             this.studentButtonClass =
                 "bg-azul hover:bg-azul/80 text-white font-bold py-2 px-4 rounded-r";
             this.studentButtonType = "submit";
+            this.form.roleId = 3;
         }
         if (this.role == 4) {
             this.technicianButtonClass =
@@ -62,6 +79,7 @@ export default defineComponent({
             this.studentButtonClass =
                 "bg-azul600 text-white font-bold py-2 px-4 rounded-r cursor-default";
             this.studentButtonType = "";
+            this.form.roleId = 4;
         }
         if (this.role == 1) {
             this.technicianButtonClass =
@@ -73,10 +91,8 @@ export default defineComponent({
         }
     },
 
-    // methods: {
-    //     submit() {
-    //         this.form.post(this.route("reassignRole"));
-    //     },
-    // },
+    components: {
+        Link,
+    },
 });
 </script>

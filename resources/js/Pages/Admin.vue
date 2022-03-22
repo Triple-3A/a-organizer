@@ -1,6 +1,5 @@
 <template>
-    <app-layout title="Dashboard"> 
-
+    <app-layout title="Dashboard">
         <div class="dashboard_container">
             <div class="flex self-end">
                 <button
@@ -93,14 +92,14 @@
                     <tr class="mb-4">
                         <td
                             colspan="3"
-                            class="bg-amarillo text-white font-poppings font-bold pl-3"
+                            class="bg-amarillo text-white font-poppings font-bold pl-5"
                         >
                             Pendiente
                         </td>
                     </tr>
                 </thead>
                 <tr
-                    class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto"
+                    class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto mt-2"
                 >
                     <div>
                         <td>Nombre</td>
@@ -140,8 +139,7 @@ export default defineComponent({
         newRoleId: Number,
     },
 
-    data: () => ({
-    }),
+    data: () => ({}),
 
     components: {
         AppLayout,
