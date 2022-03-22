@@ -1170,12 +1170,9 @@ select {
 .w-96 {
   width: 24rem;
 }
-<<<<<<< HEAD
-=======
 .w-14 {
   width: 3.5rem;
 }
->>>>>>> 9bf305cdfefeee04c8d20b763283118a42764f2d
 .min-w-0 {
   min-width: 0px;
 }
@@ -1591,8 +1588,6 @@ select {
   padding-left: 1.75rem;
   padding-right: 1.75rem;
 }
-<<<<<<< HEAD
-=======
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1601,7 +1596,6 @@ select {
   padding-left: 4rem;
   padding-right: 4rem;
 }
->>>>>>> 9bf305cdfefeee04c8d20b763283118a42764f2d
 .py-24 {
   padding-top: 6rem;
   padding-bottom: 6rem;

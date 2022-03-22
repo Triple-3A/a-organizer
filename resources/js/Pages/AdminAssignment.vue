@@ -27,6 +27,7 @@
                     <span class="text-lg font-medium">Asignación técnico</span>
                     /
                     <Link
+                        type="submit"
                         :href="route('assigned')"
                         class="text-lg font-bold text-azul"
                         >Asignados</Link
@@ -93,12 +94,12 @@
                 </div>
             </div>
             <div className="mt-4 flex flex-col justify-center items-center">
-                <!-- <Link
-                class="ml-4 mt-3 bg-azul px-5"
-                :href="route('assignTechToStudent', technician)"
-            >
-                Asignar
-            </Link> -->
+                <Link
+                    :href="route('assignTechToStudent', id)"
+                    class="ml-4 mt-3 bg-azul px-5" 
+                >
+                    Asignar
+                </Link>
                 <jet-button class="ml-4 mt-4 px-7 bg-azul">
                     Aceptar
                 </jet-button>
@@ -122,19 +123,6 @@ export default {
         JetButton,
         Head,
         Link,
-    },
-    data() {
-        return {
-            form: {
-                technician: this.props.technicians.id,
-                // student: ,
-            },
-        };
-    },
-    methods: {
-        submit() {
-            this.$inertia.put(route("productos.update", this.from), this.form);
-        },
     },
 };
 </script>
