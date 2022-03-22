@@ -47,7 +47,15 @@ module.exports = {
                 '60px': '60px',
                 '80px': '80px',
 
-              }
+            },
+            padding: {
+                '10px': '10px',
+                '20px': '20px',
+                '30px': '30px',
+                '40px': '40px',
+                '60px': '60px',
+                '100px':'100px',
+            }
         },
         plugins: [
             require('@tailwindcss/typography'),
