@@ -51,7 +51,7 @@ Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/instrumenta
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/advancedTasks', [TitleController::class, 'advancedTasks'])->name('advancedTasks');
 
 
-Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/tusers', [TechnicianController::class, 'tusers'])->name('tusers');
+Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/technicianUsers', [TechnicianController::class, 'technicianUsers'])->name('technicianUsers');
 
 
 

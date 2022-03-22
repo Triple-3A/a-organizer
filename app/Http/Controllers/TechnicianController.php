@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use App\Models\Technician;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -26,14 +27,22 @@ class TechnicianController extends Controller
     }
 
 
-    public function tusers()
+    public function technicianUsers()
     {
+        $studentsUsers = [];
         $user = auth()->user();
         $technician = Technician::where('user_id', $user->id)->value('id');
-        $studentsUsers = Student::where('technician_id', $technician)->get();
+        $students = Student::where('technician_id', $technician)->get();
+
+        foreach ($students as $student) {
+            $userId = User::where('id', $student->user_id)->value('id');
+            $user = User::find($userId);
+            array_push($studentsUsers, $user);
+        }
+
         return Inertia::render('TechnicianUsers', compact('studentsUsers'));
     }
-   
+
 
     /**
      * Show the form for creating a new resource.
