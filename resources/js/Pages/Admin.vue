@@ -20,14 +20,14 @@
                     <tr class="mb-4">
                         <td
                             colspan="3"
-                            class="bg-amarillo text-white font-poppings font-bold pl-3"
+                            class="bg-amarillo text-white font-poppings font-bold pl-5"
                         >
                             Técnicos
                         </td>
                     </tr>
                 </thead>
                 <tr
-                    class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto"
+                    class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto mt-2"
                 >
                     <div>
                         <td>Nombre</td>
@@ -46,12 +46,7 @@
                     >
                     </jet-role-table-cell>
                 </tr>
-
-                <!--             <tr class="text-black font-bold basis-0 flex-col">
-                    <td v-for="(person, index) in fakedata" :key="index">
-                        <strong> {{person.name}} </strong> {{person.email}}
-                    </td>
-                </tr> -->
+                
             </table>
 
             <table class="mb-4">
@@ -59,14 +54,14 @@
                     <tr class="mb-4">
                         <td
                             colspan="3"
-                            class="bg-amarillo text-white font-poppings font-bold pl-3"
+                            class="bg-amarillo text-white font-poppings font-bold pl-5"
                         >
                             Usuarios
                         </td>
                     </tr>
                 </thead>
                 <tr
-                    class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto"
+                    class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto mt-2"
                 >
                     <div>
                         <td>Nombre</td>

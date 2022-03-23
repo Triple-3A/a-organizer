@@ -5,10 +5,8 @@
                 <strong> {{ name }} </strong>
             </div>
             <div>
-                <p
-                    class="text-grey font-bold flex flex-row justify-between mb-2 w-11/12 mx-auto"
-                >
-                    {{ email }} {{ id }}
+                <p class="text-noNegro font-bold flex flex-row justify-between mb-2 w-11/12">
+                    {{ email }}
                 </p>
             </div>
         </td>
@@ -30,12 +28,12 @@
                         Estu.
                     </button>
                 </div>
-                <Link
+             <!--    <Link
                     :href="route('reassignRole', id, name)"
                     class="text-lg font-bold text-azul"
                 >
                     Asignados
-                </Link>
+                </Link> -->
             </form>
         </td>
     </div>
@@ -55,10 +53,15 @@ export default defineComponent({
             technicianButtonType: "",
             studentButtonType: "",
 
-            form: {
+           /*  form: {
                 userId: this.id,
                 roleId: "",
-            },
+            }, */
+
+            form: this.$inertia.form({
+                userId: this.id,
+                roleId: "",
+            }),
         };
     },
 
@@ -94,5 +97,11 @@ export default defineComponent({
     components: {
         Link,
     },
+
+      methods: {
+    submit() {
+      this.form.post(this.route("reassignRole"));
+    },
+  },
 });
 </script>

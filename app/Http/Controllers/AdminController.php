@@ -25,11 +25,8 @@ class AdminController extends Controller
         return Inertia::render('Admin', compact('technicianUsers', 'studentUsers', 'standByUsers'));
     }
 
-    public function reassignRole($form)
+    public function reassignRole($userId, $roleId)
     {
-        dd($form);
-        $userId = $form->userId;
-        $roleId = $form->roleId;
         $user = User::find($userId);
         $user->roles()->detach();
         $user->roles()->attach($roleId);
