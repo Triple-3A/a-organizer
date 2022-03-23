@@ -43,7 +43,7 @@ class AdminController extends Controller
 
     public function assignTechToStudent($technician){
         dd($technician);
-        return Redirect::route('Admin');
+        return Redirect::route('AdminAssignment');
     }
 
     public function assigned()

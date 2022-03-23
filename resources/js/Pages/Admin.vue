@@ -3,11 +3,12 @@
 
         <div class="dashboard_container">
             <div class="flex self-end">
-                <button
-                    class="bg-white hover:bg-gray-300 text-amber-300 font-bold py-2 px-3 rounded"
+                <Link
+                :href="route('assignment')"
+                    class="mt-4 mb-10 mr-2.5 font-bold text-amarillo rounded-lg text-sm py-2.5"
                 >
                     Asignación Técnico ->
-                </button>
+                </Link>
             </div>
 
             <h2
@@ -127,6 +128,7 @@
 <script>
 import { defineComponent } from "vue";
 import AppLayout from "@/Layouts/NavBar.vue";
+import { Head, Link } from "@inertiajs/inertia-vue3";
 import Welcome from "@/Jetstream/Welcome.vue";
 import JetRoleTableCell from "@/Jetstream/RoleTableCell.vue";
 
@@ -144,6 +146,8 @@ export default defineComponent({
     }),
 
     components: {
+        Head,
+        Link,
         AppLayout,
         Welcome,
         JetRoleTableCell,

@@ -1,6 +1,6 @@
 <template>
     <app-layout>
-        <div class="ml-10px mt-3">
+        <div class="ml-10px mt-4">
             <Link
                 :href="route('admin')"
                 class="mr-2.5 font-bold text-amarillo rounded-lg text-sm py-2.5 text-center flex items-center"
@@ -95,7 +95,7 @@
             </div>
             <div className="mt-4 flex flex-col justify-center items-center">
                 <Link
-                    :href="route('assignTechToStudent', id)"
+                    :href="route('assignTechToStudent', 'holi')"
                     class="ml-4 mt-3 bg-azul px-5" 
                 >
                     Asignar
