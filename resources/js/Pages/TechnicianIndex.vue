@@ -73,7 +73,7 @@
               "
             >
               <div class="p-4 rounded-lg">
-                <Link class="font-medium" :href="route('tusers')">
+                <Link class="font-medium" :href="route('technicianUsers')">
                   <center>
                     <svg
                       class="w-16 h-16 text-azul"
