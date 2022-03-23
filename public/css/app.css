@@ -1205,6 +1205,9 @@ select {
 .w-2\/5 {
   width: 40%;
 }
+.w-80 {
+  width: 20rem;
+}
 .min-w-0 {
   min-width: 0px;
 }
@@ -2234,6 +2237,14 @@ select {
     width: 100%;
   }
 
+  .sm\:w-3\/4 {
+    width: 75%;
+  }
+
+  .sm\:w-2\/5 {
+    width: 40%;
+  }
+
   .sm\:max-w-md {
     max-width: 28rem;
   }
@@ -2401,6 +2412,10 @@ select {
 
   .lg\:col-span-4 {
     grid-column: span 4 / span 4;
+  }
+
+  .lg\:w-2\/5 {
+    width: 40%;
   }
 
   .lg\:px-8 {
