@@ -29958,7 +29958,7 @@ var _hoisted_4 = {
   "class": "mx-auto w-2/5"
 };
 var _hoisted_5 = {
-  "class": "flex items-center justify-center py-6 mb-12 border-4 rounded-xl border-amarillo"
+  "class": "min-w-2/5 flex items-center justify-center py-6 px-10 mb-12 border-4 rounded-xl border-amarillo"
 };
 var _hoisted_6 = {
   "class": "rounded-lg"
@@ -29988,7 +29988,7 @@ var _hoisted_9 = {
   "class": "mx-auto w-2/5"
 };
 var _hoisted_10 = {
-  "class": "flex items-center justify-center py-6 mb-12 border-4 rounded-xl border-amarillo"
+  "class": "min-w-2/5 flex items-center justify-center py-6 px-10 mb-12 border-4 rounded-xl border-amarillo"
 };
 var _hoisted_11 = {
   "class": "rounded-lg"

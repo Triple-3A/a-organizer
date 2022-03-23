@@ -12,10 +12,12 @@
       <div class="mx-auto w-2/5">
         <div
           class="
+            min-w-2/5
             flex
             items-center
             justify-center
             py-6
+            px-10
             mb-12
             border-4
             rounded-xl
@@ -50,10 +52,12 @@
       <div class="mx-auto w-2/5">
         <div
           class="
+            min-w-2/5
             flex
             items-center
             justify-center
             py-6
+            px-10
             mb-12
             border-4
             rounded-xl
