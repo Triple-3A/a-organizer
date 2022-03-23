@@ -61,27 +61,17 @@
                                         </span>
                                     </template>
 
-                                    <template #content>
+                                   <template #content>
                                         <!-- Account Management -->
-                                        <jet-dropdown-link
-                                            :href="route('profile.show')"
-                                        >
+                                        <jet-dropdown-link :href="route('profile.show')">
                                             Profile
                                         </jet-dropdown-link>
 
-                                        <jet-dropdown-link
-                                            :href="route('api-tokens.index')"
-                                            v-if="
-                                                $page.props.jetstream
-                                                    .hasApiFeatures
-                                            "
-                                        >
+                                        <jet-dropdown-link :href="route('api-tokens.index')" v-if="$page.props.jetstream.hasApiFeatures">
                                             API Tokens
                                         </jet-dropdown-link>
 
-                                        <div
-                                            class="border-t border-gray-100"
-                                        ></div>
+                                        <div class="border-t border-gray-100"></div>
 
                                         <!-- Authentication -->
                                         <form @submit.prevent="logout">
