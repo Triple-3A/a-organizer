@@ -32,41 +32,36 @@
                         :key="studentsUser.id"
                     >
                         <div
-                            class="my-10 flex flex-center row border-4 rounded-lg border-amarillo"
+                            class="my-10 p-4 flex justify-between items-center row border-4 rounded-lg border-amarillo"
                         >
-                            <div
-                                class="p-4 rounded-lg flex justify-start items-center"
-                            >
-                                <div>
-                                    <img
-                                        class="rounded-full"
-                                        src="https://randomuser.me/api/portraits/women/81.jpg"
-                                    />
-                                </div>
-                                <div class="px-8"></div>
-                                <div class="flex flex-row">
-                                    <h1 class="text-xl font-bold ml-12">
-                                        {{ studentsUser.name }}
-                                    </h1>
-                                </div>
-                                <div class="px-16"></div>
-                                <div>
-                                    <svg
-                                        class="h-8 w-8 text-red-500"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        stroke-width="2"
-                                        stroke="currentColor"
-                                        fill="none"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <path stroke="none" d="M0 0h24v24H0z" />
-                                        <line x1="18" y1="6" x2="6" y2="18" />
-                                        <line x1="6" y1="6" x2="18" y2="18" />
-                                    </svg>
-                                </div>
+                            <div class="w-1/5">
+                                <img
+                                    class="rounded-full"
+                                    src="https://randomuser.me/api/portraits/women/81.jpg"
+                                />
+                            </div>
+                            <!-- <div class="px-8"></div> -->
+                            <div class="flex flex-row flex-wrap w-5/12">
+                                <h1 class="text-xl font-bold">
+                                    {{ studentsUser.name }}
+                                </h1>
+                            </div>
+
+                            <div>
+                                <svg
+                                    class="h-8 w-8  text-azul"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    fill="none"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <polyline points="9 6 15 12 9 18" />
+                                </svg>
                             </div>
                         </div>
                     </div>
