@@ -9,6 +9,7 @@ use App\Models\Technician;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
+use Laravel\Fortify\Contracts\RegisterViewResponse;
 
 class AdminController extends Controller
 {
@@ -25,14 +26,19 @@ class AdminController extends Controller
         return Inertia::render('Admin', compact('technicianUsers', 'studentUsers', 'standByUsers'));
     }
 
-    public function reassignRole($userId, $roleId)
+    public function reassignRole(Request $request)
     {
+        $userId = $request->get('userId');
+        $roleId = $request->get('roleId');
+
+        
+
         $user = User::find($userId);
         $user->roles()->detach();
         $user->roles()->attach($roleId);
-        return Redirect::route('users.index');
+        return Redirect::route('admin');
     }
-   
+
     public function assignment()
     {
         $roleTech = Role::find(3);
@@ -44,7 +50,8 @@ class AdminController extends Controller
         return Inertia::render('AdminAssignment', compact('technicians', 'students'));
     }
 
-    public function assignTechToStudent($technician){
+    public function assignTechToStudent($technician)
+    {
         dd($technician);
         return Redirect::route('Admin');
     }

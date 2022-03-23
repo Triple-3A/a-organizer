@@ -5,7 +5,9 @@
                 <strong> {{ name }} </strong>
             </div>
             <div>
-                <p class="text-noNegro font-bold flex flex-row justify-between mb-2 w-11/12">
+                <p
+                    class="text-noNegro font-bold flex flex-row justify-between mb-2 w-11/12"
+                >
                     {{ email }}
                 </p>
             </div>
@@ -28,12 +30,6 @@
                         Estu.
                     </button>
                 </div>
-             <!--    <Link
-                    :href="route('reassignRole', id, name)"
-                    class="text-lg font-bold text-azul"
-                >
-                    Asignados
-                </Link> -->
             </form>
         </td>
     </div>
@@ -53,11 +49,6 @@ export default defineComponent({
             technicianButtonType: "",
             studentButtonType: "",
 
-           /*  form: {
-                userId: this.id,
-                roleId: "",
-            }, */
-
             form: this.$inertia.form({
                 userId: this.id,
                 roleId: "",
@@ -66,6 +57,7 @@ export default defineComponent({
     },
 
     mounted() {
+        
         if (this.role == 3) {
             this.technicianButtonClass =
                 "bg-azul600 text-white font-bold py-2 px-4 rounded-l cursor-default";
@@ -73,8 +65,9 @@ export default defineComponent({
             this.studentButtonClass =
                 "bg-azul hover:bg-azul/80 text-white font-bold py-2 px-4 rounded-r";
             this.studentButtonType = "submit";
-            this.form.roleId = 3;
+            this.form.roleId = 4;
         }
+
         if (this.role == 4) {
             this.technicianButtonClass =
                 "bg-azul hover:bg-azul/80 text-white font-bold py-2 px-4 rounded-l";
@@ -82,8 +75,9 @@ export default defineComponent({
             this.studentButtonClass =
                 "bg-azul600 text-white font-bold py-2 px-4 rounded-r cursor-default";
             this.studentButtonType = "";
-            this.form.roleId = 4;
+            this.form.roleId = 3;
         }
+
         if (this.role == 1) {
             this.technicianButtonClass =
                 "bg-azul hover:bg-azul/80 text-white font-bold py-2 px-4 rounded-l";
@@ -98,10 +92,11 @@ export default defineComponent({
         Link,
     },
 
-      methods: {
-    submit() {
-      this.form.post(this.route("reassignRole"));
+    methods: {
+        submit() {
+            this.form.roleId = 1;
+            this.form.post(this.route("reassignRole"));
+        },
     },
-  },
 });
 </script>
