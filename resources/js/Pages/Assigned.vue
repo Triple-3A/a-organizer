@@ -34,20 +34,22 @@
                         <th class="bg-amarillo p-2 text-white text-base font-bold md:border md:border-white text-left block md:table-cell">Técnico</th>
                         <th class="bg-amarillo p-2 text-white text-base font-bold md:border md:border-white text-left block md:table-cell">Email</th>
                         <th class="bg-amarillo p-2 text-white text-base font-bold md:border md:border-white  block md:table-cell">Usuarios Asignados</th>
-                    
                     </tr>
                 </thead>
-                <tbody class="block md:table-row-group">
-                    <tr class="border border-azul-500 md:border-none block md:table-row">
-                        <td class="p-2 md:border md:border-azul-500 font-bold text-left block md:table-cell">Francisco García</td>
-                        <td class="p-2 md:border md:border-azul-500 text-left block md:table-cell">francisco@tecnician.com</td>
-                        <td class="p-2 md:border md:border-azul-500 text-left block md:table-cell">Laura (laura@user.com) <p>Laura (laura@user.com)</p></td>
+                <tbody class="block md:table-row-group"
+                >
+                    <tr class="border border-azul-500 md:border-none block md:table-row"
+                    v-for="technician in technicianStu"
+                    :key="technician.id">
+                        <td class="p-2 md:border md:border-azul-500 font-bold text-left block md:table-cell">{{technician.name}}</td>
+                        <td class="p-2 md:border md:border-azul-500 text-left block md:table-cell">{{technician.email}}</td>
+                        <td class="p-2 md:border md:border-azul-500 block md:table-cell">
+                            <p v-for="student in studentsTech"
+                                :key="student.id" >{{student.name}}  ({{student.email}})
+                            </p>
+                        </td>
                     </tr>
-                    <!-- <tr class="border border-azul-500 md:border-none block md:table-row">
-                        <td class="p-2 md:border md:border-azul-500 font-bold text-left block md:table-cell">{{name}}</td>
-                        <td class="p-2 md:border md:border-azul-500 text-left block md:table-cell">{{email}}</td>
-                        <td class="p-2 md:border md:border-azul-500 text-left block md:table-cell">{{student.technician}}</td>
-                    </tr> -->
+                
                 </tbody>
             </table>
         </div>
@@ -58,6 +60,10 @@
 import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 export default {
+     props: {
+        technicianStu: Array,
+        studentsTech: Array,
+    },
     components: {
         AppLayout,
         Head,

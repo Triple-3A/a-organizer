@@ -45,13 +45,35 @@ class AdminController extends Controller
     }
 
     public function assignTechToStudent($technician){
-        dd($technician);
+        // dd($technician);
         return Redirect::route('Admin');
     }
 
     public function assigned()
-    {
-        return Inertia::render('Assigned');
+    {   
+        $studentsTech = [];
+        $technicianStu= [];
+        $user = User::find('6');
+        $technicians = Technician::where('user_id', $user->id)->value('id');
+        $students = Student::where('technician_id', $technicians)->get();
+        $technicians = Technician::where('user_id', $user->id)->get();
+        
+        foreach ($students as $student) {
+
+                $userId = User::where('id', $student->user_id)->value('id');
+                $user=User::find($userId);
+                array_push($studentsTech, $user);
+            }
+            
+        foreach ($technicians as $technician) {
+            $userId = User::where('id', $technician->user_id)->value('id');
+            $user=User::find($userId);
+            array_push($technicianStu, $user);
+        }
+            
+            // dd($technicianStu);
+
+        return Inertia::render('Assigned', compact('studentsTech', 'technicianStu'));
     }
 
     /**
