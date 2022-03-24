@@ -53,6 +53,7 @@ class AdminController extends Controller
     {   
         $studentsTech = [];
         $technicianStu= [];
+        dd(User::technicians()->get());
         $user = User::find('6');
         $technicians = Technician::where('user_id', $user->id)->value('id');
         $students = Student::where('technician_id', $technicians)->get();

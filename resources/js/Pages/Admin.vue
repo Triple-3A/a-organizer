@@ -1,13 +1,24 @@
 <template>
-    <app-layout title="Dashboard"> 
-
-        <div class="dashboard_container">
-            <div class="flex self-end">
-                <button
-                    class="bg-white hover:bg-gray-300 text-amber-300 font-bold py-2 px-3 rounded"
+    <app-layout title="Dashboard">
+        <div class="dashboard_container flex">
+            <div class="mt-3 flex justify-end">
+                <Link
+                    :href="route('assignment')"
+                    class="font-bold text-amarillo rounded-lg text-sm py-2.5 text-center flex items-center"
                 >
-                    Asignación Técnico ->
-                </button>
+                    Asignación técnico
+                    <svg
+                        class="fill-amarillo mr-1 ml-2 w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd"
+                        ></path></svg
+                ></Link>
             </div>
 
             <h2
@@ -126,6 +137,7 @@
 
 <script>
 import { defineComponent } from "vue";
+import { Link } from "@inertiajs/inertia-vue3";
 import AppLayout from "@/Layouts/NavBar.vue";
 import Welcome from "@/Jetstream/Welcome.vue";
 import JetRoleTableCell from "@/Jetstream/RoleTableCell.vue";
@@ -140,13 +152,13 @@ export default defineComponent({
         newRoleId: Number,
     },
 
-    data: () => ({
-    }),
+    data: () => ({}),
 
     components: {
         AppLayout,
         Welcome,
         JetRoleTableCell,
+        Link,
     },
 });
 </script>
