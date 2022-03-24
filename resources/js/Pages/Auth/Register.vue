@@ -1,16 +1,16 @@
 <template>
   <Head title="Register" />
 
-  <div class="h-full align-middle py-24">
-    <div class="flex justify-center my-4">
+  <div class="h-full px-10 align-middle py-24">
+    <div class="flex justify-center">
       <h2>
-        <Link class="font-medium text-azul" :href="route('login')">Iniciar sesión</Link> / <span class="font-bold "
+        <Link class="font-medium text-azul" :href="route('login')">Iniciar sesión</Link> / <span class="font-medium "
           >Registrarse</span
         >
       </h2>
     </div>
     <div class="flex justify-center">
-      <div class="block max-w-sm p-6 bg-white rounded-lg shadow-lg">
+      <div class="block max-w-sm p-12 bg-white rounded-lg shadow-lg">
         <jet-validation-errors class="mb-4" />
 
         <form @submit.prevent="submit">
@@ -19,7 +19,7 @@
               id="name"
               placeholder="Nombre"
               type="text"
-              class="block w-full py-2 mt-1 text-center" 
+              class="block w-full mt-1 text-center" 
               v-model="form.name"
               required
               autocomplete="name"
@@ -32,7 +32,7 @@
               id="email"
               placeholder="Email"
               type="email"
-              class="block w-full py-2 mt-1 text-center"
+              class="block w-full mt-1 text-center"
               v-model="form.email"
               required
             />
@@ -43,7 +43,7 @@
               id="password"
               placeholder="Contraseña"
               type="password"
-              class="block w-full py-2 mt-1 text-center"
+              class="block w-full mt-1 text-center"
               v-model="form.password"
               required
               autocomplete="new-password"
@@ -55,7 +55,7 @@
               id="password_confirmation"
                placeholder="Confirmar contraseña"
               type="password"
-              class="block w-full py-2 mt-1 text-center"
+              class="block w-full mt-1 text-center"
               v-model="form.password_confirmation"
               required
               autocomplete="new-password"
@@ -94,17 +94,10 @@
             </jet-label>
           </div>
 
-          <div class="flex items-center justify-end mt-4">
-            <Link
-              :href="route('login')"
-              class="underline text-sm text-azul hover:text-gray-900 font-bold"
-            >
-             ¿Ya estás registrado?
-            </Link>
-
+          <div class="flex justify-center mt-6">
             <jet-button
               :href="route('attach')"
-              class="ml-4 bg-azul"
+              class=" bg-azul"
               :class="{ 'opacity-25': form.processing }"
               :disabled="form.processing"
             >

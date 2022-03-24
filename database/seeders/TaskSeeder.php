@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\AdvancedTitle;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -26,6 +27,7 @@ class TaskSeeder extends Seeder
         Description::factory(10)->create();
         Icon::factory(10)->create();
         Title::factory(10)->create();
+        AdvancedTitle::factory(5)->create();
         
         for ($id = 1; $id <= 10; $id++) {
             DB::table('task_user')->insert(
