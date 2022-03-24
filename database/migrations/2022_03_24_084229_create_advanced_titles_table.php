@@ -13,9 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('titles', function (Blueprint $table) {
+        Schema::create('advanced_titles', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+
+            $table->unsignedBigInteger('title_id');
+            $table->foreign('title_id')->references('id')->on('titles')->cascadeOnDelete();
+
             $table->string('type')->nullable();
             $table->timestamps();
         });
@@ -28,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('titles');
+        Schema::dropIfExists('advanced_titles');
     }
 };
