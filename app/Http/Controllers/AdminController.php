@@ -36,22 +36,26 @@ class AdminController extends Controller
 
         $user = User::find($userId);
 
-        // if ($currentRoleId == 1) {
-        //     if ($newRoleId == 3) {
-        //     }
-        //     if ($newRoleId == 4) {
-        //     }
-        // }
+        if ($currentRoleId == 1) {
+            if ($newRoleId == 3) {
+                Technician::create(array('user_id' => $userId));
+            }
+            if ($newRoleId == 4) {
+                Student::create(array('user_id' => $userId));
+            }
+        }
 
-        // if ($currentRoleId == 3) {
-        //     $technician = Technician::where('user_id', $userId)->firstOrFail();
-        //     $technician->delete();
-        // }
+        if ($currentRoleId == 3) {
+            $technician = Technician::where('user_id', $userId)->firstOrFail();
+            $technician->delete();
+            Student::create(array('user_id' => $userId));
+        }
 
-        // if ($currentRoleId == 4) {
-        //     $student = Student::where('user_id', $userId)->firstOrFail();
-        //     $student->delete();
-        // }
+        if ($currentRoleId == 4) {
+            $student = Student::where('user_id', $userId)->firstOrFail();
+            $student->delete();
+            Technician::create(array('user_id' => $userId));
+        }
 
         $user->roles()->detach();
         $user->roles()->attach($newRoleId);
