@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\Student;
@@ -28,15 +29,33 @@ class AdminController extends Controller
 
     public function reassignRole(Request $request)
     {
-        $userId = $request->get('userId');
-        $roleId = $request->get('roleId');
+        // dd($request->get('roleId'));
 
-        
+        # validate?
+
+        $userId = $request->get('userId');
+        $newRoleId = $request->get('roleId');
 
         $user = User::find($userId);
+        $currentRoleId = $request->get('roleId');
+        // dd($currentRoleId = $user->roles());
+
+        if ($currentRoleId == 4) {
+            $technician = Technician::where('user_id', $userId)->firstOrFail();
+            Technician::detach($technician);
+            // $user->students()->attach($userId);
+        }
+
+        if ($currentRoleId == 124312341312) {
+            $user->technicians()->detach();
+            // dd($student = Student::where('user_id', $userId)->firstOrFail());
+            // $user->technicians()->attach($userId);
+        }
+
         $user->roles()->detach();
-        $user->roles()->attach($roleId);
-        return Redirect::route('admin');
+        $user->roles()->attach($newRoleId);
+
+        return Redirect::route('login');
     }
 
     public function assignment()

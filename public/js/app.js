@@ -22169,7 +22169,6 @@ __webpack_require__.r(__webpack_exports__);
       this.technicianButtonType = "";
       this.studentButtonClass = "bg-azul hover:bg-azul/80 text-white font-bold py-2 px-4 rounded-r";
       this.studentButtonType = "submit";
-      this.form.roleId = 4;
     }
 
     if (this.role == 4) {
@@ -22177,7 +22176,6 @@ __webpack_require__.r(__webpack_exports__);
       this.technicianButtonType = "submit";
       this.studentButtonClass = "bg-azul600 text-white font-bold py-2 px-4 rounded-r cursor-default";
       this.studentButtonType = "";
-      this.form.roleId = 3;
     }
 
     if (this.role == 1) {
@@ -22191,8 +22189,13 @@ __webpack_require__.r(__webpack_exports__);
     Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Link
   },
   methods: {
+    reassignUserToTechnician: function reassignUserToTechnician() {
+      this.form.roleId = 3;
+    },
+    reassignUserToStudent: function reassignUserToStudent() {
+      this.form.roleId = 4;
+    },
     submit: function submit() {
-      this.form.roleId = 1;
       this.form.post(this.route("reassignRole"));
     }
   }
@@ -24942,15 +24945,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.email), 1
   /* TEXT */
   )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-    onSubmit: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+    onSubmit: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return _ctx.submit && _ctx.submit.apply(_ctx, arguments);
     }, ["prevent"]))
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[0] || (_cache[0] = function ($event) {
+      return _ctx.reassignUserToTechnician();
+    }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(_ctx.technicianButtonClass),
     type: _ctx.technicianButtonType
   }, " Tecn. ", 10
   /* CLASS, PROPS */
   , _hoisted_5), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[1] || (_cache[1] = function ($event) {
+      return _ctx.reassignUserToStudent();
+    }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(_ctx.studentButtonClass),
     type: _ctx.studentButtonType
   }, " Estu. ", 10

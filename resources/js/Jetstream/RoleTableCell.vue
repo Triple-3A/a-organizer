@@ -18,12 +18,14 @@
             <form @submit.prevent="submit">
                 <div class="inline-flex">
                     <button
+                        @click="reassignUserToTechnician()"
                         :class="technicianButtonClass"
                         :type="technicianButtonType"
                     >
                         Tecn.
                     </button>
                     <button
+                        @click="reassignUserToStudent()"
                         :class="studentButtonClass"
                         :type="studentButtonType"
                     >
@@ -57,7 +59,6 @@ export default defineComponent({
     },
 
     mounted() {
-        
         if (this.role == 3) {
             this.technicianButtonClass =
                 "bg-azul600 text-white font-bold py-2 px-4 rounded-l cursor-default";
@@ -65,7 +66,6 @@ export default defineComponent({
             this.studentButtonClass =
                 "bg-azul hover:bg-azul/80 text-white font-bold py-2 px-4 rounded-r";
             this.studentButtonType = "submit";
-            this.form.roleId = 4;
         }
 
         if (this.role == 4) {
@@ -75,7 +75,6 @@ export default defineComponent({
             this.studentButtonClass =
                 "bg-azul600 text-white font-bold py-2 px-4 rounded-r cursor-default";
             this.studentButtonType = "";
-            this.form.roleId = 3;
         }
 
         if (this.role == 1) {
@@ -93,8 +92,13 @@ export default defineComponent({
     },
 
     methods: {
+        reassignUserToTechnician() {
+            this.form.roleId = 3;
+        },
+        reassignUserToStudent() {
+            this.form.roleId = 4;
+        },
         submit() {
-            this.form.roleId = 1;
             this.form.post(this.route("reassignRole"));
         },
     },
