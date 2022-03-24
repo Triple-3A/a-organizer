@@ -1,7 +1,7 @@
 <template>
-    <app-layout title="Dashboard"> 
-
-        <div class="dashboard_container">
+    <app-layout title="Dashboard">
+        <h1 v-if="!technicianUsers">Cargando ...</h1>
+        <div v-else class="dashboard_container">
             <div class="flex self-end">
                 <Link
                 :href="route('assignment')"
@@ -22,14 +22,14 @@
                     <tr class="mb-4">
                         <td
                             colspan="3"
-                            class="bg-amarillo text-white font-poppings font-bold pl-3"
+                            class="bg-amarillo text-white font-poppings font-bold pl-5"
                         >
                             Técnicos
                         </td>
                     </tr>
                 </thead>
                 <tr
-                    class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto"
+                    class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto mt-2"
                 >
                     <div>
                         <td>Nombre</td>
@@ -44,16 +44,10 @@
                         :email="user.email"
                         :name="user.name"
                         :id="user.id"
-                        :role="user.pivot.role_id"
+                        :currentRoleId="user.pivot.role_id"
                     >
                     </jet-role-table-cell>
                 </tr>
-
-                <!--             <tr class="text-black font-bold basis-0 flex-col">
-                    <td v-for="(person, index) in fakedata" :key="index">
-                        <strong> {{person.name}} </strong> {{person.email}}
-                    </td>
-                </tr> -->
             </table>
 
             <table class="mb-4">
@@ -61,14 +55,14 @@
                     <tr class="mb-4">
                         <td
                             colspan="3"
-                            class="bg-amarillo text-white font-poppings font-bold pl-3"
+                            class="bg-amarillo text-white font-poppings font-bold pl-5"
                         >
                             Usuarios
                         </td>
                     </tr>
                 </thead>
                 <tr
-                    class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto"
+                    class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto mt-2"
                 >
                     <div>
                         <td>Nombre</td>
@@ -83,7 +77,7 @@
                         :email="user.email"
                         :name="user.name"
                         :id="user.id"
-                        :role="user.pivot.role_id"
+                        :currentRoleId="user.pivot.role_id"
                     >
                     </jet-role-table-cell>
                 </tr>
@@ -94,14 +88,14 @@
                     <tr class="mb-4">
                         <td
                             colspan="3"
-                            class="bg-amarillo text-white font-poppings font-bold pl-3"
+                            class="bg-amarillo text-white font-poppings font-bold pl-5"
                         >
                             Pendiente
                         </td>
                     </tr>
                 </thead>
                 <tr
-                    class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto"
+                    class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto mt-2"
                 >
                     <div>
                         <td>Nombre</td>
@@ -116,7 +110,7 @@
                         :email="user.email"
                         :name="user.name"
                         :id="user.id"
-                        :role="user.pivot.role_id"
+                        :currentRoleId="user.pivot.role_id"
                     >
                     </jet-role-table-cell>
                 </tr>
@@ -139,11 +133,13 @@ export default defineComponent({
         technicianUsers: Array,
         studentUsers: Array,
         standByUsers: Array,
-        newRoleId: Number,
     },
 
-    data: () => ({
-    }),
+    data: () => ({}),
+
+    // mounted() {
+    //     this.$forceUpdate();
+    // },
 
     components: {
         Head,
