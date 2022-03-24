@@ -1,6 +1,7 @@
 <template>
     <app-layout title="Dashboard">
-        <div class="dashboard_container">
+        <h1 v-if="!technicianUsers">Cargando ...</h1>
+        <div v-else class="dashboard_container">
             <div class="flex self-end">
                 <button
                     class="bg-white hover:bg-gray-300 text-amber-300 font-bold py-2 px-3 rounded"
@@ -42,11 +43,10 @@
                         :email="user.email"
                         :name="user.name"
                         :id="user.id"
-                        :role="user.pivot.role_id"
+                        :currentRoleId="user.pivot.role_id"
                     >
                     </jet-role-table-cell>
                 </tr>
-                
             </table>
 
             <table class="mb-4">
@@ -76,7 +76,7 @@
                         :email="user.email"
                         :name="user.name"
                         :id="user.id"
-                        :role="user.pivot.role_id"
+                        :currentRoleId="user.pivot.role_id"
                     >
                     </jet-role-table-cell>
                 </tr>
@@ -109,7 +109,7 @@
                         :email="user.email"
                         :name="user.name"
                         :id="user.id"
-                        :role="user.pivot.role_id"
+                        :currentRoleId="user.pivot.role_id"
                     >
                     </jet-role-table-cell>
                 </tr>
@@ -131,10 +131,13 @@ export default defineComponent({
         technicianUsers: Array,
         studentUsers: Array,
         standByUsers: Array,
-        newRoleId: Number,
     },
 
     data: () => ({}),
+
+    // mounted() {
+    //     this.$forceUpdate();
+    // },
 
     components: {
         AppLayout,

@@ -42,7 +42,7 @@ import { Link } from "@inertiajs/inertia-vue3";
 import { defineComponent } from "vue";
 
 export default defineComponent({
-    props: ["email", "name", "id", "role"],
+    props: ["email", "name", "id", "currentRoleId"],
 
     data() {
         return {
@@ -54,12 +54,13 @@ export default defineComponent({
             form: this.$inertia.form({
                 userId: this.id,
                 roleId: "",
+                currentRoleId: this.currentRoleId,
             }),
         };
     },
 
     mounted() {
-        if (this.role == 3) {
+        if (this.currentRoleId == 3) {
             this.technicianButtonClass =
                 "bg-azul600 text-white font-bold py-2 px-4 rounded-l cursor-default";
             this.technicianButtonType = "";
@@ -68,7 +69,7 @@ export default defineComponent({
             this.studentButtonType = "submit";
         }
 
-        if (this.role == 4) {
+        if (this.currentRoleId == 4) {
             this.technicianButtonClass =
                 "bg-azul hover:bg-azul/80 text-white font-bold py-2 px-4 rounded-l";
             this.technicianButtonType = "submit";
@@ -77,7 +78,7 @@ export default defineComponent({
             this.studentButtonType = "";
         }
 
-        if (this.role == 1) {
+        if (this.currentRoleId == 1) {
             this.technicianButtonClass =
                 "bg-azul hover:bg-azul/80 text-white font-bold py-2 px-4 rounded-l";
             this.technicianButtonType = "submit";
@@ -100,6 +101,7 @@ export default defineComponent({
         },
         submit() {
             this.form.post(this.route("reassignRole"));
+            window.location.reload();
         },
     },
 });

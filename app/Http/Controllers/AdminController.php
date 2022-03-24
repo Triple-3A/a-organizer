@@ -29,33 +29,34 @@ class AdminController extends Controller
 
     public function reassignRole(Request $request)
     {
-        // dd($request->get('roleId'));
-
-        # validate?
 
         $userId = $request->get('userId');
         $newRoleId = $request->get('roleId');
+        $currentRoleId = $request->get('currentRoleId');
 
         $user = User::find($userId);
-        $currentRoleId = $request->get('roleId');
-        // dd($currentRoleId = $user->roles());
 
-        if ($currentRoleId == 4) {
-            $technician = Technician::where('user_id', $userId)->firstOrFail();
-            Technician::detach($technician);
-            // $user->students()->attach($userId);
-        }
+        // if ($currentRoleId == 1) {
+        //     if ($newRoleId == 3) {
+        //     }
+        //     if ($newRoleId == 4) {
+        //     }
+        // }
 
-        if ($currentRoleId == 124312341312) {
-            $user->technicians()->detach();
-            // dd($student = Student::where('user_id', $userId)->firstOrFail());
-            // $user->technicians()->attach($userId);
-        }
+        // if ($currentRoleId == 3) {
+        //     $technician = Technician::where('user_id', $userId)->firstOrFail();
+        //     $technician->delete();
+        // }
+
+        // if ($currentRoleId == 4) {
+        //     $student = Student::where('user_id', $userId)->firstOrFail();
+        //     $student->delete();
+        // }
 
         $user->roles()->detach();
         $user->roles()->attach($newRoleId);
 
-        return Redirect::route('login');
+        return Redirect::back();
     }
 
     public function assignment()
