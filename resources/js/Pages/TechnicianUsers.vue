@@ -1,6 +1,6 @@
 <template>
     <app-layout title="Dashboard">
-        <Link class="font-medium" :href="route('categories')">
+        <Link class="font-medium" :href="route('technician')">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="float-left w-12 h-12 text-amarillo"
