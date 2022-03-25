@@ -133,7 +133,6 @@
 import { defineComponent } from "vue";
 import { Link } from "@inertiajs/inertia-vue3";
 import AppLayout from "@/Layouts/NavBar.vue";
-import { Head, Link } from "@inertiajs/inertia-vue3";
 import Welcome from "@/Jetstream/Welcome.vue";
 import JetRoleTableCell from "@/Jetstream/RoleTableCell.vue";
 
@@ -149,12 +148,10 @@ export default defineComponent({
     data: () => ({}),
 
     components: {
-        Head,
         Link,
         AppLayout,
         Welcome,
         JetRoleTableCell,
-        Link,
     },
 });
 </script>

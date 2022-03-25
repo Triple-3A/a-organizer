@@ -1062,11 +1062,8 @@ select {
 .mb-2 {
   margin-bottom: 12px;
 }
-.mb-10 {
-  margin-bottom: 2.5rem;
-}
-.mr-2\.5 {
-  margin-right: 0.625rem;
+.mr-1 {
+  margin-right: 8px;
 }
 .mb-3 {
   margin-bottom: 16px;
@@ -1074,8 +1071,8 @@ select {
 .ml-10px {
   margin-left: 10px;
 }
-.mr-1 {
-  margin-right: 8px;
+.mr-2\.5 {
+  margin-right: 0.625rem;
 }
 .block {
   display: block;
