@@ -2,16 +2,14 @@
 
 use App\Http\Controllers\AttachRoleController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AssignmentController;
+use App\Http\Controllers\AdvancedTitleController;
+use App\Http\Controllers\BasicTitleController;
+use App\Http\Controllers\InstrumentalTitleController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TechnicianController;
 use App\Http\Controllers\StandByController;
-use App\Http\Controllers\TitleController;
-use Illuminate\Auth\Events\Login;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,24 +34,20 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/attach', [AttachRoleContr
 Route::middleware(['auth:sanctum', 'verified', 'standBy'])->get('/standBy', [StandByController::class, 'index'])->name('standBy');
 
 Route::middleware(['auth:sanctum', 'verified', 'admin'])->get('/admin', [AdminController::class, 'index'])->name('admin');
-// Route::middleware(['auth:sanctum', 'verified', 'admin'])->post('/reassignRole', [AdminController::class, 'reassignRole'])->name('reassignRole');
 Route::middleware(['auth:sanctum', 'verified', 'admin'])->get('/assignment', [AdminController::class, 'assignment'])->name('assignment');
 Route::middleware(['auth:sanctum', 'verified', 'admin'])->get('/assignTechToStudent/{id}', [AdminController::class, 'assignTechToStudent'])->name('assignTechToStudent'); //Cambiar a ruta post y nombre store asignment
 Route::middleware(['auth:sanctum', 'verified', 'admin'])->get('/assigned', [AdminController::class, 'assigned'])->name('assigned');
 
-
-Route::middleware(['auth:sanctum', 'verified', 'student'])->get('/student', [StudentController::class, 'index'])->name('student');
-
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/technician', [TechnicianController::class, 'index'])->name('technician');
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/categories', [TechnicianController::class, 'categories'])->name('categories');
-Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/basicTasks', [TitleController::class, 'basicTasks'])->name('basicTasks');
-Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/instrumentalTasks', [TitleController::class, 'instrumentalTasks'])->name('instrumentalTasks');
-Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/advancedTasks', [TitleController::class, 'advancedTasks'])->name('advancedTasks');
-
 
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/technicianUsers', [TechnicianController::class, 'technicianUsers'])->name('technicianUsers');
 
+Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/basicTasks', [BasicTitleController::class, 'index'])->name('basicTasks');
+Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/instrumentalTasks', [InstrumentalTitleController::class, 'index'])->name('instrumentalTasks');
+Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/advancedTasks', [AdvancedTitleController::class, 'index'])->name('advancedTasks');
 
+Route::middleware(['auth:sanctum', 'verified', 'student'])->get('/student', [StudentController::class, 'index'])->name('student');
 
 // Views
 

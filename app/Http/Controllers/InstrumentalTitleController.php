@@ -6,26 +6,14 @@ use App\Models\Title;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class TitleController extends Controller
+class InstrumentalTitleController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function basicTasks()
-    {
-        $basics = [];
-        $basicTasks = Title::where('type', 'básicos')->get();
-
-        foreach ($basicTasks as $basicTask) {
-            array_push($basics, $basicTask);
-        }
-
-        return Inertia::render('TechBasicTasks', compact('basics'));
-    }
-
-    public function instrumentalTasks()
+    public function index()
     {
         $instrumentals = [];
         $instrumentalTasks = Title::where('type', 'instrumentales')->get();
@@ -36,28 +24,6 @@ class TitleController extends Controller
 
         return Inertia::render('TechInstrumentalTasks', compact('instrumentals'));
     }
-
-    public function advancedTasks()
-    {
-        $educations = [];
-        $jobs = [];
-        $games = [];
-
-        $titleTasks = Title::all();
-
-        foreach ($titleTasks as $titleTask) {
-            if($titleTask->type == 'educación'){
-                array_push($educations, $titleTask);
-            }else if($titleTask->type == 'trabajo'){
-                array_push($jobs, $titleTask);
-            }else if($titleTask->type == 'juego'){
-                array_push($games, $titleTask);
-            }
-        }
-
-        return Inertia::render('TechAdvancedTasks', compact('educations', 'jobs', 'games'));
-    }
-
 
     /**
      * Show the form for creating a new resource.
@@ -83,10 +49,10 @@ class TitleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Title  $title
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Title $title)
+    public function show($id)
     {
         //
     }
@@ -94,10 +60,10 @@ class TitleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Title  $title
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Title $title)
+    public function edit($id)
     {
         //
     }
@@ -106,10 +72,10 @@ class TitleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Title  $title
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Title $title)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -117,10 +83,10 @@ class TitleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Title  $title
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Title $title)
+    public function destroy($id)
     {
         //
     }
