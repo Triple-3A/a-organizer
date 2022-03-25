@@ -35,54 +35,6 @@ class TechnicianController extends Controller
         }
     }
 
-
-    public function technicianUsers()
-    {
-        try {
-            $studentsUsers = [];
-
-            $user = auth()->user();
-
-            $technicianId = Technician::where('user_id', $user->id)->value('id');
-
-            $students = Student::where('technician_id', $technicianId)->get();
-
-            foreach ($students as $student) {
-                $userId = User::where('id', $student->user_id)->value('id');
-                $user = User::find($userId);
-                array_push($studentsUsers, $user);
-            }
-
-            return Inertia::render('TechnicianUsers', compact('studentsUsers'));
-        } catch (Exception $error) {
-            return $error->getMessage();
-        }
-    }
-
-    public function technicianUsersProfile()
-    {
-        try {
-            $studentsUsers = [];
-
-            $user = auth()->user();
-
-            $technicianId = Technician::where('user_id', $user->id)->value('id');
-
-            $students = Student::where('technician_id', $technicianId)->get();
-
-            foreach ($students as $student) {
-                $userId = User::where('id', $student->user_id)->value('id');
-                $user = User::find($userId);
-                array_push($studentsUsers, $user);
-            }
-
-            return Inertia::render('TechnicianUsersProfile');
-        } catch (Exception $error) {
-            return $error->getMessage();
-        }
-    }
-
-
     /**
      * Show the form for creating a new resource.
      *
