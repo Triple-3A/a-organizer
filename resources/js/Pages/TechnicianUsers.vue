@@ -48,6 +48,7 @@
                             </div>
 
                             <div>
+                               <Link class="font-medium" :href="route('technicianUsersProfile')">
                                 <svg
                                     class="h-8 w-8  text-azul"
                                     width="24"
@@ -62,6 +63,7 @@
                                     <path stroke="none" d="M0 0h24v24H0z" />
                                     <polyline points="9 6 15 12 9 18" />
                                 </svg>
+                                 </Link>
                             </div>
                         </div>
                     </div>

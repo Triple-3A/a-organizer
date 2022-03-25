@@ -57,6 +57,15 @@ Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/technicianU
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/technicianUsersProfile', [TechnicianController::class, 'technicianUsersProfile'])->name('technicianUsersProfile');
 
 
+Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/techProfBasicTasks', [TechnicianController::class, 'techProfBasicTasks'])->name('techProfBasicTasks');
+
+// Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/techProfInstrumentalTasks', [TechnicianController::class, 'techProfInstrumentalTasks'])->name('techProfInstrumentalTasks');
+// Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/techProfAdvancedTasks', [TechnicianController::class, 'techProfAdvancedTasks'])->name('techProfAdvancedTasks');
+
+
+
+
+
 
 // Views
 
