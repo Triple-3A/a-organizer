@@ -94,16 +94,15 @@
                 </div>
             </div>
             <div className="mt-4 flex flex-col justify-center items-center">
-                <Link
+<!--                 <Link
                     :href="route('assignTechToStudent', 'holi')"
-                    class="ml-4 mt-3 bg-azul px-5" 
+                    class="ml-4 mt-4 px-7 bg-azul" 
                 >
                     Asignar
-                </Link>
-                <jet-button class="ml-4 mt-4 px-7 bg-azul">
+                </Link> -->
+                <button class="px-4 py-2 w-1/6 text-center bg-azul rounded-md font-semibold text-sm text-white tracking-widest hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25 transition">
                     Aceptar
-                </jet-button>
-                <jet-button class="ml-4 mt-4 bg-rojo"> Cancelar </jet-button>
+                </button>
             </div>
         </form>
     </app-layout>
