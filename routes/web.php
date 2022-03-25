@@ -11,6 +11,7 @@ use App\Http\Controllers\StandByController;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,6 +47,8 @@ Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/technicianU
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/basicTasks', [BasicTitleController::class, 'index'])->name('basicTasks');
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/instrumentalTasks', [InstrumentalTitleController::class, 'index'])->name('instrumentalTasks');
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/advancedTasks', [AdvancedTitleController::class, 'index'])->name('advancedTasks');
+Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/technicianUsersProfile', [TechnicianController::class, 'technicianUsersProfile'])->name('technicianUsersProfile');
+
 
 Route::middleware(['auth:sanctum', 'verified', 'student'])->get('/student', [StudentController::class, 'index'])->name('student');
 
