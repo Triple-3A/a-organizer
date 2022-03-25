@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use App\Models\Technician;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -17,33 +18,45 @@ class TechnicianController extends Controller
      */
     public function index()
     {
-        $username = auth()->user()->name;
-        return Inertia::render('TechnicianIndex', compact('username'));
+        try {
+            $username = auth()->user()->name;
+            return Inertia::render('TechnicianIndex', compact('username'));
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     public function categories()
     {
-        return Inertia::render('TechnicianCategories');
+        try {
+            return Inertia::render('TechnicianCategories');
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
 
     public function technicianUsers()
     {
-        $studentsUsers = [];
+        try {
+            $studentsUsers = [];
 
-        $user = auth()->user();
-        
-        $technicianId = Technician::where('user_id', $user->id)->value('id');
-        
-        $students = Student::where('technician_id', $technicianId)->get();
+            $user = auth()->user();
 
-        foreach ($students as $student) {
-            $userId = User::where('id', $student->user_id)->value('id');
-            $user = User::find($userId);
-            array_push($studentsUsers, $user);
+            $technicianId = Technician::where('user_id', $user->id)->value('id');
+
+            $students = Student::where('technician_id', $technicianId)->get();
+
+            foreach ($students as $student) {
+                $userId = User::where('id', $student->user_id)->value('id');
+                $user = User::find($userId);
+                array_push($studentsUsers, $user);
+            }
+
+            return Inertia::render('TechnicianUsers', compact('studentsUsers'));
+        } catch (Exception $error) {
+            return $error->getMessage();
         }
-        
-        return Inertia::render('TechnicianUsers', compact('studentsUsers'));
     }
 
 

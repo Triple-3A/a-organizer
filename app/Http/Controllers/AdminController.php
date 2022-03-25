@@ -6,6 +6,7 @@ use App\Models\Role;
 use App\Models\User;
 use App\Models\Student;
 use App\Models\Technician;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
@@ -19,10 +20,14 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $technicianUsers = Role::where('role', 'technician')->first()->users()->get();
-        $studentUsers = Role::where('role', 'student')->first()->users()->get();
-        $standByUsers = Role::where('role', 'standBy')->first()->users()->get();
-        return Inertia::render('Admin', compact('technicianUsers', 'studentUsers', 'standByUsers'));
+        try {
+            $technicianUsers = Role::where('role', 'technician')->first()->users()->get();
+            $studentUsers = Role::where('role', 'student')->first()->users()->get();
+            $standByUsers = Role::where('role', 'standBy')->first()->users()->get();
+            return Inertia::render('Admin', compact('technicianUsers', 'studentUsers', 'standByUsers'));
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     public function reassignRole($roleId)
@@ -32,26 +37,35 @@ class AdminController extends Controller
         $user->roles()->detach();
         $user->roles()->attach($roleId);
     }
-   
+
     public function assignment()
     {
-        $roleTech = Role::find(3);
-        $technicians = $roleTech->users;
+        try {
+            $roleTech = Role::find(3);
+            $technicians = $roleTech->users;
 
-        $roleStudents = Role::find(4);
-        $students = $roleStudents->users;
+            $roleStudents = Role::find(4);
+            $students = $roleStudents->users;
 
-        return Inertia::render('AdminAssignment', compact('technicians', 'students'));
+            return Inertia::render('AdminAssignment', compact('technicians', 'students'));
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
-    public function assignTechToStudent($technician){
+    public function assignTechToStudent($technician)
+    {
         dd($technician);
         return Redirect::route('Admin');
     }
 
     public function assigned()
     {
-        return Inertia::render('Assigned');
+        try {
+            return Inertia::render('Assigned');
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**

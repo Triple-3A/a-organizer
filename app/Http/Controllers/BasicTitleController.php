@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Title;
+use Exception;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -15,14 +16,18 @@ class BasicTitleController extends Controller
      */
     public function index()
     {
-        $basics = [];
-        $basicTasks = Title::where('type', 'básicos')->get();
+        try {
+            $basics = [];
+            $basicTasks = Title::where('type', 'básicos')->get();
 
-        foreach ($basicTasks as $basicTask) {
-            array_push($basics, $basicTask);
+            foreach ($basicTasks as $basicTask) {
+                array_push($basics, $basicTask);
+            }
+
+            return Inertia::render('TechBasicTasks', compact('basics'));
+        } catch (Exception $error) {
+            return $error->getMessage();
         }
-
-        return Inertia::render('TechBasicTasks', compact('basics'));
     }
 
     /**
@@ -32,7 +37,10 @@ class BasicTitleController extends Controller
      */
     public function create()
     {
-        //
+        try {
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**
@@ -43,7 +51,10 @@ class BasicTitleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**
@@ -88,6 +99,9 @@ class BasicTitleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Title;
+use Exception;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -15,23 +16,27 @@ class AdvancedTitleController extends Controller
      */
     public function index()
     {
-        $educations = [];
-        $jobs = [];
-        $games = [];
+        try {
+            $educations = [];
+            $jobs = [];
+            $games = [];
 
-        $titleTasks = Title::all();
+            $titleTasks = Title::all();
 
-        foreach ($titleTasks as $titleTask) {
-            if($titleTask->type == 'educación'){
-                array_push($educations, $titleTask);
-            }else if($titleTask->type == 'trabajo'){
-                array_push($jobs, $titleTask);
-            }else if($titleTask->type == 'juego'){
-                array_push($games, $titleTask);
+            foreach ($titleTasks as $titleTask) {
+                if ($titleTask->type == 'educación') {
+                    array_push($educations, $titleTask);
+                } else if ($titleTask->type == 'trabajo') {
+                    array_push($jobs, $titleTask);
+                } else if ($titleTask->type == 'juego') {
+                    array_push($games, $titleTask);
+                }
             }
-        }
 
-        return Inertia::render('TechAdvancedTasks', compact('educations', 'jobs', 'games'));
+            return Inertia::render('TechAdvancedTasks', compact('educations', 'jobs', 'games'));
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**
@@ -41,7 +46,10 @@ class AdvancedTitleController extends Controller
      */
     public function create()
     {
-        //
+        try {
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**
@@ -52,7 +60,10 @@ class AdvancedTitleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**
@@ -97,6 +108,9 @@ class AdvancedTitleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 }

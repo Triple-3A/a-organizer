@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Title;
+use Exception;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -15,14 +16,18 @@ class InstrumentalTitleController extends Controller
      */
     public function index()
     {
-        $instrumentals = [];
-        $instrumentalTasks = Title::where('type', 'instrumentales')->get();
-        
-        foreach ($instrumentalTasks as $instrumentalTask) {
-            array_push($instrumentals, $instrumentalTask);
-        }
+        try {
+            $instrumentals = [];
+            $instrumentalTasks = Title::where('type', 'instrumentales')->get();
 
-        return Inertia::render('TechInstrumentalTasks', compact('instrumentals'));
+            foreach ($instrumentalTasks as $instrumentalTask) {
+                array_push($instrumentals, $instrumentalTask);
+            }
+
+            return Inertia::render('TechInstrumentalTasks', compact('instrumentals'));
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**
@@ -32,7 +37,10 @@ class InstrumentalTitleController extends Controller
      */
     public function create()
     {
-        //
+        try {
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**
@@ -43,7 +51,10 @@ class InstrumentalTitleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**
@@ -88,6 +99,9 @@ class InstrumentalTitleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 }
