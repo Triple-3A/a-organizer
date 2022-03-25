@@ -7,6 +7,9 @@ use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
+use App\Models\User;
+use App\Models\Student;
+use App\Models\Technician;
 use Laravel\Fortify\Contracts\RegisterViewResponse;
 
 class AdminController extends Controller

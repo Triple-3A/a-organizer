@@ -101,7 +101,7 @@ export default defineComponent({
         },
         submit() {
             this.form.post(this.route("reassignRole"));
-            window.location.reload();
+            // window.location.reload();
         },
     },
 });
