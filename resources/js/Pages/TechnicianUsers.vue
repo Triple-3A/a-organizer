@@ -40,7 +40,6 @@
                                     src="https://randomuser.me/api/portraits/women/81.jpg"
                                 />
                             </div>
-                            <!-- <div class="px-8"></div> -->
                             <div class="flex flex-row flex-wrap w-5/12">
                                 <h1 class="text-xl font-bold">
                                     {{ studentsUser.name }}
