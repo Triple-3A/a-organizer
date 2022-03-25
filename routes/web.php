@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,6 +53,8 @@ Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/advancedTas
 
 
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/technicianUsers', [TechnicianController::class, 'technicianUsers'])->name('technicianUsers');
+
+Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/technicianUsersProfile', [TechnicianController::class, 'technicianUsersProfile'])->name('technicianUsersProfile');
 
 
 

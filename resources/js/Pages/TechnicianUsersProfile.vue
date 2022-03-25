@@ -3,7 +3,7 @@
         <div>
             <div class="absolute mt-2 ms-2">
                 <!--La ruta tendrá que ir a Tutor Usuario 12-->
-                <Link class="font-medium" :href="route('technician')">
+                <Link class="font-medium" :href="route('technicianUsers')">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="float-left w-12 h-12 text-amarillo"
