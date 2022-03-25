@@ -1,6 +1,6 @@
 <template>
     <app-layout>
-        <div class="ml-10px mt-3">
+        <div class="ml-10px mt-4">
             <Link
                 :href="route('admin')"
                 class="mr-2.5 font-bold text-amarillo rounded-lg text-sm py-2.5 text-center flex items-center"
@@ -27,6 +27,7 @@
                     <span class="text-lg font-medium">Asignación técnico</span>
                     /
                     <Link
+                        type="submit"
                         :href="route('assigned')"
                         class="text-lg font-bold text-azul"
                         >Asignados</Link
@@ -34,69 +35,77 @@
                 </p>
             </div>
         </div>
-
-        <div className="mt-10 flex justify-center">
-            <div class="mb-3 w-250">
-                <label forInput="role" value="Role" />
-                <select
-                    :v-model="technician"
-                    name="technician"
-                    :value="technician"
-                    id="technician"
-                    class="px-3 py-1.5 bg-amarillo text-base font-bold mt-1 rounded select w-96"
-                >
-                    <option
-                        class="bg-orange-100 font-bold text-xs" value="">
-                        Técnicos
-                    </option>
-                    <option
-                        class="text-xs text-bold bg-orange-100"
-                        v-for="technician in technicians"
-                        :value="technician.id"
-                        :selected="technician.id"
-                        :key="technician.id"
+        <form @submit.prevent="submit" class="mb-6">
+            <div className="mt-10 flex justify-center">
+                <div class="mb-3 w-250">
+                    <label forInput="role" value="Role" />
+                    <select
+                        :v-model="technician"
+                        name="technician"
+                        :value="technician"
+                        id="technician"
+                        class="px-3 py-1.5 bg-amarillo text-base font-bold mt-1 rounded select w-96"
                     >
-                        {{ technician.name }} - {{ technician.email }}
-                    </option>
-                </select>
+                        <option
+                            class="bg-orange-100 font-bold text-xs"
+                            value=""
+                        >
+                            Técnicos
+                        </option>
+                        <option
+                            class="text-xs text-bold bg-orange-100"
+                            v-for="technician in technicians"
+                            :value="technician.id"
+                            :selected="technician.id"
+                            :key="technician.id"
+                        >
+                            {{ technician.name }} - {{ technician.email }}
+                        </option>
+                    </select>
+                </div>
             </div>
-        </div>
 
-        <div className="mt-3 flex justify-center">
-            <div class="mb-3 w-250">
-                <label forInput="role" value="Role" />
-                <select
-                    :v-model="student"
-                    name="student"
-                    id="student"
-                    :value="student"
-                    class="px-3 py-1.5 bg-amarillo text-base font-bold mt-1 rounded select w-96"
-                >
-                    <option class="bg-orange-100 font-bold text-xs" value="">
-                        Usuarios
-                    </option>
-                    <option
-                        class="text-xs bg-orange-100"
-                        v-for="student in students"
-                        :key="student.id"
-                        :selected="student.id"
-                        :value="student.id"
+            <div className="mt-3 flex justify-center">
+                <div class="mb-3 w-250">
+                    <label forInput="role" value="Role" />
+                    <select
+                        :v-model="student"
+                        name="student"
+                        id="student"
+                        :value="student"
+                        class="px-3 py-1.5 bg-amarillo text-base font-bold mt-1 rounded select w-96"
                     >
-                        {{ student.name }} - {{ student.email }}
-                    </option>
-                </select>
+                        <option
+                            class="bg-orange-100 font-bold text-xs"
+                            value=""
+                        >
+                            Usuarios
+                        </option>
+                        <option
+                            class="text-xs bg-orange-100"
+                            v-for="student in students"
+                            :key="student.id"
+                            :selected="student.id"
+                            :value="student.id"
+                        >
+                            {{ student.name }} - {{ student.email }}
+                        </option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div className="mt-4 flex flex-col justify-center items-center">
-            <!-- <Link
-                class="ml-4 mt-3 bg-azul px-5"
-                :href="route('assignTechToStudent', technician)"
-            >
-                Asignar
-            </Link> -->
-            <jet-button class="ml-4 mt-4 px-7 bg-azul"> Aceptar </jet-button>
-            <jet-button class="ml-4 mt-4 bg-rojo"> Cancelar </jet-button>
-        </div>
+            <div className="mt-4 flex flex-col justify-center items-center">
+                <Link
+                    :href="route('assignTechToStudent', 'holi')"
+                    class="ml-4 mt-3 bg-azul px-5" 
+                >
+                    Asignar
+                </Link>
+                <jet-button class="ml-4 mt-4 px-7 bg-azul">
+                    Aceptar
+                </jet-button>
+                <jet-button class="ml-4 mt-4 bg-rojo"> Cancelar </jet-button>
+            </div>
+        </form>
     </app-layout>
 </template>
 
@@ -115,12 +124,5 @@ export default {
         Head,
         Link,
     },
-    data() {
-        // retornar data del form
-    },
-    method: {
-        // mandar la data con un submit
- 
-    },
-}
+};
 </script>

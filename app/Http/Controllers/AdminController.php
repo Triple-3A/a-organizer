@@ -3,9 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Role;
-use App\Models\User;
-use App\Models\Student;
-use App\Models\Technician;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
@@ -44,8 +41,8 @@ class AdminController extends Controller
         return Inertia::render('AdminAssignment', compact('technicians', 'students'));
     }
 
-    public function assignTechToStudent($technician){
-        // dd($technician);
+    public function assignTechToStudent(Request $request){
+        dd($request);
         return Redirect::route('Admin');
     }
 
