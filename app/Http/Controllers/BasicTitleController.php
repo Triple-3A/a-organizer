@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Role;
+use App\Models\Title;
+use Exception;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
-class RoleController extends Controller
+class BasicTitleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,18 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        try {
+            $basics = [];
+            $basicTasks = Title::where('type', 'básicos')->get();
+
+            foreach ($basicTasks as $basicTask) {
+                array_push($basics, $basicTask);
+            }
+
+            return Inertia::render('TechBasicTasks', compact('basics'));
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**
@@ -24,7 +37,10 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        try {
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**
@@ -35,16 +51,19 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Role  $role
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Role $role)
+    public function show($id)
     {
         //
     }
@@ -52,10 +71,10 @@ class RoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Role  $role
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Role $role)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +83,10 @@ class RoleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Role  $role
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Role $role)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,11 +94,14 @@ class RoleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Role  $role
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Role $role)
+    public function destroy($id)
     {
-        //
+        try {
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 }

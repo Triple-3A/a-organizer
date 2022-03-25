@@ -2,20 +2,29 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
+=======
+use Exception;
+use Illuminate\Http\Request;
+>>>>>>> technicianUsers
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
 class AttachRoleController extends Controller
 {
-    public function index(){
-        $user = auth()->user();
-        if(!$user->roles()->wherePivot('user_id', $user->id)->exists()){
+    public function index()
+    {
+        try {
             $user = auth()->user();
-            $user->roles()->attach(1);
-            return Redirect::route('admin');
-        }else{
-            return Redirect::route('admin');
+            if (!$user->roles()->wherePivot('user_id', $user->id)->exists()) {
+                $user = auth()->user();
+                $user->roles()->attach(1);
+                return Redirect::route('admin');
+            } else {
+                return Redirect::route('admin');
+            }
+        } catch (Exception $error) {
+            return $error->getMessage();
         }
-        
     }
 }

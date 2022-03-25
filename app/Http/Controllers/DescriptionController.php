@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Description;
+use Exception;
 use Illuminate\Http\Request;
 
 class DescriptionController extends Controller
@@ -14,7 +15,10 @@ class DescriptionController extends Controller
      */
     public function index()
     {
-        //
+        try {
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**
@@ -24,7 +28,10 @@ class DescriptionController extends Controller
      */
     public function create()
     {
-        //
+        try {
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**
@@ -35,7 +42,10 @@ class DescriptionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**
@@ -57,7 +67,10 @@ class DescriptionController extends Controller
      */
     public function edit(Description $description)
     {
-        //
+        try {
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**
@@ -69,7 +82,10 @@ class DescriptionController extends Controller
      */
     public function update(Request $request, Description $description)
     {
-        //
+        try {
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**
@@ -80,6 +96,9 @@ class DescriptionController extends Controller
      */
     public function destroy(Description $description)
     {
-        //
+        try {
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 }

@@ -17,7 +17,8 @@ class TitleFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->name(),
+            'title' => $this->faker->randomElement(['Pera', 'Plátano']),
+            'type' => $this->faker->randomElement(['básicos', 'instrumentales', 'educación', 'trabajo', 'juego']),
         ];
     }
 }

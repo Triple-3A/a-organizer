@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -16,9 +17,13 @@ class StandByController extends Controller
      */
     public function index()
     {
-        return Inertia::render('StandBy');
+        try {
+            return Inertia::render('StandBy');
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *

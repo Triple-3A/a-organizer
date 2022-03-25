@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
+use App\Models\Technician;
+use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -14,16 +18,22 @@ class TechnicianController extends Controller
      */
     public function index()
     {
-        $username = auth()->user()->name;
-        return Inertia::render('TechnicianIndex', compact('username'));
+        try {
+            $username = auth()->user()->name;
+            return Inertia::render('TechnicianIndex', compact('username'));
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     public function categories()
     {
-        return Inertia::render('TechnicianCategories');
+        try {
+            return Inertia::render('TechnicianCategories');
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
-
-   
 
     /**
      * Show the form for creating a new resource.

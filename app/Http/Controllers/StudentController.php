@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -14,7 +15,11 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Student');
+        try {
+            return Inertia::render('Student');
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**

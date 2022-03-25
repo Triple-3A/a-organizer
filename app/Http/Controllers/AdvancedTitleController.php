@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Task;
+use App\Models\Title;
 use Exception;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
-class TaskController extends Controller
+class AdvancedTitleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,6 +17,23 @@ class TaskController extends Controller
     public function index()
     {
         try {
+            $educations = [];
+            $jobs = [];
+            $games = [];
+
+            $titleTasks = Title::all();
+
+            foreach ($titleTasks as $titleTask) {
+                if ($titleTask->type == 'educación') {
+                    array_push($educations, $titleTask);
+                } else if ($titleTask->type == 'trabajo') {
+                    array_push($jobs, $titleTask);
+                } else if ($titleTask->type == 'juego') {
+                    array_push($games, $titleTask);
+                }
+            }
+
+            return Inertia::render('TechAdvancedTasks', compact('educations', 'jobs', 'games'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -51,10 +69,10 @@ class TaskController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Task  $task
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Task $task)
+    public function show($id)
     {
         //
     }
@@ -62,39 +80,33 @@ class TaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Task  $task
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Task $task)
+    public function edit($id)
     {
-        try {
-        } catch (Exception $error) {
-            return $error->getMessage();
-        }
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Task  $task
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Task $task)
+    public function update(Request $request, $id)
     {
-        try {
-        } catch (Exception $error) {
-            return $error->getMessage();
-        }
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Task  $task
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Task $task)
+    public function destroy($id)
     {
         try {
         } catch (Exception $error) {

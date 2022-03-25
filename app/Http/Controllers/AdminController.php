@@ -4,6 +4,13 @@ namespace App\Http\Controllers;
 
 use App;
 use App\Models\Role;
+<<<<<<< HEAD
+=======
+use App\Models\User;
+use App\Models\Student;
+use App\Models\Technician;
+use Exception;
+>>>>>>> technicianUsers
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
@@ -21,10 +28,14 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $technicianUsers = Role::where('role', 'technician')->first()->users()->get();
-        $studentUsers = Role::where('role', 'student')->first()->users()->get();
-        $standByUsers = Role::where('role', 'standBy')->first()->users()->get();
-        return Inertia::render('Admin', compact('technicianUsers', 'studentUsers', 'standByUsers'));
+        try {
+            $technicianUsers = Role::where('role', 'technician')->first()->users()->get();
+            $studentUsers = Role::where('role', 'student')->first()->users()->get();
+            $standByUsers = Role::where('role', 'standBy')->first()->users()->get();
+            return Inertia::render('Admin', compact('technicianUsers', 'studentUsers', 'standByUsers'));
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     public function reassignRole(Request $request)
@@ -65,21 +76,32 @@ class AdminController extends Controller
 
     public function assignment()
     {
-        $roleTech = Role::find(3);
-        $technicians = $roleTech->users;
+        try {
+            $roleTech = Role::find(3);
+            $technicians = $roleTech->users;
 
-        $roleStudents = Role::find(4);
-        $students = $roleStudents->users;
+            $roleStudents = Role::find(4);
+            $students = $roleStudents->users;
 
-        return Inertia::render('AdminAssignment', compact('technicians', 'students'));
+            return Inertia::render('AdminAssignment', compact('technicians', 'students'));
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
+<<<<<<< HEAD
     public function assignTechToStudent(Request $request){
         dd($request);
+=======
+    public function assignTechToStudent($technician)
+    {
+        dd($technician);
+>>>>>>> technicianUsers
         return Redirect::route('Admin');
     }
 
     public function assigned()
+<<<<<<< HEAD
     {   
         $studentsTech = [];
         $technicianStu= [];
@@ -105,6 +127,14 @@ class AdminController extends Controller
             // dd($technicianStu);
 
         return Inertia::render('Assigned', compact('studentsTech', 'technicianStu'));
+=======
+    {
+        try {
+            return Inertia::render('Assigned');
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
+>>>>>>> technicianUsers
     }
 
     /**
