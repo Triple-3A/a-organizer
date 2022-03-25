@@ -94,24 +94,10 @@
             </jet-label>
           </div>
 
-<<<<<<< HEAD
-          <div class="flex justify-center mt-5">
-            <!-- <Link
-              :href="route('login')"
-              class="underline text-sm text-azul hover:text-gray-900 font-bold"
-            >
-             ¿Ya estás registrado?
-            </Link> -->
-
-            <jet-button
-              :href="route('attach')"
-              class="bg-azul"
-=======
           <div class="flex justify-center mt-6">
             <jet-button
               :href="route('attach')"
               class=" bg-azul"
->>>>>>> technicianUsers
               :class="{ 'opacity-25': form.processing }"
               :disabled="form.processing"
             >

@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
-=======
 use Exception;
 use Illuminate\Http\Request;
->>>>>>> technicianUsers
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 

@@ -48,19 +48,12 @@
                         />
                     </div>
 
-<<<<<<< HEAD
-                    <div class="flex justify-center  mt-4">
-                        
-
-                        <jet-button class="bg-azul" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-=======
                     <div class="flex justify-center mt-6">
                         <jet-button
                             class="bg-azul"
                             :class="{ 'opacity-25': form.processing }"
                             :disabled="form.processing"
                         >
->>>>>>> technicianUsers
                             Acceder
                         </jet-button>
                     </div>

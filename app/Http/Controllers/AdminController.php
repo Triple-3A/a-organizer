@@ -4,13 +4,7 @@ namespace App\Http\Controllers;
 
 use App;
 use App\Models\Role;
-<<<<<<< HEAD
-=======
-use App\Models\User;
-use App\Models\Student;
-use App\Models\Technician;
 use Exception;
->>>>>>> technicianUsers
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
@@ -89,20 +83,13 @@ class AdminController extends Controller
         }
     }
 
-<<<<<<< HEAD
     public function assignTechToStudent(Request $request){
         dd($request);
-=======
-    public function assignTechToStudent($technician)
-    {
-        dd($technician);
->>>>>>> technicianUsers
         return Redirect::route('Admin');
     }
 
     public function assigned()
-<<<<<<< HEAD
-    {   
+    {   try{
         $studentsTech = [];
         $technicianStu= [];
         dd(User::technicians()->get());
@@ -127,14 +114,10 @@ class AdminController extends Controller
             // dd($technicianStu);
 
         return Inertia::render('Assigned', compact('studentsTech', 'technicianStu'));
-=======
-    {
-        try {
-            return Inertia::render('Assigned');
-        } catch (Exception $error) {
+        }catch (Exception $error) {
             return $error->getMessage();
         }
->>>>>>> technicianUsers
+        
     }
 
     /**
