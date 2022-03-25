@@ -53,8 +53,15 @@ Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/techUserIns
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/techUserAdvanced', [TechnicianUserController::class, 'techUserAdvanced'])->name('techUserAdvanced');
 
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/basicTasks', [BasicTitleController::class, 'index'])->name('basicTasks');
+Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/basicTasks/create', [BasicTitleController::class, 'create'])->name('basicTasks/create');
+
+
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/instrumentalTasks', [InstrumentalTitleController::class, 'index'])->name('instrumentalTasks');
+Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/instrumentalTasks/create', [InstrumentalTitleController::class, 'create'])->name('instrumentalTasks/create');
+
+
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/advancedTasks', [AdvancedTitleController::class, 'index'])->name('advancedTasks');
+Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/advancedTasks/create', [AdvancedTitleController::class, 'create'])->name('advancedTasks/create');
 
 
 Route::middleware(['auth:sanctum', 'verified', 'student'])->get('/student', [StudentController::class, 'index'])->name('student');

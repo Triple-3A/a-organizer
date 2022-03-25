@@ -34,38 +34,41 @@ class AdminController extends Controller
 
     public function reassignRole(Request $request)
     {
+        try {
+            $userId = $request->get('userId');
+            $newRoleId = $request->get('roleId');
+            $currentRoleId = $request->get('currentRoleId');
 
-        $userId = $request->get('userId');
-        $newRoleId = $request->get('roleId');
-        $currentRoleId = $request->get('currentRoleId');
+            $user = User::find($userId);
 
-        $user = User::find($userId);
-
-        if ($currentRoleId == 1) {
-            if ($newRoleId == 3) {
-                Technician::create(array('user_id' => $userId));
+            if ($currentRoleId == 1) {
+                if ($newRoleId == 3) {
+                    Technician::create(array('user_id' => $userId));
+                }
+                if ($newRoleId == 4) {
+                    Student::create(array('user_id' => $userId));
+                }
             }
-            if ($newRoleId == 4) {
+
+            if ($currentRoleId == 3) {
+                $technician = Technician::where('user_id', $userId)->firstOrFail();
+                $technician->delete();
                 Student::create(array('user_id' => $userId));
             }
+
+            if ($currentRoleId == 4) {
+                $student = Student::where('user_id', $userId)->firstOrFail();
+                $student->delete();
+                Technician::create(array('user_id' => $userId));
+            }
+
+            $user->roles()->detach();
+            $user->roles()->attach($newRoleId);
+
+            return Redirect::back();
+        } catch (Exception $error) {
+            return $error->getMessage();
         }
-
-        if ($currentRoleId == 3) {
-            $technician = Technician::where('user_id', $userId)->firstOrFail();
-            $technician->delete();
-            Student::create(array('user_id' => $userId));
-        }
-
-        if ($currentRoleId == 4) {
-            $student = Student::where('user_id', $userId)->firstOrFail();
-            $student->delete();
-            Technician::create(array('user_id' => $userId));
-        }
-
-        $user->roles()->detach();
-        $user->roles()->attach($newRoleId);
-
-        return Redirect::back();
     }
 
     public function assignment()
@@ -83,41 +86,46 @@ class AdminController extends Controller
         }
     }
 
-    public function assignTechToStudent(Request $request){
-        dd($request);
-        return Redirect::route('Admin');
+    public function assignTechToStudent(Request $request)
+    {
+        try {
+            dd($request);
+            return Redirect::route('Admin');
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     public function assigned()
-    {   try{
-        $studentsTech = [];
-        $technicianStu= [];
-        dd(User::technicians()->get());
-        $user = User::find('6');
-        $technicians = Technician::where('user_id', $user->id)->value('id');
-        $students = Student::where('technician_id', $technicians)->get();
-        $technicians = Technician::where('user_id', $user->id)->get();
-        
-        foreach ($students as $student) {
+    {
+        try {
+            $studentsTech = [];
+            $technicianStu = [];
+            dd(User::technicians()->get());
+            $user = User::find('6');
+            $technicians = Technician::where('user_id', $user->id)->value('id');
+            $students = Student::where('technician_id', $technicians)->get();
+            $technicians = Technician::where('user_id', $user->id)->get();
+
+            foreach ($students as $student) {
 
                 $userId = User::where('id', $student->user_id)->value('id');
-                $user=User::find($userId);
+                $user = User::find($userId);
                 array_push($studentsTech, $user);
             }
-            
-        foreach ($technicians as $technician) {
-            $userId = User::where('id', $technician->user_id)->value('id');
-            $user=User::find($userId);
-            array_push($technicianStu, $user);
-        }
-            
+
+            foreach ($technicians as $technician) {
+                $userId = User::where('id', $technician->user_id)->value('id');
+                $user = User::find($userId);
+                array_push($technicianStu, $user);
+            }
+
             // dd($technicianStu);
 
-        return Inertia::render('Assigned', compact('studentsTech', 'technicianStu'));
-        }catch (Exception $error) {
+            return Inertia::render('Assigned', compact('studentsTech', 'technicianStu'));
+        } catch (Exception $error) {
             return $error->getMessage();
         }
-        
     }
 
     /**

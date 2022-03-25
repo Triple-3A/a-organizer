@@ -47,6 +47,8 @@ class AdvancedTitleController extends Controller
     public function create()
     {
         try {
+            $advanced = 'avanzado';
+            return Inertia::render('TechCreate', compact('advanced'));
         } catch (Exception $error) {
             return $error->getMessage();
         }

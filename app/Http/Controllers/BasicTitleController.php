@@ -38,6 +38,8 @@ class BasicTitleController extends Controller
     public function create()
     {
         try {
+            $basic = 'básico';
+            return Inertia::render('TechCreate', compact('basic'));
         } catch (Exception $error) {
             return $error->getMessage();
         }

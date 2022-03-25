@@ -38,6 +38,8 @@ class InstrumentalTitleController extends Controller
     public function create()
     {
         try {
+            $instrumental = 'instrumental';
+            return Inertia::render('TechCreate', compact('instrumental'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
