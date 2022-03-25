@@ -94,13 +94,21 @@
                 </div>
             </div>
             <div className="mt-4 flex flex-col justify-center items-center">
-<!--                 <Link
+                <!--                 <Link
                     :href="route('assignTechToStudent', 'holi')"
                     class="ml-4 mt-4 px-7 bg-azul" 
                 >
                     Asignar
                 </Link> -->
-                <button class="px-4 py-2 w-1/6 text-center bg-azul rounded-md font-semibold text-sm text-white tracking-widest hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25 transition">
+                <button
+                    type="submit"
+                    class="px-4 py-2 w-1/6 text-center bg-azul rounded-md font-semibold text-sm text-white tracking-widest hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25 transition"
+                >
+                    Aceptar
+                </button>
+                <button @click="test()"
+                    class="px-4 py-2 w-1/6 text-center bg-azul rounded-md font-semibold text-sm text-white tracking-widest hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25 transition"
+                >
                     Aceptar
                 </button>
             </div>
@@ -113,6 +121,16 @@ import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 import JetButton from "@/Jetstream/Button.vue";
 export default {
+    data() {
+        return {
+            student:null,
+            technician:null,
+            form: this.$inertia.form({
+                student: null,
+                technician: null,
+            }),
+        };
+    },
     props: {
         technicians: Array,
         students: Array,
@@ -122,6 +140,14 @@ export default {
         JetButton,
         Head,
         Link,
+    },
+    methods: {
+        submit() {
+            this.$inertia.post("/assignTechToStudent", this.form);
+        },
+        test(){
+            console.log(this.technician, this.student)
+        }
     },
 };
 </script>

@@ -22599,6 +22599,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      student: null,
+      technician: null,
+      form: this.$inertia.form({
+        student: null,
+        technician: null
+      })
+    };
+  },
   props: {
     technicians: Array,
     students: Array
@@ -22608,6 +22618,14 @@ __webpack_require__.r(__webpack_exports__);
     JetButton: _Jetstream_Button_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
     Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Link
+  },
+  methods: {
+    submit: function submit() {
+      this.$inertia.post("/assignTechToStudent", this.form);
+    },
+    test: function test() {
+      console.log(this.technician, this.student);
+    }
   }
 });
 
@@ -26821,12 +26839,14 @@ var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 );
 
 var _hoisted_20 = ["selected", "value"];
-
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_21 = {
   className: "mt-4 flex flex-col justify-center items-center"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                 <Link\n                    :href=\"route('assignTechToStudent', 'holi')\"\n                    class=\"ml-4 mt-4 px-7 bg-azul\" \n                >\n                    Asignar\n                </Link> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+};
+
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "submit",
   "class": "px-4 py-2 w-1/6 text-center bg-azul rounded-md font-semibold text-sm text-white tracking-widest hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25 transition"
-}, " Aceptar ")], -1
+}, " Aceptar ", -1
 /* HOISTED */
 );
 
@@ -26863,14 +26883,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, 8
       /* PROPS */
       , ["href"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-        onSubmit: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
-          return _ctx.submit && _ctx.submit.apply(_ctx, arguments);
+        onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+          return $options.submit && $options.submit.apply($options, arguments);
         }, ["prevent"])),
         "class": "mb-6"
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
-        "v-model": _ctx.technician,
+        "v-model": $data.technician,
         name: "technician",
-        value: _ctx.technician,
+        value: $data.technician,
         id: "technician",
         "class": "px-3 py-1.5 bg-amarillo text-base font-bold mt-1 rounded select w-96"
       }, [_hoisted_13, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.technicians, function (technician) {
@@ -26887,10 +26907,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       ))], 8
       /* PROPS */
       , _hoisted_12)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
-        "v-model": _ctx.student,
+        "v-model": $data.student,
         name: "student",
         id: "student",
-        value: _ctx.student,
+        value: $data.student,
         "class": "px-3 py-1.5 bg-amarillo text-base font-bold mt-1 rounded select w-96"
       }, [_hoisted_19, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.students, function (student) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
@@ -26905,7 +26925,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       /* KEYED_FRAGMENT */
       ))], 8
       /* PROPS */
-      , _hoisted_18)])]), _hoisted_21], 32
+      , _hoisted_18)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                 <Link\n                    :href=\"route('assignTechToStudent', 'holi')\"\n                    class=\"ml-4 mt-4 px-7 bg-azul\" \n                >\n                    Asignar\n                </Link> "), _hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+        onClick: _cache[0] || (_cache[0] = function ($event) {
+          return $options.test();
+        }),
+        "class": "px-4 py-2 w-1/6 text-center bg-azul rounded-md font-semibold text-sm text-white tracking-widest hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25 transition"
+      }, " Aceptar ")])], 32
       /* HYDRATE_EVENTS */
       )];
     }),
