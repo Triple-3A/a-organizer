@@ -19,7 +19,7 @@ class StandBySeeder extends Seeder
     public function run()
     {
 
-        for ($id = 10; $id <= 10; $id++) {
+        for ($id = 1; $id <= 10; $id++) {
             DB::table('role_user')->insert(
                 [
                     'role_id' => Role::select('id')->where('id', 1)->first()->id,

@@ -22145,45 +22145,61 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
-  props: ["email", "name", "id", "role"],
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_1__.defineComponent)({
+  props: ["email", "name", "id", "currentRoleId"],
   data: function data() {
     return {
       technicianButtonClass: "",
       studentButtonClass: "",
       technicianButtonType: "",
-      studentButtonType: ""
+      studentButtonType: "",
+      form: this.$inertia.form({
+        userId: this.id,
+        roleId: "",
+        currentRoleId: this.currentRoleId
+      })
     };
   },
   mounted: function mounted() {
-    if (this.role == 3) {
+    if (this.currentRoleId == 3) {
       this.technicianButtonClass = "bg-azul600 text-white font-bold py-2 px-4 rounded-l cursor-default";
       this.technicianButtonType = "";
       this.studentButtonClass = "bg-azul hover:bg-azul/80 text-white font-bold py-2 px-4 rounded-r";
       this.studentButtonType = "submit";
     }
 
-    if (this.role == 4) {
+    if (this.currentRoleId == 4) {
       this.technicianButtonClass = "bg-azul hover:bg-azul/80 text-white font-bold py-2 px-4 rounded-l";
       this.technicianButtonType = "submit";
       this.studentButtonClass = "bg-azul600 text-white font-bold py-2 px-4 rounded-r cursor-default";
       this.studentButtonType = "";
     }
 
-    if (this.role == 1) {
+    if (this.currentRoleId == 1) {
       this.technicianButtonClass = "bg-azul hover:bg-azul/80 text-white font-bold py-2 px-4 rounded-l";
       this.technicianButtonType = "submit";
       this.studentButtonClass = "bg-azul hover:bg-azul/80 text-white font-bold py-2 px-4 rounded-r";
       this.studentButtonType = "submit";
     }
-  } // methods: {
-  //     submit() {
-  //         this.form.post(this.route("reassignRole"));
-  //     },
-  // },
-
+  },
+  components: {
+    Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Link
+  },
+  methods: {
+    reassignUserToTechnician: function reassignUserToTechnician() {
+      this.form.roleId = 3;
+    },
+    reassignUserToStudent: function reassignUserToStudent() {
+      this.form.roleId = 4;
+    },
+    submit: function submit() {
+      this.form.post(this.route("reassignRole")); // window.location.reload();
+    }
+  }
 }));
 
 /***/ }),
@@ -24875,33 +24891,42 @@ var _hoisted_1 = {
   "class": "flex flex-col"
 };
 var _hoisted_2 = {
-  "class": "flex flex-row justify-between"
+  "class": "text-noNegro font-bold flex flex-row justify-between mb-2 w-11/12"
 };
 var _hoisted_3 = {
+  "class": "flex flex-row justify-between"
+};
+var _hoisted_4 = {
   "class": "inline-flex"
 };
-var _hoisted_4 = ["type"];
 var _hoisted_5 = ["type"];
+var _hoisted_6 = ["type"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.name), 1
   /* TEXT */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.email) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.id), 1
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.email), 1
   /* TEXT */
-  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-    onSubmit: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+  )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+    onSubmit: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return _ctx.submit && _ctx.submit.apply(_ctx, arguments);
     }, ["prevent"]))
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[0] || (_cache[0] = function ($event) {
+      return _ctx.reassignUserToTechnician();
+    }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(_ctx.technicianButtonClass),
     type: _ctx.technicianButtonType
   }, " Tecn. ", 10
   /* CLASS, PROPS */
-  , _hoisted_4), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  , _hoisted_5), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[1] || (_cache[1] = function ($event) {
+      return _ctx.reassignUserToStudent();
+    }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(_ctx.studentButtonClass),
     type: _ctx.studentButtonType
   }, " Estu. ", 10
   /* CLASS, PROPS */
-  , _hoisted_5)])], 32
+  , _hoisted_6)])], 32
   /* HYDRATE_EVENTS */
   )])])], 64
   /* STABLE_FRAGMENT */

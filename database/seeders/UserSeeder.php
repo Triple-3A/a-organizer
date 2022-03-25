@@ -21,8 +21,8 @@ class UserSeeder extends Seeder
 
         $this->call([
             StandBySeeder::class,
-            TechnicianSeeder::class,
-            StudentSeeder::class,
+            // TechnicianSeeder::class,
+            // StudentSeeder::class,
         ]);
 
         $standBy = User::create(array(

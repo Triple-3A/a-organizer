@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
+use App\Models\User;
+use App\Models\Student;
+use App\Models\Technician;
+use Laravel\Fortify\Contracts\RegisterViewResponse;
 
 class AdminController extends Controller
 {
@@ -22,14 +27,42 @@ class AdminController extends Controller
         return Inertia::render('Admin', compact('technicianUsers', 'studentUsers', 'standByUsers'));
     }
 
-    public function reassignRole($roleId)
+    public function reassignRole(Request $request)
     {
-        dd($roleId);
-        $user = auth()->user();
+
+        $userId = $request->get('userId');
+        $newRoleId = $request->get('roleId');
+        $currentRoleId = $request->get('currentRoleId');
+
+        $user = User::find($userId);
+
+        if ($currentRoleId == 1) {
+            if ($newRoleId == 3) {
+                Technician::create(array('user_id' => $userId));
+            }
+            if ($newRoleId == 4) {
+                Student::create(array('user_id' => $userId));
+            }
+        }
+
+        if ($currentRoleId == 3) {
+            $technician = Technician::where('user_id', $userId)->firstOrFail();
+            $technician->delete();
+            Student::create(array('user_id' => $userId));
+        }
+
+        if ($currentRoleId == 4) {
+            $student = Student::where('user_id', $userId)->firstOrFail();
+            $student->delete();
+            Technician::create(array('user_id' => $userId));
+        }
+
         $user->roles()->detach();
-        $user->roles()->attach($roleId);
+        $user->roles()->attach($newRoleId);
+
+        return Redirect::back();
     }
-   
+
     public function assignment()
     {
         $roleTech = Role::find(3);
