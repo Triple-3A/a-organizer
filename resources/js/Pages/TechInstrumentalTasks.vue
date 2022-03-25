@@ -1,5 +1,4 @@
 <template>
-
   <app-layout title="Dashboard">
     <Link class="font-medium" :href="route('categories')">
       <svg
@@ -18,8 +17,8 @@
       </svg>
     </Link>
 
-    <div class="py-6 flex justify-around ">
-      <div class="mx-auto max-w-7xl sm:px-6 lg:px-8 ">
+    <div class="py-6 flex justify-around">
+      <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="overflow-hidden">
           <svg
             class="float-right h-14 w-14 text-white bg-rojo"
@@ -44,45 +43,67 @@
             </div>
           </div>
 
-          <div class="flex flex row border-4 rounded-lg border-amarillo">
-            <div
-              class="
-                p-4
-                rounded-lg
-                flex
-                justify-start
-                items-center">
-              
-            <div>
-              <svg class="h-16 w-16 text-azul"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <rect x="2" y="7" width="20" height="15" rx="2" ry="2" />  <polyline points="17 2 12 7 7 2" /></svg>
+          <div v-for="instrumental in instrumentals" :key="instrumental.id">
+            <div class="flexrow border-4 rounded-lg mb-10 border-amarillo">
+              <div class="p-4 rounded-lg flex justify-start items-center">
+                <div>
+                  <svg
+                    class="h-16 w-16 text-azul"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="2" y="7" width="20" height="15" rx="2" ry="2" />
+                    <polyline points="17 2 12 7 7 2" />
+                  </svg>
+                </div>
 
-            </div>
+                <div class="px-8"></div>
 
-             <div class="px-8"></div>
+                <div class="flex flex-row">
+                  <h1 class="text-xl font-bold ml-12">
+                    {{ instrumental.title }}
+                  </h1>
+                </div>
 
-              <div class="flex flex-row">
-                <h1 class="text-xl font-bold ml-12">Sistemas de Información</h1>
+                <div class="px-16"></div>
+
+                <div>
+                  <svg
+                    class="h-8 w-8 text-rojo"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </div>
               </div>
-              
-             <div class="px-16"></div>
-
-              <div><svg class="h-8 w-8 text-rojo"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="18" y1="6" x2="6" y2="18" />  <line x1="6" y1="6" x2="18" y2="18" /></svg>
-              </div>
-              
             </div>
-
           </div>
         </div>
       </div>
     </div>
   </app-layout>
-
 </template>
 
 <script>
 import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 export default {
+  props: {
+    instrumentals: Array,
+  },
   components: {
     AppLayout,
     Head,

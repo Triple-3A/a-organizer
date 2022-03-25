@@ -15,17 +15,47 @@ class TitleController extends Controller
      */
     public function basicTasks()
     {
-        return Inertia::render('TechBasicTasks');
+        $basics = [];
+        $basicTasks = Title::where('type', 'básicos')->get();
+
+        foreach ($basicTasks as $basicTask) {
+            array_push($basics, $basicTask);
+        }
+
+        return Inertia::render('TechBasicTasks', compact('basics'));
     }
 
     public function instrumentalTasks()
     {
-        return Inertia::render('TechInstrumentalTasks');
+        $instrumentals = [];
+        $instrumentalTasks = Title::where('type', 'instrumentales')->get();
+        
+        foreach ($instrumentalTasks as $instrumentalTask) {
+            array_push($instrumentals, $instrumentalTask);
+        }
+
+        return Inertia::render('TechInstrumentalTasks', compact('instrumentals'));
     }
 
     public function advancedTasks()
     {
-        return Inertia::render('TechAdvancedTasks');
+        $educations = [];
+        $jobs = [];
+        $games = [];
+
+        $titleTasks = Title::all();
+
+        foreach ($titleTasks as $titleTask) {
+            if($titleTask->type == 'educación'){
+                array_push($educations, $titleTask);
+            }else if($titleTask->type == 'trabajo'){
+                array_push($jobs, $titleTask);
+            }else if($titleTask->type == 'juego'){
+                array_push($games, $titleTask);
+            }
+        }
+
+        return Inertia::render('TechAdvancedTasks', compact('educations', 'jobs', 'games'));
     }
 
 
