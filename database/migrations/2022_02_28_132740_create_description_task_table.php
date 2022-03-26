@@ -20,8 +20,8 @@ return new class extends Migration
             $table->unsignedBigInteger('description_id');
             $table->unsignedBigInteger('task_id');
 
-            $table->foreign('description_id')->references('id')->on('descriptions')->cascadeOnDelete();
-            $table->foreign('task_id')->references('id')->on('tasks')->cascadeOnDelete();
+            $table->foreign('description_id')->references('id')->on('descriptions')->onDelete("cascade");
+            $table->foreign('task_id')->references('id')->on('tasks')->onDelete("cascade");
         });
     }
 

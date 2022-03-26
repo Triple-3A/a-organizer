@@ -1,7 +1,7 @@
 <template>
   <app-layout title="Dashboard">
     <div v-if="basic == 'básico'">
-      <Link class="font-medium" :href="route('basicTasks')">
+      <Link class="font-medium" :href="route('basicTitle')">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="float-left w-12 h-12 text-amarillo"
@@ -98,7 +98,7 @@
                       shadow-sm
                     "
                   />
-                  <Link :href="route('basicTasks')">Cancelar</Link>
+                  <Link :href="route('basicTitle')">Cancelar</Link>
                   <button type="submit">Guardar</button>
                 </form>
               </div>
@@ -144,7 +144,7 @@ export default {
   },
   methods: {
     basicSubmit() {
-      this.$inertia.post(route("basicTasks/store"), this.basicForm);
+      this.$inertia.post(route("basicTitle/store"), this.basicForm);
     },
   },
   components: {

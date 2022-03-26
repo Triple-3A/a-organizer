@@ -60,7 +60,7 @@ class BasicTitleController extends Controller
                 'type' => 'required',
             ]);
             Title::create($request->all());
-            return Redirect::route('basicTasks');
+            return Redirect::route('basicTitle');
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -106,11 +106,12 @@ class BasicTitleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Title $titleId)
+    public function destroy($id)
     {
         try {
-            $titleId->delete();
-            return Redirect::route('basicTasks');
+            $title = Title::find($id);
+            $title->delete();
+            return Redirect::route('basicTitle');
         } catch (Exception $error) {
             return $error->getMessage();
         }

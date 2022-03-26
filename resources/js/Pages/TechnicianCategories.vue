@@ -41,7 +41,7 @@
         "
       >
         <div class="rounded-lg">
-          <Link class="font-medium" :href="route('basicTasks')">
+          <Link class="font-medium" :href="route('basicTitle')">
             <center>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
