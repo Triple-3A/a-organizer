@@ -54,6 +54,8 @@ Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/techUserAdv
 
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/basicTasks', [BasicTitleController::class, 'index'])->name('basicTasks');
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/basicTasks/create', [BasicTitleController::class, 'create'])->name('basicTasks/create');
+Route::middleware(['auth:sanctum', 'verified', 'technician'])->post('/basicTasks/store', [BasicTitleController::class, 'store'])->name('basicTasks/store');
+Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/basicTasks/delete/{$id}', [BasicTitleController::class, 'destroy'])->name('basicTasks/delete');
 
 
 Route::middleware(['auth:sanctum', 'verified', 'technician'])->get('/instrumentalTasks', [InstrumentalTitleController::class, 'index'])->name('instrumentalTasks');

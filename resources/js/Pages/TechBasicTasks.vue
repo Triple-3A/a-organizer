@@ -20,7 +20,7 @@
     <div class="py-6 flex justify-around">
       <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="overflow-hidden">
-          <Link :href="route('basicTasks/create')">
+          <Link :href="route('basicTasks/create')" type="button">
             <svg
               class="float-right h-14 w-14 text-white bg-rojo"
               width="24"
@@ -76,7 +76,8 @@
 
                 <div class="px-16"></div>
 
-                <div>
+                <Link method="delete" :href="route('basicTasks/delete', basic.id)">
+                  
                   <svg
                     class="h-8 w-8 text-red-500"
                     width="24"
@@ -92,7 +93,7 @@
                     <line x1="18" y1="6" x2="6" y2="18" />
                     <line x1="6" y1="6" x2="18" y2="18" />
                   </svg>
-                </div>
+                </Link>
               </div>
             </div>
           </div>

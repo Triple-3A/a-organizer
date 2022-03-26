@@ -68,6 +68,39 @@
                   Te encuentras en la vista de Crud desde BÁSICO!!!
                 </h1>
                 <br />
+                <form @submit.prevent="basicSubmit">
+                  
+                  <input
+                    placeholder="Título"
+                    id="title"
+                    v-model="basicForm.title"
+                    class="
+                      text-xs
+                      border-2
+                      px-6
+                      border-amarillo
+                      rounded
+                      shadow-sm
+                    "
+                  />
+                  <input
+                    name="básicos"
+                    hidden
+                    placeholder="básicos"
+                    id="type"
+                    v-model="basicForm.type"
+                    class="
+                      text-xs
+                      border-2
+                      px-6
+                      border-amarillo
+                      rounded
+                      shadow-sm
+                    "
+                  />
+                  <Link :href="route('basicTasks')">Cancelar</Link>
+                  <button type="submit">Guardar</button>
+                </form>
               </div>
               <div v-if="instrumental === 'instrumental'">
                 <h1 class="text-xl font-bold">
@@ -103,7 +136,16 @@ export default {
       basic: this.basic,
       instrumental: this.instrumental,
       advanced: this.advanced,
+      basicForm: {
+        title: null,
+        type: 'básicos',
+      },
     };
+  },
+  methods: {
+    basicSubmit() {
+      this.$inertia.post(route("basicTasks/store"), this.basicForm);
+    },
   },
   components: {
     AppLayout,

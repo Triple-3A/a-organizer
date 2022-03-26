@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Title;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
 class BasicTitleController extends Controller
@@ -54,6 +55,12 @@ class BasicTitleController extends Controller
     public function store(Request $request)
     {
         try {
+            $request->validate([
+                'title' => 'required',
+                'type' => 'required',
+            ]);
+            Title::create($request->all());
+            return Redirect::route('basicTasks');
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -99,9 +106,11 @@ class BasicTitleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Title $titleId)
     {
         try {
+            $titleId->delete();
+            return Redirect::route('basicTasks');
         } catch (Exception $error) {
             return $error->getMessage();
         }

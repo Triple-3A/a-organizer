@@ -12,6 +12,7 @@ class Title extends Model
     protected $fillable = [
         'id',
         'title',
+        'type',
     ];
 
     public function tasks()
