@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Title;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
 class InstrumentalTitleController extends Controller
@@ -24,7 +25,7 @@ class InstrumentalTitleController extends Controller
                 array_push($instrumentals, $instrumentalTask);
             }
 
-            return Inertia::render('TechInstrumentalTasks', compact('instrumentals'));
+            return Inertia::render('TechInstrumentalTitle', compact('instrumentals'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -39,7 +40,7 @@ class InstrumentalTitleController extends Controller
     {
         try {
             $instrumental = 'instrumental';
-            return Inertia::render('TechCreate', compact('instrumental'));
+            return Inertia::render('TechCreateTitles', compact('instrumental'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -54,6 +55,12 @@ class InstrumentalTitleController extends Controller
     public function store(Request $request)
     {
         try {
+            $request->validate([
+                'title' => 'required',
+                'type' => 'required',
+            ]);
+            Title::create($request->all());
+            return Redirect::route('instrumentalTitle');
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -102,6 +109,9 @@ class InstrumentalTitleController extends Controller
     public function destroy($id)
     {
         try {
+            $title = Title::find($id);
+            $title->delete();
+            return Redirect::route('instrumentalTitle');
         } catch (Exception $error) {
             return $error->getMessage();
         }

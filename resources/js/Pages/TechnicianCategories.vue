@@ -80,7 +80,7 @@
           "
         >
           <div class="rounded-lg">
-            <Link class="font-medium" :href="route('instrumentalTasks')">
+            <Link class="font-medium" :href="route('instrumentalTitle')">
               <center>
                 <svg
                   class="w-16 h-16 mb-4 text-azul"
@@ -119,7 +119,7 @@
         "
       >
         <div class="rounded-lg">
-          <Link class="font-medium" :href="route('advancedTasks')">
+          <Link class="font-medium" :href="route('advancedTitle')">
             <center>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

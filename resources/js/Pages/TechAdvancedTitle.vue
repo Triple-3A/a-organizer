@@ -20,7 +20,7 @@
     <div class="py-6 flex justify-around">
       <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="overflow-hidden">
-          <Link :href="route('advancedTasks/create')">
+          <Link :href="route('advancedTitle/create')">
             <svg
               class="float-right h-14 w-14 text-white bg-rojo"
               width="24"
@@ -49,7 +49,7 @@
             <div class="flex row border-4 rounded-lg mb-10 border-amarillo">
               <div class="p-4 rounded-lg flex justify-start items-center">
                 <div>
-                  <Link :href="route('advancedTasks/create')">
+                  <Link :href="route('advancedTitle/create')">
                     <svg
                       class="h-16 w-16 text-azul"
                       width="24"
@@ -83,7 +83,12 @@
 
                 <div class="px-16"></div>
 
-                <div>
+                <Link
+                  as="button"
+                  type="button"
+                  method="delete"
+                  :href="route('advancedTitle/delete', education.id)"
+                >
                   <svg
                     class="h-8 w-8 text-rojo"
                     width="24"
@@ -99,7 +104,7 @@
                     <line x1="18" y1="6" x2="6" y2="18" />
                     <line x1="6" y1="6" x2="18" y2="18" />
                   </svg>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -140,7 +145,12 @@
 
                 <div class="px-16"></div>
 
-                <div>
+                <Link
+                  as="button"
+                  type="button"
+                  method="delete"
+                  :href="route('advancedTitle/delete', job.id)"
+                >
                   <svg
                     class="h-8 w-8 text-rojo"
                     width="24"
@@ -156,7 +166,7 @@
                     <line x1="18" y1="6" x2="6" y2="18" />
                     <line x1="6" y1="6" x2="18" y2="18" />
                   </svg>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -197,7 +207,12 @@
 
                 <div class="px-16"></div>
 
-                <div>
+                <Link
+                  as="button"
+                  type="button"
+                  method="delete"
+                  :href="route('advancedTitle/delete', game.id)"
+                >
                   <svg
                     class="h-8 w-8 text-rojo"
                     width="24"
@@ -213,7 +228,7 @@
                     <line x1="18" y1="6" x2="6" y2="18" />
                     <line x1="6" y1="6" x2="18" y2="18" />
                   </svg>
-                </div>
+                </Link>
               </div>
             </div>
           </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Title;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
 class AdvancedTitleController extends Controller
@@ -33,7 +34,7 @@ class AdvancedTitleController extends Controller
                 }
             }
 
-            return Inertia::render('TechAdvancedTasks', compact('educations', 'jobs', 'games'));
+            return Inertia::render('TechAdvancedTitle', compact('educations', 'jobs', 'games'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -48,7 +49,7 @@ class AdvancedTitleController extends Controller
     {
         try {
             $advanced = 'avanzado';
-            return Inertia::render('TechCreate', compact('advanced'));
+            return Inertia::render('TechCreateTitles', compact('advanced'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -63,6 +64,12 @@ class AdvancedTitleController extends Controller
     public function store(Request $request)
     {
         try {
+            $request->validate([
+                'title' => 'required',
+                'type' => 'required',
+            ]);
+            Title::create($request->all());
+            return Redirect::route('advancedTitle');
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -111,6 +118,9 @@ class AdvancedTitleController extends Controller
     public function destroy($id)
     {
         try {
+            $title = Title::find($id);
+            $title->delete();
+            return Redirect::route('advancedTitle');
         } catch (Exception $error) {
             return $error->getMessage();
         }
