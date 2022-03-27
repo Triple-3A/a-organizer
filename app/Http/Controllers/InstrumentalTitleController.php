@@ -25,7 +25,7 @@ class InstrumentalTitleController extends Controller
                 array_push($instrumentals, $instrumentalTask);
             }
 
-            return Inertia::render('TechInstrumentalTitle', compact('instrumentals'));
+            return Inertia::render('Technician/Titles/TechInstrumentalTitle', compact('instrumentals'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -40,7 +40,7 @@ class InstrumentalTitleController extends Controller
     {
         try {
             $instrumental = 'instrumental';
-            return Inertia::render('TechCreateTitles', compact('instrumental'));
+            return Inertia::render('Technician/Titles/TechCreateTitles', compact('instrumental'));
         } catch (Exception $error) {
             return $error->getMessage();
         }

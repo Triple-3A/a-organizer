@@ -34,7 +34,7 @@ class AdvancedTitleController extends Controller
                 }
             }
 
-            return Inertia::render('TechAdvancedTitle', compact('educations', 'jobs', 'games'));
+            return Inertia::render('Technician/Titles/TechAdvancedTitle', compact('educations', 'jobs', 'games'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -49,7 +49,7 @@ class AdvancedTitleController extends Controller
     {
         try {
             $advanced = 'avanzado';
-            return Inertia::render('TechCreateTitles', compact('advanced'));
+            return Inertia::render('Technician/Titles/TechCreateTitles', compact('advanced'));
         } catch (Exception $error) {
             return $error->getMessage();
         }

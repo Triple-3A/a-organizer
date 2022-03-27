@@ -25,7 +25,7 @@ class BasicTitleController extends Controller
                 array_push($basics, $basicTask);
             }
 
-            return Inertia::render('TechBasicTitle', compact('basics'));
+            return Inertia::render('Technician/Titles/TechBasicTitle', compact('basics'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -40,7 +40,7 @@ class BasicTitleController extends Controller
     {
         try {
             $basic = 'básico';
-            return Inertia::render('TechCreateTitles', compact('basic'));
+            return Inertia::render('Technician/Titles/TechCreateTitles', compact('basic'));
         } catch (Exception $error) {
             return $error->getMessage();
         }

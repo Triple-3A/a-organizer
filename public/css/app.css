@@ -1081,14 +1081,14 @@ select {
 .mb-10 {
   margin-bottom: 2.5rem;
 }
+.mr-6 {
+  margin-right: 48px;
+}
 .mt-16 {
   margin-top: 4rem;
 }
 .mb-12 {
   margin-bottom: 3rem;
-}
-.mr-6 {
-  margin-right: 48px;
 }
 .block {
   display: block;
@@ -1512,10 +1512,6 @@ select {
 .bg-rojo {
   --tw-bg-opacity: 1;
   background-color: rgb(246 105 87 / var(--tw-bg-opacity));
-}
-.bg-red-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
 }
 .bg-red-500 {
   --tw-bg-opacity: 1;

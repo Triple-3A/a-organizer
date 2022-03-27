@@ -20,7 +20,7 @@ class TechnicianController extends Controller
     {
         try {
             $username = auth()->user()->name;
-            return Inertia::render('TechnicianIndex', compact('username'));
+            return Inertia::render('Technician/TechIndex', compact('username'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -29,7 +29,7 @@ class TechnicianController extends Controller
     public function categories()
     {
         try {
-            return Inertia::render('TechnicianCategories');
+            return Inertia::render('Technician/Titles/TechCategories');
         } catch (Exception $error) {
             return $error->getMessage();
         }

@@ -4,14 +4,14 @@
     <div class="dashboard_container">
         <div class="flex self-end">
             <button
-                class="bg-white hover:bg-gray-300 text-amber-300 font-bold py-2 px-3 rounded"
+                class="px-3 py-2 font-bold bg-white rounded hover:bg-gray-300 text-amber-300"
             >
                 Asignación Técnico ->
             </button>
         </div>
 
         <h2
-            class="font-bold font-poppings text-xl text-azul leading-tight mb-3 mx-auto"
+            class="mx-auto mb-3 text-xl font-bold leading-tight font-poppings text-azul"
         >
             Control de roles
         </h2>
@@ -21,21 +21,21 @@
                 <tr class="mb-4">
                     <td
                         colspan="3"
-                        class="bg-amarillo text-white font-poppings font-bold pl-3"
+                        class="pl-3 font-bold text-white bg-amarillo font-poppings"
                     >
                         Técnicos
                     </td>
                 </tr>
             </thead>
             <tr
-                class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto"
+                class="flex flex-row justify-between w-11/12 mx-auto mb-4 font-bold text-black"
             >
                 <div>
                     <td>Nombre</td>
                 </div>
             </tr>
             <tr
-                class="text-black font-bold flex flex-row justify-between mb-2 w-11/12 mx-auto"
+                class="flex flex-row justify-between w-11/12 mx-auto mb-2 font-bold text-black"
                 v-for="(person, index) in fakedata"
                 :key="index"
             >
@@ -47,7 +47,7 @@
                 </jet-role-table-cell>
             </tr>
 
-            <!--             <tr class="text-black font-bold basis-0 flex-col">
+            <!--             <tr class="flex-col font-bold text-black basis-0">
                 <td v-for="(person, index) in fakedata" :key="index">
                     <strong> {{person.name}} </strong> {{person.email}}
                 </td>
@@ -59,21 +59,21 @@
                 <tr class="mb-4">
                     <td
                         colspan="3"
-                        class="bg-amarillo text-white font-poppings font-bold pl-3"
+                        class="pl-3 font-bold text-white bg-amarillo font-poppings"
                     >
                         Usuarios
                     </td>
                 </tr>
             </thead>
             <tr
-                class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto"
+                class="flex flex-row justify-between w-11/12 mx-auto mb-4 font-bold text-black"
             >
                 <div>
                     <td>Nombre</td>
                 </div>
             </tr>
             <tr
-                class="text-black font-bold flex flex-row justify-between mb-2 w-11/12 mx-auto"
+                class="flex flex-row justify-between w-11/12 mx-auto mb-2 font-bold text-black"
                 v-for="(person, index) in fakedata"
                 :key="index"
             >
@@ -91,21 +91,21 @@
                 <tr class="mb-4">
                     <td
                         colspan="3"
-                        class="bg-amarillo text-white font-poppings font-bold pl-3"
+                        class="pl-3 font-bold text-white bg-amarillo font-poppings"
                     >
                         Pendiente
                     </td>
                 </tr>
             </thead>
             <tr
-                class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto"
+                class="flex flex-row justify-between w-11/12 mx-auto mb-4 font-bold text-black"
             >
                 <div>
                     <td>Nombre</td>
                 </div>
             </tr>
             <tr
-                class="text-black font-bold flex flex-row justify-between mb-2 w-11/12 mx-auto"
+                class="flex flex-row justify-between w-11/12 mx-auto mb-2 font-bold text-black"
                 v-for="(person, index) in fakedata"
                 :key="index"
             >

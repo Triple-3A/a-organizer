@@ -17,12 +17,12 @@
       </svg>
     </Link>
 
-    <div class="py-6 flex justify-around">
+    <div class="flex justify-around py-6">
       <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="overflow-hidden">
           <Link :href="route('basicTitle/create')" type="button">
             <svg
-              class="float-right h-14 w-14 text-white bg-rojo"
+              class="float-right text-white h-14 w-14 bg-rojo"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -41,16 +41,17 @@
 
           <div class="flex items-center justify-center">
             <div class="p-10 bg-white rounded-lg">
-              <h1 class="text-xl text-azul font-bold">Tareas Básicas</h1>
+              <jet-create-btn class="text-xl font-bold text-azul"/>
+              <h1 class="text-xl font-bold text-azul">Tareas Básicas</h1>
             </div>
           </div>
 
           <div v-for="basic in basics" :key="basic.id">
-            <div class="flex row border-4 rounded-lg mb-10 border-amarillo">
-              <div class="p-4 rounded-lg flex justify-start items-center">
+            <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
+              <div class="flex items-center justify-start p-4 rounded-lg">
                 <div>
                   <svg
-                    class="h-16 w-16 text-azul"
+                    class="w-16 h-16 text-azul"
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
@@ -71,7 +72,7 @@
                 <div class="px-8"></div>
 
                 <div class="flex flex-row">
-                  <h1 class="text-xl font-bold ml-12">{{ basic.title }}</h1>
+                  <h1 class="ml-12 text-xl font-bold">{{ basic.title }}</h1>
                 </div>
 
                 <div class="px-16"></div>
@@ -83,7 +84,7 @@
                   :href="route('basicTitle/delete', basic.id)"
                 >
                   <svg
-                    class="h-8 w-8 text-red-500"
+                    class="w-8 h-8 text-red-500"
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
@@ -108,6 +109,7 @@
 </template>
 
 <script>
+import CreateBtn from "@/Jetstream/CreateBtn.vue" 
 import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 export default {
@@ -115,6 +117,7 @@ export default {
     basics: Array,
   },
   components: {
+    CreateBtn,
     AppLayout,
     Head,
     Link,

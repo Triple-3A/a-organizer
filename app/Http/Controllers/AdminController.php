@@ -26,7 +26,7 @@ class AdminController extends Controller
             $technicianUsers = Role::where('role', 'technician')->first()->users()->get();
             $studentUsers = Role::where('role', 'student')->first()->users()->get();
             $standByUsers = Role::where('role', 'standBy')->first()->users()->get();
-            return Inertia::render('Admin', compact('technicianUsers', 'studentUsers', 'standByUsers'));
+            return Inertia::render('Admin/AdminIndex', compact('technicianUsers', 'studentUsers', 'standByUsers'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -80,7 +80,7 @@ class AdminController extends Controller
             $roleStudents = Role::find(4);
             $students = $roleStudents->users;
 
-            return Inertia::render('AdminAssignment', compact('technicians', 'students'));
+            return Inertia::render('Admin/AdminAssignment', compact('technicians', 'students'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -120,9 +120,7 @@ class AdminController extends Controller
                 array_push($technicianStu, $user);
             }
 
-            // dd($technicianStu);
-
-            return Inertia::render('Assigned', compact('studentsTech', 'technicianStu'));
+            return Inertia::render('Admin/Assigned', compact('studentsTech', 'technicianStu'));
         } catch (Exception $error) {
             return $error->getMessage();
         }

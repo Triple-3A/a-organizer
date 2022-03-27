@@ -26,19 +26,9 @@
       </p>
     </div>
 
-    <div class="mx-auto w-3/4 lg:w-2/5">
+    <div class="w-3/4 mx-auto lg:w-2/5">
       <div
-        class="
-          flex
-          items-center
-          justify-center
-          py-6
-          px-10
-          mb-12
-          border-4
-          rounded-xl
-          border-amarillo
-        "
+        class="flex items-center justify-center px-10 py-6 mb-12 border-4  rounded-xl border-amarillo"
       >
         <div class="rounded-lg">
           <Link class="font-medium" :href="route('basicTitle')">
@@ -64,20 +54,9 @@
       </div>
     </div>
 
-    <div class="mx-auto w-3/4 lg:w-2/5">
+    <div class="w-3/4 mx-auto lg:w-2/5">
         <div
-          class="
-            flex
-            itemsflex
-            items-center
-            justify-center
-            py-6
-            px-10
-            mb-12
-            border-4
-            rounded-xl
-            border-amarillo
-          "
+          class="flex items-center justify-center px-10 py-6 mb-12 border-4  itemsflex rounded-xl border-amarillo"
         >
           <div class="rounded-lg">
             <Link class="font-medium" :href="route('instrumentalTitle')">
@@ -104,19 +83,9 @@
         </div>
     </div>
 
-    <div class="mx-auto w-3/4 lg:w-2/5">
+    <div class="w-3/4 mx-auto lg:w-2/5">
       <div
-        class="
-          flex
-          items-center
-          justify-center
-          py-6
-          px-10
-          mb-12
-          border-4
-          rounded-xl
-          border-amarillo
-        "
+        class="flex items-center justify-center px-10 py-6 mb-12 border-4  rounded-xl border-amarillo"
       >
         <div class="rounded-lg">
           <Link class="font-medium" :href="route('advancedTitle')">

@@ -16,7 +16,7 @@ class StudentController extends Controller
     public function index()
     {
         try {
-            return Inertia::render('Student');
+            return Inertia::render('Student/StudentIndex');
         } catch (Exception $error) {
             return $error->getMessage();
         }

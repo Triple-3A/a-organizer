@@ -33,7 +33,7 @@ class TechnicianUserController extends Controller
                 array_push($studentsUsers, $user);
             }
 
-            return Inertia::render('TechnicianUsers', compact('studentsUsers'));
+            return Inertia::render('Technician/Users/TechUsers', compact('studentsUsers'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -56,7 +56,7 @@ class TechnicianUserController extends Controller
                 array_push($studentsUsers, $user);
             }
 
-            return Inertia::render('TechnicianUsersProfile');
+            return Inertia::render('Technician/Users/TechUsersProfile');
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -65,7 +65,7 @@ class TechnicianUserController extends Controller
     public function techUserBasic()
     {
         try {
-            return Inertia::render('TechUserBasic');
+            return Inertia::render('Technician/Users/TechUserBasic');
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -74,7 +74,7 @@ class TechnicianUserController extends Controller
     public function techUserInstrumental()
     {
         try {
-            return Inertia::render('TechUserInstrumental');
+            return Inertia::render('Technician/Users/TechUserInstrumental');
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -83,7 +83,7 @@ class TechnicianUserController extends Controller
     public function techUserAdvanced()
     {
         try {
-            return Inertia::render('TechUserAdvanced');
+            return Inertia::render('Technician/Users/TechUserAdvanced');
         } catch (Exception $error) {
             return $error->getMessage();
         }

@@ -18,7 +18,7 @@ class StandByController extends Controller
     public function index()
     {
         try {
-            return Inertia::render('StandBy');
+            return Inertia::render('StandBy/StandByIndex');
         } catch (Exception $error) {
             return $error->getMessage();
         }
