@@ -29,7 +29,7 @@ class TechnicianController extends Controller
     public function categories()
     {
         try {
-            return Inertia::render('Technician/Titles/TechCategories');
+            return Inertia::render('Technician/Titles/TechTitleCategories');
         } catch (Exception $error) {
             return $error->getMessage();
         }
