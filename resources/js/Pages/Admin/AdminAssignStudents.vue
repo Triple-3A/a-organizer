@@ -1,6 +1,6 @@
 <template>
   <app-layout>
-    <div class="ml-10px mt-4">
+    <div class="mt-4 ml-10px">
       <Link
         :href="route('admin')"
         class="
@@ -16,7 +16,7 @@
         "
       >
         <svg
-          class="fill-amarillo mr-1 ml-2 w-5 h-5 rotate-180"
+          class="w-5 h-5 ml-2 mr-1 rotate-180 fill-amarillo"
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@
         <div class="mb-3 w-250">
           <label forInput="role" value="Role" />
           <select
-            :v-model="technician"
+            v-model="form.technician"
             name="technician"
             :value="technician"
             id="technician"
@@ -66,13 +66,13 @@
               w-96
             "
           >
-            <option class="bg-orange-100 font-bold text-xs" value="">
+            <option class="text-xs font-bold bg-orange-100" value="">
               Técnicos
             </option>
             <option
-              class="text-xs text-bold bg-orange-100"
+              class="text-xs bg-orange-100 text-bold"
               v-for="technician in technicians"
-              :value="technician.id"
+              :value="technician"
               :selected="technician.id"
               :key="technician.id"
             >
@@ -86,7 +86,7 @@
         <div class="mb-3 w-250">
           <label forInput="role" value="Role" />
           <select
-            :v-model="student"
+            v-model="form.student"
             name="student"
             id="student"
             :value="student"
@@ -102,15 +102,15 @@
               w-96
             "
           >
-            <option class="bg-orange-100 font-bold text-xs" value="">
+            <option class="text-xs font-bold bg-orange-100" value="">
               Usuarios
             </option>
             <option
               class="text-xs bg-orange-100"
               v-for="student in students"
               :key="student.id"
-              :selected="student.id"
-              :value="student.id"
+              :selected="student"
+              :value="student"
             >
               {{ student.name }} - {{ student.email }}
             </option>
@@ -118,14 +118,14 @@
         </div>
       </div>
       <div className="mt-4 flex flex-col justify-center items-center">
-        <Link
-          :href="route('assignTechToStudent', 'holi')"
-          class="ml-4 mt-3 bg-azul px-5"
+        <button 
+        type="submit"
+          class="px-5 mt-3 ml-4 bg-azul"
         >
           Asignar
-        </Link>
-        <jet-button class="ml-4 mt-4 px-7 bg-azul"> Aceptar </jet-button>
-        <jet-button class="ml-4 mt-4 bg-rojo"> Cancelar </jet-button>
+        </button>
+        <!-- <jet-button class="mt-4 ml-4 px-7 bg-azul"> Aceptar </jet-button>
+        <jet-button class="mt-4 ml-4 bg-rojo"> Cancelar </jet-button> -->
       </div>
     </form>
   </app-layout>
@@ -135,6 +135,7 @@
 import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 import JetButton from "@/Jetstream/Button.vue";
+
 export default {
   props: {
     technicians: Array,
@@ -144,7 +145,21 @@ export default {
     AppLayout,
     JetButton,
     Head,
-    Link,
+    Link
+  },
+  data() {
+    return {
+      form: {
+        technician: null,
+        student: null,
+      },
+    };
+  },
+
+  methods: {
+    submit() {
+      this.$inertia.post(route("assignTechToStudent"), this.form);
+    },
   },
 };
 </script>

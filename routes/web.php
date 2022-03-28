@@ -40,7 +40,7 @@ Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
     Route::post('/reassignRole', [AdminController::class, 'reassignRole'])->name('reassignRole');
 
     Route::get('/assignment', [AdminController::class, 'studentAsignment'])->name('assignment');
-    Route::get('/assignTechToStudent/{id}', [AdminController::class, 'assignTechToStudent'])->name('assignTechToStudent'); //Cambiar a ruta post y nombre store asignment
+    Route::post('/assignTechToStudent', [AdminController::class, 'assignTechToStudent'])->name('assignTechToStudent'); //Cambiar a ruta post y nombre store asignment
     Route::get('/assigned', [AdminController::class, 'assignStudent'])->name('assigned');
 });
 

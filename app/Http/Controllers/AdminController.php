@@ -74,11 +74,18 @@ class AdminController extends Controller
     public function studentAsignment()
     {
         try {
-            $roleTech = Role::find(3);
-            $technicians = $roleTech->users;
+            $techniciansModels = Technician::all();
+            $studentsModels = Student::all();
+            $technicians = [];
+            $students = [];
 
-            $roleStudents = Role::find(4);
-            $students = $roleStudents->users;
+            foreach($techniciansModels as $index){ 
+                array_push($technicians, User::find($index->user_id));
+            }
+            
+            foreach($studentsModels as $index){ 
+                array_push($students, User::find($index->user_id));
+            }
 
             return Inertia::render('Admin/AdminAssignStudents', compact('technicians', 'students'));
         } catch (Exception $error) {
@@ -89,8 +96,33 @@ class AdminController extends Controller
     public function assignTechToStudent(Request $request)
     {
         try {
-            dd($request);
-            return Redirect::route('Admin');
+            $array = [];
+            $both = [];
+            $technicianArray = [];
+            $studentArray = [];
+            array_push($array, $request->all());
+
+            foreach ($array as $index) {
+                foreach ($index as $i) {
+                    array_push($both, $i);
+                }
+            }
+
+            array_push($technicianArray, $both[0]);
+            array_push($studentArray, $both[1]);
+
+            foreach ($technicianArray as $index) {
+                $technicianUserId = $index['id'];
+            }
+            
+            foreach ($studentArray as $index) {
+                $studentUserId = $index['id'];
+            }
+
+            $technicianId = Technician::where('user_id', $technicianUserId)->value('id');
+            Student::where('user_id', $studentUserId)->update(array('technician_id' => $technicianId));
+
+            return Inertia::render('Admin/AdminAssignStudents');
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -99,29 +131,21 @@ class AdminController extends Controller
     public function assignStudent()
     {
         try {
-            // $studentsTech = [];
-            // $technicianStu = [];
-            // dd(User::technicians()->get());
-            // $user = User::find('6');
-            // $technicians = Technician::where('user_id', $user->id)->value('id');
-            // $students = Student::where('technician_id', $technicians)->get();
-            // $technicians = Technician::where('user_id', $user->id)->get();
+            $techs = [];
+            $studentTechs= [];
+            $allTechs = Technician::all();
 
-            // foreach ($students as $student) {
+            foreach ($allTechs as $allTech) {
+                $students = [];
+                array_push($techs, User::find($allTech->user_id));
+                $allStudents = Student::where('technician_id', $allTech->id)->get();
+                foreach($allStudents as $student){
+                    array_push($students, User::find($student->user_id));
+                }
+                array_push($studentTechs , $students);
+            }
 
-            //     $userId = User::where('id', $student->user_id)->value('id');
-            //     $user = User::find($userId);
-            //     array_push($studentsTech, $user);
-            // }
-
-            // foreach ($technicians as $technician) {
-            //     $userId = User::where('id', $technician->user_id)->value('id');
-            //     $user = User::find($userId);
-            //     array_push($technicianStu, $user);
-            // }
-            // compact('studentsTech', 'technicianStu')
-
-            return Inertia::render('Admin/AdminTechStudents');
+            return Inertia::render('Admin/AdminTechStudents', compact('techs', 'studentTechs'));
         } catch (Exception $error) {
             return $error->getMessage();
         }

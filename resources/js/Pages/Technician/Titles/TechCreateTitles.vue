@@ -73,52 +73,16 @@
                     placeholder="Título"
                     id="title"
                     v-model="basicForm.title"
-                    class="
-                      text-xs
-                      border-2
-                      px-6
-                      border-amarillo
-                      rounded
-                      shadow-sm
-                    "
+                    class="px-6 text-xs border-2 rounded shadow-sm  border-amarillo"
                   />
                   <div class="mt-6">
                     <Link
-                      class="
-                        mr-6
-                        bg-red-500
-                        inline-flex
-                        items-center
-                        px-6
-                        py-2
-                        rounded-md
-                        font-medium
-                        text-xs text-white
-                        tracking-widest
-                        hover:bg-gray-700
-                        active:bg-gray-900
-                        disabled:opacity-25
-                        transition
-                      "
+                      class="inline-flex items-center px-6 py-2 mr-6 text-xs font-medium tracking-widest text-white transition bg-red-500 rounded-md  hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25"
                       :href="route('basicTitle')"
                       >Cancelar</Link
                     >
                     <button
-                      class="
-                        bg-azul
-                        inline-flex
-                        items-center
-                        px-6
-                        py-2
-                        rounded-md
-                        font-medium
-                        text-xs text-white
-                        tracking-widest
-                        hover:bg-gray-700
-                        active:bg-gray-900
-                        disabled:opacity-25
-                        transition
-                      "
+                      class="inline-flex items-center px-6 py-2 text-xs font-medium tracking-widest text-white transition rounded-md  bg-azul hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25"
                       type="submit"
                     >
                       Guardar
@@ -136,52 +100,16 @@
                     placeholder="Título"
                     id="title"
                     v-model="instrumentalForm.title"
-                    class="
-                      text-xs
-                      border-2
-                      px-6
-                      border-amarillo
-                      rounded
-                      shadow-sm
-                    "
+                    class="px-6 text-xs border-2 rounded shadow-sm  border-amarillo"
                   />
                   <div class="mt-6">
                     <Link
-                      class="
-                        mr-6
-                        bg-red-500
-                        inline-flex
-                        items-center
-                        px-6
-                        py-2
-                        rounded-md
-                        font-medium
-                        text-xs text-white
-                        tracking-widest
-                        hover:bg-gray-700
-                        active:bg-gray-900
-                        disabled:opacity-25
-                        transition
-                      "
+                      class="inline-flex items-center px-6 py-2 mr-6 text-xs font-medium tracking-widest text-white transition bg-red-500 rounded-md  hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25"
                       :href="route('instrumentalTitle')"
                       >Cancelar</Link
                     >
                     <button
-                      class="
-                        bg-azul
-                        inline-flex
-                        items-center
-                        px-6
-                        py-2
-                        rounded-md
-                        font-medium
-                        text-xs text-white
-                        tracking-widest
-                        hover:bg-gray-700
-                        active:bg-gray-900
-                        disabled:opacity-25
-                        transition
-                      "
+                      class="inline-flex items-center px-6 py-2 text-xs font-medium tracking-widest text-white transition rounded-md  bg-azul hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25"
                       type="submit"
                     >
                       Guardar
@@ -199,14 +127,7 @@
                       placeholder="Título"
                       id="title"
                       v-model="advancedForm.title"
-                      class="
-                        text-xs
-                        border-2
-                        px-6
-                        border-amarillo
-                        rounded
-                        shadow-sm
-                      "
+                      class="px-6 text-xs border-2 rounded shadow-sm  border-amarillo"
                     />
                   </div>
                   <div class="mt-6">
@@ -228,21 +149,21 @@
                       "
                     >
                       <option
-                        class="text-xs text-bold bg-orange-100"
+                        class="text-xs bg-orange-100 text-bold"
                         :selected="game"
                         value="juego"
                       >
                         Juego
                       </option>
                       <option
-                        class="text-xs text-bold bg-orange-100"
+                        class="text-xs bg-orange-100 text-bold"
                         :selected="trabajo"
                         value="trabajo"
                       >
                         Trabajo
                       </option>
                       <option
-                        class="text-xs text-bold bg-orange-100"
+                        class="text-xs bg-orange-100 text-bold"
                         :selected="Educación"
                         value="educación"
                       >
@@ -252,41 +173,12 @@
                   </div>
                   <div class="mt-6">
                     <Link
-                      class="
-                        mr-6
-                        bg-red-500
-                        inline-flex
-                        items-center
-                        px-6
-                        py-2
-                        rounded-md
-                        font-medium
-                        text-xs text-white
-                        tracking-widest
-                        hover:bg-gray-700
-                        active:bg-gray-900
-                        disabled:opacity-25
-                        transition
-                      "
+                      class="inline-flex items-center px-6 py-2 mr-6 text-xs font-medium tracking-widest text-white transition bg-red-500 rounded-md  hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25"
                       :href="route('advancedTitle')"
                       >Cancelar</Link
                     >
                     <button
-                      class="
-                        bg-azul
-                        inline-flex
-                        items-center
-                        px-6
-                        py-2
-                        rounded-md
-                        font-medium
-                        text-xs text-white
-                        tracking-widest
-                        hover:bg-gray-700
-                        active:bg-gray-900
-                        disabled:opacity-25
-                        transition
-                      "
+                      class="inline-flex items-center px-6 py-2 text-xs font-medium tracking-widest text-white transition rounded-md  bg-azul hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25"
                       type="submit"
                     >
                       Guardar
