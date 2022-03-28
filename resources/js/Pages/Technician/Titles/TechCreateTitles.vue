@@ -1,5 +1,6 @@
 <template>
   <app-layout title="Dashboard">
+    <!-- Link de vuelta de básico  -->
     <div v-if="basic == 'básico'">
       <Link class="font-medium" :href="route('basicTitle')">
         <svg
@@ -19,6 +20,7 @@
       </Link>
     </div>
 
+    <!-- Link de vuelta de instrumental  -->
     <div v-if="instrumental == 'instrumental'">
       <Link class="font-medium" :href="route('instrumentalTitle')">
         <svg
@@ -38,6 +40,14 @@
       </Link>
     </div>
 
+    <div class="flex items-center justify-center">
+      <div class="p-10 bg-white rounded-lg">
+        <jet-create-btn class="text-xl font-bold text-azul" />
+        <h1 class="text-xl font-bold text-azul">Creación de Tareas Básicas</h1>
+      </div>
+    </div>
+
+    <!-- Link de vuelta de avanzado  -->
     <div v-if="advanced == 'avanzado'">
       <Link class="font-medium" :href="route('advancedTitle')">
         <svg
@@ -57,32 +67,73 @@
       </Link>
     </div>
 
-    <div class="py-12">
+    <!-- Form de creación -->
+
+ 
+    <!-- <div class="py-12"> -->
       <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
+        <!-- <div class="overflow-hidden bg-white sm:rounded-lg"> -->
           <body class="flex items-center justify-center">
             <div class="p-10 bg-white rounded-lg">
-              <h2>{{ basic }}</h2>
+              <!-- Creación de básico -->
+             
               <div v-if="basic == 'básico'">
-                <h1 class="text-xl font-bold">
-                  Te encuentras en la vista de Crud desde BÁSICO!!!
-                </h1>
-                <br />
                 <form @submit.prevent="basicSubmit">
                   <input
                     placeholder="Título"
                     id="title"
                     v-model="basicForm.title"
-                    class="px-6 text-xs border-2 rounded shadow-sm  border-amarillo"
+                    class="
+                      px-6
+                      text-xs
+                      border-2
+                      rounded
+                      shadow-sm
+                      border-amarillo
+                      text-center
+                    "
                   />
+ 
+
                   <div class="mt-6">
                     <Link
-                      class="inline-flex items-center px-6 py-2 mr-6 text-xs font-medium tracking-widest text-white transition bg-red-500 rounded-md  hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25"
+                      class="
+                        inline-flex
+                        items-center
+                        px-6
+                        py-2
+                        mr-6
+                        text-xs
+                        font-medium
+                        tracking-widest
+                        text-white
+                        transition
+                        bg-red-500
+                        rounded-md
+                        hover:bg-gray-700
+                        active:bg-gray-900
+                        disabled:opacity-25
+                      "
                       :href="route('basicTitle')"
                       >Cancelar</Link
                     >
                     <button
-                      class="inline-flex items-center px-6 py-2 text-xs font-medium tracking-widest text-white transition rounded-md  bg-azul hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25"
+                      class="
+                        inline-flex
+                        items-center
+                        px-6
+                        py-2
+                        text-xs
+                        font-medium
+                        tracking-widest
+                        text-white
+                        transition
+                        rounded-md
+                        bg-azul
+                        hover:bg-gray-700
+                        active:bg-gray-900
+                        disabled:opacity-25
+                      "
                       type="submit"
                     >
                       Guardar
@@ -90,26 +141,61 @@
                   </div>
                 </form>
               </div>
+              <!-- Creación de instrumental -->
               <div v-if="instrumental === 'instrumental'">
-                <h1 class="text-xl font-bold">
-                  Te encuentras en la vista de Crud desde INSTRUMENTAL!!!
-                </h1>
-                <br />
                 <form @submit.prevent="instrumentalSubmit">
                   <input
                     placeholder="Título"
                     id="title"
                     v-model="instrumentalForm.title"
-                    class="px-6 text-xs border-2 rounded shadow-sm  border-amarillo"
+                    class="
+                      px-6
+                      text-xs
+                      border-2
+                      rounded
+                      shadow-sm
+                      border-amarillo
+                    "
                   />
                   <div class="mt-6">
                     <Link
-                      class="inline-flex items-center px-6 py-2 mr-6 text-xs font-medium tracking-widest text-white transition bg-red-500 rounded-md  hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25"
+                      class="
+                        inline-flex
+                        items-center
+                        px-6
+                        py-2
+                        mr-6
+                        text-xs
+                        font-medium
+                        tracking-widest
+                        text-white
+                        transition
+                        bg-red-500
+                        rounded-md
+                        hover:bg-gray-700
+                        active:bg-gray-900
+                        disabled:opacity-25
+                      "
                       :href="route('instrumentalTitle')"
                       >Cancelar</Link
                     >
                     <button
-                      class="inline-flex items-center px-6 py-2 text-xs font-medium tracking-widest text-white transition rounded-md  bg-azul hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25"
+                      class="
+                        inline-flex
+                        items-center
+                        px-6
+                        py-2
+                        text-xs
+                        font-medium
+                        tracking-widest
+                        text-white
+                        transition
+                        rounded-md
+                        bg-azul
+                        hover:bg-gray-700
+                        active:bg-gray-900
+                        disabled:opacity-25
+                      "
                       type="submit"
                     >
                       Guardar
@@ -117,17 +203,22 @@
                   </div>
                 </form>
               </div>
+              <!-- Creación de avanzado -->
               <div v-if="advanced === 'avanzado'">
-                <h1 class="text-xl font-bold">
-                  Te encuentras en la vista de Crud desde AVANZADO!!!
-                </h1>
                 <form @submit.prevent="advancedSubmit">
                   <div class="mt-6">
                     <input
                       placeholder="Título"
                       id="title"
                       v-model="advancedForm.title"
-                      class="px-6 text-xs border-2 rounded shadow-sm  border-amarillo"
+                      class="
+                        px-6
+                        text-xs
+                        border-2
+                        rounded
+                        shadow-sm
+                        border-amarillo
+                      "
                     />
                   </div>
                   <div class="mt-6">
@@ -171,14 +262,46 @@
                       </option>
                     </select>
                   </div>
+                  <!-- Botones de Guardar y Cancelar -->
                   <div class="mt-6">
                     <Link
-                      class="inline-flex items-center px-6 py-2 mr-6 text-xs font-medium tracking-widest text-white transition bg-red-500 rounded-md  hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25"
+                      class="
+                        inline-flex
+                        items-center
+                        px-6
+                        py-2
+                        mr-6
+                        text-xs
+                        font-medium
+                        tracking-widest
+                        text-white
+                        transition
+                        bg-red-500
+                        rounded-md
+                        hover:bg-gray-700
+                        active:bg-gray-900
+                        disabled:opacity-25
+                      "
                       :href="route('advancedTitle')"
                       >Cancelar</Link
                     >
                     <button
-                      class="inline-flex items-center px-6 py-2 text-xs font-medium tracking-widest text-white transition rounded-md  bg-azul hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25"
+                      class="
+                        inline-flex
+                        items-center
+                        px-6
+                        py-2
+                        text-xs
+                        font-medium
+                        tracking-widest
+                        text-white
+                        transition
+                        rounded-md
+                        bg-azul
+                        hover:bg-gray-700
+                        active:bg-gray-900
+                        disabled:opacity-25
+                      "
                       type="submit"
                     >
                       Guardar
@@ -190,8 +313,8 @@
             </div>
           </body>
         </div>
-      </div>
-    </div>
+      <!-- </div> -->
+    <!-- </div> -->
   </app-layout>
 </template>
 
