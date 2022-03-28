@@ -11,6 +11,7 @@ class RoutesTest extends TestCase
      *
      * @return void
      */
+
     public function test_login()
     {
         $response = $this->get('/login');
