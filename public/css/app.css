@@ -1724,6 +1724,9 @@ select {
 .font-bold {
   font-weight: 700;
 }
+.font-thin {
+  font-weight: 100;
+}
 .uppercase {
   text-transform: uppercase;
 }
@@ -2113,6 +2116,10 @@ select {
 .active\:text-gray-800:active {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+.active\:text-gray-900:active {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 .disabled\:opacity-25:disabled {
   opacity: 0.25;
