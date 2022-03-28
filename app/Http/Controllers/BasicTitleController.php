@@ -17,13 +17,17 @@ class BasicTitleController extends Controller
      */
     public function index()
     {
+
         try {
             $basics = [];
             $basicTasks = Title::where('type', 'básicos')->get();
+            $basicTasks->load('icons', 'tasks');
 
             foreach ($basicTasks as $basicTask) {
                 array_push($basics, $basicTask);
             }
+
+            // dd($basics);
 
             return Inertia::render('Technician/Titles/TechBasicTitle', compact('basics'));
         } catch (Exception $error) {
@@ -36,6 +40,7 @@ class BasicTitleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
         try {

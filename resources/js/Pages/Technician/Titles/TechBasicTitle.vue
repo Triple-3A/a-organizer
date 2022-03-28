@@ -41,7 +41,7 @@
 
           <div class="flex items-center justify-center">
             <div class="p-10 bg-white rounded-lg">
-              <jet-create-btn class="text-xl font-bold text-azul"/>
+              <jet-create-btn class="text-xl font-bold text-azul" />
               <h1 class="text-xl font-bold text-azul">Tareas Básicas</h1>
             </div>
           </div>
@@ -50,7 +50,10 @@
             <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
               <div class="flex items-center justify-start p-4 rounded-lg">
                 <div>
-                  <svg
+                  <div v-for="icon in basic.icons" :key="icon.id">
+                    <img :src="icon.icon" alt="Icono de tarea" />
+                  </div>
+                  <!-- <svg
                     class="w-16 h-16 text-azul"
                     width="24"
                     height="24"
@@ -66,7 +69,7 @@
                       d="M9 7c-3 0-4 3-4 5.5 0 3 2 7.5 4 7.5 1.088-.046 1.679-.5 3-.5 1.312 0 1.5.5 3 .5s4-3 4-5c-.028-.01-2.472-.403-2.5-3-.019-2.17 2.416-2.954 2.5-3-1.023-1.492-2.951-1.963-3.5-2-1.433-.111-2.83 1-3.5 1-.68 0-1.9-1-3-1z"
                     />
                     <path d="M12 4a2 2 0 0 0 2 -2a2 2 0 0 0 -2 2" />
-                  </svg>
+                  </svg> -->
                 </div>
 
                 <div class="px-8"></div>
@@ -109,7 +112,7 @@
 </template>
 
 <script>
-import CreateBtn from "@/Jetstream/CreateBtn.vue" 
+import CreateBtn from "@/Jetstream/CreateBtn.vue";
 import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 export default {
