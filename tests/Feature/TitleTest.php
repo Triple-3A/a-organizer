@@ -19,4 +19,18 @@ class TitleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+     //Type error 302
+    // public function test_store()
+    // {
+    //     $response = $this->post('/admin', [
+    //         'event_name' => 'Php',
+    //         'event_date' => '10/10/2023',
+    //         'event_description' => 'Hello PHP!!',
+    //         'event_img' => 'https://unsplash.com/images/stock/high-resolution',
+    //         'event_capacity' => '12',
+    //     ]);
+
+    //     $response->assertStatus(200);
+    // }
 }
