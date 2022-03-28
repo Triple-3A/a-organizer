@@ -139,6 +139,7 @@ class AdminController extends Controller
                 $students = [];
                 array_push($techs, User::find($allTech->user_id));
                 $allStudents = Student::where('technician_id', $allTech->id)->get();
+
                 foreach($allStudents as $student){
                     array_push($students, User::find($student->user_id));
                 }

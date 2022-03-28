@@ -83,9 +83,9 @@
             <td class="block p-2 md:border md:border-azul-500 md:table-cell">
                             <div v-for="studentTech in studentTechs"
                                 :key="studentTech.id" >
-                                {{studentTech}}
-                                <!-- <p v-for="student in studentTech"
-                                :key="student.id">{{student.name}}</p> -->
+                                <!-- {{studentTech}} -->
+                                <p v-for="student in studentTech"
+                                :key="student.id">{{student.name}}</p>
                             </div>
                         </td>
           </tr>

@@ -21,4 +21,9 @@ class Student extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+    public function technician()
+    {
+        return $this->belongsToMany(Technician::class);
+    }
 }
