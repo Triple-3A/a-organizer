@@ -50,20 +50,53 @@
       <table>
         <thead class="block md:table-header-group">
           <tr
-            class="absolute block border md:border-none md:table-row -top-full md:top-auto -left-full md:left-auto md:relative"
+            class="
+              absolute
+              block
+              border
+              md:border-none md:table-row
+              -top-full
+              md:top-auto
+              -left-full
+              md:left-auto md:relative
+            "
           >
             <th
-              class="block p-2 text-base font-bold text-left text-white bg-amarillo md:border md:border-white md:table-cell"
+              class="
+                block
+                p-2
+                text-base
+                font-bold
+                text-left text-white
+                bg-amarillo
+                md:border md:border-white md:table-cell
+              "
             >
               Técnico
             </th>
             <th
-              class="block p-2 text-base font-bold text-left text-white bg-amarillo md:border md:border-white md:table-cell"
+              class="
+                block
+                p-2
+                text-base
+                font-bold
+                text-left text-white
+                bg-amarillo
+                md:border md:border-white md:table-cell
+              "
             >
               Email
             </th>
             <th
-              class="block p-2 text-base font-bold text-white bg-amarillo md:border md:border-white md:table-cell"
+              class="
+                block
+                p-2
+                text-base
+                font-bold
+                text-white
+                bg-amarillo
+                md:border md:border-white md:table-cell
+              "
             >
               Usuarios Asignados
             </th>
@@ -76,18 +109,38 @@
             :key="tech.id"
           >
             <td
-              class="block p-2 font-bold text-left md:border md:border-azul-500 md:table-cell"
-            >{{tech.name}}
+              class="
+                block
+                p-2
+                font-bold
+                text-left
+                md:border md:border-azul-500 md:table-cell
+              "
+            >
+              {{ tech.name }}
             </td>
-            <td class="block p-2 text-left md:border md:border-azul-500 md:table-cell"></td>
-            <td class="block p-2 md:border md:border-azul-500 md:table-cell">
-                            <div v-for="studentTech in studentTechs"
-                                :key="studentTech.id" >
-                                <!-- {{studentTech}} -->
-                                <p v-for="student in studentTech"
-                                :key="student.id">{{student.name}}</p>
-                            </div>
-                        </td>
+            <td
+              class="
+                block
+                p-2
+                text-left
+                md:border md:border-azul-500 md:table-cell
+              "
+            >
+              {{ tech.email }}
+            </td>
+            <td
+              class="block p-2 md:border md:border-azul-500 md:table-cell"
+              v-for="studentTech in studentTechs"
+              :key="studentTech.id"
+            >
+            <p v-for="student in studentTech" :key="student.id">
+              {{ student.name }} - ({{student.email}})
+            </p>
+
+       
+              <!-- {{studentTech}} -->
+            </td>
           </tr>
         </tbody>
       </table>
@@ -101,7 +154,7 @@ import { Head, Link } from "@inertiajs/inertia-vue3";
 export default {
   props: {
     techs: Array,
-    studentTechs:Array,
+    studentTechs: Array,
   },
   components: {
     AppLayout,

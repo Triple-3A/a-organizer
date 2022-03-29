@@ -64,7 +64,7 @@
               rounded
               select
               w-96
-            "
+            " 
           >
             <option class="text-xs font-bold bg-orange-100" value="">
               Técnicos
@@ -120,12 +120,10 @@
       <div className="mt-4 flex flex-col justify-center items-center">
         <button 
         type="submit"
-          class="px-5 mt-3 ml-4 bg-azul"
+          class="inline-flex items-center px-6 py-2 bg-azul rounded-md font-bold text-sm text-white tracking-widest hover:bg-azul active:bg-gray-900  disabled:opacity-25 transition"
         >
           Asignar
         </button>
-        <!-- <jet-button class="mt-4 ml-4 px-7 bg-azul"> Aceptar </jet-button>
-        <jet-button class="mt-4 ml-4 bg-rojo"> Cancelar </jet-button> -->
       </div>
     </form>
   </app-layout>

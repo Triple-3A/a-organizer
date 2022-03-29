@@ -122,7 +122,7 @@ class AdminController extends Controller
             $technicianId = Technician::where('user_id', $technicianUserId)->value('id');
             Student::where('user_id', $studentUserId)->update(array('technician_id' => $technicianId));
 
-            return Inertia::render('Admin/AdminAssignStudents');
+            return Redirect::route('assignment');
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -146,6 +146,7 @@ class AdminController extends Controller
                 array_push($studentTechs , $students);
             }
 
+            // dd($techs, $studentTechs);
             return Inertia::render('Admin/AdminTechStudents', compact('techs', 'studentTechs'));
         } catch (Exception $error) {
             return $error->getMessage();
