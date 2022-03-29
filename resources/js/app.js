@@ -3,6 +3,7 @@ require('./bootstrap');
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
+import JetOwnInput from '@/Jetstream/OwnInput.vue';
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
@@ -16,5 +17,7 @@ createInertiaApp({
             .mount(el);
     },
 });
+
+app.component('jet-own-input', JetOwnInput);
 
 InertiaProgress.init({ color: '#4B5563' });
