@@ -12,10 +12,16 @@ class Title extends Model
     protected $fillable = [
         'id',
         'title',
+        'type',
     ];
 
     public function tasks()
     {
         return $this->belongsToMany(Task::class);
+    }
+
+    public function advancedtitles()
+    {
+        return $this->belongsToMany(AdvancedTitle::class);
     }
 }

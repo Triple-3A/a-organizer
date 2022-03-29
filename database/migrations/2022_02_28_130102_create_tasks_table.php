@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
+            $table->boolean('repeatable');
             $table->date('date');
             $table->time('time');
+            $table->boolean('done');
             $table->timestamps();
         });
     }

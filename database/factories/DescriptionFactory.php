@@ -17,7 +17,6 @@ class DescriptionFactory extends Factory
     public function definition()
     {
         return [
-            'done' => $this->faker->numberBetween(0,1),
             'description' => $this->faker->text(),
         ];
     }

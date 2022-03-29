@@ -3,11 +3,12 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\User;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Role>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Techinician>
  */
-class RoleFactory extends Factory
+class TechnicianFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +18,7 @@ class RoleFactory extends Factory
     public function definition()
     {
         return [
-            'role' => $this->faker->numberBetween(1,3),
+            'user_id' => User::select('id')->orderByRaw("RAND()")->first()->id,
         ];
     }
 }

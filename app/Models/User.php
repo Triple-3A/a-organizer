@@ -61,17 +61,20 @@ class User extends Authenticatable
 
     public function roles()
     {
-        return $this->belongsToMany(Role::class);
+        return $this->belongsToMany(Role::class)->withPivot(
+            'role_id', 
+            'user_id',
+        );
     }
 
-    // public function technicians()
-    // {
-    //     return $this->belongsToMany(Role::class);
-    // }
+    public function technicians()
+    {
+        return $this->belongsToMany(Technician::class);
+    }
 
-    // public function pacients()
-    // {
-    //     return $this->belongsToMany(Role::class);
-    // }
+    public function students()
+    {
+        return $this->belongsToMany(Student::class);
+    }
 
 }

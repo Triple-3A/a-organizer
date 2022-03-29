@@ -17,8 +17,10 @@ class TaskFactory extends Factory
     public function definition()
     {
         return [
+            'repeatable' => $this->faker->boolean(),
             'date' => $this->faker->date(),
             'time' => $this->faker->time(),
+            'done' => $this->faker->boolean(),
         ];
     }
 }

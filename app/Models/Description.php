@@ -11,7 +11,6 @@ class Description extends Model
 
     protected $fillable = [
         'id',
-        'done',
         'description',
     ];
 
