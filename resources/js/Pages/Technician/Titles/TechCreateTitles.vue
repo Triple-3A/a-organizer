@@ -46,7 +46,11 @@
         <h1 class="text-xl font-bold text-azul">Creación de Tareas Básicas</h1>
       </div>
     </div>
-
+    <div>
+    <center><svg class="h-16 w-16 text-azul"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg>
+    <h1 class="pt-8">Pulsa siguiente para crear la tarea</h1>
+    </center>
+    </div>
     <!-- Link de vuelta de avanzado  -->
     <div v-if="advanced == 'avanzado'">
       <Link class="font-medium" :href="route('advancedTitle')">
@@ -80,7 +84,7 @@
               <div v-if="basic == 'básico'">
                 <form @submit.prevent="basicSubmit">
                   <center><input
-                    placeholder="Título"
+                    placeholder="Introduce la tarea"
                     id="title"
                     v-model="basicForm.title"
                     class="
