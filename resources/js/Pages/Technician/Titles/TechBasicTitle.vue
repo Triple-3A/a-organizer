@@ -1,6 +1,6 @@
 <template>
   <app-layout title="Dashboard">
-   <div class="mt-4 ml-10px">
+    <div class="mt-4 ml-10px">
       <Link
         :href="route('categories')"
         class="
@@ -36,7 +36,7 @@
         <div class="overflow-hidden">
           <Link :href="route('basicTitle/create')">
             <svg
-             class="float-right h-14 w-14 text-white bg-rojo"
+              class="float-right h-14 w-14 text-white bg-rojo"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -54,8 +54,8 @@
           </Link>
 
           <div class="flex items-center justify-center">
-            <div class="p-10 bg-white rounded-lg">
-              <jet-create-btn class="text-xl font-bold text-azul"/>
+            <!-- <div class="p-10 bg-white rounded-lg"> -->
+              <jet-create-btn class="text-xl font-bold text-azul" />
               <h1 class="text-xl font-bold text-azul">Tareas Básicas</h1>
             </div>
           </div>
@@ -118,12 +118,12 @@
           </div>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
   </app-layout>
 </template>
 
 <script>
-import CreateBtn from "@/Jetstream/CreateBtn.vue" 
+import CreateBtn from "@/Jetstream/CreateBtn.vue";
 import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 export default {

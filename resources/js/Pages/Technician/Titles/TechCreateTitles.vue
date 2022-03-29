@@ -8,7 +8,7 @@
 
           <div v-if="basic == 'básico'">
             <div class="flex items-center justify-center">
-              <div class="p-10 bg-white rounded-lg">
+              <div class="p-10">
                 <jet-create-btn class="text-xl font-bold text-azul" />
                 <h1 class="text-xl font-bold text-azul">
                   Creación de Tareas Básicas
@@ -18,7 +18,7 @@
             <div>
               <center>
                 <svg
-                  class="h-16 w-16 text-azul"
+                  class="h-16 w-16 text-azul mb-6"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -113,7 +113,7 @@
               </div>
               <div>
                 <center>
-                  <svg class="h-16 w-16 text-azul"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="5" y="3" width="14" height="6" rx="2" />  <path d="M19 6h1a2 2 0 0 1 2 2a5 5 0 0 1 -5 5l-5 0v2" />  <rect x="10" y="15" width="4" height="6" rx="1" /></svg>
+                  <svg class="h-16 w-16 text-azul mb-6"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="5" y="3" width="14" height="6" rx="2" />  <path d="M19 6h1a2 2 0 0 1 2 2a5 5 0 0 1 -5 5l-5 0v2" />  <rect x="10" y="15" width="4" height="6" rx="1" /></svg>
                   <!-- <h1 class="pt-8">Pulsa siguiente para crear la tarea</h1> -->
                 </center>
               </div>
