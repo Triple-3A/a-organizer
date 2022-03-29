@@ -1,7 +1,7 @@
 <template>
   <app-layout title="Dashboard">
     <!-- Link de vuelta de básico  -->
-    <div v-if="basic == 'básico'">
+    <!-- <div v-if="basic == 'básico'">
       <Link class="font-medium" :href="route('basicTitle')">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +18,7 @@
           />
         </svg>
       </Link>
-    </div>
+    </div> -->
 
     <!-- Link de vuelta de instrumental  -->
     <div v-if="instrumental == 'instrumental'">
@@ -70,16 +70,16 @@
     <!-- Form de creación -->
 
  
-    <!-- <div class="py-12"> -->
+    
       <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <!-- <div class="overflow-hidden bg-white sm:rounded-lg"> -->
+       
           <body class="flex items-center justify-center">
-            <div class="p-10 bg-white rounded-lg">
+            <div class="p-10 bg-white rounded-lg flex items-center justify-center">
               <!-- Creación de básico -->
              
               <div v-if="basic == 'básico'">
                 <form @submit.prevent="basicSubmit">
-                  <input
+                  <center><input
                     placeholder="Título"
                     id="title"
                     v-model="basicForm.title"
@@ -92,7 +92,7 @@
                       border-amarillo
                       text-center
                     "
-                  />
+                  /></center>
  
 
                   <div class="mt-6">
@@ -136,7 +136,7 @@
                       "
                       type="submit"
                     >
-                      Guardar
+                      Siguiente
                     </button>
                   </div>
                 </form>
