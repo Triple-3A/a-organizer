@@ -21,14 +21,10 @@
       <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="overflow-hidden">
           <Link :href="route('instrumentalTitle/create')">
-            <jet-create-btn/>
+            <jet-create-btn />
           </Link>
-
-          <div class="flex items-center justify-center">
-            <div class="p-10 bg-white rounded-lg">
-              <h1 class="text-xl font-bold text-azul">Tareas Instrumentales</h1>
-            </div>
-          </div>
+          
+          <jet-title>Tareas Instrumentales</jet-title>
 
           <div v-for="instrumental in instrumentals" :key="instrumental.id">
             <div class="mb-10 border-4 rounded-lg flexrow border-amarillo">
@@ -70,6 +66,7 @@ import { Head, Link } from "@inertiajs/inertia-vue3";
 import JetDeleteBtn from "@/Jetstream/DeleteBtn.vue";
 import JetInstrumentalTitleSvg from "@/Jetstream/InstrumentalTitleSvg.vue";
 import JetCreateBtn from "@/Jetstream/CreateBtn.vue";
+import JetTitle from "@/Jetstream/Title.vue";
 export default {
   props: {
     instrumentals: Array,
@@ -81,6 +78,7 @@ export default {
     JetDeleteBtn,
     JetInstrumentalTitleSvg,
     JetCreateBtn,
+    JetTitle,
   },
 };
 </script>

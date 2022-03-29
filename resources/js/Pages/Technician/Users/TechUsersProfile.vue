@@ -27,19 +27,7 @@
           src="https://randomuser.me/api/portraits/women/81.jpg"
         />
       </center>
-      <h1
-        class="
-          pt-2
-          pb-4
-          mb-2
-          font-semibold
-          leading-tight
-          text-center text-xl text-azul
-        "
-      >
-        Ana
-        <!--{{ studentsUser.name }}-->
-      </h1>
+      <jet-title>Ana</jet-title>
     </div>
     <Link class="font-medium" :href="route('techUserBasic')">
       <jet-card>
@@ -68,6 +56,7 @@ import JetCard from "@/Jetstream/Card.vue";
 import JetBasicSvg from "@/Jetstream/BasicSvg.vue";
 import JetInstrumentalSvg from "@/Jetstream/InstrumentalSvg.vue";
 import JetAdvancedSvg from "@/Jetstream/AdvancedSvg.vue";
+import JetTitle from "@/Jetstream/Title.vue";
 export default {
   components: {
     AppLayout,
@@ -77,6 +66,7 @@ export default {
     JetBasicSvg,
     JetInstrumentalSvg,
     JetAdvancedSvg,
+    JetTitle,
   },
 };
 </script>

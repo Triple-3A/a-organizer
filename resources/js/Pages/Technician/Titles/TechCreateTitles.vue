@@ -60,7 +60,7 @@
     <div class="py-12">
       <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
-          <body class="flex items-center justify-center">
+          <div class="flex items-center justify-center">
             <div class="p-10 bg-white rounded-lg">
               <div v-if="basic == 'básico'">
                 <h1 class="text-xl font-bold">
@@ -184,10 +184,10 @@
                     </button>
                   </div>
                 </form>
-                <br />
+                <br/>
               </div>
             </div>
-          </body>
+          </div>
         </div>
       </div>
     </div>

@@ -21,10 +21,10 @@
       <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="overflow-hidden">
           <Link :href="route('basicTitle/create')" type="button">
-            <jet-create-btn/>
+            <jet-create-btn />
           </Link>
 
-              <jet-title>Tareas Básicas</jet-title>
+          <jet-title>Tareas Básicas</jet-title>
 
           <div v-for="basic in basics" :key="basic.id">
             <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
