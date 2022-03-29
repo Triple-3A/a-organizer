@@ -1,30 +1,42 @@
 <template>
   <app-layout title="Dashboard">
-    <div class="mt-16">
-      <div class="absolute mt-2 ms-4">
-        <Link class="font-medium" :href="route('technician')">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="float-left w-12 h-12 text-amarillo"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M10 19l-7-7m0 0l7-7m-7 7h18"
-            /></svg
-        ></Link>
-      </div>
+    <div class="mt-4 ml-10px">
+      <Link
+        :href="route('technician')"
+        class="
+          mr-2.5
+          font-bold
+          text-amarillo
+          rounded-lg
+          text-sm
+          py-2.5
+          text-center
+          flex
+          items-center
+        "
+      >
+        <svg
+          class="w-5 h-5 ml-2 mr-1 rotate-180 fill-amarillo"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+        Inicio</Link
+      >
+    </div>
       <h1 class="mb-6 text-xl font-semibold text-center text-azul">
         Categoria de Tareas
       </h1>
       <p class="mb-6 font-medium text-center text-gray-800">
         Estas son tus tareas predeterminadas
       </p>
-    </div>
+    
 
     <div class="w-3/4 mx-auto lg:w-2/5">
       <div

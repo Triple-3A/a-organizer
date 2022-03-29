@@ -204,7 +204,7 @@
               
               <div class="mt-6">
                 <center><input
-                  placeholder="Introdudir tarea"
+                  placeholder="Introducir tarea"
                   id="title"
                   v-model="advancedForm.title"
                   class="

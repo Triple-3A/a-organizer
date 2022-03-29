@@ -1539,6 +1539,10 @@ select {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.object-right {
+  -o-object-position: right;
+     object-position: right;
+}
 .p-2 {
   padding: 12px;
 }
@@ -1677,9 +1681,6 @@ select {
 }
 .pl-5 {
   padding-left: 32px;
-}
-.pb-8 {
-  padding-bottom: 2rem;
 }
 .text-left {
   text-align: left;
