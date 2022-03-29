@@ -48,21 +48,8 @@
 
                             <div>
                                <Link class="font-medium" :href="route('technicianUsersProfile')">
-                                <svg
-                                    class="h-8 w-8  text-azul"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="2"
-                                    stroke="currentColor"
-                                    fill="none"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <path stroke="none" d="M0 0h24v24H0z" />
-                                    <polyline points="9 6 15 12 9 18" />
-                                </svg>
-                                 </Link>
+                                <jet-arrow-next-svg/>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -75,6 +62,7 @@
 <script>
 import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
+import JetArrowNextSvg from "@/Jetstream/ArrowNextSvg";
 export default {
     props: {
         studentsUsers: Array,
@@ -84,6 +72,7 @@ export default {
         AppLayout,
         Head,
         Link,
+        JetArrowNextSvg,
     },
 };
 </script>

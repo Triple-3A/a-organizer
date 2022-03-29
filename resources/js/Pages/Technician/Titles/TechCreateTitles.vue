@@ -62,7 +62,6 @@
         <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
           <body class="flex items-center justify-center">
             <div class="p-10 bg-white rounded-lg">
-              <h2>{{ basic }}</h2>
               <div v-if="basic == 'básico'">
                 <h1 class="text-xl font-bold">
                   Te encuentras en la vista de Crud desde BÁSICO!!!

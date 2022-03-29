@@ -15,17 +15,6 @@ class TitleTest extends TestCase
      *
      * @return void
      */
-    // public function test_title_store()
-    // {
-    //     $user = new User(['role' => 'technician']);
-    //     $this->be($user);
-
-    //     $response = $this->post('basicTitle/store', [
-    //         'title' => 'Test basic title',
-    //         'type' => 'básico'
-    //     ])->assertRedirect('/basicTitle');
-
-    // }
 
     public function test_title_duplication()
     {
@@ -56,30 +45,43 @@ class TitleTest extends TestCase
         $this->assertNull($title->fresh());;
     }
 
-    // public function test_delete_title()
-    // {
-    //     $title = Title::make([
-    //         'title' => 'Test basic title',
-    //         'type' => 'básico'
-    //     ]);
+    public function test_delete_title()
+    {
+        $title = Title::make([
+            'id' => 1,
+            'title' => 'Test basic title',
+            'type' => 'básico'
+        ]);
 
-    //     $this->withSession(['role' => 'technician'])
-    //         ->delete("/basicTitle/delete/{$title->id}")
-    // ->assertRedirect('/basicTitle')
-    //         ->assertSessionHas('deleted', $title->id);
-    // }
+        $this->withSession(['role' => 'technician'])
+            ->delete("/basicTitle/delete/{$title->id}")
+    ->assertRedirect('/basicTitle')
+            ->assertSessionHas('deleted', $title->id);
+    }
 
-    //Type error 302
-    // public function test_store()
-    // {
-    //     $response = $this->post('/admin', [
-    //         'event_name' => 'Php',
-    //         'event_date' => '10/10/2023',
-    //         'event_description' => 'Hello PHP!!',
-    //         'event_img' => 'https://unsplash.com/images/stock/high-resolution',
-    //         'event_capacity' => '12',
-    //     ]);
+    public function test_title_store()
+    {
+        $user = new User(['role' => 'technician']);
+        $this->be($user);
 
-    //     $response->assertStatus(200);
-    // }
+        $response = $this->post('basicTitle/store', [
+            'title' => 'Test basic title',
+            'type' => 'básico'
+        ])->assertRedirect('/basicTitle');
+
+    }
+
+    // Type error 302
+    public function test_store()
+    {
+        $response = $this->post('/admin', [
+            'event_name' => 'Php',
+            'event_date' => '10/10/2023',
+            'event_description' => 'Hello PHP!!',
+            'event_img' => 'https://unsplash.com/images/stock/high-resolution',
+            'event_capacity' => '12',
+        ]);
+
+        $response->assertStatus(200);
+    }
 }

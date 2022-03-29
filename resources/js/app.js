@@ -18,6 +18,8 @@ import JetOwnInput from '@/Jetstream/OwnInput.vue';
 import JetBasicTitleSvg from '@/Jetstream/BasicTitleSvg.vue';
 import JetInstrumentalTitleSvg from '@/Jetstream/InstrumentalTitleSvg.vue';
 import JetAdvancedTitleSvg from '@/Jetstream/AdvancedTitleSvg.vue';
+import JetArrowBackSvg from '@/Jetstream/ArrowBackSvg.vue';
+import JetTitle from '@/Jetstream/Title.vue';
 
 // import JetInput from '@/Jetstream/OwnInput.vue';
 
@@ -48,5 +50,7 @@ app.component('jet-own-input', JetOwnInput);
 app.component('jet-basic-title-svg', JetBasicTitleSvg);
 app.component('jet-instrumental-title-svg', JetInstrumentalTitleSvg);
 app.component('jet-advanced-title-svg', JetAdvancedTitleSvg);
+app.component('jet-arrow-back-svg', JetArrowBackSvg);
+app.component('jet-title', JetTitle);
 
 InertiaProgress.init({ color: '#4B5563' });

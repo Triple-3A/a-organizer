@@ -18,36 +18,31 @@
             /></svg
         ></Link>
       </div>
-      <h1 class="mb-6 text-xl font-semibold text-center text-azul">
+      <jet-title>
         Categoria de Tareas
-      </h1>
+      </jet-title>
       <p class="mb-6 font-medium text-center text-gray-800">
         Estas son tus tareas predeterminadas
       </p>
     </div>
-
-    <jet-card>
-      <Link class="font-medium" :href="route('basicTitle')">
+    <Link class="font-medium" :href="route('basicTitle')">
+      <jet-card>
         <jet-basic-svg />
-        <h1 class="text-xl font-bold text-center">Tareas Básicas</h1></Link
-      >
-    </jet-card>
-
-    <jet-card>
-      <Link class="font-medium" :href="route('instrumentalTitle')">
+        <h1 class="text-xl font-bold text-center">Tareas Básicas</h1>
+      </jet-card>
+    </Link>
+    <Link class="font-medium" :href="route('instrumentalTitle')">
+      <jet-card>
         <jet-instrumental-svg />
-        <h1 class="text-xl font-bold text-center">
-          Tareas Instrumentales
-        </h1></Link
-      >
-    </jet-card>
-
-    <jet-card>
-      <Link class="font-medium" :href="route('advancedTitle')">
+        <h1 class="text-xl font-bold text-center">Tareas Instrumentales</h1>
+      </jet-card>
+    </Link>
+    <Link class="font-medium" :href="route('advancedTitle')">
+      <jet-card>
         <jet-advanced-svg />
-        <h1 class="text-xl font-bold text-center">Tareas Avanzadas</h1></Link
-      >
-    </jet-card>
+        <h1 class="text-xl font-bold text-center">Tareas Avanzadas</h1>
+      </jet-card>
+    </Link>
   </app-layout>
 </template>
 
@@ -58,6 +53,7 @@ import JetCard from "@/Jetstream/Card.vue";
 import JetBasicSvg from "@/Jetstream/BasicSvg.vue";
 import JetInstrumentalSvg from "@/Jetstream/InstrumentalSvg.vue";
 import JetAdvancedSvg from "@/Jetstream/AdvancedSvg.vue";
+import JetTitle from "@/Jetstream/Title.vue";
 
 export default {
   components: {
@@ -68,6 +64,7 @@ export default {
     JetBasicSvg,
     JetInstrumentalSvg,
     JetAdvancedSvg,
+    JetTitle,
   },
 };
 </script>
