@@ -1,6 +1,6 @@
 <template>
   <app-layout title="Dashboard">
-     <div class="mt-4 ml-10px">
+    <div class="mt-4 ml-10px">
       <Link
         :href="route('technicianUsers')"
         class="
@@ -30,29 +30,29 @@
         Categorias de tareas</Link
       >
     </div>
-      <h1 class="my-2 text-xl font-bold leading-tight text-center text-noNegro">
-        Estas viendo el perfil de:
-      </h1>
-      <center>
-        <img
-          class="rounded-full"
-          src="https://randomuser.me/api/portraits/women/81.jpg"
-        />
-      </center>
-      <h1
-        class="
-          pt-2
-          pb-4
-          mb-2
-          font-semibold
-          leading-tight
-          text-center text-xl text-azul
-        "
-      >
-        Ana
-        <!--{{ studentsUser.name }}-->
-      </h1>
-    
+    <h1 class="my-2 text-xl font-bold leading-tight text-center text-noNegro">
+      Estas viendo el perfil de:
+    </h1>
+    <center>
+      <img
+        class="rounded-full"
+        src="https://randomuser.me/api/portraits/women/81.jpg"
+      />
+    </center>
+    <h1
+      class="
+        pt-2
+        pb-4
+        mb-2
+        font-semibold
+        leading-tight
+        text-center text-xl text-azul
+      "
+    >
+      Ana
+      <!--{{ studentsUser.name }}-->
+    </h1>
+
     <div>
       <div class="mx-auto max-w-7xl sm:px-6 lg:px-60">
         <body>

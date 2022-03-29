@@ -1,6 +1,6 @@
 <template>
   <app-layout title="Dashboard">
-     <div class="mt-4 ml-10px">
+    <div class="mt-4 ml-10px">
       <Link
         :href="route('technicianUsersProfile')"
         class="
