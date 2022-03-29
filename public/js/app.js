@@ -29491,18 +29491,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "py-12"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "mx-auto max-w-7xl sm:px-6 lg:px-8"
+  "class": "mx-auto max-w-7xl py-12 sm:px-6 lg:px-8"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "overflow-hidden bg-white shadow-xl sm:rounded-lg"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("body", {
-  "class": "flex items-center justify-center"
+  "class": "flex flex-col items-center justify-center"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "p-10 bg-white rounded-lg"
+  "class": "p-10 bg-white rounded-lg flex flex-col items-center justify-center"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
-  "class": "text-xl font-bold"
-}, "Bienvenido, te encuentras en la vista de Student!!!")])])])])], -1
+  "class": "font-poppings text-xxl font-bold text-azul"
+}, "¡HOLA!"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+  "class": "font-poppings text-lg font-bold text-amarillo"
+}, "Dinos como te gustaría que te llamemos")])])])], -1
 /* HOISTED */
 );
 
