@@ -29768,12 +29768,22 @@ var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "flex justify-start w-8/12"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+  "class": "font-poppings text-lg font-base text-noNegro text-left mb-4"
+}, "Estas son tus tareas para hoy")], -1
+/* HOISTED */
+);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_jet_own_input = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-own-input");
 
   var _component_jet_user_avatar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-user-avatar");
 
   var _component_jet_button_regular = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-button-regular");
+
+  var _component_jet_medidor_tareas = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-medidor-tareas");
 
   var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
 
@@ -29794,7 +29804,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
       })])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_19, "¡HOLA " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.username) + "!", 1
       /* TEXT */
-      ), _hoisted_20])])])])])];
+      ), _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" componente resumen tareas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_medidor_tareas), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" contenedooooooooooooooooooooor imagenesssssssssssssssss "), _hoisted_21])])])])])];
     }),
     _: 1
     /* STABLE */

@@ -50,7 +50,14 @@
           <div class="p-10 bg-white rounded-lg flex flex-col items-center justify-center w-9/12">
             <h1 class="font-poppings text-xxl font-bold text-azul pb-4">¡HOLA {{ username }}!</h1>
             <h2 class="font-poppings text-lg font-base text-noNegro text-center mb-4">Este es tu progreso de hoy</h2>
+           
+            <!-- componente resumen tareas -->
+            <jet-medidor-tareas/>
+               <!-- contenedooooooooooooooooooooor imagenesssssssssssssssss -->
 
+            <div class="flex justify-start w-8/12">
+              <h2 class="font-poppings text-lg font-base text-noNegro text-left mb-4">Estas son tus tareas para hoy</h2>
+          </div>
           </div>
         </div>
         </section>
