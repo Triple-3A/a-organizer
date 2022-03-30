@@ -3,7 +3,6 @@ require('./bootstrap');
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
-import JetOwnInput from '@/Jetstream/OwnInput.vue';
 
 //Import new components
 import  JetCreateBtn  from '@/Jetstream/CreateBtn.vue';
@@ -54,6 +53,5 @@ app.component('jet-instrumental-title-svg', JetInstrumentalTitleSvg);
 app.component('jet-advanced-title-svg', JetAdvancedTitleSvg);
 app.component('jet-arrow-back-svg', JetArrowBackSvg);
 app.component('jet-title', JetTitle);
-app.component('jet-own-input', JetOwnInput);
 
 InertiaProgress.init({ color: '#4B5563' });

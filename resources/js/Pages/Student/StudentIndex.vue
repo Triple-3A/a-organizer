@@ -2,6 +2,9 @@
   <app-layout title="Dashboard">
     <div class="mx-auto max-w-7xl py-12 sm:px-6 lg:px-8">
       <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
+
+
+        
         <section id="pantalla-1-nombre-user">
         <div class="flex flex-col items-center justify-center">
           <div class="p-10 bg-white rounded-lg flex flex-col items-center justify-center">
@@ -13,7 +16,6 @@
           <div class="flex justify-center">
             <div class="block max-w-sm p-12 bg-white">
               <jet-own-input class="placeholder p-2">
-
               </jet-own-input>
             </div>
           </div>
