@@ -37,9 +37,7 @@ createInertiaApp({
     },
 });
 
-<<<<<<< HEAD
-app.component('jet-own-input', JetOwnInput);
-=======
+
 //Globalize new components
 app.component('jet-create-btn', JetCreateBtn);
 app.component('jet-delete-btn', JetDeleteBtn);
@@ -56,6 +54,6 @@ app.component('jet-instrumental-title-svg', JetInstrumentalTitleSvg);
 app.component('jet-advanced-title-svg', JetAdvancedTitleSvg);
 app.component('jet-arrow-back-svg', JetArrowBackSvg);
 app.component('jet-title', JetTitle);
->>>>>>> origin/develop
+app.component('jet-own-input', JetOwnInput);
 
 InertiaProgress.init({ color: '#4B5563' });
