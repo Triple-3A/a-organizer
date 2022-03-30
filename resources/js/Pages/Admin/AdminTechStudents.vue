@@ -175,7 +175,6 @@
               class="
                 block
                 p-2
-                font-bold
                 text-left
                 md:border md:border-azul-500 md:table-cell
               "
@@ -187,13 +186,12 @@
               class="
                 block
                 p-2
-                font-bold
-                text-left
+                text-center
                 md:border md:border-azul-500 md:table-cell
               "
             >
               <p v-for="std in array[1]" :key="std.id">
-                {{ std.name }}
+                - p{{ std.name }} - ({{std.email}})
               </p>
             </td>
           </tr>
