@@ -20,8 +20,8 @@ class Title extends Model
         return $this->belongsToMany(Task::class);
     }
 
-    public function advancedtitles()
+    public function icons()
     {
-        return $this->belongsToMany(AdvancedTitle::class);
+        return $this->belongsToMany(Icon::class);
     }
 }
