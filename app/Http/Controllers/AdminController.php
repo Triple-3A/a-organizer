@@ -70,7 +70,7 @@ class AdminController extends Controller
             return $error->getMessage();
         }
     }
-
+    
     public function studentAsignment()
     {
         try {
