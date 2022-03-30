@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Laravel\Fortify\Features;
 use Tests\TestCase;
 
 class UserTest extends TestCase
@@ -15,7 +16,17 @@ class UserTest extends TestCase
      * @return void
      */
 
-    public function test_user_register()
+    public function test_registration_screen_can_be_rendered()
+    {
+        if (! Features::enabled(Features::registration())) {
+            return $this->markTestSkipped('Registration support is not enabled.');
+        }
+
+        $response = $this->get('/register');
+
+        $response->assertStatus(200);
+    }
+    public function test_user_create_register()
     {
 
         $response = $this->post('/register', [
@@ -23,6 +34,7 @@ class UserTest extends TestCase
             'email' => 'test@example.com',
             'password' => 'password',
             'password_confirmation' => 'password',
+            'role' => 'admin',
         ]);
 
         $response->assertRedirect('/');
@@ -43,22 +55,17 @@ class UserTest extends TestCase
         $this->assertTrue($user1->name != $user2->name);
     }
 
-    // public function test_user_delete()
-    // {
-    //     $user = User::make([
-    //         'name' => 'John Doe',
-    //         'email' => 'jhondoe@gmail.com'
-    //     ]);
+    public function test_user_delete()
+    {
+        $user = User::make([
+            'name' => 'John Doe',
+            'email' => 'jhondoe@gmail.com'
+        ]);
 
-    //     if ($user) {
-    //         $user->delete();
-    //         if ($user) {
-    //             $response = false;
-    //         } else {
-    //             $response = true;
-    //         }
-    //     }
+        if ($user) {
+            $user->delete();
+        }
 
-    //     $this->assertTrue($response);
-    // }
+        $this->assertNull($user->fresh());;
+    }
 }

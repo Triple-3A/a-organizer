@@ -11,6 +11,7 @@ class RoutesTest extends TestCase
      *
      * @return void
      */
+
     public function test_login()
     {
         $response = $this->get('/login');
@@ -200,7 +201,7 @@ class RoutesTest extends TestCase
     public function test_technician_users_profile()
     {
         $response = $this->withSession(['role' => 'technician'])
-                         ->get('/technicianUsersProfile')
+                         ->get('/technicianUsersProfile/1')
                          ->assertStatus(302);
 
     }
@@ -208,7 +209,7 @@ class RoutesTest extends TestCase
     public function test_technician_user_basic()
     {
         $response = $this->withSession(['role' => 'technician'])
-                         ->get('/techUserBasic')
+                         ->get('/techUserBasic/1')
                          ->assertStatus(302);
 
     }
@@ -216,7 +217,7 @@ class RoutesTest extends TestCase
     public function test_technician_user_instrumental()
     {
         $response = $this->withSession(['role' => 'technician'])
-                         ->get('/techUserInstrumental')
+                         ->get('/techUserInstrumental/1')
                          ->assertStatus(302);
 
     }
@@ -224,7 +225,7 @@ class RoutesTest extends TestCase
     public function test_technician_user_advanced()
     {
         $response = $this->withSession(['role' => 'technician'])
-                         ->get('/techUserAdvanced')
+                         ->get('/techUserAdvanced/1')
                          ->assertStatus(302);
 
     }

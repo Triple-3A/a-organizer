@@ -131,23 +131,32 @@ class AdminController extends Controller
     public function assignStudent()
     {
         try {
-            $techs = [];
-            $studentTechs= [];
+            $arrayAll=[];
+
             $allTechs = Technician::all();
 
             foreach ($allTechs as $allTech) {
+                $arrayGroup=[];
+                $tech = [];
                 $students = [];
-                array_push($techs, User::find($allTech->user_id));
+                $studentTechs = [];
+
+                array_push($tech, User::find($allTech->user_id));
+                array_push($arrayGroup, $tech);
+
                 $allStudents = Student::where('technician_id', $allTech->id)->get();
 
                 foreach($allStudents as $student){
                     array_push($students, User::find($student->user_id));
                 }
                 array_push($studentTechs , $students);
-            }
+                array_push($arrayGroup , $students);
+                array_push($arrayAll , $arrayGroup);
 
-            // dd($techs, $studentTechs);
-            return Inertia::render('Admin/AdminTechStudents', compact('techs', 'studentTechs'));
+            }
+            // dd($arrayAll);
+
+            return Inertia::render('Admin/AdminTechStudents', compact('arrayAll'));
         } catch (Exception $error) {
             return $error->getMessage();
         }

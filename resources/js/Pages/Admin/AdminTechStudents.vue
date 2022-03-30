@@ -45,6 +45,54 @@
         </div>
       </div>
     </div>
+    <div>
+      <div
+        class="block border border-azul-500 md:border-none md:table-row"
+        v-for="tech in techs"
+        :key="tech.id"
+      >
+        <div
+          class="
+            block
+            p-2
+            font-bold
+            text-left
+            md:border md:border-azul-500 md:table-cell
+          "
+        >
+          {{ tech.name }}
+        </div>
+        <div
+          class="
+            block
+            p-2
+            font-bold
+            text-left
+            md:border md:border-azul-500 md:table-cell
+          "
+        >
+          {{ tech.email }}
+        </div>
+      </div>
+      <div class="block border border-azul-500 md:border-none md:table-row">
+        <div
+          class="
+            block
+            p-2
+            font-bold
+            text-left
+            md:border md:border-azul-500 md:table-cell
+          "
+          v-for="studentTech in studentTechs"
+          :key="studentTech.id"
+        >
+          <!-- {{studentTech}} -->
+          <div v-for="student in studentTech" :key="student.id">
+            {{ student.name }}
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="mt-3 dashboard_container">
       <table>
@@ -102,10 +150,14 @@
             </th>
           </tr>
         </thead>
-        <tbody class="block md:table-row-group">
+        <tbody
+          v-for="array in arrayAll"
+          :key="array.id"
+          class="block md:table-row-group"
+        >
           <tr
             class="block border border-azul-500 md:border-none md:table-row"
-            v-for="tech in techs"
+            v-for="tech in array[0]"
             :key="tech.id"
           >
             <td
@@ -123,23 +175,26 @@
               class="
                 block
                 p-2
+                font-bold
                 text-left
                 md:border md:border-azul-500 md:table-cell
               "
             >
               {{ tech.email }}
             </td>
-            <td
-              class="block p-2 md:border md:border-azul-500 md:table-cell"
-              v-for="studentTech in studentTechs"
-              :key="studentTech.id"
-            >
-            <p v-for="student in studentTech" :key="student.id">
-              {{ student.name }} - ({{student.email}})
-            </p>
 
-       
-              <!-- {{studentTech}} -->
+            <td
+              class="
+                block
+                p-2
+                font-bold
+                text-left
+                md:border md:border-azul-500 md:table-cell
+              "
+            >
+              <p v-for="std in array[1]" :key="std.id">
+                {{ std.name }}
+              </p>
             </td>
           </tr>
         </tbody>
@@ -153,8 +208,7 @@ import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 export default {
   props: {
-    techs: Array,
-    studentTechs: Array,
+    arrayAll: Array,
   },
   components: {
     AppLayout,
