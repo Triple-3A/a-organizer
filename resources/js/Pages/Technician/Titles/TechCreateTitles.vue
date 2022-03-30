@@ -72,20 +72,38 @@
                     placeholder="Título"
                     id="title"
                     v-model="basicForm.title"
-                    class="px-6 text-xs border-2 rounded shadow-sm  border-amarillo"
+                    class="
+                      px-6
+                      text-xs
+                      border-2
+                      rounded
+                      shadow-sm
+                      border-amarillo
+                    "
                   />
                   <div class="mt-6">
                     <Link
-                      class="inline-flex items-center px-6 py-2 mr-6 text-xs font-medium tracking-widest text-white transition bg-red-500 rounded-md  hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25"
+                      class="
+                        inline-flex
+                        items-center
+                        px-6
+                        py-2
+                        mr-6
+                        text-xs
+                        font-medium
+                        tracking-widest
+                        text-white
+                        transition
+                        bg-red-500
+                        rounded-md
+                        hover:bg-gray-700
+                        active:bg-gray-900
+                        disabled:opacity-25
+                      "
                       :href="route('basicTitle')"
                       >Cancelar</Link
                     >
-                    <button
-                      class="inline-flex items-center px-6 py-2 text-xs font-medium tracking-widest text-white transition rounded-md  bg-azul hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25"
-                      type="submit"
-                    >
-                      Guardar
-                    </button>
+                    <jet-submit-btn type="submit"> Guardar </jet-submit-btn>
                   </div>
                 </form>
               </div>
@@ -99,20 +117,38 @@
                     placeholder="Título"
                     id="title"
                     v-model="instrumentalForm.title"
-                    class="px-6 text-xs border-2 rounded shadow-sm  border-amarillo"
+                    class="
+                      px-6
+                      text-xs
+                      border-2
+                      rounded
+                      shadow-sm
+                      border-amarillo
+                    "
                   />
                   <div class="mt-6">
                     <Link
-                      class="inline-flex items-center px-6 py-2 mr-6 text-xs font-medium tracking-widest text-white transition bg-red-500 rounded-md  hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25"
+                      class="
+                        inline-flex
+                        items-center
+                        px-6
+                        py-2
+                        mr-6
+                        text-xs
+                        font-medium
+                        tracking-widest
+                        text-white
+                        transition
+                        bg-red-500
+                        rounded-md
+                        hover:bg-gray-700
+                        active:bg-gray-900
+                        disabled:opacity-25
+                      "
                       :href="route('instrumentalTitle')"
                       >Cancelar</Link
                     >
-                    <button
-                      class="inline-flex items-center px-6 py-2 text-xs font-medium tracking-widest text-white transition rounded-md  bg-azul hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25"
-                      type="submit"
-                    >
-                      Guardar
-                    </button>
+                    <jet-submit-btn type="submit"> Guardar </jet-submit-btn>
                   </div>
                 </form>
               </div>
@@ -126,7 +162,14 @@
                       placeholder="Título"
                       id="title"
                       v-model="advancedForm.title"
-                      class="px-6 text-xs border-2 rounded shadow-sm  border-amarillo"
+                      class="
+                        px-6
+                        text-xs
+                        border-2
+                        rounded
+                        shadow-sm
+                        border-amarillo
+                      "
                     />
                   </div>
                   <div class="mt-6">
@@ -172,19 +215,30 @@
                   </div>
                   <div class="mt-6">
                     <Link
-                      class="inline-flex items-center px-6 py-2 mr-6 text-xs font-medium tracking-widest text-white transition bg-red-500 rounded-md  hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25"
+                      class="
+                        inline-flex
+                        items-center
+                        px-6
+                        py-2
+                        mr-6
+                        text-xs
+                        font-medium
+                        tracking-widest
+                        text-white
+                        transition
+                        bg-red-500
+                        rounded-md
+                        hover:bg-gray-700
+                        active:bg-gray-900
+                        disabled:opacity-25
+                      "
                       :href="route('advancedTitle')"
                       >Cancelar</Link
                     >
-                    <button
-                      class="inline-flex items-center px-6 py-2 text-xs font-medium tracking-widest text-white transition rounded-md  bg-azul hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25"
-                      type="submit"
-                    >
-                      Guardar
-                    </button>
+                    <jet-submit-btn type="submit"> Guardar </jet-submit-btn>
                   </div>
                 </form>
-                <br/>
+                <br />
               </div>
             </div>
           </div>
@@ -197,6 +251,7 @@
 <script>
 import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
+import JetSubmitBtn from "@/Jetstream/JetSubmitBtn.vue";
 export default {
   props: {
     basic: String,
@@ -240,6 +295,7 @@ export default {
     AppLayout,
     Head,
     Link,
+    JetSubmitBtn,
   },
 };
 </script>

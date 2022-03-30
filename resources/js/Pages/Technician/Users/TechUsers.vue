@@ -50,7 +50,7 @@
               <div>
                 <Link
                   class="font-medium"
-                  :href="route('technicianUsersProfile')"
+                  :href="route('technicianUsersProfile', studentsUser.id)"
                 >
                   <jet-arrow-next-svg />
                 </Link>

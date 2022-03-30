@@ -1,6 +1,6 @@
 <template>
   <app-layout title="Dashboard">
-    <div>
+    <div v-for="index in student" :key="index.id">
       <div class="absolute mt-2 ms-2">
         <Link class="font-medium" :href="route('technicianUsers')">
           <svg
@@ -27,26 +27,27 @@
           src="https://randomuser.me/api/portraits/women/81.jpg"
         />
       </center>
-      <jet-title>Ana</jet-title>
-    </div>
-    <Link class="font-medium" :href="route('techUserBasic')">
+      <jet-title>{{ index.name }}</jet-title>
+    
+    <Link class="font-medium" :href="route('techUserBasic', index.id)">
       <jet-card>
         <jet-basic-svg />
         <h1 class="text-xl font-bold text-center">Tareas Básicas</h1>
       </jet-card>
     </Link>
-    <Link class="font-medium" :href="route('techUserInstrumental')">
+    <Link class="font-medium" :href="route('techUserInstrumental', index.id)">
       <jet-card>
         <jet-instrumental-svg />
         <h1 class="text-xl font-bold text-center">Tareas Instrumentales</h1>
       </jet-card>
     </Link>
-    <Link class="font-medium" :href="route('techUserAdvanced')">
+    <Link class="font-medium" :href="route('techUserAdvanced', index.id)">
       <jet-card>
         <jet-advanced-svg />
         <h1 class="text-xl font-bold text-center">Tareas Avanzadas</h1>
       </jet-card>
     </Link>
+    </div>
   </app-layout>
 </template>
 <script>
@@ -58,6 +59,9 @@ import JetInstrumentalSvg from "@/Jetstream/InstrumentalSvg.vue";
 import JetAdvancedSvg from "@/Jetstream/AdvancedSvg.vue";
 import JetTitle from "@/Jetstream/Title.vue";
 export default {
+  props: {
+    student:Array,
+  },
   components: {
     AppLayout,
     Head,

@@ -39,51 +39,45 @@ class TechnicianUserController extends Controller
         }
     }
 
-    public function technicianUsersProfile()
+    public function technicianUsersProfile($id)
     {
         try {
-            $studentsUsers = [];
+            $student = User::where('id', $id)->get();
 
-            $user = auth()->user();
-
-            $technicianId = Technician::where('user_id', $user->id)->value('id');
-
-            $students = Student::where('technician_id', $technicianId)->get();
-
-            foreach ($students as $student) {
-                $userId = User::where('id', $student->user_id)->value('id');
-                $user = User::find($userId);
-                array_push($studentsUsers, $user);
-            }
-
-            return Inertia::render('Technician/Users/TechUsersProfile');
+            return Inertia::render('Technician/Users/TechUsersProfile', compact('student'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
     }
 
-    public function techUserBasic()
+    public function techUserBasic($id)
     {
         try {
-            return Inertia::render('Technician/Users/TechUserBasic');
+            $student = User::where('id', $id)->get();
+
+            return Inertia::render('Technician/Users/TechUserBasic', compact('student'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
     }
 
-    public function techUserInstrumental()
+    public function techUserInstrumental($id)
     {
         try {
-            return Inertia::render('Technician/Users/TechUserInstrumental');
+            $student = User::where('id', $id)->get();
+
+            return Inertia::render('Technician/Users/TechUserInstrumental', compact('student'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
     }
 
-    public function techUserAdvanced()
+    public function techUserAdvanced($id)
     {
         try {
-            return Inertia::render('Technician/Users/TechUserAdvanced');
+            $student = User::where('id', $id)->get();
+
+            return Inertia::render('Technician/Users/TechUserAdvanced', compact('student'));
         } catch (Exception $error) {
             return $error->getMessage();
         }

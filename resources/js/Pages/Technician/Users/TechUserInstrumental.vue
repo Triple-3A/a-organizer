@@ -1,5 +1,6 @@
 <template>
   <app-layout title="Dashboard">
+    <div v-for="index in student" :key="index.id">
     <Link class="font-medium" :href="route('technicianUsersProfile')">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -24,8 +25,10 @@
           <jet-title class="mt-4">
             Tareas Instrumentales del usuario
           </jet-title>
+          <jet-title class="mt-4"> {{ index.name }} </jet-title>
         </div>
       </div>
+    </div>
     </div>
   </app-layout>
 </template>
@@ -36,6 +39,9 @@ import { Head, Link } from "@inertiajs/inertia-vue3";
 import JetCreateBtn from "@/Jetstream/CreateBtn.vue";
 import JetTitle from "@/Jetstream/Title.vue";
 export default {
+  props: {
+    student:Array,
+  },
   components: {
     AppLayout,
     Head,
