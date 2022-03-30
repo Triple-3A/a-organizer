@@ -40,13 +40,13 @@
 
               <div class="flex items-center justify-center">
                 <div class="mt-6">
-                  <jet-cancel-btn
-                    class="mr-4"
-                    :href="route('basicTitle')"
-                  ></jet-cancel-btn>
-                  <jet-submit-btn class="ml-4" type="submit">
+                  <jet-submit-btn class="mr-4" type="submit">
                     Guardar
                   </jet-submit-btn>
+                  <jet-cancel-btn
+                    class="ml-4"
+                    :href="route('basicTitle')"
+                  ></jet-cancel-btn>
                 </div>
               </div>
             </form>
@@ -103,13 +103,13 @@
                 </div>
                 <div class="flex items-center justify-center">
                   <div class="mt-6">
-                    <jet-cancel-btn
-                      class="mr-4"
-                      :href="route('instrumentalTitle')"
-                    ></jet-cancel-btn>
-                    <jet-submit-btn class="ml-4" type="submit">
+                    <jet-submit-btn class="mr-4" type="submit">
                       Guardar
                     </jet-submit-btn>
+                    <jet-cancel-btn
+                      class="ml-4"
+                      :href="route('instrumentalTitle')"
+                    ></jet-cancel-btn>
                   </div>
                 </div>
               </form>
@@ -210,14 +210,14 @@
               </div>
               <div class="flex items-center justify-center">
                 <div class="mt-6">
-                  <jet-cancel-btn
-                    class="mr-4"
-                    :href="route('advancedTitle')"
-                  ></jet-cancel-btn>
-
-                  <jet-submit-btn class="ml-4" type="submit">
+                  <jet-submit-btn class="mr-4" type="submit">
                     Guardar
                   </jet-submit-btn>
+                  
+                  <jet-cancel-btn
+                    class="ml-4"
+                    :href="route('advancedTitle')"
+                  ></jet-cancel-btn>
                 </div>
               </div>
             </form>
