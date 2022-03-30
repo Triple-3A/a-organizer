@@ -9,7 +9,7 @@ do .env
 line 14 put the BD name
 
 php artisan key:generate
-php artisan migrate:fresh --seeds
+php artisan migrate:fresh --seed
 
 
 
