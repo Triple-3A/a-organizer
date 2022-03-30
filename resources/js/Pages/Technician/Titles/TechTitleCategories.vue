@@ -30,17 +30,26 @@
         Inicio</Link
       >
     </div>
-      <h1 class="mb-6 text-xl font-semibold text-center text-azul">
-        Categoria de Tareas
-      </h1>
-      <p class="mb-6 font-medium text-center text-gray-800">
-        Estas son tus tareas predeterminadas
-      </p>
-    
+    <h1 class="mb-6 text-xl font-semibold text-center text-azul">
+      Categoria de Tareas
+    </h1>
+    <p class="mb-6 font-medium text-center text-gray-800">
+      Estas son tus tareas predeterminadas
+    </p>
 
     <div class="w-3/4 mx-auto lg:w-2/5">
       <div
-        class="flex items-center justify-center px-10 py-6 mb-12 border-4  rounded-xl border-amarillo"
+        class="
+          flex
+          items-center
+          justify-center
+          px-10
+          py-6
+          mb-12
+          border-4
+          rounded-xl
+          border-amarillo
+        "
       >
         <div class="rounded-lg">
           <Link class="font-medium" :href="route('basicTitle')">
@@ -67,37 +76,58 @@
     </div>
 
     <div class="w-3/4 mx-auto lg:w-2/5">
-        <div
-          class="flex items-center justify-center px-10 py-6 mb-12 border-4  itemsflex rounded-xl border-amarillo"
-        >
-          <div class="rounded-lg">
-            <Link class="font-medium" :href="route('instrumentalTitle')">
-              <center>
-                <svg
-                  class="w-16 h-16 mb-4 text-azul"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-              </center>
-              <h1 class="text-xl font-bold text-center">
-                Tareas Instrumentales
-              </h1></Link
-            >
-          </div>
+      <div
+        class="
+          flex
+          items-center
+          justify-center
+          px-10
+          py-6
+          mb-12
+          border-4
+          itemsflex
+          rounded-xl
+          border-amarillo
+        "
+      >
+        <div class="rounded-lg">
+          <Link class="font-medium" :href="route('instrumentalTitle')">
+            <center>
+              <svg
+                class="w-16 h-16 mb-4 text-azul"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+            </center>
+            <h1 class="text-xl font-bold text-center">
+              Tareas Instrumentales
+            </h1></Link
+          >
         </div>
+      </div>
     </div>
 
     <div class="w-3/4 mx-auto lg:w-2/5">
       <div
-        class="flex items-center justify-center px-10 py-6 mb-12 border-4  rounded-xl border-amarillo"
+        class="
+          flex
+          items-center
+          justify-center
+          px-10
+          py-6
+          mb-12
+          border-4
+          rounded-xl
+          border-amarillo
+        "
       >
         <div class="rounded-lg">
           <Link class="font-medium" :href="route('advancedTitle')">

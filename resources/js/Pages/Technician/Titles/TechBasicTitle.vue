@@ -30,13 +30,12 @@
         Categorias de tareas</Link
       >
     </div>
-
-    <div class="flex justify-around py-6 object-right">
+    <div class="flex justify-around py-6">
       <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="overflow-hidden">
           <Link :href="route('basicTitle/create')">
             <svg
-              class="float-right h-14 w-14 text-white bg-rojo"
+              class="float-right text-white h-14 w-14 bg-rojo"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -52,14 +51,12 @@
               <line x1="12" y1="9" x2="12" y2="15" />
             </svg>
           </Link>
-
           <div class="flex items-center justify-center">
-            <!-- <div class="p-10 bg-white rounded-lg"> -->
+            <div class="p-10 bg-white rounded-lg">
               <jet-create-btn class="text-xl font-bold text-azul" />
               <h1 class="text-xl font-bold text-azul">Tareas Básicas</h1>
             </div>
           </div>
-
           <div v-for="basic in basics" :key="basic.id">
             <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
               <div class="flex items-center justify-start p-4 rounded-lg">
@@ -82,15 +79,11 @@
                     <path d="M12 4a2 2 0 0 0 2 -2a2 2 0 0 0 -2 2" />
                   </svg>
                 </div>
-
                 <div class="px-8"></div>
-
                 <div class="flex flex-row">
                   <h1 class="ml-12 text-xl font-bold">{{ basic.title }}</h1>
                 </div>
-
                 <div class="px-16"></div>
-
                 <Link
                   as="button"
                   type="button"
@@ -118,10 +111,9 @@
           </div>
         </div>
       </div>
-    <!-- </div> -->
+    </div>
   </app-layout>
 </template>
-
 <script>
 import CreateBtn from "@/Jetstream/CreateBtn.vue";
 import AppLayout from "@/Layouts/NavBar.vue";
