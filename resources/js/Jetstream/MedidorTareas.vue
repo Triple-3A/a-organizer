@@ -7,7 +7,7 @@
         </div>
         <div>
             <div class="w-full bg-white h-4 rounded-full">
-                <div class="bg-azul" style="width: 25%"></div>
+                <div class="bg-azul w-1/4"></div>
             </div>
         </div>
 
