@@ -53,10 +53,10 @@ Route::middleware(['auth:sanctum', 'verified', 'technician'])->group(function ()
     Route::resource('advancedTitle', AdvancedTitleController::class, ['only' => ['index', 'create', 'store', 'destroy']])->names(['index' => 'advancedTitle', 'create' => 'advancedTitle/create', 'store' => 'advancedTitle/store', 'destroy' => 'advancedTitle/delete']);
 
     Route::get('/technicianUsers', [TechnicianUserController::class, 'index'])->name('technicianUsers');
-    Route::get('/technicianUsersProfile', [TechnicianUserController::class, 'technicianUsersProfile'])->name('technicianUsersProfile');
-    Route::get('/techUserBasic', [TechnicianUserController::class, 'techUserBasic'])->name('techUserBasic');
-    Route::get('/techUserInstrumental', [TechnicianUserController::class, 'techUserInstrumental'])->name('techUserInstrumental');
-    Route::get('/techUserAdvanced', [TechnicianUserController::class, 'techUserAdvanced'])->name('techUserAdvanced');
+    Route::get('/technicianUsersProfile/{id}', [TechnicianUserController::class, 'technicianUsersProfile'])->name('technicianUsersProfile');
+    Route::get('/techUserBasic/{id}', [TechnicianUserController::class, 'techUserBasic'])->name('techUserBasic');
+    Route::get('/techUserInstrumental/{id}', [TechnicianUserController::class, 'techUserInstrumental'])->name('techUserInstrumental');
+    Route::get('/techUserAdvanced/{id}', [TechnicianUserController::class, 'techUserAdvanced'])->name('techUserAdvanced');
 });
 
 Route::middleware(['auth:sanctum', 'verified', 'student'])->group(function () {

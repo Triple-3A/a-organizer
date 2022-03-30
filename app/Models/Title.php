@@ -20,8 +20,4 @@ class Title extends Model
         return $this->belongsToMany(Task::class);
     }
 
-    public function advancedtitles()
-    {
-        return $this->belongsToMany(AdvancedTitle::class);
-    }
 }

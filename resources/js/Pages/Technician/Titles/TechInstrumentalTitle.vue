@@ -31,56 +31,31 @@
       >
     </div>
 
-    <div class="py-6 flex justify-around">
+    <div class="flex justify-around py-6">
       <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="overflow-hidden">
-          <Link :href="route('instrumentalTitle/create')">
-            <svg
-              class="float-right h-14 w-14 text-white bg-rojo"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" />
-              <circle cx="12" cy="12" r="9" />
-              <line x1="9" y1="12" x2="15" y2="12" />
-              <line x1="12" y1="9" x2="12" y2="15" />
-            </svg>
-          </Link>
-
-          <div class="flex items-center justify-center">
-            <div class="p-10 bg-white rounded-lg">
-              <h1 class="text-xl text-azul font-bold">Tareas Instrumentales</h1>
-            </div>
+          <div class="flex items-center justify-end">
+            <Link :href="route('instrumentalTitle/create')" type="button">
+              <jet-create-btn />
+            </Link> 
           </div>
 
+          <div class="mt-2 flex items-center justify-center">
+            <jet-title>Tareas Instrumentales</jet-title>
+          </div>
+
+
           <div v-for="instrumental in instrumentals" :key="instrumental.id">
-            <div class="flexrow border-4 rounded-lg mb-10 border-amarillo">
-              <div class="p-4 rounded-lg flex justify-start items-center">
+            <div class="mb-10 border-4 rounded-lg flexrow border-amarillo">
+              <div class="flex items-center justify-start p-4 rounded-lg">
                 <div>
-                  <svg
-                    class="h-16 w-16 text-azul"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <rect x="2" y="7" width="20" height="15" rx="2" ry="2" />
-                    <polyline points="17 2 12 7 7 2" />
-                  </svg>
+                  <jet-instrumental-title-svg />
                 </div>
 
                 <div class="px-8"></div>
 
                 <div class="flex flex-row">
-                  <h1 class="text-xl font-bold ml-12">
+                  <h1 class="ml-12 text-xl font-bold">
                     {{ instrumental.title }}
                   </h1>
                 </div>
@@ -93,21 +68,7 @@
                   method="delete"
                   :href="route('instrumentalTitle/delete', instrumental.id)"
                 >
-                  <svg
-                    class="h-8 w-8 text-rojo"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" />
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                  </svg>
+                  <jet-delete-btn />
                 </Link>
               </div>
             </div>
@@ -121,6 +82,10 @@
 <script>
 import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
+import JetDeleteBtn from "@/Jetstream/DeleteBtn.vue";
+import JetInstrumentalTitleSvg from "@/Jetstream/InstrumentalTitleSvg.vue";
+import JetCreateBtn from "@/Jetstream/CreateBtn.vue";
+import JetTitle from "@/Jetstream/Title.vue";
 export default {
   props: {
     instrumentals: Array,
@@ -129,6 +94,10 @@ export default {
     AppLayout,
     Head,
     Link,
+    JetDeleteBtn,
+    JetInstrumentalTitleSvg,
+    JetCreateBtn,
+    JetTitle,
   },
 };
 </script>

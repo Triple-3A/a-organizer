@@ -45,49 +45,157 @@
         </div>
       </div>
     </div>
+    <div>
+      <div
+        class="block border border-azul-500 md:border-none md:table-row"
+        v-for="tech in techs"
+        :key="tech.id"
+      >
+        <div
+          class="
+            block
+            p-2
+            font-bold
+            text-left
+            md:border md:border-azul-500 md:table-cell
+          "
+        >
+          {{ tech.name }}
+        </div>
+        <div
+          class="
+            block
+            p-2
+            font-bold
+            text-left
+            md:border md:border-azul-500 md:table-cell
+          "
+        >
+          {{ tech.email }}
+        </div>
+      </div>
+      <div class="block border border-azul-500 md:border-none md:table-row">
+        <div
+          class="
+            block
+            p-2
+            font-bold
+            text-left
+            md:border md:border-azul-500 md:table-cell
+          "
+          v-for="studentTech in studentTechs"
+          :key="studentTech.id"
+        >
+          <!-- {{studentTech}} -->
+          <div v-for="student in studentTech" :key="student.id">
+            {{ student.name }}
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="mt-3 dashboard_container">
       <table>
         <thead class="block md:table-header-group">
           <tr
-            class="absolute block border md:border-none md:table-row -top-full md:top-auto -left-full md:left-auto md:relative"
+            class="
+              absolute
+              block
+              border
+              md:border-none md:table-row
+              -top-full
+              md:top-auto
+              -left-full
+              md:left-auto md:relative
+            "
           >
             <th
-              class="block p-2 text-base font-bold text-left text-white bg-amarillo md:border md:border-white md:table-cell"
+              class="
+                block
+                p-2
+                text-base
+                font-bold
+                text-left text-white
+                bg-amarillo
+                md:border md:border-white md:table-cell
+              "
             >
               Técnico
             </th>
             <th
-              class="block p-2 text-base font-bold text-left text-white bg-amarillo md:border md:border-white md:table-cell"
+              class="
+                block
+                p-2
+                text-base
+                font-bold
+                text-left text-white
+                bg-amarillo
+                md:border md:border-white md:table-cell
+              "
             >
               Email
             </th>
             <th
-              class="block p-2 text-base font-bold text-white bg-amarillo md:border md:border-white md:table-cell"
+              class="
+                block
+                p-2
+                text-base
+                font-bold
+                text-white
+                bg-amarillo
+                md:border md:border-white md:table-cell
+              "
             >
               Usuarios Asignados
             </th>
           </tr>
         </thead>
-        <tbody class="block md:table-row-group">
+        <tbody
+          v-for="array in arrayAll"
+          :key="array.id"
+          class="block md:table-row-group"
+        >
           <tr
             class="block border border-azul-500 md:border-none md:table-row"
-            v-for="tech in techs"
+            v-for="tech in array[0]"
             :key="tech.id"
           >
             <td
-              class="block p-2 font-bold text-left md:border md:border-azul-500 md:table-cell"
-            >{{tech.name}}
+              class="
+                block
+                p-2
+                font-bold
+                text-left
+                md:border md:border-azul-500 md:table-cell
+              "
+            >
+              {{ tech.name }}
             </td>
-            <td class="block p-2 text-left md:border md:border-azul-500 md:table-cell"></td>
-            <td class="block p-2 md:border md:border-azul-500 md:table-cell">
-                            <div v-for="studentTech in studentTechs"
-                                :key="studentTech.id" >
-                                <!-- {{studentTech}} -->
-                                <p v-for="student in studentTech"
-                                :key="student.id">{{student.name}}</p>
-                            </div>
-                        </td>
+            <td
+              class="
+                block
+                p-2
+                font-bold
+                text-left
+                md:border md:border-azul-500 md:table-cell
+              "
+            >
+              {{ tech.email }}
+            </td>
+
+            <td
+              class="
+                block
+                p-2
+                font-bold
+                text-left
+                md:border md:border-azul-500 md:table-cell
+              "
+            >
+              <p v-for="std in array[1]" :key="std.id">
+                {{ std.name }}
+              </p>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -100,8 +208,7 @@ import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 export default {
   props: {
-    techs: Array,
-    studentTechs:Array,
+    arrayAll: Array,
   },
   components: {
     AppLayout,
