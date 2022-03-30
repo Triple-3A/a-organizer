@@ -18,8 +18,7 @@
         <jet-arrow-back-svg>Categorias de tareas</jet-arrow-back-svg></Link
       >
     </div>
-
-    <div class="flex justify-around py-6 object-right">
+    <div class="flex justify-around py-6">
       <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div>
           <div class="flex items-center justify-end">
@@ -31,24 +30,19 @@
           <div class="mt-2 flex items-center justify-center">
             <jet-title>Tareas Básicas</jet-title>
           </div>
-
           <div v-for="basic in basics" :key="basic.id">
             <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
               <div class="flex items-center justify-start p-4 rounded-lg">
                 <div>
                   <jet-basic-title-svg />
                 </div>
-
                 <div class="px-8"></div>
-
                 <div class="flex flex-row">
                   <h1 class="ml-12 text-xl font-bold">
                     {{ basic.title }}
                   </h1>
                 </div>
-
                 <div class="px-16"></div>
-
                 <Link
                   as="button"
                   type="button"
@@ -65,7 +59,6 @@
     </div>
   </app-layout>
 </template>
-
 <script>
 import CreateBtn from "@/Jetstream/CreateBtn.vue";
 import AppLayout from "@/Layouts/NavBar.vue";
