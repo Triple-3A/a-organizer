@@ -31,6 +31,47 @@
       >
     </div>
 
+    <div
+      v-if="showAlert"
+      v-show="isShow"
+      class="
+        bg-white
+        border border-azul
+        drop-shadow-md
+        border
+        radius
+        mx-auto
+        text-azul
+        mt-3
+        px-4
+        py-3
+        w-1/2
+      "
+      role="alert"
+    >
+      <p class="font-bold">Asignación realizada con éxito</p>
+      <p class="text-xs">
+        Puedes continuar o acceder a todas las asignaciones pulsando en
+        "Asignados"
+      </p>
+      <button
+        @click="isShow = !isShow"
+        class="absolute top-0 bottom-0 right-0 px-4 py-3"
+      >
+        <svg
+          class="fill-current h-4 w-4 mt-0.5 text-azul"
+          role="button"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+        >
+          <title>Close</title>
+          <path
+            d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"
+          />
+        </svg>
+      </button>
+    </div>
+
     <div class="flex justify-center my-4 mt-10 text-lg">
       <div class="flex justify-center my-4">
         <p>
@@ -64,7 +105,7 @@
               rounded
               select
               w-96
-            " 
+            "
           >
             <option class="text-xs font-bold bg-orange-100" value="">
               Técnicos
@@ -118,8 +159,8 @@
         </div>
       </div>
       <div className="mt-4 flex flex-col justify-center items-center">
-        <jet-submit-btn>Asignar</jet-submit-btn >
-        </div>
+        <jet-submit-btn>Asignar</jet-submit-btn>
+      </div>
     </form>
   </app-layout>
 </template>
@@ -138,7 +179,7 @@ export default {
     AppLayout,
     JetSubmitBtn,
     Head,
-    Link
+    Link,
   },
   data() {
     return {
@@ -146,12 +187,14 @@ export default {
         technician: null,
         student: null,
       },
+      isShow: true,
     };
   },
 
   methods: {
     submit() {
       this.$inertia.post(route("assignTechToStudent"), this.form);
+      this.showAlert = true;
     },
   },
 };

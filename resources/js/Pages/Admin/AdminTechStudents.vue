@@ -86,7 +86,6 @@
           v-for="studentTech in studentTechs"
           :key="studentTech.id"
         >
-          <!-- {{studentTech}} -->
           <div v-for="student in studentTech" :key="student.id">
             {{ student.name }}
           </div>
@@ -191,7 +190,7 @@
               "
             >
               <p v-for="std in array[1]" :key="std.id">
-                - p{{ std.name }} - ({{std.email}})
+                - {{ std.name }} - ({{std.email}})
               </p>
             </td>
           </tr>

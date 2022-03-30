@@ -26,7 +26,7 @@
           
           <jet-title>Tareas Instrumentales</jet-title>
 
-          <div class="transform transition duration-500 hover:scale-110" v-for="instrumental in instrumentals" :key="instrumental.id">
+          <div v-for="instrumental in instrumentals" :key="instrumental.id">
             <div class="mb-10 border-4 rounded-lg flexrow border-amarillo ">
               <div class="flex items-center justify-start p-4 rounded-lg">
                 <div>
