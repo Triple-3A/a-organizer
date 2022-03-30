@@ -1192,6 +1192,9 @@ select {
 .w-11\/12 {
   width: 91.666667%;
 }
+.w-1\/4 {
+  width: 25%;
+}
 .w-96 {
   width: 24rem;
 }
@@ -1553,9 +1556,6 @@ select {
 }
 .p-4 {
   padding: 24px;
-}
-.p-3 {
-  padding: 16px;
 }
 .px-4 {
   padding-left: 24px;

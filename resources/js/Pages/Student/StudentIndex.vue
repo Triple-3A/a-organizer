@@ -27,13 +27,16 @@
             <h1 class="font-poppings text-xxl font-bold text-azul pb-4">¡QUEREMOS VERTE!</h1>
             <h2 class="font-poppings text-lg font-bold text-amarillo text-center">Elige una de estas imágenes</h2>
             <!-- contenedooooooooooooooooooooor imagenesssssssssssssssss -->
-            <div class="flex justify-center align-middle">
+            <div class="flex flex-col justify-center align-middle">
                 <div class="flex flex-row flex-wrap justify-center align-middle max-w-sm p-12 bg-white">
                     <jet-user-avatar/>
                     <jet-user-avatar/>
                     <jet-user-avatar/>
                     <jet-user-avatar/>
                 </div>
+
+                    <jet-button-regular class="font-poppings text-base font-semibold">Siguiente</jet-button-regular>
+
             </div>
           </div>
         </div>
@@ -49,12 +52,15 @@
 import AppLayout from "@/Layouts/NavBar.vue";
 import JetOwnInput from "@/Jetstream/OwnInput.vue";
 import JetUserAvatar from "@/jetstream/UserAvatar.vue";
+import JetButtonRegular from "@/jetstream/ButtonRegular.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
+
 export default {
   components: {
     AppLayout,
     JetOwnInput,
     JetUserAvatar,
+    JetButtonRegular,
     Head,
     Link,
   },
