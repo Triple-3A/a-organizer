@@ -22236,7 +22236,8 @@ __webpack_require__.r(__webpack_exports__);
       this.form.roleId = 4;
     },
     submit: function submit() {
-      this.form.post(this.route("reassignRole")); // window.location.reload();
+      this.form.post(this.route("reassignRole"));
+      window.location.reload();
     }
   }
 }));
@@ -24955,7 +24956,7 @@ var _hoisted_1 = {
   "class": "w-3/4 mx-auto lg:w-2/5"
 };
 var _hoisted_2 = {
-  "class": "flex items-center justify-center px-10 py-6 mb-12 border-4 rounded-xl border-amarillo"
+  "class": "flex items-center bg-white justify-center px-10 py-6 mb-12 border-4 rounded-xl border-amarillo drop-shadow-md hover:drop-shadow-2xl"
 };
 var _hoisted_3 = {
   "class": "rounded-lg"
@@ -27821,14 +27822,19 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNod
 
 var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
-    "class": "font-bold font-poppings text-xl text-azul leading-tight mb-3 mx-auto"
-  }, " Control de roles ", -1
+    "class": "font-bold text-xl text-azul leading-tight mb-3 mx-auto"
+  }, " Control de Roles ", -1
   /* HOISTED */
   );
 });
 
+<<<<<<< HEAD
 var _hoisted_5 = {
   "class": "mb-4"
+=======
+var _hoisted_6 = {
+  "class": "mt-4 mb-4"
+>>>>>>> 2d01a70a2f1e6f98c17af7c9b2b3302c0eeeb877
 };
 
 var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
@@ -28058,11 +28064,19 @@ var _hoisted_13 = /*#__PURE__*/_withScopeId(function () {
 var _hoisted_14 = {
   "class": "block p-2 font-bold text-left md:border md:border-azul-500 md:table-cell"
 };
+<<<<<<< HEAD
 var _hoisted_15 = {
   "class": "block p-2 font-bold text-left md:border md:border-azul-500 md:table-cell"
 };
 var _hoisted_16 = {
   "class": "block p-2 font-bold text-left md:border md:border-azul-500 md:table-cell"
+=======
+var _hoisted_16 = {
+  "class": "block p-2 text-left md:border md:border-azul-500 md:table-cell"
+};
+var _hoisted_17 = {
+  "class": "block p-2 text-center md:border md:border-azul-500 md:table-cell"
+>>>>>>> 2d01a70a2f1e6f98c17af7c9b2b3302c0eeeb877
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_jet_arrow_back_svg = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-arrow-back-svg");
@@ -28145,7 +28159,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_16, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(array[1], function (std) {
             return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", {
               key: std.id
-            }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(std.name), 1
+            }, " - p" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(std.name) + " - (" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(std.email) + ") ", 1
             /* TEXT */
             );
           }), 128
@@ -31580,6 +31594,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
       })]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.instrumentals, function (instrumental) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+          "class": "transform transition duration-500 hover:scale-110",
           key: instrumental.id
         }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_instrumental_title_svg)]), _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(instrumental.title), 1
         /* TEXT */

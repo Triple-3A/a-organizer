@@ -11,12 +11,12 @@
             </div>
 
             <h2
-                class="font-bold font-poppings text-xl text-azul leading-tight mb-3 mx-auto"
+                class="font-bold text-xl text-azul leading-tight mb-3 mx-auto"
             >
-                Control de roles
+                Control de Roles
             </h2>
 
-            <table class="mb-4">
+            <table class="mt-4 mb-4">
                 <thead>
                     <tr class="mb-4">
                         <td
