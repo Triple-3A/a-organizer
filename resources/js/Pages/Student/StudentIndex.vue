@@ -5,7 +5,7 @@
 
 
         
-        <section id="pantalla-1-nombre-user">
+<!--         <section id="pantalla-1-nombre-user">
         <div class="flex flex-col items-center justify-center">
           <div class="px-10 bg-white rounded-lg flex flex-col items-center justify-center">
 
@@ -31,10 +31,10 @@
           <div class="p-10 bg-white rounded-lg flex flex-col items-center justify-center">
 
             <jet-title>¡QUEREMOS VERTE!</jet-title>
-            <jet-sub-title>Elige una de estas imágenes</jet-sub-title>
+            <jet-sub-title>Elige una de estas imágenes</jet-sub-title>-->
 
             <!-- contenedooooooooooooooooooooor imagenesssssssssssssssss -->
-            <div class="flex flex-col justify-center align-middle">
+            <!--<div class="flex flex-col justify-center align-middle">
                 <div class="flex flex-row flex-wrap justify-center align-middle max-w-sm p-12 bg-white">
                     <jet-user-avatar/>
                     <jet-user-avatar/>
@@ -46,7 +46,7 @@
             </div>
           </div>
         </div>
-        </section>
+        </section> -->
 
 
 
@@ -64,6 +64,37 @@
             <div class="flex justify-start w-8/12">
               <h2 class="font-poppings text-lg font-base text-noNegro text-left mb-4">Estas son tus tareas para hoy</h2>
           </div>
+
+            <!-- ATENCIÓN CAGADA INCOMINGGGGGGGGGGGG --- PELIGRO PELIGROOOOOOOO-->
+
+            <!--cambiar argumentos en v-for -->
+            <!-- cómo pasamos las tareas creadas y asignadas por el tutor? -->
+            <div v-for="task in tasks" :key="basic.id">
+            <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
+              <div class="flex items-center justify-start p-4 rounded-lg">
+                <div>
+                  <jet-basic-title-svg />
+                </div>
+                <div class="px-8"></div>
+                <div class="flex flex-row">
+                  <h1 class="ml-12 text-xl font-bold">
+                    {{ basic.title }}
+                  </h1>
+                </div>
+                <div class="px-16"></div>
+                <Link
+                  as="button"
+                  type="button"
+                  method="delete"
+                  :href="route('basicTitle/delete', basic.id)"
+                >
+                  <jet-delete-btn />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+
           </div>
         </div>
         </section>
@@ -87,6 +118,7 @@ import JetMedidorTareas from "@/jetstream/MedidorTareas.vue";
 export default {
     props: {
     username: String,
+    tasks: Array,
   },
   components: {
     AppLayout,
