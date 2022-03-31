@@ -72,10 +72,12 @@
       </button>
     </div>
 
-    <div class="flex justify-center my-4 mt-10 text-lg">
+    <div class="flex justify-center my-4 mt-8 text-lg">
       <div class="flex justify-center my-4">
         <p>
-          <span class="text-lg font-medium">Asignación técnico</span>
+          <span class="text-lg text-noNegro font-medium"
+            >Asignación técnico</span
+          >
           /
           <Link
             type="submit"
@@ -87,31 +89,35 @@
       </div>
     </div>
     <form @submit.prevent="submit" class="mb-6">
-      <div className="mt-10 flex justify-center">
+      <div className="mt-4 flex justify-center">
         <div class="mb-3 w-250">
-          <label forInput="role" value="Role" />
+          <label
+            class="display: block text-noNegro font-bold"
+            forInput="role"
+            value="Role"
+            >Selección de Técnico</label
+          >
           <select
             v-model="form.technician"
             name="technician"
             :value="technician"
             id="technician"
             class="
-              px-3
+              pl-2
+              pr-9
               py-1.5
               bg-amarillo
-              text-base
+              text-base text-noNegro
               font-bold
               mt-1
               rounded
               select
               w-96
+              truncate
             "
           >
-            <option class="text-xs font-bold bg-orange-100" value="">
-              Técnicos
-            </option>
             <option
-              class="text-xs bg-orange-100 text-bold"
+              class="text-xs bg-white text-bold"
               v-for="technician in technicians"
               :value="technician"
               :selected="technician.id"
@@ -125,29 +131,33 @@
 
       <div className="mt-3 flex justify-center">
         <div class="mb-3 w-250">
-          <label forInput="role" value="Role" />
+          <label
+            class="display: block text-noNegro font-bold"
+            forInput="role"
+            value="Role"
+            >Selección de Usuarios</label
+          >
           <select
             v-model="form.student"
             name="student"
             id="student"
             :value="student"
             class="
-              px-3
+              pl-2
+              pr-9
               py-1.5
               bg-amarillo
-              text-base
+              text-noNegro text-base
               font-bold
               mt-1
               rounded
               select
               w-96
+              truncate
             "
           >
-            <option class="text-xs font-bold bg-orange-100" value="">
-              Usuarios
-            </option>
             <option
-              class="text-xs bg-orange-100"
+              class="text-xs bg-white"
               v-for="student in students"
               :key="student.id"
               :selected="student"
@@ -158,7 +168,7 @@
           </select>
         </div>
       </div>
-      <div className="mt-4 flex flex-col justify-center items-center">
+      <div className="mt-5 flex flex-col justify-center items-center">
         <jet-submit-btn>Asignar</jet-submit-btn>
       </div>
     </form>
@@ -187,7 +197,7 @@ export default {
         technician: null,
         student: null,
       },
-      isShow: true,
+      isShow: false,
     };
   },
 
@@ -195,6 +205,7 @@ export default {
     submit() {
       this.$inertia.post(route("assignTechToStudent"), this.form);
       this.showAlert = true;
+      this.isShow = true;
     },
   },
 };
