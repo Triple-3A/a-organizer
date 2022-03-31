@@ -23744,6 +23744,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _jetstream_ButtonRegular_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/jetstream/ButtonRegular.vue */ "./resources/js/jetstream/ButtonRegular.vue");
 /* harmony import */ var _jetstream_SubmitBtn_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/jetstream/SubmitBtn.vue */ "./resources/js/jetstream/SubmitBtn.vue");
 /* harmony import */ var _jetstream_MedidorTareas_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/jetstream/MedidorTareas.vue */ "./resources/js/jetstream/MedidorTareas.vue");
+/* harmony import */ var _Jetstream_Card_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @/Jetstream/Card.vue */ "./resources/js/Jetstream/Card.vue");
+
 
 
 
@@ -23767,6 +23769,7 @@ __webpack_require__.r(__webpack_exports__);
     JetButtonRegular: _jetstream_ButtonRegular_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
     JetMedidorTareas: _jetstream_MedidorTareas_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
     JetSubmitBtn: _jetstream_SubmitBtn_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
+    JetCard: _Jetstream_Card_vue__WEBPACK_IMPORTED_MODULE_9__["default"],
     Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
     Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Link
   }
@@ -30534,32 +30537,6 @@ var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_8 = {
-  "class": "flex mb-10 border-4 rounded-lg row border-amarillo"
-};
-var _hoisted_9 = {
-  "class": "flex items-center justify-start p-4 rounded-lg"
-};
-
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "px-8"
-}, null, -1
-/* HOISTED */
-);
-
-var _hoisted_11 = {
-  "class": "flex flex-row"
-};
-var _hoisted_12 = {
-  "class": "ml-12 text-xl font-bold"
-};
-
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "px-16"
-}, null, -1
-/* HOISTED */
-);
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_jet_title = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-title");
 
@@ -30567,11 +30544,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_jet_medidor_tareas = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-medidor-tareas");
 
-  var _component_jet_basic_title_svg = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-basic-title-svg");
-
-  var _component_jet_delete_btn = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-delete-btn");
-
-  var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
+  var _component_jet_card = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-card");
 
   var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
 
@@ -30595,29 +30568,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         _: 1
         /* STABLE */
 
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" componente resumen tareas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_medidor_tareas), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" contenedooooooooooooooooooooor imagenesssssssssssssssss "), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ATENCIÓN CAGADA INCOMINGGGGGGGGGGGG --- PELIGRO PELIGROOOOOOOO"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("cambiar argumentos en v-for "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" cómo pasamos las tareas creadas y asignadas por el tutor? "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.tasks, function (task) {
-        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
-          key: _ctx.basic.id
-        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_basic_title_svg)]), _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.basic.title), 1
-        /* TEXT */
-        )]), _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-          as: "button",
-          type: "button",
-          method: "delete",
-          href: _ctx.route('basicTitle/delete', _ctx.basic.id)
-        }, {
-          "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_delete_btn)];
-          }),
-          _: 1
-          /* STABLE */
-
-        }, 8
-        /* PROPS */
-        , ["href"])])])]);
-      }), 128
-      /* KEYED_FRAGMENT */
-      ))])])])])])];
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" componente resumen tareas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_medidor_tareas), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" contenedooooooooooooooooooooor imagenesssssssssssssssss "), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ATENCIÓN CAGADA INCOMINGGGGGGGGGGGG --- PELIGRO PELIGROOOOOOOO"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("  PROBANDO LA CARD "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_card), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("cambiar argumentos en v-for "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" cómo pasamos las tareas creadas y asignadas por el tutor? "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<div v-for=\"task in tasks\" :key=\"basic.id\">\n            <div class=\"flex mb-10 border-4 rounded-lg row border-amarillo\">\n              <div class=\"flex items-center justify-start p-4 rounded-lg\">\n                <div>\n                  <jet-card/>\n                </div>\n                <div class=\"px-8\"></div>\n                <div class=\"flex flex-row\">\n                  <h1 class=\"ml-12 text-xl font-bold\">\n                    {{ basic.title }}\n                  </h1>\n                </div>\n                <div class=\"px-16\"></div>\n                <Link\n                  as=\"button\"\n                  type=\"button\"\n                  method=\"delete\"\n                  :href=\"route('basicTitle/delete', basic.id)\"\n                >\n                  <jet-delete-btn />\n                </Link>\n              </div>\n            </div>\n          </div> ")])])])])])];
     }),
     _: 1
     /* STABLE */

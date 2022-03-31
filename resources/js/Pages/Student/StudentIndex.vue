@@ -67,13 +67,19 @@
 
             <!-- ATENCIÓN CAGADA INCOMINGGGGGGGGGGGG --- PELIGRO PELIGROOOOOOOO-->
 
+
+            <!--  PROBANDO LA CARD -->
+            <jet-card/>
+
+
             <!--cambiar argumentos en v-for -->
             <!-- cómo pasamos las tareas creadas y asignadas por el tutor? -->
-            <div v-for="task in tasks" :key="basic.id">
+
+            <!--<div v-for="task in tasks" :key="basic.id">
             <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
               <div class="flex items-center justify-start p-4 rounded-lg">
                 <div>
-                  <jet-basic-title-svg />
+                  <jet-card/>
                 </div>
                 <div class="px-8"></div>
                 <div class="flex flex-row">
@@ -92,7 +98,7 @@
                 </Link>
               </div>
             </div>
-          </div>
+          </div> -->
 
 
           </div>
@@ -114,6 +120,7 @@ import JetUserAvatar from "@/jetstream/UserAvatar.vue";
 import JetButtonRegular from "@/jetstream/ButtonRegular.vue";
 import JetSubmitBtn from "@/jetstream/SubmitBtn.vue";
 import JetMedidorTareas from "@/jetstream/MedidorTareas.vue";
+import JetCard from "@/Jetstream/Card.vue";
 
 export default {
     props: {
@@ -129,6 +136,7 @@ export default {
     JetButtonRegular,
     JetMedidorTareas,
     JetSubmitBtn,
+    JetCard,
     
     Head,
     Link,
