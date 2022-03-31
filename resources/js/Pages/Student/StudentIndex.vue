@@ -37,7 +37,7 @@
                     <jet-user-avatar/>
                     <jet-user-avatar/>
                 </div>
-
+               <!-- mierdaaaaaaaa-->
                     <jet-button-regular class="font-poppings text-base font-semibold">Siguiente</jet-button-regular>
 
             </div>
