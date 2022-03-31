@@ -21,52 +21,16 @@
       <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="overflow-hidden">
           <Link :href="route('basicTitle/create')" type="button">
-            <svg
-              class="float-right text-white h-14 w-14 bg-rojo"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" />
-              <circle cx="12" cy="12" r="9" />
-              <line x1="9" y1="12" x2="15" y2="12" />
-              <line x1="12" y1="9" x2="12" y2="15" />
-            </svg>
+            <jet-create-btn />
           </Link>
 
-          <div class="flex items-center justify-center">
-            <div class="p-10 bg-white rounded-lg">
-              <jet-create-btn class="text-xl font-bold text-azul"/>
-              <h1 class="text-xl font-bold text-azul">Tareas Básicas</h1>
-            </div>
-          </div>
+          <jet-title>Tareas Básicas</jet-title>
 
           <div v-for="basic in basics" :key="basic.id">
             <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
               <div class="flex items-center justify-start p-4 rounded-lg">
                 <div>
-                  <svg
-                    class="w-16 h-16 text-azul"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" />
-                    <path
-                      d="M9 7c-3 0-4 3-4 5.5 0 3 2 7.5 4 7.5 1.088-.046 1.679-.5 3-.5 1.312 0 1.5.5 3 .5s4-3 4-5c-.028-.01-2.472-.403-2.5-3-.019-2.17 2.416-2.954 2.5-3-1.023-1.492-2.951-1.963-3.5-2-1.433-.111-2.83 1-3.5 1-.68 0-1.9-1-3-1z"
-                    />
-                    <path d="M12 4a2 2 0 0 0 2 -2a2 2 0 0 0 -2 2" />
-                  </svg>
+                  <jet-basic-title-svg />
                 </div>
 
                 <div class="px-8"></div>
@@ -83,21 +47,7 @@
                   method="delete"
                   :href="route('basicTitle/delete', basic.id)"
                 >
-                  <svg
-                    class="w-8 h-8 text-red-500"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" />
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                  </svg>
+                  <jet-delete-btn />
                 </Link>
               </div>
             </div>
@@ -109,9 +59,13 @@
 </template>
 
 <script>
-import CreateBtn from "@/Jetstream/CreateBtn.vue" 
+import CreateBtn from "@/Jetstream/CreateBtn.vue";
 import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
+import JetDeleteBtn from "@/Jetstream/DeleteBtn.vue";
+import JetBasicTitleSvg from "@/Jetstream/BasicTitleSvg.vue";
+import JetCreateBtn from "@/Jetstream/CreateBtn.vue";
+import JetTitle from "@/Jetstream/Title.vue";
 export default {
   props: {
     basics: Array,
@@ -121,6 +75,10 @@ export default {
     AppLayout,
     Head,
     Link,
+    JetDeleteBtn,
+    JetBasicTitleSvg,
+    JetCreateBtn,
+    JetTitle,
   },
 };
 </script>

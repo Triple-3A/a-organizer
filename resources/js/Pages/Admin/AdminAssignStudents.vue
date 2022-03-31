@@ -64,7 +64,7 @@
               rounded
               select
               w-96
-            "
+            " 
           >
             <option class="text-xs font-bold bg-orange-100" value="">
               Técnicos
@@ -118,15 +118,8 @@
         </div>
       </div>
       <div className="mt-4 flex flex-col justify-center items-center">
-        <button 
-        type="submit"
-          class="px-5 mt-3 ml-4 bg-azul"
-        >
-          Asignar
-        </button>
-        <!-- <jet-button class="mt-4 ml-4 px-7 bg-azul"> Aceptar </jet-button>
-        <jet-button class="mt-4 ml-4 bg-rojo"> Cancelar </jet-button> -->
-      </div>
+        <jet-submit-btn>Asignar</jet-submit-btn >
+        </div>
     </form>
   </app-layout>
 </template>
@@ -134,7 +127,7 @@
 <script>
 import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
-import JetButton from "@/Jetstream/Button.vue";
+import JetSubmitBtn from "@/Jetstream/SubmitBtn.vue";
 
 export default {
   props: {
@@ -143,7 +136,7 @@ export default {
   },
   components: {
     AppLayout,
-    JetButton,
+    JetSubmitBtn,
     Head,
     Link
   },
