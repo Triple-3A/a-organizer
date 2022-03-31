@@ -15,15 +15,19 @@ class InstrumentalTitleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         try {
             $instrumentals = [];
             $instrumentalTasks = Title::where('type', 'instrumentales')->get();
+            $instrumentalTasks->load('icons');
 
             foreach ($instrumentalTasks as $instrumentalTask) {
                 array_push($instrumentals, $instrumentalTask);
             }
+
+            // dd($instrumentalTask); 
 
             return Inertia::render('Technician/Titles/TechInstrumentalTitle', compact('instrumentals'));
         } catch (Exception $error) {
@@ -36,6 +40,7 @@ class InstrumentalTitleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
         try {
@@ -52,6 +57,7 @@ class InstrumentalTitleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
         try {
@@ -59,7 +65,8 @@ class InstrumentalTitleController extends Controller
                 'title' => 'required',
                 'type' => 'required',
             ]);
-            Title::create($request->all());
+            $newTitle = Title::create($request->all());
+            $newTitle->icons()->attach(13);
             return Redirect::route('instrumentalTitle');
         } catch (Exception $error) {
             return $error->getMessage();
@@ -72,6 +79,7 @@ class InstrumentalTitleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function show($id)
     {
         //
@@ -95,6 +103,7 @@ class InstrumentalTitleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
         //
@@ -106,6 +115,7 @@ class InstrumentalTitleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    
     public function destroy($id)
     {
         try {

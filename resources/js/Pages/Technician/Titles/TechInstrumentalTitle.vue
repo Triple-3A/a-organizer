@@ -38,7 +38,9 @@
             <div class="mb-10 border-4 rounded-lg flexrow border-amarillo ">
               <div class="flex items-center justify-start p-4 rounded-lg">
                 <div>
-                  <jet-instrumental-title-svg />
+                  <div v-for="icon in instrumental.icons" :key="icon.id">
+                    <img :src="icon.icon" alt="Icono de tarea" />
+                  </div>
                 </div>
 
                 <div class="px-8"></div>

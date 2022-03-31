@@ -23,6 +23,7 @@ class AdvancedTitleController extends Controller
             $games = [];
 
             $titleTasks = Title::all();
+            $titleTasks->load('icons');
 
             foreach ($titleTasks as $titleTask) {
                 if ($titleTask->type == 'educación') {
@@ -68,7 +69,8 @@ class AdvancedTitleController extends Controller
                 'title' => 'required',
                 'type' => 'required',
             ]);
-            Title::create($request->all());
+            $newTitle = Title::create($request->all());
+            $newTitle->icons()->attach(1);
             return Redirect::route('advancedTitle');
         } catch (Exception $error) {
             return $error->getMessage();

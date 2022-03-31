@@ -21,13 +21,13 @@ class BasicTitleController extends Controller
         try {
             $basics = [];
             $basicTasks = Title::where('type', 'básicos')->get();
-            $basicTasks->load('icons', 'tasks');
+            $basicTasks->load('icons');
 
             foreach ($basicTasks as $basicTask) {
                 array_push($basics, $basicTask);
             }
 
-            // dd($basics);
+            // dd($basicTask); 
 
             return Inertia::render('Technician/Titles/TechBasicTitle', compact('basics'));
         } catch (Exception $error) {
@@ -64,7 +64,8 @@ class BasicTitleController extends Controller
                 'title' => 'required',
                 'type' => 'required',
             ]);
-            Title::create($request->all());
+            $newTitle = Title::create($request->all());
+            $newTitle->icons()->attach(2);
             return Redirect::route('basicTitle');
         } catch (Exception $error) {
             return $error->getMessage();

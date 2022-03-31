@@ -10,13 +10,13 @@
     </div>
     <Link class="font-medium" :href="route('categories')">
       <jet-card>
-        <jet-titles-categories-svg />
+        <img src="images/tasks.png" alt="Icono de tareas avanzadas" />
         <h1 class="text-xl font-bold text-center">Gestión de tareas</h1>
       </jet-card>
     </Link>
     <Link class="font-medium" :href="route('technicianUsers')">
       <jet-card>
-        <jet-users-categories-svg />
+        <img src="images/users.png" alt="Icono de tareas avanzadas" />
         <h1 class="text-xl font-bold text-center">Gestión de usuarios</h1>
       </jet-card>
     </Link>

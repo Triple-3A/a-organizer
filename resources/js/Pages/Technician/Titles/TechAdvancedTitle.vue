@@ -37,7 +37,9 @@
             <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
               <div class="flex items-center justify-start p-4 rounded-lg">
                 <div>
-                  <jet-advanced-title-svg />
+                  <div v-for="icon in education.icons" :key="icon.id">
+                    <img :src="icon.icon" alt="Icono de tarea" />
+                  </div>
                 </div>
 
                 <div class="px-8"></div>
@@ -64,7 +66,9 @@
             <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
               <div class="flex items-center justify-start p-4 rounded-lg">
                 <div>
-                  <jet-advanced-title-svg />
+                  <div v-for="icon in job.icons" :key="icon.id">
+                    <img :src="icon.icon" alt="Icono de tarea" />
+                  </div>
                 </div>
 
                 <div class="px-8"></div>
@@ -91,7 +95,9 @@
             <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
               <div class="flex items-center justify-start p-4 rounded-lg">
                 <div>
-                  <jet-advanced-title-svg />
+                  <div v-for="icon in game.icons" :key="icon.id">
+                    <img :src="icon.icon" alt="Icono de tarea" />
+                  </div>
                 </div>
 
                 <div class="px-8"></div>

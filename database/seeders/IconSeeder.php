@@ -70,7 +70,7 @@ class IconSeeder extends Seeder
         ));
 
         $messagging = Icon::create(array(
-            'icon' => "images/messagging.png",
+            'icon' => "images/messaging.png",
         ));
 
         $pan = Icon::create(array(
