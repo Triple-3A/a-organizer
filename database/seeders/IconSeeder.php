@@ -17,27 +17,100 @@ class IconSeeder extends Seeder
      */
     public function run()
     {
-        Icon::factory(10)->create();
-
-        for ($id = 1; $id <= 10; $id++) {
-            DB::table('icon_title')->insert(
-                [
-                    'icon_id' => Icon::select('id')->orderByRaw("RAND()")->first()->id,
-                    'title_id' => Title::select('id')->where('id', $id)->first()->id,
-                ]
-            );
-        }
+        $advanced = Icon::create(array(
+            'icon' => "images/advanced.png",
+        ));
 
         $basic = Icon::create(array(
             'icon' => "images/basic.png",
+        ));
+
+        $beach = Icon::create(array(
+            'icon' => "images/beach.png",
+        ));
+
+        $bedroom = Icon::create(array(
+            'icon' => "images/bedroom.png",
+        ));
+
+        $brush = Icon::create(array(
+            'icon' => "images/brush.png",
+        ));
+
+        $community = Icon::create(array(
+            'icon' => "images/community.png",
+        ));
+
+        $compass = Icon::create(array(
+            'icon' => "images/compass.png",
+        ));
+
+        $deal = Icon::create(array(
+            'icon' => "images/deal.png",
+        ));
+
+        $dog = Icon::create(array(
+            'icon' => "images/dog.png",
+        ));
+
+        $finances = Icon::create(array(
+            'icon' => "images/finances.png",
+        ));
+
+        $health = Icon::create(array(
+            'icon' => "images/health.png",
+        ));
+
+        $home = Icon::create(array(
+            'icon' => "images/home.png",
         ));
 
         $instrumental = Icon::create(array(
             'icon' => "images/instrumental.png",
         ));
 
-        $advanced = Icon::create(array(
-            'icon' => "images/advanced.png",
+        $messagging = Icon::create(array(
+            'icon' => "images/messagging.png",
+        ));
+
+        $pan = Icon::create(array(
+            'icon' => "images/pan.png",
+        ));
+
+        $play = Icon::create(array(
+            'icon' => "images/play.png",
+        ));
+
+        $relationship = Icon::create(array(
+            'icon' => "images/relationship.png",
+        ));
+
+        $salad = Icon::create(array(
+            'icon' => "images/salad.png",
+        ));
+
+        $studies = Icon::create(array(
+            'icon' => "images/studies.png",
+        ));
+
+        $toilet = Icon::create(array(
+            'icon' => "images/toilet.png",
+        ));
+
+        $traffic = Icon::create(array(
+            'icon' => "images/traffic.png",
+        ));
+
+        $work = Icon::create(array(
+            'icon' => "images/work.png",
+        ));
+
+        $baby = Icon::create(array(
+            'icon' => "images/baby.png",
+        ));
+
+        $shoe = Icon::create(array(
+            'icon' => "images/shoe.png",
         ));
     }
 }

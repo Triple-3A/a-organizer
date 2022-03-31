@@ -18,7 +18,7 @@ class TitleFactory extends Factory
     {
         return [
             'title' => $this->faker->randomElement(['Pera', 'Plátano']),
-            'type' => $this->faker->randomElement(['básicos', 'instrumentales', 'educación', 'trabajo', 'juego']),
+            'type' => $this->faker->randomElement(['básicos', 'instrumentales', 'educación', 'trabajo', 'juego', 'tiempolibre']),
         ];
     }
 }
