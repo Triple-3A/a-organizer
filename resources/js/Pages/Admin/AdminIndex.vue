@@ -11,7 +11,7 @@
             </div>
 
             <h2
-                class="font-bold text-xl text-azul leading-tight mb-3 mx-auto"
+                class="font-bold text-lg mt-8 text-azul leading-tight mb-3 mx-auto"
             >
                 Control de Roles
             </h2>
@@ -21,14 +21,14 @@
                     <tr class="mb-4">
                         <td
                             colspan="3"
-                            class="bg-amarillo text-white font-poppings font-bold pl-5"
+                            class="bg-amarillo text-white font-poppings text-base font-bold pl-5"
                         >
                             Técnicos
                         </td>
                     </tr>
                 </thead>
                 <tr
-                    class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto mt-2"
+                    class="text-noNegro text-xs font-medium flex flex-row justify-between mb-4 w-11/12 mx-auto mt-2"
                 >
                     <div>
                         <td>Nombre</td>
@@ -54,14 +54,14 @@
                     <tr class="mb-4">
                         <td
                             colspan="3"
-                            class="bg-amarillo text-white font-poppings font-bold pl-5"
+                            class="bg-amarillo text-white font-poppings font-bold text-base pl-5"
                         >
                             Usuarios
                         </td>
                     </tr>
                 </thead>
                 <tr
-                    class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto mt-2"
+                    class="text-noNegro text-xs font-medium flex flex-row justify-between mb-4 w-11/12 mx-auto mt-2"
                 >
                     <div>
                         <td>Nombre</td>
@@ -87,14 +87,14 @@
                     <tr class="mb-4">
                         <td
                             colspan="3"
-                            class="bg-amarillo text-white font-poppings font-bold pl-5"
+                            class="bg-amarillo text-white font-poppings text-base font-bold pl-5"
                         >
                             Pendiente
                         </td>
                     </tr>
                 </thead>
                 <tr
-                    class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto mt-2"
+                    class="text-noNegro text-xs font-medium flex flex-row justify-between mb-4 w-11/12 mx-auto mt-2"
                 >
                     <div>
                         <td>Nombre</td>
