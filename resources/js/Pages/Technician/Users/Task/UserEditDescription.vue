@@ -4,7 +4,7 @@
       <div class="flex items-center justify-center">
         <div class="p-10 bg-white rounded-lg flex items-center justify-center">
           <div class="flex items-center justify-center">
-            <div v-if="basic == 'básicos'">
+            <div v-if="basic == 'básico'">
               <form @submit.prevent="basicSubmit">
                 <div class="text-center">
                   <label for="basic">Escribe una nueva tarea: </label>
