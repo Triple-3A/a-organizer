@@ -30,12 +30,12 @@
               </Link>
             </div>
             <jet-title class="mt-4"> Tareas Básicas del usuario </jet-title>
-            <div v-for="array in all" :key="array.id">
+            <div class="mb-10" v-for="array in all" :key="array.id">
               <div v-for="task in array[0]" :key="task.id">
                 <div
                   v-for="title in array[1]"
                   :key="title.id"
-                  class="flex mb-10 border-4 rounded-lg row border-amarillo"
+                  class="flex border-4 rounded-lg row border-amarillo"
                 >
                   <div class="flex items-center justify-start p-4 rounded-lg">
                     <div>
@@ -48,12 +48,45 @@
                       </h1>
                     </div>
                     <div class="px-16"></div>
+                    <Link
+                      :href="route('techUserBasic/createDescription', task.id)"
+                      type="button"
+                    >
+                      <jet-create-btn />
+                    </Link>
                     <Link :href="route('techUserBasic/deleteTask', task.id)">
                       <jet-delete-btn />
                     </Link>
                   </div>
                 </div>
               </div>
+              <div
+                  v-for="description in array[2]"
+                  :key="description.id"
+                  class="flex border-4 rounded-lg row border-amarillo"
+                >
+                  <div class="flex items-center justify-start p-2 rounded-lg">
+                    <div>
+                      <jet-basic-description-svg />
+                    </div>
+                    <div class="px-8"></div>
+                    <div class="flex flex-row">
+                      <h1 class="ml-12 text-xl font-bold">
+                        {{ description.description }}
+                      </h1>
+                    </div>
+                    <div class="px-16"></div>
+                    <Link
+                      :href="route('techUserBasic/editDescription', description.id)"
+                      type="button"
+                    >
+                    <jet-edit-btn />
+                    </Link>
+                    <Link :href="route('techUserBasic/deleteDescription', description.id)">
+                      <jet-delete-btn />
+                    </Link>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
@@ -67,6 +100,7 @@ import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 import JetCreateBtn from "@/Jetstream/CreateBtn.vue";
 import JetDeleteBtn from "@/Jetstream/DeleteBtn.vue";
+import JetEditBtn from "@/Jetstream/EditBtn.vue";
 import JetTitle from "@/Jetstream/Title.vue";
 import JetArrowBackSvg from "@/Jetstream/ArrowBackSvg.vue";
 import JetBasicTitleSvg from "@/Jetstream/BasicTitleSvg.vue";
@@ -81,6 +115,7 @@ export default {
     Link,
     JetCreateBtn,
     JetDeleteBtn,
+    JetEditBtn,
     JetTitle,
     JetArrowBackSvg,
     JetBasicTitleSvg,

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Description;
 use App\Models\Task;
 use App\Models\Title;
 use App\Models\User;
@@ -29,8 +30,10 @@ class UserBasicTaskController extends Controller
                 $arrayGroup = [];
                 $taskArray = [];
                 $titlesArray = [];
+                $descriptionsArray = [];
 
                 $titles = $task->titles()->where('type', 'básicos')->get();
+                $descriptions = $task->descriptions()->get();
 
                 foreach ($titles as $title) {
                     if (!empty($title)) {
@@ -38,10 +41,20 @@ class UserBasicTaskController extends Controller
                         array_push($arrayGroup, $taskArray);
                         array_push($titlesArray, $title);
                         array_push($arrayGroup, $titlesArray);
+
+                        foreach ($descriptions as $description) {
+                            if (!empty($description)) {
+                                array_push($descriptionsArray, $description);
+                            }
+                        }
+                        array_push($arrayGroup, $descriptionsArray);
                         array_push($all, $arrayGroup);
                     }
                 }
+
+                // dd($descriptions);
             }
+
             // dd($all);
 
             return Inertia::render('Technician/Users/TechUserBasic', compact('student', 'all'));
@@ -77,6 +90,31 @@ class UserBasicTaskController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createDescription($task)
+    {
+        try {
+            $basic = 'básico';
+            $basicTask = Task::find($task);
+
+            $userCollection = $basicTask->users()->get();
+
+            $id = 0;
+
+            foreach ($userCollection as $user) {
+                $id = $user->id;
+            }
+
+            return Inertia::render('Technician/Users/Task/UserCreateDescription', compact('basic', 'id', 'basicTask'));
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -106,6 +144,34 @@ class UserBasicTaskController extends Controller
     }
 
     /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function storeDescription(Request $request)
+    {
+        try {
+
+            $requested = $request->all();
+
+            $studentId = $requested['id'];
+            $task = $requested['basicTask'];
+            $taskId = $task['id'];
+            $descriptionString =  array_slice($requested, 2);
+
+            $description = Description::create($descriptionString);
+
+            $description->tasks()->attach($taskId);
+
+            return Redirect::route('techUserBasic', $studentId);
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
+    }
+
+
+    /**
      * Display the specified resource.
      *
      * @param  int  $id
@@ -122,9 +188,26 @@ class UserBasicTaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editDescription($id)
     {
-        //
+        try {
+            $descriptionId = $id;
+            $description = Description::find($id);
+            $userId = 0;
+            $taskCollection = $description->tasks()->get();
+            foreach ($taskCollection as $task) {
+                $userCollection = $task->users()->get();
+
+                foreach ($userCollection as $user) {
+                    $userId = $user->id;
+                }
+            }
+            // dd($description);
+
+            return Inertia::render('Technician/Users/Task/UserEditDescription', compact('userId', 'description'));
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**
@@ -134,9 +217,21 @@ class UserBasicTaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updateDescription(Request $request)
     {
-        //
+        try {
+            $requested = $request->all();
+            $id = $requested['userId'];
+            $descriptionId = $requested['descriptionId'];
+            $descriptionString =  array_slice($requested, 2);
+            $description = Description::find($descriptionId);
+
+            $description->update($descriptionString);
+
+            return Redirect::route('techUserBasic', compact('id'));
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**
@@ -167,8 +262,23 @@ class UserBasicTaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function deleteDescription($description)
+    public function deleteDescription($id)
     {
-        dd($description);
+        try {
+            $description = Description::find($id);
+            $userId = 0;
+            $taskCollection = $description->tasks()->get();
+            foreach ($taskCollection as $task) {
+                $userCollection = $task->users()->get();
+
+                foreach ($userCollection as $user) {
+                    $userId = $user->id;
+                }
+            }
+            $description->delete();
+            return Redirect::route('techUserBasic', $userId);
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 }

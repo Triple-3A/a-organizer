@@ -12,7 +12,7 @@
                   <div class="block max-w-sm p-12 bg-white">
                     <input
                       placeholder="Introduce la tarea"
-                      id="title"
+                      id="description"
                       v-model="basicForm.description"
                       class="
                         text-center
@@ -34,7 +34,7 @@
                     </jet-submit-btn>
                     <jet-cancel-btn
                       class="ml-4"
-                      :href="route('techUserBasic', id)"
+                      :href="route('techUserBasic', userId)"
                       >Cancelar</jet-cancel-btn
                     >
                   </div>
@@ -57,9 +57,8 @@ import JetSubmitBtn from "@/Jetstream/SubmitBtn.vue";
 
 export default {
   props: {
-    id: Number,
-    basic: String,
-    basicTask: Array,
+    userId: Number,
+    description: Array,
   },
   components: {
     AppLayout,
@@ -71,19 +70,18 @@ export default {
   },
   data() {
     return {
-      id: this.id,
-      basicTask: this.basicTask,
+      userId: this.userId,
       basicForm: {
-        id: this.id,
-        basicTask: this.basicTask,
-        description: null,
+        userId: this.userId,
+        descriptionId: this.$props.description.id,
+        description: this.$props.description.description,
       },
     };
   },
   methods: {
     basicSubmit() {
       this.$inertia.post(
-        route("techUserBasic/storeDescription"),
+        route("techUserBasic/updateDescription"),
         this.basicForm
       );
     },
