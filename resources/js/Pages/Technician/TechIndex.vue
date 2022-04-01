@@ -1,94 +1,35 @@
 <template>
   <app-layout title="Dashboard">
     <div class="mt-16">
-      <h1 class="mb-6 text-xl font-semibold text-center text-azul">
+      <jet-title>
         ¡Hola {{ username }}!
-      </h1>
+      </jet-title>
       <h2 class="mb-6 font-medium text-center text-gray-800">
         Selecciona que quieres hacer
       </h2>
     </div>
-    <div class="mx-auto w-3/4 lg:w-2/5">
-      <div
-        class="
-          flex
-          items-center
-          justify-center
-          py-6
-          px-10
-          mb-12
-          border-4
-          rounded-xl
-          border-amarillo
-        "
-      >
-        <div class="rounded-lg">
-          <Link class="font-medium" :href="route('categories')">
-            <center>
-              <svg
-                class="w-16 h-16 text-azul mb-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-            </center>
-            <h1 class="text-xl font-bold text-center">
-              Gestión de tareas
-            </h1></Link
-          >
-        </div>
-      </div>
-    </div>
-
-    <div class="mx-auto w-3/4 lg:w-2/5">
-      <div
-        class="
-          flex
-          items-center
-          justify-center
-          py-6
-          px-10
-          mb-12
-          border-4
-          rounded-xl
-          border-amarillo
-        "
-      >
-        <div class="rounded-lg">
-          <Link class="font-medium" :href="route('technicianUsers')">
-            <center>
-              <svg
-                class="w-16 h-16 text-azul mb-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-                />
-              </svg>
-            </center>
-            <h1 class="text-xl font-bold text-center">Gestión de usuarios</h1>
-          </Link>
-        </div>
-      </div>
-    </div>
+    <Link class="font-medium" :href="route('categories')">
+      <jet-card>
+        <jet-titles-categories-svg />
+        <h1 class="text-xl font-bold text-center">Gestión de tareas</h1>
+      </jet-card>
+    </Link>
+    <Link class="font-medium" :href="route('technicianUsers')">
+      <jet-card>
+        <jet-users-categories-svg />
+        <h1 class="text-xl font-bold text-center">Gestión de usuarios</h1>
+      </jet-card>
+    </Link>
   </app-layout>
 </template>
 
 <script>
 import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
+import JetCard from "@/Jetstream/Card.vue";
+import JetTitlesCategoriesSvg from "@/Jetstream/TitlesCategoriesSvg.vue";
+import JetUsersCategoriesSvg from "@/Jetstream/UsersCategoriesSvg.vue";
+import JetTitle from "@/Jetstream/Title.vue";
 export default {
   props: {
     username: String,
@@ -97,6 +38,10 @@ export default {
     AppLayout,
     Head,
     Link,
+    JetCard,
+    JetTitlesCategoriesSvg,
+    JetUsersCategoriesSvg,
+    JetTitle,
   },
 };
 </script>

@@ -16,25 +16,28 @@ class StudentController extends Controller
     public function index()
     {
         try {
-            return Inertia::render('Student/StudentIndex');
+            return Inertia::render('Student/StudentName');
+
+            //if else por si ya puso su nickname y profile photo
+
         } catch (Exception $error) {
             return $error->getMessage();
         }
     }
-    
-    public function studentPhoto()
+
+    public function studentPic(){
+
+        try {
+            return Inertia::render('Student/StudentPic');
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
+    }
+
+    public function studentTasks()
     {
         try {
-            return Inertia::render('Student/StudentPhoto');
-        } catch (Exception $error) {
-            return $error->getMessage();
-        }
-    }
-
-    public function studentTasks(){
-
-        try {
-            return Inertia::render('Student/StudentTasks');
+            return Inertia::render('Student/StudentIndex');
         } catch (Exception $error) {
             return $error->getMessage();
         }

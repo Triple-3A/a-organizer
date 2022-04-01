@@ -11,6 +11,7 @@ class RoutesTest extends TestCase
      *
      * @return void
      */
+
     public function test_login()
     {
         $response = $this->get('/login');
@@ -47,7 +48,7 @@ class RoutesTest extends TestCase
     public function test_admin_reassign_role()
     {
         $response = $this->withSession(['role' => 'admin'])
-                         ->get('/reassignRole')
+                         ->post('/reassignRole')
                          ->assertStatus(302);
 
     }
@@ -63,7 +64,7 @@ class RoutesTest extends TestCase
     public function test_admin_assignTechToStudent()
     {
         $response = $this->withSession(['role' => 'admin'])
-                         ->get('/assignTechToStudent')
+                         ->post('/assignTechToStudent')
                          ->assertStatus(302);
 
     }
@@ -109,10 +110,58 @@ class RoutesTest extends TestCase
 
     }
 
+    public function test_technician_basic_create()
+    {
+        $response = $this->withSession(['role' => 'technician'])
+                         ->get('/basicTitle/create')
+                         ->assertStatus(302);
+
+    }
+
+    public function test_technician_basic_store()
+    {
+        $response = $this->withSession(['role' => 'technician'])
+                         ->delete('/basicTitle/store')
+                         ->assertStatus(302);
+
+    }
+
+    public function test_technician_basic_delete()
+    {
+        $response = $this->withSession(['role' => 'technician'])
+                         ->delete('/basicTitle/delete')
+                         ->assertStatus(302);
+
+    }
+
     public function test_technician_instrumental_title()
     {
         $response = $this->withSession(['role' => 'technician'])
-                         ->get('/insrumentalTitle')
+                         ->get('/instrumentalTitle')
+                         ->assertStatus(302);
+
+    }
+
+    public function test_technician_instrumental_create()
+    {
+        $response = $this->withSession(['role' => 'technician'])
+                         ->get('/instrumentalTitle/create')
+                         ->assertStatus(302);
+
+    }
+
+    public function test_technician_instrumental_store()
+    {
+        $response = $this->withSession(['role' => 'technician'])
+                         ->delete('/instrumentalTitle/store')
+                         ->assertStatus(302);
+
+    }
+
+    public function test_technician_instrumental_delete()
+    {
+        $response = $this->withSession(['role' => 'technician'])
+                         ->delete('/instrumentalTitle/delete')
                          ->assertStatus(302);
 
     }
@@ -125,10 +174,34 @@ class RoutesTest extends TestCase
 
     }
 
+    public function test_technician_advanced_create()
+    {
+        $response = $this->withSession(['role' => 'technician'])
+                         ->get('/advancedTitle/create')
+                         ->assertStatus(302);
+
+    }
+
+    public function test_technician_advanced_store()
+    {
+        $response = $this->withSession(['role' => 'technician'])
+                         ->delete('/advancedTitle/store')
+                         ->assertStatus(302);
+
+    }
+
+    public function test_technician_advanced_delete()
+    {
+        $response = $this->withSession(['role' => 'technician'])
+                         ->delete('/advancedTitle/delete')
+                         ->assertStatus(302);
+
+    }
+
     public function test_technician_users_profile()
     {
         $response = $this->withSession(['role' => 'technician'])
-                         ->get('/technicianUsersProfile')
+                         ->get('/technicianUsersProfile/1')
                          ->assertStatus(302);
 
     }
@@ -136,7 +209,7 @@ class RoutesTest extends TestCase
     public function test_technician_user_basic()
     {
         $response = $this->withSession(['role' => 'technician'])
-                         ->get('/techUserBasic')
+                         ->get('/techUserBasic/1')
                          ->assertStatus(302);
 
     }
@@ -144,7 +217,7 @@ class RoutesTest extends TestCase
     public function test_technician_user_instrumental()
     {
         $response = $this->withSession(['role' => 'technician'])
-                         ->get('/techUserInstrumental')
+                         ->get('/techUserInstrumental/1')
                          ->assertStatus(302);
 
     }
@@ -152,7 +225,7 @@ class RoutesTest extends TestCase
     public function test_technician_user_advanced()
     {
         $response = $this->withSession(['role' => 'technician'])
-                         ->get('/techUserAdvanced')
+                         ->get('/techUserAdvanced/1')
                          ->assertStatus(302);
 
     }
