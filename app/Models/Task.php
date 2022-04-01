@@ -22,11 +22,6 @@ class Task extends Model
         return $this->belongsToMany(Description::class);
     }
 
-    public function icons()
-    {
-        return $this->belongsToMany(Icon::class);
-    }
-
     public function titles()
     {
         return $this->belongsToMany(Title::class);

@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('icon_task', function (Blueprint $table) {
+        Schema::create('icon_title', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
 
             $table->unsignedBigInteger('icon_id');
-            $table->unsignedBigInteger('task_id');
+            $table->unsignedBigInteger('title_id');
 
             $table->foreign('icon_id')->references('id')->on('icons')->onDelete("cascade");
-            $table->foreign('task_id')->references('id')->on('tasks')->onDelete("cascade");
+            $table->foreign('title_id')->references('id')->on('titles')->onDelete("cascade");
         });
     }
 
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('icon_task');
+        Schema::dropIfExists('icon_title');
     }
 };
