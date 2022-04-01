@@ -69,7 +69,7 @@
 
 
             <!--  PROBANDO LA CARD -->
-            <jet-card/>
+            <jet-card class="w-8/12"></jet-card>
 
 
             <!--cambiar argumentos en v-for -->
