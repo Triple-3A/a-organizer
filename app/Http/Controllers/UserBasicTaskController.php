@@ -51,11 +51,7 @@ class UserBasicTaskController extends Controller
                         array_push($all, $arrayGroup);
                     }
                 }
-
-                // dd($descriptions);
             }
-
-            // dd($all);
 
             return Inertia::render('Technician/Users/TechUserBasic', compact('student', 'all'));
         } catch (Exception $error) {
@@ -98,9 +94,9 @@ class UserBasicTaskController extends Controller
     {
         try {
             $basic = 'básico';
-            $basicTask = Task::find($task);
+            $task = Task::find($task);
 
-            $userCollection = $basicTask->users()->get();
+            $userCollection = $task->users()->get();
 
             $id = 0;
 
@@ -108,7 +104,7 @@ class UserBasicTaskController extends Controller
                 $id = $user->id;
             }
 
-            return Inertia::render('Technician/Users/Task/UserCreateDescription', compact('basic', 'id', 'basicTask'));
+            return Inertia::render('Technician/Users/Task/UserCreateDescription', compact('basic', 'id', 'task'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -152,11 +148,9 @@ class UserBasicTaskController extends Controller
     public function storeDescription(Request $request)
     {
         try {
-
             $requested = $request->all();
-
             $studentId = $requested['id'];
-            $task = $requested['basicTask'];
+            $task = $requested['task'];
             $taskId = $task['id'];
             $descriptionString =  array_slice($requested, 2);
 
@@ -191,6 +185,7 @@ class UserBasicTaskController extends Controller
     public function editDescription($id)
     {
         try {
+            $basic = 'básico';
             $descriptionId = $id;
             $description = Description::find($id);
             $userId = 0;
@@ -202,9 +197,8 @@ class UserBasicTaskController extends Controller
                     $userId = $user->id;
                 }
             }
-            // dd($description);
 
-            return Inertia::render('Technician/Users/Task/UserEditDescription', compact('userId', 'description'));
+            return Inertia::render('Technician/Users/Task/UserEditDescription', compact('userId', 'description', 'basic'));
         } catch (Exception $error) {
             return $error->getMessage();
         }

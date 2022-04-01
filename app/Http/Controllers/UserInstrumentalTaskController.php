@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Description;
 use App\Models\Task;
 use App\Models\Title;
 use App\Models\User;
@@ -29,18 +30,24 @@ class UserInstrumentalTaskController extends Controller
                 $arrayGroup = [];
                 $taskArray = [];
                 $titlesArray = [];
+                $descriptionsArray = [];
 
                 $titles = $task->titles()->where('type', 'instrumentales')->get();
+                $descriptions = $task->descriptions()->get();
 
                 foreach ($titles as $title) {
                     if (!empty($title)) {
                         array_push($taskArray, $task);
                         array_push($arrayGroup, $taskArray);
-                        foreach ($titles as $title) {
-                            array_push($titlesArray, $title);
-                        }
-
+                        array_push($titlesArray, $title);
                         array_push($arrayGroup, $titlesArray);
+
+                        foreach ($descriptions as $description) {
+                            if (!empty($description)) {
+                                array_push($descriptionsArray, $description);
+                            }
+                        }
+                        array_push($arrayGroup, $descriptionsArray);
                         array_push($all, $arrayGroup);
                     }
                 }
@@ -79,6 +86,31 @@ class UserInstrumentalTaskController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createDescription($task)
+    {
+        try {
+            $instrumental = 'instrumental';
+            $task = Task::find($task);
+
+            $userCollection = $task->users()->get();
+
+            $id = 0;
+
+            foreach ($userCollection as $user) {
+                $id = $user->id;
+            }
+
+            return Inertia::render('Technician/Users/Task/UserCreateDescription', compact('instrumental', 'id', 'task'));
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -100,7 +132,33 @@ class UserInstrumentalTaskController extends Controller
 
             $title->tasks()->attach($task->id);
             $studentUser->tasks()->attach($task->id);
-           
+
+            return Redirect::route('techUserInstrumental', $studentId);
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function storeDescription(Request $request)
+    {
+        try {
+            $requested = $request->all();
+
+            $studentId = $requested['id'];
+            $task = $requested['task'];
+            $taskId = $task['id'];
+            $descriptionString =  array_slice($requested, 2);
+
+            $description = Description::create($descriptionString);
+
+            $description->tasks()->attach($taskId);
+
             return Redirect::route('techUserInstrumental', $studentId);
         } catch (Exception $error) {
             return $error->getMessage();
@@ -124,9 +182,26 @@ class UserInstrumentalTaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editDescription($id)
     {
-        //
+        try {
+            $instrumental = 'instrumental';
+            $descriptionId = $id;
+            $description = Description::find($id);
+            $userId = 0;
+            $taskCollection = $description->tasks()->get();
+            foreach ($taskCollection as $task) {
+                $userCollection = $task->users()->get();
+
+                foreach ($userCollection as $user) {
+                    $userId = $user->id;
+                }
+            }
+
+            return Inertia::render('Technician/Users/Task/UserEditDescription', compact('userId', 'description', 'instrumental'));
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**
@@ -136,9 +211,21 @@ class UserInstrumentalTaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updateDescription(Request $request)
     {
-        //
+        try {
+            $requested = $request->all();
+            $id = $requested['userId'];
+            $descriptionId = $requested['descriptionId'];
+            $descriptionString =  array_slice($requested, 2);
+            $description = Description::find($descriptionId);
+
+            $description->update($descriptionString);
+
+            return Redirect::route('techUserInstrumental', compact('id'));
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     /**
@@ -149,11 +236,11 @@ class UserInstrumentalTaskController extends Controller
      */
     public function deleteTask($id)
     {
-        try{
+        try {
             $task = Task::find($id);
             $userId = 0;
             $userCollection = $task->users()->get();
-            foreach($userCollection as $user){
+            foreach ($userCollection as $user) {
                 $userId = $user->id;
             }
             $task->delete();
@@ -169,8 +256,23 @@ class UserInstrumentalTaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function deleteDescription($description)
+    public function deleteDescription($id)
     {
-        dd($description);
+        try {
+            $description = Description::find($id);
+            $userId = 0;
+            $taskCollection = $description->tasks()->get();
+            foreach ($taskCollection as $task) {
+                $userCollection = $task->users()->get();
+
+                foreach ($userCollection as $user) {
+                    $userId = $user->id;
+                }
+            }
+            $description->delete();
+            return Redirect::route('techUserInstrumental', $userId);
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 }

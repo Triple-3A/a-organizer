@@ -30,7 +30,7 @@
               </Link>
             </div>
             <jet-title class="mt-4"> Tareas Básicas del usuario </jet-title>
-            <div class="mb-10" v-for="array in all" :key="array.id">
+            <!-- <div class="mb-10" v-for="array in all" :key="array.id">
               <div v-for="task in array[0]" :key="task.id">
                 <div
                   v-for="title in array[1]"
@@ -86,8 +86,8 @@
                       <jet-delete-btn />
                     </Link>
                   </div>
-                </div>
-            </div>
+                    </div>-->
+            <!-- </div> -->
           </div>
         </div>
       </div>

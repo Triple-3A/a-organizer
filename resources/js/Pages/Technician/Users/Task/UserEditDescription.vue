@@ -4,43 +4,125 @@
       <div class="flex items-center justify-center">
         <div class="p-10 bg-white rounded-lg flex items-center justify-center">
           <div class="flex items-center justify-center">
-            <form @submit.prevent="basicSubmit">
-              <div class="text-center">
-                <label for="advanced">Escribe una nueva tarea: </label>
-                <br />
-                <div class="flex justify-center">
-                  <div class="block max-w-sm p-12 bg-white">
-                    <input
-                      placeholder="Introduce la tarea"
-                      id="description"
-                      v-model="basicForm.description"
-                      class="
-                        text-center
-                        px-6
-                        text-xs
-                        border-2
-                        rounded
-                        shadow-sm
-                        border-amarillo
-                      "
-                    />
+            <div v-if="basic == 'básicos'">
+              <form @submit.prevent="basicSubmit">
+                <div class="text-center">
+                  <label for="basic">Escribe una nueva tarea: </label>
+                  <br />
+                  <div class="flex justify-center">
+                    <div class="block max-w-sm p-12 bg-white">
+                      <input
+                        placeholder="Introduce la tarea"
+                        id="description"
+                        v-model="basicForm.description"
+                        class="
+                          text-center
+                          px-6
+                          text-xs
+                          border-2
+                          rounded
+                          shadow-sm
+                          border-amarillo
+                        "
+                      />
+                    </div>
                   </div>
-                </div>
 
-                <div class="flex items-center justify-center">
-                  <div class="mt-6">
-                    <jet-submit-btn class="mr-4" type="submit">
-                      Guardar
-                    </jet-submit-btn>
-                    <jet-cancel-btn
-                      class="ml-4"
-                      :href="route('techUserBasic', userId)"
-                      >Cancelar</jet-cancel-btn
-                    >
+                  <div class="flex items-center justify-center">
+                    <div class="mt-6">
+                      <jet-submit-btn class="mr-4" type="submit">
+                        Guardar
+                      </jet-submit-btn>
+                      <jet-cancel-btn
+                        class="ml-4"
+                        :href="route('techUserBasic', userId)"
+                        >Cancelar</jet-cancel-btn
+                      >
+                    </div>
                   </div>
                 </div>
-              </div>
-            </form>
+              </form>
+            </div>
+
+            <div v-if="instrumental == 'instrumental'">
+              <form @submit.prevent="instrumentalSubmit">
+                <div class="text-center">
+                  <label for="instrumental">Escribe una nueva tarea: </label>
+                  <br />
+                  <div class="flex justify-center">
+                    <div class="block max-w-sm p-12 bg-white">
+                      <input
+                        placeholder="Introduce la tarea"
+                        id="description"
+                        v-model="instrumentalForm.description"
+                        class="
+                          text-center
+                          px-6
+                          text-xs
+                          border-2
+                          rounded
+                          shadow-sm
+                          border-amarillo
+                        "
+                      />
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-center">
+                    <div class="mt-6">
+                      <jet-submit-btn class="mr-4" type="submit">
+                        Guardar
+                      </jet-submit-btn>
+                      <jet-cancel-btn
+                        class="ml-4"
+                        :href="route('techUserInstrumental', userId)"
+                        >Cancelar</jet-cancel-btn
+                      >
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div v-if="advanced == 'avanzado'">
+              <form @submit.prevent="advancedSubmit">
+                <div class="text-center">
+                  <label for="advanced">Escribe una nueva tarea: </label>
+                  <br />
+                  <div class="flex justify-center">
+                    <div class="block max-w-sm p-12 bg-white">
+                      <input
+                        placeholder="Introduce la tarea"
+                        id="description"
+                        v-model="advancedForm.description"
+                        class="
+                          text-center
+                          px-6
+                          text-xs
+                          border-2
+                          rounded
+                          shadow-sm
+                          border-amarillo
+                        "
+                      />
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-center">
+                    <div class="mt-6">
+                      <jet-submit-btn class="mr-4" type="submit">
+                        Guardar
+                      </jet-submit-btn>
+                      <jet-cancel-btn
+                        class="ml-4"
+                        :href="route('techUserAdvanced', userId)"
+                        >Cancelar</jet-cancel-btn
+                      >
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -59,6 +141,9 @@ export default {
   props: {
     userId: Number,
     description: Array,
+    basic: String,
+    instrumental: String,
+    advanced: String,
   },
   components: {
     AppLayout,
@@ -76,6 +161,16 @@ export default {
         descriptionId: this.$props.description.id,
         description: this.$props.description.description,
       },
+      instrumentalForm: {
+        userId: this.userId,
+        descriptionId: this.$props.description.id,
+        description: this.$props.description.description,
+      },
+       advancedForm: {
+        userId: this.userId,
+        descriptionId: this.$props.description.id,
+        description: this.$props.description.description,
+      },
     };
   },
   methods: {
@@ -83,6 +178,18 @@ export default {
       this.$inertia.post(
         route("techUserBasic/updateDescription"),
         this.basicForm
+      );
+    },
+    instrumentalSubmit() {
+      this.$inertia.post(
+        route("techUserInstrumental/updateDescription"),
+        this.instrumentalForm
+      );
+    },
+    advancedSubmit() {
+      this.$inertia.post(
+        route("techUserAdvanced/updateDescription"),
+        this.advancedForm
       );
     },
   },
