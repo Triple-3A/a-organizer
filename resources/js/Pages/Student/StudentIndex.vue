@@ -2,9 +2,6 @@
   <app-layout title="Dashboard">
     <div class="mx-auto max-w-7xl py-12 sm:px-6 lg:px-8">
       <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
-
-
-        
 <!--         <section id="pantalla-1-nombre-user">
         <div class="flex flex-col items-center justify-center">
           <div class="px-10 bg-white rounded-lg flex flex-col items-center justify-center">
@@ -19,7 +16,7 @@
               <jet-own-input class="placeholder p-2 mb-6">
               </jet-own-input>
             </div>
-            <jet-submit-btn class="font-poppings text-base font-semibold text-center align-middle">Siguiente</jet-submit-btn>
+            <jet-btn class="font-poppings text-base font-semibold text-center align-middle">Siguiente</jet-btn>
           </div>
         </div>
         </section>
@@ -41,7 +38,7 @@
                     <jet-user-avatar/>
                     <jet-user-avatar/>
                 </div>
-                    <jet-submit-btn class="font-poppings text-base font-semibold text-center align-middle">Siguiente</jet-submit-btn>
+                    <jet-btn class="font-poppings text-base font-semibold text-center align-middle">Siguiente</jet-btn>
 
             </div>
           </div>
@@ -115,11 +112,10 @@ import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 import JetTitle from "@/Jetstream/Title.vue";
 import JetSubTitle from "@/Jetstream/SubTitle.vue";
-import JetOwnInput from "@/Jetstream/OwnInput.vue";
-import JetUserAvatar from "@/jetstream/UserAvatar.vue";
-import JetButtonRegular from "@/jetstream/ButtonRegular.vue";
-import JetSubmitBtn from "@/jetstream/SubmitBtn.vue";
-import JetMedidorTareas from "@/jetstream/MedidorTareas.vue";
+import JetUserAvatar from "@/Jetstream/UserAvatar.vue";
+import JetButtonRegular from "@/Jetstream/ButtonRegular.vue";
+import JetBtn from "@/Jetstream/Btn.vue";
+import JetMedidorTareas from "@/Jetstream/MedidorTareas.vue";
 import JetCard from "@/Jetstream/Card.vue";
 
 export default {
@@ -135,7 +131,7 @@ export default {
     JetUserAvatar,
     JetButtonRegular,
     JetMedidorTareas,
-    JetSubmitBtn,
+    JetBtn,
     JetCard,
     
     Head,

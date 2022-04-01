@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
 class StudentController extends Controller
@@ -14,6 +15,28 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    {
+        try {
+            return Inertia::render('Student/StudentName');
+
+            //if else por si ya puso su nickname y profile photo
+            //return Redirect::route('studentTasks');
+
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
+    }
+
+    public function studentPic(){
+
+        try {
+            return Inertia::render('Student/StudentPic');
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
+    }
+
+    public function studentTasks()
     {
         try {
             return Inertia::render('Student/StudentIndex');

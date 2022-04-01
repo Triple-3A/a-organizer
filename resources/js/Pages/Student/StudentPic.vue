@@ -17,7 +17,10 @@
                     <jet-user-avatar/>
                     <jet-user-avatar/>
                 </div>
-                    <jet-submit-btn class="font-poppings text-base font-semibold text-center align-middle">Siguiente</jet-submit-btn>
+                <Link :href="route('studentTasks')">
+                <jet-btn class="font-poppings text-base font-semibold text-center align-middle">Siguiente</jet-btn>
+                </Link>
+                    
 
             </div>
           </div>
@@ -34,7 +37,8 @@ import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 import JetTitle from "@/Jetstream/Title.vue";
 import JetSubTitle from "@/Jetstream/SubTitle.vue";
-import JetSubmitBtn from "@/jetstream/SubmitBtn.vue";
+import JetBtn from "@/Jetstream/Btn.vue";
+import JetUserAvatar from "@/Jetstream/UserAvatar.vue";
 
 
 export default {
@@ -42,8 +46,8 @@ export default {
     AppLayout,
     JetTitle,
     JetSubTitle,
-    JetSubmitBtn,
-
+    JetBtn,
+    JetUserAvatar,
     Head,
     Link,
   },

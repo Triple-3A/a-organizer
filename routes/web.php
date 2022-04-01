@@ -61,6 +61,8 @@ Route::middleware(['auth:sanctum', 'verified', 'technician'])->group(function ()
 
 Route::middleware(['auth:sanctum', 'verified', 'student'])->group(function () {
     Route::get('/student', [StudentController::class, 'index'])->name('student');
+    Route::get('/studentPic', [StudentController::class, 'studentPic'])->name('studentPic');
+    Route::get('/studentTasks', [StudentController::class, 'studentTasks'])->name('studentTasks');
 });
 
 

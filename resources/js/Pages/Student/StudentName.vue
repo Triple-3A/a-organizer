@@ -2,23 +2,32 @@
   <app-layout title="Dashboard">
     <div class="mx-auto max-w-7xl py-12 sm:px-6 lg:px-8">
       <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
-
-
         <div class="flex flex-col items-center justify-center">
-            <div class="px-10 bg-white rounded-lg flex flex-col items-center justify-center">
-              <jet-title>¡HOLA!</jet-title>
-              <jet-sub-title>Dinos como te gustaría que te llamemos</jet-sub-title>
+          <div
+            class="
+              px-10
+              bg-white
+              rounded-lg
+              flex flex-col
+              items-center
+              justify-center
+            "
+          >
+            <jet-title>¡HOLA!</jet-title>
+            <jet-sub-title
+              >Dinos como te gustaría que te llamemos</jet-sub-title
+            >
+          </div>
+          <div class="flex flex-col items-center justify-center">
+            <div class="block max-w-sm px-12 py-3 bg-white">
+              <jet-own-input class="placeholder p-2 mb-6"> </jet-own-input>
             </div>
-            <div class="flex flex-col items-center justify-center">
-              <div class="block max-w-sm px-12 py-3 bg-white">
-                <jet-own-input class="placeholder p-2 mb-6">
-                </jet-own-input>
-              </div>
-              <jet-submit-btn class="font-poppings text-base font-semibold text-center align-middle">Siguiente</jet-submit-btn>
-            </div>
+            <Link :href="route('studentPic')">
+              <jet-btn>Siguiente</jet-btn
+              >
+            </Link>
+          </div>
         </div>
-
-
       </div>
     </div>
   </app-layout>
@@ -30,8 +39,7 @@ import { Head, Link } from "@inertiajs/inertia-vue3";
 import JetTitle from "@/Jetstream/Title.vue";
 import JetSubTitle from "@/Jetstream/SubTitle.vue";
 import JetOwnInput from "@/Jetstream/OwnInput.vue";
-import JetSubmitBtn from "@/jetstream/SubmitBtn.vue";
-
+import JetBtn from "@/Jetstream/Btn.vue";
 
 export default {
   components: {
@@ -39,10 +47,29 @@ export default {
     JetTitle,
     JetSubTitle,
     JetOwnInput,
-    JetSubmitBtn,
-
+    JetBtn,
     Head,
     Link,
   },
 };
 </script>
+
+<!--
+                <Link
+                  as="button"
+                  type="button"
+                  method="delete"
+                  :href="route('instrumentalTitle/delete', instrumental.id)"
+                >
+                  <jet-delete-btn />
+                </Link>
+                
+                
+                <Link
+                   class="font-medium"
+                   :href="route('technicianUsersProfile', studentsUser.id)">
+                   <jet-arrow-next-svg />
+                 </Link>
+                
+                
+                 -->

@@ -106,7 +106,7 @@
         </div>
       </div>
       <div className="mt-4 flex flex-col justify-center items-center">
-        <jet-submit-btn>Asignar</jet-submit-btn >
+        <jet-btn>Asignar</jet-btn >
         </div>
     </form>
   </app-layout>
@@ -115,7 +115,7 @@
 <script>
 import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
-import JetSubmitBtn from "@/Jetstream/SubmitBtn.vue";
+import JetBtn from "@/Jetstream/Btn.vue";
 import JetArrowBackSvg from "@/Jetstream/ArrowBackSvg.vue";
 
 export default {
@@ -127,7 +127,7 @@ export default {
     Head,
     Link,
     AppLayout,
-    JetSubmitBtn,
+    JetBtn,
     JetArrowBackSvg,
   },
   data() {
