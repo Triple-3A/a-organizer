@@ -24956,7 +24956,7 @@ var _hoisted_2 = {
   "class": "flex items-center bg-white justify-center px-10 py-6 mb-12 border-4 rounded-xl border-amarillo drop-shadow-md hover:drop-shadow-2xl"
 };
 var _hoisted_3 = {
-  "class": "rounded-lg"
+  "class": "rounded-lg flex flex-col items-center"
 };
 function render(_ctx, _cache) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])])]);
@@ -30362,7 +30362,7 @@ var _hoisted_1 = {
 };
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
-  "class": "mb-6 font-medium text-center text-gray-800"
+  "class": "mb-6 font-medium text-sm text-center text-noNegro"
 }, " Selecciona que quieres hacer ", -1
 /* HOISTED */
 );
@@ -30376,7 +30376,7 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
-  "class": "text-xl font-bold text-center"
+  "class": "text-lg text-noNegro font-bold text-center"
 }, "Gestión de tareas", -1
 /* HOISTED */
 );
@@ -30390,7 +30390,7 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
-  "class": "text-xl font-bold text-center"
+  "class": "text-lg text-noNegro font-bold text-center"
 }, "Gestión de usuarios", -1
 /* HOISTED */
 );
