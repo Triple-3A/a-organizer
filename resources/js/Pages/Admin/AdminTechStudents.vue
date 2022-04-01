@@ -33,14 +33,14 @@
 
     <div class="py-2">
       <div class="mx-auto mt-4 max-w-7xl sm:px-6 lg:px-8">
-        <div class="flex justify-center my-4">
+        <div class="flex text-lg justify-center my-4">
           <p>
             <Link
               :href="route('assignment')"
               class="text-lg font-bold text-azul"
               >Asignación técnico</Link
             >
-            / <span class="text-lg font-medium">Asignados</span>
+            / <span class="text-lg text-noNegro font-medium">Asignados</span>
           </p>
         </div>
       </div>
@@ -142,6 +142,7 @@
                 font-bold
                 text-white
                 bg-amarillo
+                text-left
                 md:border md:border-white md:table-cell
               "
             >
@@ -165,6 +166,7 @@
                 p-2
                 font-bold
                 text-left
+                text-noNegro
                 md:border md:border-azul-500 md:table-cell
               "
             >
@@ -175,6 +177,7 @@
                 block
                 p-2
                 text-left
+                text-noNegro
                 md:border md:border-azul-500 md:table-cell
               "
             >
@@ -185,12 +188,13 @@
               class="
                 block
                 p-2
-                text-center
+                text-left
+                text-noNegro
                 md:border md:border-azul-500 md:table-cell
               "
             >
               <p v-for="std in array[1]" :key="std.id">
-                - {{ std.name }} - ({{std.email}})
+                - {{ std.name }} ({{ std.email }})
               </p>
             </td>
           </tr>
