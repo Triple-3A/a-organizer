@@ -9,6 +9,10 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TechnicianController;
 use App\Http\Controllers\StandByController;
 use App\Http\Controllers\TechnicianUserController;
+use App\Http\Controllers\UserBasicTaskController;
+use App\Http\Controllers\UserInstrumentalTaskController;
+use App\Http\Controllers\UserAdvancedTaskController;
+
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
@@ -40,7 +44,7 @@ Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
     Route::post('/reassignRole', [AdminController::class, 'reassignRole'])->name('reassignRole');
 
     Route::get('/assignment', [AdminController::class, 'studentAsignment'])->name('assignment');
-    Route::post('/assignTechToStudent', [AdminController::class, 'assignTechToStudent'])->name('assignTechToStudent'); //Cambiar a ruta post y nombre store asignment
+    Route::post('/assignTechToStudent', [AdminController::class, 'assignTechToStudent'])->name('assignTechToStudent');
     Route::get('/assigned', [AdminController::class, 'assignStudent'])->name('assigned');
 });
 
@@ -54,9 +58,16 @@ Route::middleware(['auth:sanctum', 'verified', 'technician'])->group(function ()
 
     Route::get('/technicianUsers', [TechnicianUserController::class, 'index'])->name('technicianUsers');
     Route::get('/technicianUsersProfile/{id}', [TechnicianUserController::class, 'technicianUsersProfile'])->name('technicianUsersProfile');
-    Route::get('/techUserBasic/{id}', [TechnicianUserController::class, 'techUserBasic'])->name('techUserBasic');
-    Route::get('/techUserInstrumental/{id}', [TechnicianUserController::class, 'techUserInstrumental'])->name('techUserInstrumental');
-    Route::get('/techUserAdvanced/{id}', [TechnicianUserController::class, 'techUserAdvanced'])->name('techUserAdvanced');
+
+    Route::resource('/techUserBasic/{id}', UserBasicTaskController::class, ['only' => ['index', 'create', 'destroy']])->names(['index' => 'techUserBasic', 'create' => 'techUserBasic/create', 'destroy' => 'techUserBasic/delete']);
+    Route::post('/techUserBasic/store', [UserBasicTaskController::class, 'store'])->name('techUserBasic/store');
+
+    Route::resource('/techUserInstrumental/{id}', UserInstrumentalTaskController::class, ['only' => ['index', 'create']])->names(['index' => 'techUserInstrumental', 'create' => 'techUserInstrumental/create']);
+    Route::post('/techUserInstrumental/store', [UserInstrumentalTaskController::class, 'store'])->name('techUserInstrumental/store');
+    
+    Route::resource('/techUserAdvanced/{id}', UserAdvancedTaskController::class, ['only' => ['index', 'create']])->names(['index' => 'techUserAdvanced', 'create' => 'techUserAdvanced/create']);
+   
+
 });
 
 Route::middleware(['auth:sanctum', 'verified', 'student'])->group(function () {

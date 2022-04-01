@@ -6,7 +6,6 @@
           <div v-if="basic == 'básico'">
             <div class="flex items-center justify-center">
               <div class="p-10">
-                <jet-create-btn class="text-xl font-bold text-azul" />
                 <h1 class="text-xl font-bold text-azul">
                   Creación de Tareas Básicas
                 </h1>
@@ -205,6 +204,13 @@
                     value="educación"
                   >
                     Educación
+                  </option>
+                  <option
+                    class="text-xs bg-orange-100 text-bold"
+                    :selected="tiempoLibre"
+                    value="tiempo libre"
+                  >
+                    Tiempo libre
                   </option>
                 </select>
               </div>

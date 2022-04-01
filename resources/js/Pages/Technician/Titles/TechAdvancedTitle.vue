@@ -116,6 +116,35 @@
               </div>
             </div>
           </div>
+          <h2 class="mb-2">Tiempo libre</h2>
+          <div v-for="libre in freeTime" :key="libre.id">
+            <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
+              <div class="flex items-center justify-start p-4 rounded-lg">
+                <div>
+                  <Link :href="route('advancedTitle/create')">
+                    <jet-advanced-title-svg />
+                  </Link>
+                </div>
+
+                <div class="px-8"></div>
+
+                <div class="flex flex-row">
+                  <h1 class="ml-12 text-xl font-bold">{{ libre.title }}</h1>
+                </div>
+
+                <div class="px-16"></div>
+
+                <Link
+                  as="button"
+                  type="button"
+                  method="delete"
+                  :href="route('advancedTitle/delete', libre.id)"
+                >
+                  <jet-delete-btn />
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -136,6 +165,7 @@ export default {
     educations: Array,
     jobs: Array,
     games: Array,
+    freeTime: Array,
   },
   components: {
     AppLayout,

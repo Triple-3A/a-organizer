@@ -10,9 +10,9 @@
                 <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div class="overflow-hidden">
                         <div class="flex items-center justify-end">
-                            <!-- <Link :href="route('basicTitle/create')" type="button"> -->
+                            <Link :href="route('techUserAdvanced/create', index.id)" type="button">
                             <jet-create-btn />
-                            <!-- </Link>  -->
+                            </Link> 
                         </div>
                         <jet-title class="mt-4">
                             Tareas Avanzadas del usuario

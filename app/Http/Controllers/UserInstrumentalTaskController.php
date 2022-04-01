@@ -2,42 +2,39 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Task;
 use App\Models\Title;
+use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
-class AdvancedTitleController extends Controller
+class UserInstrumentalTaskController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
         try {
-            $educations = [];
-            $jobs = [];
-            $games = [];
-            $freeTime = [];
+            $student = User::find($id);
 
-            $titleTasks = Title::all();
+            $allTasks = $student->tasks()->get();
+            $allTitles = [];
 
-            foreach ($titleTasks as $titleTask) {
-                if ($titleTask->type == 'educación') {
-                    array_push($educations, $titleTask);
-                } else if ($titleTask->type == 'trabajo') {
-                    array_push($jobs, $titleTask);
-                } else if ($titleTask->type == 'juego') {
-                    array_push($games, $titleTask);
-                } else if ($titleTask->type == 'tiempo libre'){
-                    array_push($freeTime, $titleTask);
+            foreach ($allTasks as $task) {
+                $titles = $task->titles()->where('type', 'instrumental')->get();
+               
+                foreach ($titles as $title) {
+                    array_push($allTitles, $title);
                 }
             }
 
-            return Inertia::render('Technician/Titles/TechAdvancedTitle', compact('educations', 'jobs', 'games', 'freeTime'));
+
+            return Inertia::render('Technician/Users/TechUserInstrumental', compact('student', 'allTitles'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -48,11 +45,21 @@ class AdvancedTitleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
         try {
-            $advanced = 'avanzado';
-            return Inertia::render('Technician/Titles/TechCreateTitles', compact('advanced'));
+            $instrumental = 'instrumental';
+            $instrumentalTitles = [];
+
+            $allTitles = Title::where('type', 'instrumentales')->get();
+
+            foreach ($allTitles as $title) {
+                array_push($instrumentalTitles, $title);
+            }
+
+            // dd($instrumentalTitles);
+
+            return Inertia::render('Technician/Users/Task/UserCreateTitle', compact('instrumental', 'id', 'instrumentalTitles'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -67,12 +74,21 @@ class AdvancedTitleController extends Controller
     public function store(Request $request)
     {
         try {
-            $request->validate([
-                'title' => 'required',
-                'type' => 'required',
-            ]);
-            Title::create($request->all());
-            return Redirect::route('advancedTitle');
+            $requested = $request->all();
+
+            $studentId = $requested['id'];
+            $titleArray = $requested['title'];
+            $titleId = $titleArray['id'];
+            $taskRequested = array_slice($requested, 2);
+
+            $title = Title::find($titleId);
+            $task = Task::create($taskRequested);
+            $studentUser = User::find($studentId);
+
+            $title->tasks()->attach($task->id);
+            $studentUser->tasks()->attach($task->id);
+           
+            return Redirect::route('techUserBasic', $studentId);
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -120,12 +136,6 @@ class AdvancedTitleController extends Controller
      */
     public function destroy($id)
     {
-        try {
-            $title = Title::find($id);
-            $title->delete();
-            return Redirect::route('advancedTitle');
-        } catch (Exception $error) {
-            return $error->getMessage();
-        }
+        //
     }
 }
