@@ -114,9 +114,7 @@
               </div>
               <form @submit.prevent="advancedSubmit">
                 <div class="text-center">
-                  <label for="avanzado"
-                    >Elige el título avanzado:
-                  </label>
+                  <label for="avanzado">Elige el título avanzado: </label>
                   <br />
                   <select
                     v-model="advancedForm.title"
@@ -216,11 +214,11 @@ export default {
         // date: null,
       },
       advancedForm: {
-      id: this.id,
+        id: this.id,
         title: null,
-      // repeatable: null,
-      // time: null,
-      // date: null,
+        // repeatable: null,
+        // time: null,
+        // date: null,
       },
     };
   },
@@ -235,10 +233,7 @@ export default {
       );
     },
     advancedSubmit() {
-      this.$inertia.post(
-        route("techUserAdvanced/store"),
-        this.advancedForm
-      );
+      this.$inertia.post(route("techUserAdvanced/store"), this.advancedForm);
     },
   },
 };

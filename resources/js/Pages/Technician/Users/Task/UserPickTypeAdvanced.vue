@@ -96,7 +96,7 @@ export default {
   },
   data() {
     return {
-    id: this.id,
+      id: this.id,
       advanced: {
         id: this.id,
         type: null,

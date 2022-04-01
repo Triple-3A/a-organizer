@@ -42,7 +42,7 @@
                 >
                   <div class="flex items-center justify-start p-4 rounded-lg">
                     <div>
-                      <jet-advanced-title-svg/>
+                      <jet-advanced-title-svg />
                     </div>
                     <div class="px-8"></div>
                     <div class="flex flex-row">
@@ -51,7 +51,7 @@
                       </h1>
                     </div>
                     <div class="px-16"></div>
-                     <Link :href="route('techUserAdvanced/deleteTask', task.id)">
+                    <Link :href="route('techUserAdvanced/deleteTask', task.id)">
                       <jet-delete-btn />
                     </Link>
                   </div>
@@ -68,7 +68,7 @@
                 >
                   <div class="flex items-center justify-start p-4 rounded-lg">
                     <div>
-                      <jet-advanced-title-svg/>
+                      <jet-advanced-title-svg />
                     </div>
                     <div class="px-8"></div>
                     <div class="flex flex-row">
@@ -94,7 +94,7 @@
                 >
                   <div class="flex items-center justify-start p-4 rounded-lg">
                     <div>
-                      <jet-advanced-title-svg/>
+                      <jet-advanced-title-svg />
                     </div>
                     <div class="px-8"></div>
                     <div class="flex flex-row">
@@ -120,7 +120,7 @@
                 >
                   <div class="flex items-center justify-start p-4 rounded-lg">
                     <div>
-                      <jet-advanced-title-svg/>
+                      <jet-advanced-title-svg />
                     </div>
                     <div class="px-8"></div>
                     <div class="flex flex-row">
@@ -149,7 +149,7 @@ import { Head, Link } from "@inertiajs/inertia-vue3";
 import JetCreateBtn from "@/Jetstream/CreateBtn.vue";
 import JetDeleteBtn from "@/Jetstream/DeleteBtn.vue";
 import JetTitle from "@/Jetstream/Title.vue";
-import JetAdvancedTitleSvg from '@/Jetstream/AdvancedTitleSvg.vue';
+import JetAdvancedTitleSvg from "@/Jetstream/AdvancedTitleSvg.vue";
 import JetArrowBackSvg from "@/Jetstream/ArrowBackSvg.vue";
 export default {
   props: {
