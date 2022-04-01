@@ -1186,14 +1186,14 @@ select {
 .w-96 {
   width: 24rem;
 }
+.w-32 {
+  width: 8rem;
+}
 .w-1\/5 {
   width: 20%;
 }
 .w-5\/12 {
   width: 41.666667%;
-}
-.w-32 {
-  width: 8rem;
 }
 .min-w-0 {
   min-width: 0px;
