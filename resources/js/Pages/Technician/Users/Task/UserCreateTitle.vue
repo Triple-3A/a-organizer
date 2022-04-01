@@ -108,7 +108,58 @@
               </form>
             </div>
 
+            <div v-if="advanced == 'avanzado'">
+              <div class="p-10">
+                <jet-title>Viendo form avanzado -> {{ id }}</jet-title>
+              </div>
+              <form @submit.prevent="advancedSubmit">
+                <div class="text-center">
+                  <label for="avanzado"
+                    >Elige el título avanzado:
+                  </label>
+                  <br />
+                  <select
+                    v-model="advancedForm.title"
+                    name="title"
+                    id="title"
+                    class="
+                      px-3
+                      py-1.5
+                      bg-amarillo
+                      text-base
+                      font-bold
+                      mt-1
+                      rounded
+                      select
+                      w-96
+                    "
+                  >
+                    <option
+                      class="text-xs bg-orange-100 text-bold"
+                      v-for="advancedTitle in advancedTitles"
+                      :value="advancedTitle"
+                      :selected="advancedTitle"
+                      :key="advancedTitle.id"
+                    >
+                      {{ advancedTitle.title }}
+                    </option>
+                  </select>
 
+                  <div class="flex items-center justify-center">
+                    <div class="mt-6">
+                      <jet-submit-btn class="mr-4" type="submit">
+                        Guardar
+                      </jet-submit-btn>
+                      <jet-cancel-btn
+                        class="ml-4"
+                        :href="route('techUserAdvanced/pickType', id)"
+                        >Cancelar</jet-cancel-btn
+                      >
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -133,7 +184,8 @@ export default {
     instrumentalTitles: Array,
     instrumental: String,
 
-    // advanced: String,
+    advancedTitles: Array,
+    advanced: String,
   },
   components: {
     AppLayout,
@@ -159,12 +211,17 @@ export default {
       instrumentalForm: {
         id: this.id,
         title: null,
-        //   task: null,
+        // repeatable: null,
+        // time: null,
+        // date: null,
       },
-      // advancedForm: {
-      //   title: null,
-      //   task: null,
-      // },
+      advancedForm: {
+      id: this.id,
+        title: null,
+      // repeatable: null,
+      // time: null,
+      // date: null,
+      },
     };
   },
   methods: {
@@ -177,12 +234,12 @@ export default {
         this.instrumentalForm
       );
     },
-    // advancedSubmit() {
-    //   this.$inertia.post(
-    //     route("techUserAdvanced/store", id),
-    //     this.advancedForm
-    //   );
-    // },
+    advancedSubmit() {
+      this.$inertia.post(
+        route("techUserAdvanced/store"),
+        this.advancedForm
+      );
+    },
   },
 };
 </script>

@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Task;
+use App\Models\Title;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
 class UserAdvancedTaskController extends Controller
@@ -17,24 +20,127 @@ class UserAdvancedTaskController extends Controller
     public function index($id)
     {
         try {
-            $student = User::where('id', $id)->get();
+            $student = User::find($id);
+            $tasks = $student->tasks()->get();
 
-            return Inertia::render('Technician/Users/TechUserAdvanced', compact('student'));
+            $allEducation = [];
+            $allJob = [];
+            $allGame = [];
+            $allFreeTime = [];
+
+            foreach ($tasks as $task) {
+                $arrayGroup = [];
+                $taskArray = [];
+                $titlesArray = [];
+
+                $titles = $task->titles()->where('type', 'educación')->get();
+
+                foreach ($titles as $title) {
+                    if (!empty($title)) {
+                        array_push($taskArray, $task);
+                        array_push($arrayGroup, $taskArray);
+                        array_push($titlesArray, $title);
+                        array_push($arrayGroup, $titlesArray);
+                        array_push($allEducation, $arrayGroup);
+                    }
+                }
+            }
+
+            foreach ($tasks as $task) {
+                $arrayGroup = [];
+                $taskArray = [];
+                $titlesArray = [];
+
+                $titles = $task->titles()->where('type', 'trabajo')->get();
+
+                foreach ($titles as $title) {
+                    if (!empty($title)) {
+                        array_push($taskArray, $task);
+                        array_push($arrayGroup, $taskArray);
+                        array_push($titlesArray, $title);
+                        array_push($arrayGroup, $titlesArray);
+                        array_push($allJob, $arrayGroup);
+                    }
+                }
+            }
+
+            foreach ($tasks as $task) {
+                $arrayGroup = [];
+                $taskArray = [];
+                $titlesArray = [];
+
+                $titles = $task->titles()->where('type', 'juego')->get();
+
+                foreach ($titles as $title) {
+                    if (!empty($title)) {
+                        array_push($taskArray, $task);
+                        array_push($arrayGroup, $taskArray);
+                        array_push($titlesArray, $title);
+                        array_push($arrayGroup, $titlesArray);
+                        array_push($allGame, $arrayGroup);
+                    }
+                }
+            }
+
+            foreach ($tasks as $task) {
+                $arrayGroup = [];
+                $taskArray = [];
+                $titlesArray = [];
+
+                $titles = $task->titles()->where('type', 'tiempo libre')->get();
+
+                foreach ($titles as $title) {
+                    if (!empty($title)) {
+                        array_push($taskArray, $task);
+                        array_push($arrayGroup, $taskArray);
+                        array_push($titlesArray, $title);
+                        array_push($arrayGroup, $titlesArray);
+                        array_push($allFreeTime, $arrayGroup);
+                    }
+                }
+            }
+
+            // , 'allEducation', 'allJob', 'allGame', 'allFreeTime'
+            // dd($allJob, $allEducation, $allFreeTime, $allGame);
+
+            return Inertia::render('Technician/Users/TechUserAdvanced', compact('student', 'allEducation', 'allJob', 'allGame', 'allFreeTime'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
     }
 
-    /**
-     * Show the form for creating a new resource.
+    public function pickType($id){
+        try{
+            return Inertia::render('Technician/Users/Task/UserPickTypeAdvanced', compact('id'));
+        }  catch (Exception $error) {
+            return $error->getMessage();
+        }
+    }
+
+     /**
+     * Store a newly created resource in storage.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create(Request $request)
     {
         try {
+            $requested = $request->all();
+
+            $id = $requested['id'];
+            $advancedType = $requested['type'];
+            $advancedTitles = [];
             $advanced = 'avanzado';
-            return Inertia::render('Technician/Users/TechUserCreateTask', compact('advanced', 'id'));
+
+            $titles =  Title::where('type', $advancedType)->get();
+
+            foreach ($titles as $title) {
+                array_push($advancedTitles, $title);
+            }
+            // dd($id, $advanced, $advancedTitles);
+
+            return Inertia::render('Technician/Users/Task/UserCreateTitle', compact('id', 'advanced', 'advancedTitles'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -52,11 +158,18 @@ class UserAdvancedTaskController extends Controller
             $requested = $request->all();
 
             $studentId = $requested['id'];
-            $title = $requested['title'];
-            $arrayTask = array_slice($requested, 2);;
+            $titleArray = $requested['title'];
+            $titleId = $titleArray['id'];
+            $taskRequested = array_slice($requested, 2);
 
+            $title = Title::find($titleId);
+            $task = Task::create($taskRequested);
+            $studentUser = User::find($studentId);
 
-            dd($studentId, $title, $arrayTask);
+            $title->tasks()->attach($task->id);
+            $studentUser->tasks()->attach($task->id);
+
+            return Redirect::route('techUserAdvanced', $studentId);
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -96,14 +209,36 @@ class UserAdvancedTaskController extends Controller
         //
     }
 
+   /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteTask($id)
+    {
+        try {
+            $task = Task::find($id);
+            $userId = 0;
+            $userCollection = $task->users()->get();
+            foreach ($userCollection as $user) {
+                $userId = $user->id;
+            }
+            $task->delete();
+            return Redirect::route('techUserAdvanced', $userId);
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
+    }
+
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function deleteDescription($description)
     {
-        //
+        dd($description);
     }
 }

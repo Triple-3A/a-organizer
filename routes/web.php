@@ -59,13 +59,20 @@ Route::middleware(['auth:sanctum', 'verified', 'technician'])->group(function ()
     Route::get('/technicianUsers', [TechnicianUserController::class, 'index'])->name('technicianUsers');
     Route::get('/technicianUsersProfile/{id}', [TechnicianUserController::class, 'technicianUsersProfile'])->name('technicianUsersProfile');
 
-    Route::resource('/techUserBasic/{id}', UserBasicTaskController::class, ['only' => ['index', 'create', 'destroy']])->names(['index' => 'techUserBasic', 'create' => 'techUserBasic/create', 'destroy' => 'techUserBasic/delete']);
+    Route::resource('/techUserBasic/{id}', UserBasicTaskController::class, ['only' => ['index', 'create']])->names(['index' => 'techUserBasic', 'create' => 'techUserBasic/create']);
     Route::post('/techUserBasic/store', [UserBasicTaskController::class, 'store'])->name('techUserBasic/store');
+    Route::post('/techUserBasic/deleteTask', [UserBasicTaskController::class, 'deleteTask'])->name('techUserBasic/deleteTask');
+   
 
     Route::resource('/techUserInstrumental/{id}', UserInstrumentalTaskController::class, ['only' => ['index', 'create']])->names(['index' => 'techUserInstrumental', 'create' => 'techUserInstrumental/create']);
     Route::post('/techUserInstrumental/store', [UserInstrumentalTaskController::class, 'store'])->name('techUserInstrumental/store');
+    Route::get('/techUserInstrumental/deleteTask/{id}', [UserInstrumentalTaskController::class, 'deleteTask'])->name('techUserInstrumental/deleteTask');
     
     Route::resource('/techUserAdvanced/{id}', UserAdvancedTaskController::class, ['only' => ['index', 'create']])->names(['index' => 'techUserAdvanced', 'create' => 'techUserAdvanced/create']);
+    Route::get('/techUserAdvanced/pickType/{id}', [UserAdvancedTaskController::class, 'pickType'])->name('techUserAdvanced/pickType');
+    Route::post('/techUserAdvanced/create', [UserAdvancedTaskController::class, 'create'])->name('techUserAdvanced/create');
+    Route::post('/techUserAdvanced/store', [UserAdvancedTaskController::class, 'store'])->name('techUserAdvanced/store');
+    Route::get('/techUserAdvanced/deleteTask/{id}', [UserAdvancedTaskController::class, 'deleteTask'])->name('techUserAdvanced/deleteTask');
    
 
 });

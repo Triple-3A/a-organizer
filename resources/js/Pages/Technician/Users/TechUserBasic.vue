@@ -30,31 +30,29 @@
               </Link>
             </div>
             <jet-title class="mt-4"> Tareas Básicas del usuario </jet-title>
-
-            <div
-              v-for="title in allTitles"
-              :key="title.id"
-              class="flex mb-10 border-4 rounded-lg row border-amarillo"
-            >
-              <div class="flex items-center justify-start p-4 rounded-lg">
-                <div>
-                  <jet-basic-title-svg />
-                </div>
-                <div class="px-8"></div>
-                <div class="flex flex-row">
-                  <h1 class="ml-12 text-xl font-bold">
-                    {{ title.title }}
-                  </h1>
-                </div>
-                <div class="px-16"></div>
-                <Link
-                  as="button"
-                  type="button"
-                  method="delete"
-                  :href="route('techUserBasic/delete')"
+            <div v-for="array in all" :key="array.id">
+              <div v-for="task in array[0]" :key="task.id">
+                <div
+                  v-for="title in array[1]"
+                  :key="title.id"
+                  class="flex mb-10 border-4 rounded-lg row border-amarillo"
                 >
-                  <jet-delete-btn />
-                </Link>
+                  <div class="flex items-center justify-start p-4 rounded-lg">
+                    <div>
+                      <jet-basic-title-svg />
+                    </div>
+                    <div class="px-8"></div>
+                    <div class="flex flex-row">
+                      <h1 class="ml-12 text-xl font-bold">
+                        {{ title.title }}
+                      </h1>
+                    </div>
+                    <div class="px-16"></div>
+                    <Link :href="route('techUserBasic/deleteTask', task.id)">
+                      <jet-delete-btn />
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -75,7 +73,7 @@ import JetBasicTitleSvg from "@/Jetstream/BasicTitleSvg.vue";
 export default {
   props: {
     student: Array,
-    allTitles: Array,
+    all: Array,
   },
   components: {
     AppLayout,

@@ -21,18 +21,30 @@ class UserBasicTaskController extends Controller
     {
         try {
             $student = User::find($id);
+            $tasks = $student->tasks()->get();
+            $allTasks = [];
+            $all = [];
 
-            $allTasks = $student->tasks()->get();
-            $allTitles = [];
+            foreach ($tasks as $task) {
+                $arrayGroup = [];
+                $taskArray = [];
+                $titlesArray = [];
 
-            foreach ($allTasks as $task) {
                 $titles = $task->titles()->where('type', 'básicos')->get();
+
                 foreach ($titles as $title) {
-                    array_push($allTitles, $title);
+                    if (!empty($title)) {
+                        array_push($taskArray, $task);
+                        array_push($arrayGroup, $taskArray);
+                        array_push($titlesArray, $title);
+                        array_push($arrayGroup, $titlesArray);
+                        array_push($all, $arrayGroup);
+                    }
                 }
             }
+            // dd($all);
 
-            return Inertia::render('Technician/Users/TechUserBasic', compact('student', 'allTitles'));
+            return Inertia::render('Technician/Users/TechUserBasic', compact('student', 'all'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -53,7 +65,7 @@ class UserBasicTaskController extends Controller
             $titles =  Title::where('type', 'básicos')->get();
 
             foreach ($titles as $title) {
-               array_push($basicTitles, $title);
+                array_push($basicTitles, $title);
             }
 
             // dd($basicTitles);
@@ -86,7 +98,7 @@ class UserBasicTaskController extends Controller
 
             $title->tasks()->attach($task->id);
             $studentUser->tasks()->attach($task->id);
-           
+
             return Redirect::route('techUserBasic', $studentId);
         } catch (Exception $error) {
             return $error->getMessage();
@@ -133,8 +145,30 @@ class UserBasicTaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($student, $title)
+    public function deleteTask($id)
     {
-        dd($student, $title);
+        try {
+            $task = Task::find($id);
+            $userId = 0;
+            $userCollection = $task->users()->get();
+            foreach ($userCollection as $user) {
+                $userId = $user->id;
+            }
+            $task->delete();
+            return Redirect::route('techUserBasic', $userId);
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteDescription($description)
+    {
+        dd($description);
     }
 }
