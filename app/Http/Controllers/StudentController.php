@@ -21,6 +21,24 @@ class StudentController extends Controller
             return $error->getMessage();
         }
     }
+    
+    public function studentPhoto()
+    {
+        try {
+            return Inertia::render('Student/StudentPhoto');
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
+    }
+
+    public function studentTasks(){
+
+        try {
+            return Inertia::render('Student/StudentTasks');
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
+    }
 
     /**
      * Show the form for creating a new resource.
