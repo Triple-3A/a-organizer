@@ -23,7 +23,7 @@
           <div class="overflow-hidden">
             <div class="flex items-center justify-end">
               <Link
-                :href="route('techUserAdvanced/pickType', student.id)"
+                :href="route('techUserAdvanced/pick', student.id)"
                 type="button"
               >
                 <jet-create-btn />

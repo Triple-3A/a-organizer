@@ -144,8 +144,15 @@ class UserAdvancedTaskController extends Controller
         }
     }
 
-    public function pickType($id){
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function pick($id)
+    {
         try{
+
             return Inertia::render('Technician/Users/Task/UserPickTypeAdvanced', compact('id'));
         }  catch (Exception $error) {
             return $error->getMessage();
@@ -161,46 +168,20 @@ class UserAdvancedTaskController extends Controller
     public function create(Request $request)
     {
         try {
-            $requested = $request->all();
 
+            $requested = $request->all();
             $id = $requested['id'];
-            $advancedType = $requested['type'];
+            $type = $requested['type'];
             $advancedTitles = [];
             $advanced = 'avanzado';
 
-            $titles =  Title::where('type', $advancedType)->get();
+            $titles =  Title::where('type', $type)->get();
 
             foreach ($titles as $title) {
                 array_push($advancedTitles, $title);
             }
-            // dd($id, $advanced, $advancedTitles);
 
             return Inertia::render('Technician/Users/Task/UserCreateTitle', compact('id', 'advanced', 'advancedTitles'));
-        } catch (Exception $error) {
-            return $error->getMessage();
-        }
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function createDescription($task)
-    {
-        try {
-            $advanced = 'avanzado';
-            $task = Task::find($task);
-
-            $userCollection = $task->users()->get();
-
-            $id = 0;
-
-            foreach ($userCollection as $user) {
-                $id = $user->id;
-            }
-
-            return Inertia::render('Technician/Users/Task/UserCreateDescription', compact('advanced', 'id', 'task'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
@@ -236,31 +217,6 @@ class UserAdvancedTaskController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function storeDescription(Request $request)
-    {
-        try {
-            $requested = $request->all();
-            $studentId = $requested['id'];
-            $task = $requested['task'];
-            $taskId = $task['id'];
-            $descriptionString =  array_slice($requested, 2);
-
-            $description = Description::create($descriptionString);
-
-            $description->tasks()->attach($taskId);
-
-            return Redirect::route('techUserAdvanced', $studentId);
-        } catch (Exception $error) {
-            return $error->getMessage();
-        }
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  int  $id
@@ -271,64 +227,13 @@ class UserAdvancedTaskController extends Controller
         //
     }
 
-     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function editDescription($id)
-    {
-        try {
-            $advanced = 'avanzado';
-            $descriptionId = $id;
-            $description = Description::find($id);
-            $userId = 0;
-            $taskCollection = $description->tasks()->get();
-            foreach ($taskCollection as $task) {
-                $userCollection = $task->users()->get();
-
-                foreach ($userCollection as $user) {
-                    $userId = $user->id;
-                }
-            }
-
-            return Inertia::render('Technician/Users/Task/UserEditDescription', compact('userId', 'description', 'advanced'));
-        } catch (Exception $error) {
-            return $error->getMessage();
-        }
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $descriptionId)
-    {
-        try {
-
-            $requested = $request->all();
-            $id = $requested['userId'];
-            $descriptionString = $requested['descriptions'];;
-            $description = Description::Find($descriptionId);
-
-            $description->update(array('description' => $descriptionString));
-
-            return Redirect::route('techUserAdvanced', compact('id'));
-        } catch (Exception $error) {
-            return $error->getMessage();
-        }
-    }
    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function deleteTask($id)
+    public function destroy($id)
     {
         try {
             $task = Task::find($id);
@@ -338,32 +243,6 @@ class UserAdvancedTaskController extends Controller
                 $userId = $user->id;
             }
             $task->delete();
-            return Redirect::route('techUserAdvanced', $userId);
-        } catch (Exception $error) {
-            return $error->getMessage();
-        }
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function deleteDescription($id)
-    {
-        try {
-            $description = Description::find($id);
-            $userId = 0;
-            $taskCollection = $description->tasks()->get();
-            foreach ($taskCollection as $task) {
-                $userCollection = $task->users()->get();
-
-                foreach ($userCollection as $user) {
-                    $userId = $user->id;
-                }
-            }
-            $description->delete();
             return Redirect::route('techUserAdvanced', $userId);
         } catch (Exception $error) {
             return $error->getMessage();

@@ -150,7 +150,7 @@
                       </jet-submit-btn>
                       <jet-cancel-btn
                         class="ml-4"
-                        :href="route('techUserAdvanced/pickType', id)"
+                        :href="route('techUserAdvanced/pick', id)"
                         >Cancelar</jet-cancel-btn
                       >
                     </div>
@@ -198,27 +198,30 @@ export default {
       id: this.id,
       basic: this.basic,
       instrumental: this.instrumental,
-      // advanced: this.advanced,
+      advanced: this.advanced,
       basicForm: {
         id: this.id,
         title: null,
-        // repeatable: null,
+        // repeatable: false,
         // time: null,
         // date: null,
+        // done: null,
       },
       instrumentalForm: {
         id: this.id,
         title: null,
-        // repeatable: null,
+        // repeatable: false,
         // time: null,
         // date: null,
+        // done: null,
       },
       advancedForm: {
         id: this.id,
         title: null,
-        // repeatable: null,
+        // repeatable: false,
         // time: null,
         // date: null,
+        // done: null,
       },
     };
   },
