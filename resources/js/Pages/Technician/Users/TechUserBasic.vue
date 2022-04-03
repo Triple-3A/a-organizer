@@ -61,32 +61,39 @@
                 </div>
               </div>
               <div
-                  v-for="description in array[2]"
-                  :key="description.id"
-                  class="flex border-4 rounded-lg row border-amarillo"
-                >
-                  <div class="flex items-center justify-start p-2 rounded-lg">
-                    <div>
-                      <jet-basic-description-svg />
-                    </div>
-                    <div class="px-8"></div>
-                    <div class="flex flex-row">
-                      <h1 class="ml-12 text-xl font-bold">
-                        {{ description.description }}
-                      </h1>
-                    </div>
-                    <div class="px-16"></div>
-                    <Link
-                      :href="route('techUserBasic/editDescription', description.id)"
-                      type="button"
-                    >
-                    <jet-edit-btn />
-                    </Link>
-                    <Link :href="route('techUserBasic/deleteDescription', description.id)">
-                      <jet-delete-btn />
-                    </Link>
+                v-for="description in array[2]"
+                :key="description.id"
+                class="flex border-4 rounded-lg row border-amarillo"
+              >
+                <div class="flex items-center justify-start p-2 rounded-lg">
+                  <div>
+                    <jet-basic-description-svg />
                   </div>
-                    </div>
+                  <div class="px-8"></div>
+                  <div class="flex flex-row">
+                    <h1 class="ml-12 text-xl font-bold">
+                      {{ description.description }}
+                    </h1>
+                  </div>
+                  <div class="px-16"></div>
+                  <Link
+                    :href="
+                      route('techUserBasic/editDescription', description.id)
+                    "
+                    type="button"
+                  >
+                    <jet-edit-btn />
+                  </Link>
+                  <Link
+                    
+                    :href="
+                      route('techUserBasic/deleteDescription', description.id)
+                    "
+                  >
+                    <jet-delete-btn />
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>

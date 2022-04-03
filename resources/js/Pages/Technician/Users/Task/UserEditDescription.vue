@@ -7,14 +7,14 @@
             <div v-if="basic == 'básico'">
               <form @submit.prevent="basicSubmit">
                 <div class="text-center">
-                  <label for="basic">Escribe una nueva tarea: </label>
+                  <label for="basic">Edita la tarea: </label>
                   <br />
                   <div class="flex justify-center">
                     <div class="block max-w-sm p-12 bg-white">
                       <input
                         placeholder="Introduce la tarea"
                         id="description"
-                        v-model="basicForm.description"
+                        v-model="basicForm.descriptions"
                         class="
                           text-center
                           px-6
@@ -47,14 +47,14 @@
             <div v-if="instrumental == 'instrumental'">
               <form @submit.prevent="instrumentalSubmit">
                 <div class="text-center">
-                  <label for="instrumental">Escribe una nueva tarea: </label>
+                  <label for="instrumental">Edita la tarea: </label>
                   <br />
                   <div class="flex justify-center">
                     <div class="block max-w-sm p-12 bg-white">
                       <input
                         placeholder="Introduce la tarea"
                         id="description"
-                        v-model="instrumentalForm.description"
+                        v-model="instrumentalForm.descriptions"
                         class="
                           text-center
                           px-6
@@ -87,14 +87,14 @@
             <div v-if="advanced == 'avanzado'">
               <form @submit.prevent="advancedSubmit">
                 <div class="text-center">
-                  <label for="advanced">Escribe una nueva tarea: </label>
+                  <label for="advanced">Edita la tarea: </label>
                   <br />
                   <div class="flex justify-center">
                     <div class="block max-w-sm p-12 bg-white">
                       <input
                         placeholder="Introduce la tarea"
                         id="description"
-                        v-model="advancedForm.description"
+                        v-model="advancedForm.descriptions"
                         class="
                           text-center
                           px-6
@@ -158,37 +158,34 @@ export default {
       userId: this.userId,
       basicForm: {
         userId: this.userId,
-        descriptionId: this.$props.description.id,
-        description: this.$props.description.description,
+        descriptions: this.$props.description.description,
       },
       instrumentalForm: {
         userId: this.userId,
-        descriptionId: this.$props.description.id,
-        description: this.$props.description.description,
+        descriptions: this.$props.description.description,
       },
        advancedForm: {
         userId: this.userId,
-        descriptionId: this.$props.description.id,
-        description: this.$props.description.description,
+        descriptions: this.$props.description.description,
       },
     };
   },
   methods: {
     basicSubmit() {
-      this.$inertia.post(
-        route("techUserBasic/updateDescription"),
+      this.$inertia.put(
+        route("techUserBasic/updateDescription", this.$props.description.id),
         this.basicForm
       );
     },
     instrumentalSubmit() {
-      this.$inertia.post(
-        route("techUserInstrumental/updateDescription"),
+      this.$inertia.put(
+        route("techUserInstrumental/updateDescription",  this.$props.description.id),
         this.instrumentalForm
       );
     },
     advancedSubmit() {
-      this.$inertia.post(
-        route("techUserAdvanced/updateDescription"),
+      this.$inertia.put(
+        route("techUserAdvanced/updateDescription",  this.$props.description.id),
         this.advancedForm
       );
     },

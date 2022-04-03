@@ -211,16 +211,16 @@ class UserInstrumentalTaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function updateDescription(Request $request)
+    public function update(Request $request, $descriptionId)
     {
         try {
+
             $requested = $request->all();
             $id = $requested['userId'];
-            $descriptionId = $requested['descriptionId'];
-            $descriptionString =  array_slice($requested, 2);
-            $description = Description::find($descriptionId);
+            $descriptionString = $requested['descriptions'];;
+            $description = Description::Find($descriptionId);
 
-            $description->update($descriptionString);
+            $description->update(array('description' => $descriptionString));
 
             return Redirect::route('techUserInstrumental', compact('id'));
         } catch (Exception $error) {
