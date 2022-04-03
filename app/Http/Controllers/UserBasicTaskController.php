@@ -134,14 +134,15 @@ class UserBasicTaskController extends Controller
     public function destroy($id)
     {
         try {
+            
             $task = Task::find($id);
-            $userId = 0;
+            $student = 0;
             $userCollection = $task->users()->get();
             foreach ($userCollection as $user) {
-                $userId = $user->id;
+                $student = $user->id;
             }
             $task->delete();
-            return Redirect::route('techUserBasic', $userId);
+            return Redirect::route('techUserBasic', $student);
         } catch (Exception $error) {
             return $error->getMessage();
         }
