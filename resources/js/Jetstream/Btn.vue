@@ -1,7 +1,7 @@
 <template>
   <button
     class="
-      inline-flex
+      flex
       items-center
       px-6
       py-2
