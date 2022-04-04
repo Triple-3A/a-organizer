@@ -25183,13 +25183,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" + ");
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  "xmlns:xlink": "http://www.w3.org/1999/xlink",
+  "aria-hidden": "true",
+  role: "img",
+  width: "1.7em",
+  height: "1.7em",
+  preserveAspectRatio: "xMidYMid meet",
+  viewBox: "0 0 24 24"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
+  fill: "none",
+  stroke: "currentColor",
+  "stroke-linecap": "round",
+  "stroke-width": "2.5",
+  d: "M12 20v-8m0 0V4m0 8h8m-8 0H4"
+})], -1
+/* HOISTED */
+);
 
 function render(_ctx, _cache) {
   var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Link, {
-    "class": "inline-flex items-center px-3 text-xl font-bold text-white transition bg-red-500 rounded-md hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25"
+    "class": "inline-flex items-center p-2 font-bold text-white transition bg-red-500 rounded-md hover:bg-gray-700 active:bg-gray-900 disabled:opacity-25"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_1];
@@ -30785,7 +30802,7 @@ var _hoisted_1 = {
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Categorias de tareas");
 
 var _hoisted_3 = {
-  "class": "flex justify-around py-6"
+  "class": "flex justify-around"
 };
 var _hoisted_4 = {
   "class": "mx-auto max-w-7xl sm:px-6 lg:px-8"
@@ -30794,38 +30811,24 @@ var _hoisted_5 = {
   "class": "flex items-center justify-end"
 };
 var _hoisted_6 = {
-  "class": "mt-2 flex items-center justify-center"
+  "class": "flex items-center justify-center"
 };
 
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Tareas Básicas");
 
 var _hoisted_8 = {
-  "class": "flex mb-10 border-4 rounded-lg row border-amarillo"
+  "class": "flex mb-11 border-4 bg-white rounded-lg row border-amarillo drop-shadow-md hover:drop-shadow-2xl"
 };
 var _hoisted_9 = {
-  "class": "flex items-center justify-start p-4 rounded-lg"
+  "class": "flex items-center justify-start p-4"
 };
 var _hoisted_10 = ["src"];
-
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "px-8"
-}, null, -1
-/* HOISTED */
-);
-
+var _hoisted_11 = {
+  "class": "pl-9 w-72"
+};
 var _hoisted_12 = {
-  "class": "flex flex-row"
+  "class": "text-lg text-noNegro font-bold"
 };
-var _hoisted_13 = {
-  "class": "ml-12 text-xl font-bold"
-};
-
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "px-16"
-}, null, -1
-/* HOISTED */
-);
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_jet_arrow_back_svg = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-arrow-back-svg");
 
@@ -30884,10 +30887,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       })]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.basics, function (basic) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
           key: basic.id
-        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(basic.icons, function (icon) {
+        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(basic.icons, function (icon) {
           return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
-            key: icon.id
+            key: icon.id,
+            "class": "items-center"
           }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+            "class": "w-28 h-28",
             src: icon.icon,
             alt: "Icono de tarea"
           }, null, 8
@@ -30895,9 +30900,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           , _hoisted_10)]);
         }), 128
         /* KEYED_FRAGMENT */
-        ))]), _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(basic.title), 1
+        )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(basic.title), 1
         /* TEXT */
-        )]), _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+        )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+          "class": "ml-10",
           as: "button",
           type: "button",
           method: "delete",
@@ -30911,7 +30917,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
         }, 1032
         /* PROPS, DYNAMIC_SLOTS */
-        , ["href"])])])]);
+        , ["href"])])])])]);
       }), 128
       /* KEYED_FRAGMENT */
       ))])])])];
@@ -31491,7 +31497,7 @@ var _hoisted_1 = {
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Inicio");
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Categoria de Tareas ");
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Categoría de Tareas ");
 
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "mb-6 font-medium text-center text-gray-800"
@@ -31500,6 +31506,7 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  "class": "w-32 h-32 mb-2",
   src: "images/basic.png",
   alt: "Icono de tareas básicas"
 }, null, -1
@@ -31507,12 +31514,13 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
-  "class": "text-xl font-bold text-center"
+  "class": "text-lg text-noNegro font-bold text-center"
 }, "Tareas Básicas", -1
 /* HOISTED */
 );
 
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  "class": "w-32 h-32 mb-2",
   src: "images/instrumental.png",
   alt: "Icono de tareas instrumentales"
 }, null, -1
@@ -31520,12 +31528,13 @@ var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
-  "class": "text-xl font-bold text-center"
+  "class": "text-lg text-noNegro font-bold text-center"
 }, "Tareas Instrumentales", -1
 /* HOISTED */
 );
 
 var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  "class": "w-32 h-32 mb-2",
   src: "images/advanced.png",
   alt: "Icono de tareas avanzadas"
 }, null, -1
@@ -31533,7 +31542,7 @@ var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
-  "class": "text-xl font-bold text-center"
+  "class": "text-lg text-noNegro font-bold text-center"
 }, "Tareas Avanzadas", -1
 /* HOISTED */
 );
