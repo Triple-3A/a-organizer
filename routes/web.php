@@ -91,9 +91,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         });
         //advanced task
         Route::controller(UserAdvancedTaskController::class)->group(function () {
-            Route::get('techUserAdvanced/{id}', [UserAdvancedTaskController::class, 'index'])->name('techUserAdvanced');
+            Route::get('techUserAdvanced/{id}', 'index')->name('techUserAdvanced');
             Route::get('techUserAdvanced/pick/{id}', 'pick')->name('techUserAdvanced/pick');
             Route::post('techUserAdvanced/create', 'create')->name('techUserAdvanced/create');
+            Route::post('techUserAdvanced/store', 'store')->name('techUserAdvanced/store');
             
             Route::get('techUserAdvanced/deleteTask/{id}', 'destroy')->name('techUserAdvanced/deleteTask');
         });
