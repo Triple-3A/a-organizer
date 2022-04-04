@@ -1,12 +1,12 @@
 <template>
     <div>
         <td class="flex flex-col">
-            <div>
-                <strong> {{ name }} </strong>
+            <div class="text-sm text-noNegro font-bold">
+                 {{ name }} 
             </div>
             <div>
                 <p
-                    class="text-noNegro font-bold flex flex-row justify-between mb-2 w-11/12"
+                    class="text-noNegro text-sm font-medium flex flex-row justify-between mb-2 w-11/12"
                 >
                     {{ email }}
                 </p>

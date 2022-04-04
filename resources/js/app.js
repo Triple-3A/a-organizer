@@ -7,12 +7,11 @@ import { InertiaProgress } from '@inertiajs/progress';
 //Import new components
 import  JetCreateBtn  from '@/Jetstream/CreateBtn.vue';
 import JetDeleteBtn from '@/Jetstream/DeleteBtn.vue';
+import JetEditBtn from '@/Jetstream/EditBtn.vue';
 import JetSubmitBtn from '@/Jetstream/SubmitBtn.vue';
 import JetCancelBtn from '@/Jetstream/CancelBtn.vue';
 import JetCard from '@/Jetstream/Card.vue';
 import JetBasicSvg from '@/Jetstream/BasicSvg.vue';
-import JetTitlesCategoriesSvg from '@/Jetstream/TitlesCategoriesSvg.vue';
-import JetUsersCategoriesSvg from '@/Jetstream/UsersCategoriesSvg.vue';
 import JetArrowNextSvg from '@/Jetstream/ArrowNextSvg.vue';
 import JetOwnInput from '@/Jetstream/OwnInput.vue';
 import JetBasicTitleSvg from '@/Jetstream/BasicTitleSvg.vue';
@@ -39,12 +38,11 @@ createInertiaApp({
 //Globalize new components
 app.component('jet-create-btn', JetCreateBtn);
 app.component('jet-delete-btn', JetDeleteBtn);
+app.component('jet-edit-btn', JetEditBtn);
 app.component('jet-submit-btn', JetSubmitBtn);
 app.component('jet-cancel-btn', JetCancelBtn);
 app.component('jet-card', JetCard);
 app.component('jet-basic-svg', JetBasicSvg);
-app.component('jet-titles-categories-svg', JetTitlesCategoriesSvg);
-app.component('jet-users-categories-svg', JetUsersCategoriesSvg);
 app.component('jet-arrow-next-svg', JetArrowNextSvg);
 app.component('jet-own-input', JetOwnInput);
 app.component('jet-basic-title-svg', JetBasicTitleSvg);

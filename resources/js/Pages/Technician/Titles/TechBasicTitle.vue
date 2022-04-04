@@ -24,7 +24,7 @@
           <div class="flex items-center justify-end">
             <Link :href="route('basicTitle/create')" type="button">
             <jet-create-btn />
-          </Link> 
+          </Link>
           </div>
 
           <div class="mt-2 flex items-center justify-center">
@@ -34,7 +34,9 @@
             <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
               <div class="flex items-center justify-start p-4 rounded-lg">
                 <div>
-                  <jet-basic-title-svg />
+                  <div v-for="icon in basic.icons" :key="icon.id">
+                    <img :src="icon.icon" alt="Icono de tarea" />
+                  </div>
                 </div>
                 <div class="px-8"></div>
                 <div class="flex flex-row">

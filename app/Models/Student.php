@@ -22,7 +22,7 @@ class Student extends Model
         return $this->belongsToMany(User::class);
     }
 
-    public function technician()
+    public function technicians()
     {
         return $this->belongsToMany(Technician::class);
     }

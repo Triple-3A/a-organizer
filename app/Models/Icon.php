@@ -14,8 +14,8 @@ class Icon extends Model
         'icon',
     ];
 
-    public function tasks()
+    public function titles()
     {
-        return $this->belongsToMany(Task::class);
+        return $this->belongsToMany(Title::class);
     }
 }

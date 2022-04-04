@@ -24,23 +24,22 @@
         <div class="overflow-hidden">
           <div class="flex items-center justify-end">
             <Link :href="route('advancedTitle/create')" type="button">
-            <jet-create-btn />
-          </Link> 
+              <jet-create-btn />
+            </Link>
           </div>
 
           <div class="mt-2 flex items-center justify-center">
             <jet-title>Tareas Avanzadas</jet-title>
           </div>
 
-
           <h2 class="mb-2">Educación</h2>
           <div v-for="education in educations" :key="education.id">
             <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
               <div class="flex items-center justify-start p-4 rounded-lg">
                 <div>
-                  <Link :href="route('advancedTitle/create')">
-                    <jet-advanced-title-svg />
-                  </Link>
+                  <div v-for="icon in education.icons" :key="icon.id">
+                    <img :src="icon.icon" alt="Icono de tarea" />
+                  </div>
                 </div>
 
                 <div class="px-8"></div>
@@ -67,7 +66,9 @@
             <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
               <div class="flex items-center justify-start p-4 rounded-lg">
                 <div>
-                  <jet-advanced-title-svg />
+                  <div v-for="icon in job.icons" :key="icon.id">
+                    <img :src="icon.icon" alt="Icono de tarea" />
+                  </div>
                 </div>
 
                 <div class="px-8"></div>
@@ -94,7 +95,9 @@
             <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
               <div class="flex items-center justify-start p-4 rounded-lg">
                 <div>
-                  <jet-advanced-title-svg />
+                  <div v-for="icon in game.icons" :key="icon.id">
+                    <img :src="icon.icon" alt="Icono de tarea" />
+                  </div>
                 </div>
 
                 <div class="px-8"></div>
@@ -110,6 +113,35 @@
                   type="button"
                   method="delete"
                   :href="route('advancedTitle/delete', game.id)"
+                >
+                  <jet-delete-btn />
+                </Link>
+              </div>
+            </div>
+          </div>
+          <h2 class="mb-2">Tiempo libre</h2>
+          <div v-for="libre in freeTime" :key="libre.id">
+            <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
+              <div class="flex items-center justify-start p-4 rounded-lg">
+                <div>
+                  <Link :href="route('advancedTitle/create')">
+                    <jet-advanced-title-svg />
+                  </Link>
+                </div>
+
+                <div class="px-8"></div>
+
+                <div class="flex flex-row">
+                  <h1 class="ml-12 text-xl font-bold">{{ libre.title }}</h1>
+                </div>
+
+                <div class="px-16"></div>
+
+                <Link
+                  as="button"
+                  type="button"
+                  method="delete"
+                  :href="route('advancedTitle/delete', libre.id)"
                 >
                   <jet-delete-btn />
                 </Link>
@@ -136,6 +168,7 @@ export default {
     educations: Array,
     jobs: Array,
     games: Array,
+    freeTime: Array,
   },
   components: {
     AppLayout,
