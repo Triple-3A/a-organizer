@@ -6,6 +6,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
+use App\Models\Student;
 
 class StudentController extends Controller
 {
@@ -17,14 +18,23 @@ class StudentController extends Controller
     public function index()
     {
         try {
-            return Inertia::render('Student/StudentName');
+            $userId = auth()->id();
+            $currentStudent = Student::where('user_id', $userId)->get();
 
-            //if else por si ya puso su nickname y profile photo
-            //return Redirect::route('studentTasks');
-
+            if ($currentStudent->pluck('nickname')[0] === null) {
+                return Inertia::render('Student/StudentName', compact('currentStudent'));
+            } else {
+                return Redirect::route('studentPic');
+            }
         } catch (Exception $error) {
             return $error->getMessage();
         }
+    }
+
+    public function assignStudentNickname(Request $request){
+
+        dd($request->all());
+            return Redirect::route('studentPic');
     }
 
     public function studentPic(){

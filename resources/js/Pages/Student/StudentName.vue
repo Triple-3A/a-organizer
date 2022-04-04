@@ -14,19 +14,19 @@
             "
           >
             <jet-title>¡HOLA!</jet-title>
-            <jet-sub-title
-              >Dinos como te gustaría que te llamemos</jet-sub-title
-            >
+            <jet-sub-title>Dinos como te gustaría que te llamemos</jet-sub-title>
           </div>
           <div class="flex flex-col items-center justify-center">
-            <div class="block max-w-sm px-12 py-3 bg-white">
-              <jet-own-input class="placeholder p-2 mb-6"> </jet-own-input>
-            </div>
-            <Link :href="route('studentPic')">
-              <jet-btn>Siguiente</jet-btn
-              >
-            </Link>
-          </div>
+            <form @submit.prevent="submit">
+
+              <div class="block max-w-sm px-12 py-3 bg-white"> 
+                  <jet-own-input class="placeholder p-2 mb-6" v-model= "form.nickname"> </jet-own-input>
+              </div>
+              <!-- <Link :href="route('studentPic')"> -->
+                <jet-btn>Siguiente</jet-btn>
+              <!-- </Link> -->
+            </form>
+           </div>
         </div>
       </div>
     </div>
@@ -51,6 +51,20 @@ export default {
     Head,
     Link,
   },
+
+  data() {
+    return {
+      form:this.$inertia.form({
+        nickname: null,
+      }),
+    }
+  },
+
+  methods: {
+      submit() {
+            this.form.post(this.route("assignStudentNickname"));
+      },
+  }
 };
 </script>
 
