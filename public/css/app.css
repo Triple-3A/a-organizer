@@ -1828,6 +1828,10 @@ select {
   --tw-text-opacity: 1;
   color: rgb(241 197 82 / var(--tw-text-opacity));
 }
+.text-rojo {
+  --tw-text-opacity: 1;
+  color: rgb(246 105 87 / var(--tw-text-opacity));
+}
 .text-noNegro {
   --tw-text-opacity: 1;
   color: rgb(74 82 81 / var(--tw-text-opacity));
