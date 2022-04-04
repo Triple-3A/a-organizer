@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Jetstream\Features;
+use Illuminate\Contracts\Auth\Authenticable; 
 use Tests\TestCase;
 
 class PasswordConfirmationTest extends TestCase
@@ -24,7 +25,7 @@ class PasswordConfirmationTest extends TestCase
     {
         $user = User::factory()->create();
 
-        $response = $this->withSession(['role' => 'standBy'])->post('/user/confirm-password', [
+        $response = $this->actingAs($user)->post('/user/confirm-password', [
             'password' => 'password',
         ]);
 
@@ -35,8 +36,8 @@ class PasswordConfirmationTest extends TestCase
     public function test_password_is_not_confirmed_with_invalid_password()
     {
         $user = User::factory()->create();
-
-        $response = $this->withSession(['role' => 'standBy'])->post('/user/confirm-password', [
+                                                                                            
+        $response = $this->actingAs($user)->post('/user/confirm-password', [ 
             'password' => 'wrong-password',
         ]);
 

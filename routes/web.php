@@ -75,7 +75,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::resource('techUserBasic', UserBasicDescriptionController::class, ['only' => ['store', 'edit', 'update']])->names(['store' => 'techUserBasic/storeDescription', 'edit' => 'techUserBasic/editDescription', 'update' => 'techUserBasic/updateDescription']);
         Route::controller(UserBasicDescriptionController::class)->group(function () {
             Route::get('techUserBasic/createDescription/{id}', 'create')->name('techUserBasic/createDescription');
-            Route::get('techUserBasic/deleteDescription/{id}', 'destroy')->name('techUserBasic/deleteDescription');
+            Route::delete('techUserBasic/deleteDescription/{id}', 'destroy')->name('techUserBasic/deleteDescription');
         });
         //instrumental task
         Route::resource('techUserInstrumental/{id}', UserInstrumentalTaskController::class, ['only' => ['index', 'create']])->names(['index' => 'techUserInstrumental', 'create' => 'techUserInstrumental/create']);
