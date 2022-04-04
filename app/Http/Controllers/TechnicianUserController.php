@@ -50,39 +50,6 @@ class TechnicianUserController extends Controller
         }
     }
 
-    public function techUserBasic($id)
-    {
-        try {
-            $student = User::where('id', $id)->get();
-
-            return Inertia::render('Technician/Users/TechUserBasic', compact('student'));
-        } catch (Exception $error) {
-            return $error->getMessage();
-        }
-    }
-
-    public function techUserInstrumental($id)
-    {
-        try {
-            $student = User::where('id', $id)->get();
-
-            return Inertia::render('Technician/Users/TechUserInstrumental', compact('student'));
-        } catch (Exception $error) {
-            return $error->getMessage();
-        }
-    }
-
-    public function techUserAdvanced($id)
-    {
-        try {
-            $student = User::where('id', $id)->get();
-
-            return Inertia::render('Technician/Users/TechUserAdvanced', compact('student'));
-        } catch (Exception $error) {
-            return $error->getMessage();
-        }
-    }
-
     /**
      * Show the form for creating a new resource.
      *

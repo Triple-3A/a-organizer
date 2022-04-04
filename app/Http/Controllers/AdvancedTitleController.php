@@ -21,6 +21,7 @@ class AdvancedTitleController extends Controller
             $educations = [];
             $jobs = [];
             $games = [];
+            $freeTime = [];
 
             $titleTasks = Title::all();
             $titleTasks->load('icons');
@@ -32,10 +33,12 @@ class AdvancedTitleController extends Controller
                     array_push($jobs, $titleTask);
                 } else if ($titleTask->type == 'juego') {
                     array_push($games, $titleTask);
+                } else if ($titleTask->type == 'tiempo libre'){
+                    array_push($freeTime, $titleTask);
                 }
             }
 
-            return Inertia::render('Technician/Titles/TechAdvancedTitle', compact('educations', 'jobs', 'games'));
+            return Inertia::render('Technician/Titles/TechAdvancedTitle', compact('educations', 'jobs', 'games', 'freeTime'));
         } catch (Exception $error) {
             return $error->getMessage();
         }

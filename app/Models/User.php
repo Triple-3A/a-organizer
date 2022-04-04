@@ -77,4 +77,9 @@ class User extends Authenticatable
         return $this->belongsToMany(Student::class);
     }
 
+    public function tasks()
+    {
+        return $this->belongsToMany(Task::class);
+    }
+
 }
