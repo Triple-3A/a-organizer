@@ -33,7 +33,13 @@ class StudentController extends Controller
 
     public function assignStudentNickname(Request $request)
     {
-        dd($request->all());
+        $userId = auth()->id();
+        $currentStudent = Student::where('user_id', $userId)->get();
+        foreach ($currentStudent as $student) {
+            $studentOne = $student;
+        }
+        $studentOne->update($request->all());
+
         return Redirect::route('studentPic');
     }
 
