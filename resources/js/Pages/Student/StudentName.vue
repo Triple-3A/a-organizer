@@ -14,19 +14,35 @@
             "
           >
             <jet-title>¡HOLA!</jet-title>
-            <jet-sub-title>Dinos como te gustaría que te llamemos</jet-sub-title>
+            <jet-sub-title
+              >Dinos como te gustaría que te llamemos</jet-sub-title
+            >
           </div>
           <div class="flex flex-col items-center justify-center">
             <form @submit.prevent="submit">
-
-              <div class="block max-w-sm px-12 py-3 bg-white"> 
-                  <jet-own-input class="placeholder p-2 mb-6" v-model= "form.nickname"> </jet-own-input>
+              <div class="block max-w-sm px-12 py-3 bg-white">
+                <input
+                  placeholder="Introduce tu nombre"
+                  v-model="form.nickname"
+                  class="
+                    block
+                    w-full
+                    px-6
+                    mt-1
+                    text-xs text-center
+                    border-2
+                    rounded
+                    shadow-sm
+                    border-amarillo
+                  "
+                />
+                <!-- <jet-own-input class="placeholder p-2 mb-6" v-model= "form.nickname"> </jet-own-input> -->
               </div>
               <!-- <Link :href="route('studentPic')"> -->
-                <jet-btn>Siguiente</jet-btn>
+              <jet-btn>Siguiente</jet-btn>
               <!-- </Link> -->
             </form>
-           </div>
+          </div>
         </div>
       </div>
     </div>
@@ -54,17 +70,17 @@ export default {
 
   data() {
     return {
-      form:this.$inertia.form({
+      form: this.$inertia.form({
         nickname: null,
       }),
-    }
+    };
   },
 
   methods: {
-      submit() {
-            this.form.post(this.route("assignStudentNickname"));
-      },
-  }
+    submit() {
+      this.form.post(this.route("assignStudentNickname"));
+    },
+  },
 };
 </script>
 
