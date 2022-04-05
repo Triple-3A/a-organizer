@@ -67,42 +67,42 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         });
         //basic task
         Route::resource('techUserBasic/{id}', UserBasicTaskController::class, ['only' => ['index', 'create']])->names(['index' => 'techUserBasic', 'create' => 'techUserBasic/create']);
-        Route::resource('techUserBasic', UserBasicTaskController::class, ['only' => ['store', 'destroy']])->names(['store' => 'techUserBasic/store', 'destroy' => 'techUserBasic/delete']);
+        // Route::resource('techUserBasic', UserBasicTaskController::class, ['only' => ['store', 'destroy']])->names(['store' => 'techUserBasic/store', 'destroy' => 'techUserBasic/delete']);
         Route::controller(UserBasicTaskController::class)->group(function () {
             Route::post('techUserBasic/store', 'store')->name('techUserBasic/store');
+            Route::delete('techUserBasic/delete/{id}', 'destroy')->name('techUserBasic/delete');
         });
         //basic description
-        Route::resource('techUserBasic', UserBasicDescriptionController::class, ['only' => ['store', 'edit', 'update']])->names(['store' => 'techUserBasic/storeDescription', 'edit' => 'techUserBasic/editDescription', 'update' => 'techUserBasic/updateDescription']);
+        Route::resource('techUserBasic', UserBasicDescriptionController::class, ['only' => ['store', 'edit', 'update', 'destroy']])->names(['store' => 'techUserBasic/storeDescription', 'edit' => 'techUserBasic/editDescription', 'update' => 'techUserBasic/updateDescription', 'destroy' => 'techUserBasic/deleteDescription']);
         Route::controller(UserBasicDescriptionController::class)->group(function () {
             Route::get('techUserBasic/createDescription/{id}', 'create')->name('techUserBasic/createDescription');
-            Route::delete('techUserBasic/deleteDescription/{id}', 'destroy')->name('techUserBasic/deleteDescription');
         });
         //instrumental task
         Route::resource('techUserInstrumental/{id}', UserInstrumentalTaskController::class, ['only' => ['index', 'create']])->names(['index' => 'techUserInstrumental', 'create' => 'techUserInstrumental/create']);
+        // Route::resource('techUserInstrumental', UserInstrumentalTaskController::class, ['only' => ['destroy', 'store']])->names(['destroy' => 'techUserInstrumental/deleteTask', 'store' => 'techUserInstrumental/store']);
         Route::controller(UserInstrumentalTaskController::class)->group(function () {
             Route::post('techUserInstrumental/store', 'store')->name('techUserInstrumental/store');
-            Route::get('techUserInstrumental/deleteTask/{id}', 'destroy')->name('techUserInstrumental/deleteTask');
+            Route::delete('techUserInstrumental/deleteTask/{id}', 'destroy')->name('techUserInstrumental/deleteTask');
         });
-        //instrumental task
-        Route::resource('techUserInstrumental', UserInstrumentalDescriptionController::class, ['only' => ['store', 'edit', 'update', 'store']])->names(['store' => 'techUserInstrumental/storeDescription', 'edit' => 'techUserInstrumental/editDescription', 'update' => 'techUserInstrumental/updateDescription', 'store' => 'techUserInstrumental/storeDescription']);
+        //instrumental description
+        Route::resource('techUserInstrumental', UserInstrumentalDescriptionController::class, ['only' => ['store', 'edit', 'update', 'destroy']])->names(['store' => 'techUserInstrumental/storeDescription', 'edit' => 'techUserInstrumental/editDescription', 'update' => 'techUserInstrumental/updateDescription', 'destroy' => 'techUserInstrumental/deleteDescription']);
         Route::controller(UserInstrumentalDescriptionController::class)->group(function () {
             Route::get('techUserInstrumental/createDescription/{id}', 'create')->name('techUserInstrumental/createDescription');
-            Route::get('techUserInstrumental/deleteDescription/{id}', 'destroy')->name('techUserInstrumental/deleteDescription');
         });
         //advanced task
+        // Route::resource('techUserAdvanced', UserAdvancedTaskController::class, ['only' => ['store', 'destroy']])->names(['store' => 'techUserAdvanced/store', 'destroy' => 'techUserAdvanced/deleteTask']);
         Route::controller(UserAdvancedTaskController::class)->group(function () {
             Route::get('techUserAdvanced/{id}', 'index')->name('techUserAdvanced');
             Route::get('techUserAdvanced/pick/{id}', 'pick')->name('techUserAdvanced/pick');
             Route::post('techUserAdvanced/create', 'create')->name('techUserAdvanced/create');
+
             Route::post('techUserAdvanced/store', 'store')->name('techUserAdvanced/store');
-            
-            Route::get('techUserAdvanced/deleteTask/{id}', 'destroy')->name('techUserAdvanced/deleteTask');
+            Route::delete('techUserAdvanced/deleteTask/{id}', 'destroy')->name('techUserAdvanced/deleteTask');
         });
         //advanced description
-        Route::resource('techUserAdvanced', UserAdvancedDescriptionController::class, ['only' => ['store', 'edit', 'update']])->names(['store' => 'techUserAdvanced/storeDescription', 'edit' => 'techUserAdvanced/editDescription', 'update' => 'techUserAdvanced/updateDescription']);
+        Route::resource('techUserAdvanced', UserAdvancedDescriptionController::class, ['only' => ['store', 'edit', 'update', 'destroy']])->names(['store' => 'techUserAdvanced/storeDescription', 'edit' => 'techUserAdvanced/editDescription', 'update' => 'techUserAdvanced/updateDescription', 'destroy' => 'techUserAdvanced/deleteDescription']);
         Route::controller(UserAdvancedDescriptionController::class)->group(function () {
             Route::get('techUserAdvanced/createDescription/{id}', 'create')->name('techUserAdvanced/createDescription');
-            Route::get('techUserAdvanced/deleteDescription/{id}', 'destroy')->name('techUserAdvanced/deleteDescription');
         });
     });
 

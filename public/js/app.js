@@ -33402,6 +33402,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             }, 1032
             /* PROPS, DYNAMIC_SLOTS */
             , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+              type: "button",
+              method: "delete",
               href: _ctx.route('techUserAdvanced/deleteTask', task.id)
             }, {
               "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -33437,6 +33439,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, 1032
           /* PROPS, DYNAMIC_SLOTS */
           , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+            type: "button",
+            method: "delete",
             href: _ctx.route('techUserAdvanced/deleteDescription', description.id)
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -33479,6 +33483,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             }, 1032
             /* PROPS, DYNAMIC_SLOTS */
             , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+              type: "button",
+              method: "delete",
               href: _ctx.route('techUserAdvanced/deleteTask', task.id)
             }, {
               "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -33514,6 +33520,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, 1032
           /* PROPS, DYNAMIC_SLOTS */
           , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+            type: "button",
+            method: "delete",
             href: _ctx.route('techUserAdvanced/deleteDescription', description.id)
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -33556,6 +33564,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             }, 1032
             /* PROPS, DYNAMIC_SLOTS */
             , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+              type: "button",
+              method: "delete",
               href: _ctx.route('techUserAdvanced/deleteTask', task.id)
             }, {
               "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -33591,6 +33601,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, 1032
           /* PROPS, DYNAMIC_SLOTS */
           , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+            type: "button",
+            method: "delete",
             href: _ctx.route('techUserAdvanced/deleteDescription', description.id)
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -33633,6 +33645,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             }, 1032
             /* PROPS, DYNAMIC_SLOTS */
             , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+              type: "button",
+              method: "delete",
               href: _ctx.route('techUserAdvanced/deleteTask', task.id)
             }, {
               "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -33668,6 +33682,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, 1032
           /* PROPS, DYNAMIC_SLOTS */
           , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+            type: "button",
+            method: "delete",
             href: _ctx.route('techUserAdvanced/deleteDescription', description.id)
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -33900,6 +33916,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, 1032
           /* PROPS, DYNAMIC_SLOTS */
           , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+            type: "button",
+            method: "delete",
             href: _ctx.route('techUserBasic/deleteDescription', description.id)
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -34098,6 +34116,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             }, 1032
             /* PROPS, DYNAMIC_SLOTS */
             , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+              type: "button",
+              method: "delete",
               href: _ctx.route('techUserInstrumental/deleteTask', task.id)
             }, {
               "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -34133,6 +34153,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, 1032
           /* PROPS, DYNAMIC_SLOTS */
           , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+            type: "button",
+            method: "delete",
             href: _ctx.route('techUserInstrumental/deleteDescription', description.id)
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
