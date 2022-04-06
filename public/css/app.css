@@ -972,21 +972,9 @@ select {
 .col-span-6 {
   grid-column: span 6 / span 6;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-.float-left {
-  float: left;
-}
 .m-4 {
   margin: 24px;
 }
->>>>>>> e9125d6733c42f6471eba23d71feec4b231a2d61
-=======
-.m-4 {
-  margin: 24px;
-}
->>>>>>> f98abf609625c0244f4b25c2d383f25ead8662ea
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1075,13 +1063,6 @@ select {
 .-mt-px {
   margin-top: -1px;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-.mr-2\.5 {
-  margin-right: 0.625rem;
-}
-=======
->>>>>>> develop
 .mr-1 {
   margin-right: 8px;
 }
@@ -1091,26 +1072,6 @@ select {
 .mb-12 {
   margin-bottom: 3rem;
 }
-=======
-<<<<<<< HEAD
-.mr-1 {
-  margin-right: 8px;
-}
-.mr-2\.5 {
-  margin-right: 0.625rem;
-}
-.mb-12 {
-  margin-bottom: 3rem;
-}
-=======
-.mb-12 {
-  margin-bottom: 3rem;
-}
-.mr-6 {
-  margin-right: 48px;
-}
->>>>>>> d4f6e89e89c62fae5fb8f983ad16b2ede5fdf4ab
->>>>>>> e9125d6733c42f6471eba23d71feec4b231a2d61
 .mb-2 {
   margin-bottom: 12px;
 }
@@ -1138,21 +1099,9 @@ select {
 .ml-10 {
   margin-left: 2.5rem;
 }
-<<<<<<< HEAD
 .mr-4 {
   margin-right: 24px;
 }
-=======
-<<<<<<< HEAD
-.mr-4 {
-  margin-right: 24px;
-}
-.mr-6 {
-  margin-right: 48px;
-}
-=======
->>>>>>> d4f6e89e89c62fae5fb8f983ad16b2ede5fdf4ab
->>>>>>> e9125d6733c42f6471eba23d71feec4b231a2d61
 .block {
   display: block;
 }
@@ -1267,23 +1216,6 @@ select {
 .w-96 {
   width: 24rem;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-.w-14 {
-  width: 3.5rem;
-}
-.w-9\/12 {
-  width: 75%;
-}
-=======
->>>>>>> d4f6e89e89c62fae5fb8f983ad16b2ede5fdf4ab
-=======
-.w-32 {
-  width: 8rem;
-}
->>>>>>> develop
-=======
 .w-9\/12 {
   width: 75%;
 }
@@ -1296,7 +1228,6 @@ select {
 .w-80 {
   width: 20rem;
 }
->>>>>>> f98abf609625c0244f4b25c2d383f25ead8662ea
 .w-1\/5 {
   width: 20%;
 }
@@ -1603,51 +1534,25 @@ select {
   background-color: rgb(95 144 186 / var(--tw-bg-opacity));
 }
 .bg-red-500 {
-<<<<<<< HEAD
-=======
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
-<<<<<<< HEAD
-.bg-azul600 {
->>>>>>> d4f6e89e89c62fae5fb8f983ad16b2ede5fdf4ab
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 .bg-amarillo {
   --tw-bg-opacity: 1;
-=======
-.bg-amarillo {
-  --tw-bg-opacity: 1;
->>>>>>> f98abf609625c0244f4b25c2d383f25ead8662ea
   background-color: rgb(241 197 82 / var(--tw-bg-opacity));
 }
 .bg-azul600 {
   --tw-bg-opacity: 1;
   background-color: rgb(135 155 171 / var(--tw-bg-opacity));
 }
-.bg-azul600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(135 155 171 / var(--tw-bg-opacity));
-}
-<<<<<<< HEAD
 .bg-sky-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(2 132 199 / var(--tw-bg-opacity));
 }
-=======
->>>>>>> f98abf609625c0244f4b25c2d383f25ead8662ea
 .bg-orange-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(255 237 213 / var(--tw-bg-opacity));
 }
-<<<<<<< HEAD
-.bg-rojo {
-  --tw-bg-opacity: 1;
-  background-color: rgb(246 105 87 / var(--tw-bg-opacity));
-}
-=======
->>>>>>> d4f6e89e89c62fae5fb8f983ad16b2ede5fdf4ab
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }
@@ -1768,19 +1673,9 @@ select {
   padding-left: 4rem;
   padding-right: 4rem;
 }
-<<<<<<< HEAD
-.px-5 {
-  padding-left: 32px;
-  padding-right: 32px;
-}
-.px-7 {
-  padding-left: 1.75rem;
-  padding-right: 1.75rem;
-=======
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
->>>>>>> f98abf609625c0244f4b25c2d383f25ead8662ea
 }
 .pt-6 {
   padding-top: 48px;
@@ -1972,26 +1867,14 @@ select {
   --tw-text-opacity: 1;
   color: rgb(95 144 186 / var(--tw-text-opacity));
 }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> e9125d6733c42f6471eba23d71feec4b231a2d61
 .text-amarillo {
   --tw-text-opacity: 1;
   color: rgb(241 197 82 / var(--tw-text-opacity));
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> d4f6e89e89c62fae5fb8f983ad16b2ede5fdf4ab
->>>>>>> e9125d6733c42f6471eba23d71feec4b231a2d61
-=======
 .text-rojo {
   --tw-text-opacity: 1;
   color: rgb(246 105 87 / var(--tw-text-opacity));
 }
->>>>>>> f98abf609625c0244f4b25c2d383f25ead8662ea
 .text-noNegro {
   --tw-text-opacity: 1;
   color: rgb(74 82 81 / var(--tw-text-opacity));
@@ -2004,19 +1887,6 @@ select {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-.text-rojo {
-  --tw-text-opacity: 1;
-  color: rgb(246 105 87 / var(--tw-text-opacity));
-=======
-.text-amarillo {
-  --tw-text-opacity: 1;
-  color: rgb(241 197 82 / var(--tw-text-opacity));
->>>>>>> d4f6e89e89c62fae5fb8f983ad16b2ede5fdf4ab
-}
->>>>>>> e9125d6733c42f6471eba23d71feec4b231a2d61
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -2085,16 +1955,6 @@ select {
   --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-.drop-shadow-lg {
-  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-=======
->>>>>>> e9125d6733c42f6471eba23d71feec4b231a2d61
-=======
->>>>>>> develop
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
@@ -2189,16 +2049,6 @@ select {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-.hover\:drop-shadow-xl:hover {
-  --tw-drop-shadow: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-=======
->>>>>>> e9125d6733c42f6471eba23d71feec4b231a2d61
-=======
->>>>>>> develop
 .hover\:drop-shadow-2xl:hover {
   --tw-drop-shadow: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
