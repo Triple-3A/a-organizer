@@ -85,7 +85,8 @@
                   >
                     <jet-edit-btn />
                   </Link>
-                  <Link 
+                  <Link type="button"
+                      method="delete"
                     :href="
                       route('techUserBasic/deleteDescription', description.id)
                     "

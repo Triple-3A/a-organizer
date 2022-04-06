@@ -57,7 +57,8 @@
                     >
                       <jet-create-btn />
                     </Link>
-                    <Link :href="route('techUserAdvanced/deleteTask', task.id)">
+                    <Link type="button"
+                      method="delete" :href="route('techUserAdvanced/deleteTask', task.id)">
                       <jet-delete-btn />
                     </Link>
                   </div>
@@ -87,7 +88,8 @@
                   >
                     <jet-edit-btn />
                   </Link>
-                  <Link
+                  <Link type="button"
+                      method="delete"
                     :href="
                       route('techUserAdvanced/deleteDescription', description.id)
                     "
@@ -123,7 +125,8 @@
                     >
                       <jet-create-btn />
                     </Link>
-                    <Link :href="route('techUserAdvanced/deleteTask', task.id)">
+                    <Link type="button"
+                      method="delete" :href="route('techUserAdvanced/deleteTask', task.id)">
                       <jet-delete-btn />
                     </Link>
                   </div>
@@ -153,7 +156,8 @@
                   >
                     <jet-edit-btn />
                   </Link>
-                  <Link
+                  <Link type="button"
+                      method="delete"
                     :href="
                       route('techUserAdvanced/deleteDescription', description.id)
                     "
@@ -189,7 +193,8 @@
                     >
                       <jet-create-btn />
                     </Link>
-                    <Link :href="route('techUserAdvanced/deleteTask', task.id)">
+                    <Link type="button"
+                      method="delete" :href="route('techUserAdvanced/deleteTask', task.id)">
                       <jet-delete-btn />
                     </Link>
                   </div>
@@ -219,7 +224,8 @@
                   >
                     <jet-edit-btn />
                   </Link>
-                  <Link
+                  <Link type="button"
+                      method="delete"
                     :href="
                       route('techUserAdvanced/deleteDescription', description.id)
                     "
@@ -255,7 +261,8 @@
                     >
                       <jet-create-btn />
                     </Link>
-                    <Link :href="route('techUserAdvanced/deleteTask', task.id)">
+                    <Link type="button"
+                      method="delete" :href="route('techUserAdvanced/deleteTask', task.id)">
                       <jet-delete-btn />
                     </Link>
                   </div>
@@ -285,7 +292,8 @@
                   >
                     <jet-edit-btn />
                   </Link>
-                  <Link
+                  <Link type="button"
+                      method="delete"
                     :href="
                       route('techUserAdvanced/deleteDescription', description.id)
                     "

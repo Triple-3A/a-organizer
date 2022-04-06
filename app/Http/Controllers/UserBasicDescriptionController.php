@@ -144,17 +144,17 @@ class UserBasicDescriptionController extends Controller
     {
         try {
             $description = Description::find($id);
-            $userId = 0;
+            $student = 0;
             $taskCollection = $description->tasks()->get();
             foreach ($taskCollection as $task) {
                 $userCollection = $task->users()->get();
 
                 foreach ($userCollection as $user) {
-                    $userId = $user->id;
+                    $student = $user->id;
                 }
             }
             $description->delete();
-            return Redirect::route('techUserBasic', $userId);
+            return Redirect::route('techUserBasic', $student);
         } catch (Exception $error) {
             return $error->getMessage();
         }
