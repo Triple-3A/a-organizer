@@ -32,7 +32,7 @@ class StudentController extends Controller
     }
 
     public function assignStudentNickname(Request $request){
-
+        
         dd($request->all());
             return Redirect::route('studentPic');
     }

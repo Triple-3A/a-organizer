@@ -68,22 +68,4 @@ export default {
 };
 </script>
 
-<!--
-                <Link
-                  as="button"
-                  type="button"
-                  method="delete"
-                  :href="route('instrumentalTitle/delete', instrumental.id)"
-                >
-                  <jet-delete-btn />
-                </Link>
-                
-                
-                <Link
-                   class="font-medium"
-                   :href="route('technicianUsersProfile', studentsUser.id)">
-                   <jet-arrow-next-svg />
-                 </Link>
-                
-                
-                 -->
+<!-- REVISAR V-MODEL, NO ESTÁ FUNCIONANDO-->
