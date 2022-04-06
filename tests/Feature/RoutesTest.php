@@ -120,9 +120,11 @@ class RoutesTest extends TestCase
 
     public function test_technician_basic_store()
     {
-        $response = $this->withSession(['role' => 'technician'])
-                         ->delete('/basicTitle/store')
-                         ->assertStatus(302);
+        $this->withSession(['role' => 'technician'])
+                         ->post('basicTitle/store',  [
+                            'title' => 'Instrumental',
+                            'type' => 'instrumental',
+                        ])->assertStatus(302);
 
     }
 

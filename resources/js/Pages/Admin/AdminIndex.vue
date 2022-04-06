@@ -1,17 +1,28 @@
 <template>
     <app-layout title="Dashboard">
         <div class="dashboard_container flex">
-            <div class="mt-3 flex justify-end">
+            <div class="mt-4 flex justify-end">
                 <Link
                     :href="route('assignment')"
                     class="font-bold text-amarillo rounded-lg text-sm py-2.5 text-center flex items-center"
                 >
-                    
-                    <jet-arrow-back-svg>Asignación técnico</jet-arrow-back-svg></Link>
+                    Asignación técnico
+                    <svg
+                        class="fill-amarillo mr-1 ml-2 w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd"
+                        ></path></svg
+                ></Link>
             </div>
 
             <h2
-                class="font-bold text-xl text-azul leading-tight mb-3 mx-auto"
+                class="font-bold text-lg mt-8 text-azul leading-tight mb-3 mx-auto"
             >
                 Control de Roles
             </h2>
@@ -21,14 +32,14 @@
                     <tr class="mb-4">
                         <td
                             colspan="3"
-                            class="bg-amarillo text-white font-poppings font-bold pl-5"
+                            class="bg-amarillo text-white font-poppings text-base font-bold pl-5"
                         >
                             Técnicos
                         </td>
                     </tr>
                 </thead>
                 <tr
-                    class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto mt-2"
+                    class="text-noNegro text-xs font-medium flex flex-row justify-between mb-4 w-11/12 mx-auto mt-2"
                 >
                     <div>
                         <td>Nombre</td>
@@ -54,14 +65,14 @@
                     <tr class="mb-4">
                         <td
                             colspan="3"
-                            class="bg-amarillo text-white font-poppings font-bold pl-5"
+                            class="bg-amarillo text-white font-poppings font-bold text-base pl-5"
                         >
                             Usuarios
                         </td>
                     </tr>
                 </thead>
                 <tr
-                    class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto mt-2"
+                    class="text-noNegro text-xs font-medium flex flex-row justify-between mb-4 w-11/12 mx-auto mt-2"
                 >
                     <div>
                         <td>Nombre</td>
@@ -87,14 +98,14 @@
                     <tr class="mb-4">
                         <td
                             colspan="3"
-                            class="bg-amarillo text-white font-poppings font-bold pl-5"
+                            class="bg-amarillo text-white font-poppings text-base font-bold pl-5"
                         >
                             Pendiente
                         </td>
                     </tr>
                 </thead>
                 <tr
-                    class="text-black font-bold flex flex-row justify-between mb-4 w-11/12 mx-auto mt-2"
+                    class="text-noNegro text-xs font-medium flex flex-row justify-between mb-4 w-11/12 mx-auto mt-2"
                 >
                     <div>
                         <td>Nombre</td>

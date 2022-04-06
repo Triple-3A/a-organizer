@@ -35,18 +35,26 @@ class AdminController extends Controller
     public function reassignRole(Request $request)
     {
         try {
+            
             $userId = $request->get('userId');
+            $user = User::find($userId);
+
             $newRoleId = $request->get('roleId');
             $currentRoleId = $request->get('currentRoleId');
 
-            $user = User::find($userId);
+            $user->roles()->detach();
+            $user->roles()->attach($newRoleId);
 
             if ($currentRoleId == 1) {
                 if ($newRoleId == 3) {
                     Technician::create(array('user_id' => $userId));
+
+                    return Redirect::back();
                 }
                 if ($newRoleId == 4) {
                     Student::create(array('user_id' => $userId));
+
+                    return Redirect::back();
                 }
             }
 
@@ -54,23 +62,23 @@ class AdminController extends Controller
                 $technician = Technician::where('user_id', $userId)->firstOrFail();
                 $technician->delete();
                 Student::create(array('user_id' => $userId));
+
+                return Redirect::back();
             }
 
             if ($currentRoleId == 4) {
                 $student = Student::where('user_id', $userId)->firstOrFail();
                 $student->delete();
                 Technician::create(array('user_id' => $userId));
+
+                return Redirect::back();
             }
 
-            $user->roles()->detach();
-            $user->roles()->attach($newRoleId);
-
-            return Redirect::back();
         } catch (Exception $error) {
             return $error->getMessage();
         }
     }
-    
+
     public function studentAsignment()
     {
         try {
@@ -79,11 +87,11 @@ class AdminController extends Controller
             $technicians = [];
             $students = [];
 
-            foreach($techniciansModels as $index){ 
+            foreach ($techniciansModels as $index) {
                 array_push($technicians, User::find($index->user_id));
             }
-            
-            foreach($studentsModels as $index){ 
+
+            foreach ($studentsModels as $index) {
                 array_push($students, User::find($index->user_id));
             }
 
@@ -114,7 +122,7 @@ class AdminController extends Controller
             foreach ($technicianArray as $index) {
                 $technicianUserId = $index['id'];
             }
-            
+
             foreach ($studentArray as $index) {
                 $studentUserId = $index['id'];
             }
@@ -131,12 +139,12 @@ class AdminController extends Controller
     public function assignStudent()
     {
         try {
-            $arrayAll=[];
+            $arrayAll = [];
 
             $allTechs = Technician::all();
 
             foreach ($allTechs as $allTech) {
-                $arrayGroup=[];
+                $arrayGroup = [];
                 $tech = [];
                 $students = [];
                 $studentTechs = [];
@@ -146,13 +154,12 @@ class AdminController extends Controller
 
                 $allStudents = Student::where('technician_id', $allTech->id)->get();
 
-                foreach($allStudents as $student){
+                foreach ($allStudents as $student) {
                     array_push($students, User::find($student->user_id));
                 }
-                array_push($studentTechs , $students);
-                array_push($arrayGroup , $students);
-                array_push($arrayAll , $arrayGroup);
-
+                array_push($studentTechs, $students);
+                array_push($arrayGroup, $students);
+                array_push($arrayAll, $arrayGroup);
             }
             // dd($arrayAll);
 

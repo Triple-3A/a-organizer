@@ -20,4 +20,11 @@ class Title extends Model
         return $this->belongsToMany(Task::class);
     }
 
+    public function icons()
+    {
+        return $this->belongsToMany(Icon::class)->withPivot(
+            'icon_id', 
+            'title_id',
+        );
+    }
 }

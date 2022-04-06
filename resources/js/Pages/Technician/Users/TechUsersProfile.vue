@@ -32,19 +32,19 @@
     
     <Link class="font-medium" :href="route('techUserBasic', index.id)">
       <jet-card>
-        <jet-basic-svg />
+        <img src="images/basic.png" alt="Icono de tareas básicas" />
         <h1 class="text-xl font-bold text-center">Tareas Básicas</h1>
       </jet-card>
     </Link>
     <Link class="font-medium" :href="route('techUserInstrumental', index.id)">
       <jet-card>
-        <jet-instrumental-svg />
+        <img src="images/instrumental.png" alt="Icono de tareas instrumentales" />
         <h1 class="text-xl font-bold text-center">Tareas Instrumentales</h1>
       </jet-card>
     </Link>
     <Link class="font-medium" :href="route('techUserAdvanced', index.id)">
       <jet-card>
-        <jet-advanced-svg />
+        <img src="images/advanced.png" alt="Icono de tareas avanzadas" />
         <h1 class="text-xl font-bold text-center">Tareas Avanzadas</h1>
       </jet-card>
     </Link>
