@@ -122,12 +122,12 @@ class TitleSeeder extends Seeder
 
         $exploracion = Title::create(array(
             'title' => "Exploración",
-            'type' => "tiempolibre",
+            'type' => "tiempo libre",
         ));
 
         $ocio = Title::create(array(
             'title' => "Ocio",
-            'type' => "tiempolibre",
+            'type' => "tiempo libre",
         ));
     }
 }

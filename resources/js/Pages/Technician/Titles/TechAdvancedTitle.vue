@@ -130,33 +130,33 @@
               </Link>
             </div>
           </div>
-          <h2 class="mb-2">Tiempo libre</h2>
-          <div v-for="libre in freeTime" :key="libre.id">
-            <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
-              <div class="flex items-center justify-start p-4 rounded-lg">
-                <div>
-                  <Link :href="route('advancedTitle/create')">
-                    <jet-advanced-title-svg />
-                  </Link>
+        </div>
+        <h2 class="mb-2">Tiempo libre</h2>
+        <div v-for="free in freeTime" :key="free.id">
+          <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
+            <div class="flex items-center justify-start p-4 rounded-lg">
+              <div>
+                <div v-for="icon in free.icons" :key="icon.id">
+                  <img :src="icon.icon" alt="Icono de tarea" />
                 </div>
-
-                <div class="px-8"></div>
-
-                <div class="flex flex-row">
-                  <h1 class="ml-12 text-xl font-bold">{{ libre.title }}</h1>
-                </div>
-
-                <div class="px-16"></div>
-
-                <Link
-                  as="button"
-                  type="button"
-                  method="delete"
-                  :href="route('advancedTitle/delete', libre.id)"
-                >
-                  <jet-delete-btn />
-                </Link>
               </div>
+
+              <div class="px-8"></div>
+
+              <div class="flex flex-row">
+                <h1 class="ml-12 text-xl font-bold">{{ free.title }}</h1>
+              </div>
+
+              <div class="px-16"></div>
+
+              <Link
+                as="button"
+                type="button"
+                method="delete"
+                :href="route('advancedTitle/delete', free.id)"
+              >
+                <jet-delete-btn />
+              </Link>
             </div>
           </div>
         </div>
