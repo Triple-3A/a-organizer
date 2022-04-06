@@ -22,7 +22,7 @@ class StudentController extends Controller
             $currentStudent = Student::where('user_id', $userId)->get();
 
             if ($currentStudent->pluck('nickname')[0] === null) {
-                return Inertia::render('Student/StudentName', compact('currentStudent'));
+                return Inertia::render('Student/StudentName');
             } else {
                 return Redirect::route('studentPic');
             }
@@ -47,10 +47,29 @@ class StudentController extends Controller
     {
 
         try {
-            return Inertia::render('Student/StudentPic');
+            $userId = auth()->id();
+            $currentStudent = Student::where('user_id', $userId)->get();
+
+            if ($currentStudent->pluck('avatar')[0] === null) {
+                return Inertia::render('Student/StudentPic');
+            } else {
+                return Redirect::route('studentTasks');
+            }
         } catch (Exception $error) {
             return $error->getMessage();
         }
+    }
+
+    public function assignStudentPic(Request $request)
+    {
+        $userId = auth()->id();
+        $currentStudent = Student::where('user_id', $userId)->get();
+        foreach ($currentStudent as $student) {
+            $studentOne = $student;
+        }
+        $studentOne->update($request->all());
+
+        return Redirect::route('studentTasks');
     }
 
     public function studentTasks()
