@@ -11,39 +11,42 @@
                 </h1>
               </div>
             </div>
-            <div>
-              <center>
-                <svg
-                  class="h-16 w-16 text-azul mb-6"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
-                  />
-                </svg>
-              </center>
+            <div class="flex items-center justify-center">
+              <img
+                class="w-32 h-32 mb-2"
+                src="images/basic.png"
+                alt="Icono de tareas básicas"
+              />
             </div>
+
             <form @submit.prevent="basicSubmit">
               <div class="flex justify-center">
-                <div class="block max-w-sm p-12 bg-white">
-                  <input placeholder="Introduce la tarea" id="title"
-                  v-model="basicForm.title" class=" text-center px-6 text-xs
-                  border-2 rounded shadow-sm border-amarillo " />
+                <div class="block max-w-md p-4 bg-white">
+                  <input
+                    placeholder="Introduce el nombre de la tarea"
+                    id="title"
+                    v-model="basicForm.title"
+                    class="
+                      text-center
+                      h-10
+                      w-96
+                      text-xs
+                      border-2
+                      rounded
+                      shadow-sm
+                      border-amarillo
+                    "
+                  />
                 </div>
               </div>
 
               <div class="flex items-center justify-center">
                 <div class="mt-6">
-                  <jet-submit-btn class="mr-4" type="submit">
+                  <jet-submit-btn class="mr-2" type="submit">
                     Guardar
                   </jet-submit-btn>
                   <jet-cancel-btn
-                    class="ml-4"
+                    class="ml-6"
                     :href="route('basicTitle')"
                   ></jet-cancel-btn>
                 </div>
@@ -61,36 +64,24 @@
                   </h1>
                 </div>
               </div>
-              <div>
-                <center>
-                  <svg
-                    class="h-16 w-16 text-azul mb-6"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" />
-                    <rect x="5" y="3" width="14" height="6" rx="2" />
-                    <path d="M19 6h1a2 2 0 0 1 2 2a5 5 0 0 1 -5 5l-5 0v2" />
-                    <rect x="10" y="15" width="4" height="6" rx="1" />
-                  </svg>
-                </center>
+              <div class="flex items-center justify-center">
+                <img
+                  class="w-32 h-32 mb-2"
+                  src="images/instrumental.png"
+                  alt="Icono de tareas instrumentales"
+                />
               </div>
               <form @submit.prevent="instrumentalSubmit">
                 <div class="flex justify-center">
-                  <div class="block max-w-sm p-12 bg-white">
+                  <div class="block max-w-md p-4 bg-white">
                     <input
-                      placeholder="Introduce tarea"
+                      placeholder="Introduce el nombre de la tarea"
                       id="title"
                       v-model="instrumentalForm.title"
                       class="
                         text-center
-                        px-6
+                        h-10
+                        w-96
                         text-xs
                         border-2
                         rounded
@@ -102,11 +93,11 @@
                 </div>
                 <div class="flex items-center justify-center">
                   <div class="mt-6">
-                    <jet-submit-btn class="mr-4" type="submit">
+                    <jet-submit-btn class="mr-2" type="submit">
                       Guardar
                     </jet-submit-btn>
                     <jet-cancel-btn
-                      class="ml-4"
+                      class="ml-6"
                       :href="route('instrumentalTitle')"
                     ></jet-cancel-btn>
                   </div>
@@ -219,7 +210,7 @@
                   <jet-submit-btn class="mr-4" type="submit">
                     Guardar
                   </jet-submit-btn>
-                  
+
                   <jet-cancel-btn
                     class="ml-4"
                     :href="route('advancedTitle')"
