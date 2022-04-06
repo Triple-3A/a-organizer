@@ -24227,13 +24227,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     basicSubmit: function basicSubmit() {
-      this.$inertia.post(route("techUserBasic/storeDescription"), this.basicForm);
+      this.$inertia.post(route("techUserBasicDescription/store"), this.basicForm);
     },
     instrumentalSubmit: function instrumentalSubmit() {
-      this.$inertia.post(route("techUserInstrumental/storeDescription"), this.instrumentalForm);
+      this.$inertia.post(route("techUserInstrumentalDescription/store"), this.instrumentalForm);
     },
     advancedSubmit: function advancedSubmit() {
-      this.$inertia.post(route("techUserAdvanced/storeDescription"), this.advancedForm);
+      this.$inertia.post(route("techUserAdvancedDescription/store"), this.advancedForm);
     }
   }
 });
@@ -24382,13 +24382,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     basicSubmit: function basicSubmit() {
-      this.$inertia.put(route("techUserBasic/updateDescription", this.$props.description.id), this.basicForm);
+      this.$inertia.put(route("techUserBasicDescription/update", this.$props.description.id), this.basicForm);
     },
     instrumentalSubmit: function instrumentalSubmit() {
-      this.$inertia.put(route("techUserInstrumental/updateDescription", this.$props.description.id), this.instrumentalForm);
+      this.$inertia.put(route("techUserInstrumentalDescription/update", this.$props.description.id), this.instrumentalForm);
     },
     advancedSubmit: function advancedSubmit() {
-      this.$inertia.put(route("techUserAdvanced/updateDescription", this.$props.description.id), this.advancedForm);
+      this.$inertia.put(route("techUserAdvancedDescription/update", this.$props.description.id), this.advancedForm);
     }
   }
 });
@@ -31414,21 +31414,22 @@ var _hoisted_31 = {
 var _hoisted_32 = {
   "class": "flex items-center justify-start p-4 rounded-lg"
 };
+var _hoisted_33 = ["src"];
 
-var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "px-8"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_34 = {
+var _hoisted_35 = {
   "class": "flex flex-row"
 };
-var _hoisted_35 = {
+var _hoisted_36 = {
   "class": "ml-12 text-xl font-bold"
 };
 
-var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "px-16"
 }, null, -1
 /* HOISTED */
@@ -31444,8 +31445,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_jet_title = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-title");
 
   var _component_jet_delete_btn = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-delete-btn");
-
-  var _component_jet_advanced_title_svg = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-advanced-title-svg");
 
   var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
 
@@ -31590,40 +31589,40 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
         }, 1032
         /* PROPS, DYNAMIC_SLOTS */
-        , ["href"])])]), _hoisted_30, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.freeTime, function (libre) {
+        , ["href"])])])]);
+      }), 128
+      /* KEYED_FRAGMENT */
+      )), _hoisted_30, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.freeTime, function (free) {
+        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+          key: free.id
+        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(free.icons, function (icon) {
           return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
-            key: libre.id
-          }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-            href: _ctx.route('advancedTitle/create')
-          }, {
-            "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_advanced_title_svg)];
-            }),
-            _: 1
-            /* STABLE */
-
-          }, 8
+            key: icon.id
+          }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+            src: icon.icon,
+            alt: "Icono de tarea"
+          }, null, 8
           /* PROPS */
-          , ["href"])]), _hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_34, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_35, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(libre.title), 1
-          /* TEXT */
-          )]), _hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-            as: "button",
-            type: "button",
-            method: "delete",
-            href: _ctx.route('advancedTitle/delete', libre.id)
-          }, {
-            "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_delete_btn)];
-            }),
-            _: 2
-            /* DYNAMIC */
-
-          }, 1032
-          /* PROPS, DYNAMIC_SLOTS */
-          , ["href"])])])]);
+          , _hoisted_33)]);
         }), 128
         /* KEYED_FRAGMENT */
-        ))]);
+        ))]), _hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(free.title), 1
+        /* TEXT */
+        )]), _hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+          as: "button",
+          type: "button",
+          method: "delete",
+          href: _ctx.route('advancedTitle/delete', free.id)
+        }, {
+          "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_delete_btn)];
+          }),
+          _: 2
+          /* DYNAMIC */
+
+        }, 1032
+        /* PROPS, DYNAMIC_SLOTS */
+        , ["href"])])])]);
       }), 128
       /* KEYED_FRAGMENT */
       ))])])];
@@ -33763,7 +33762,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_advanced_title_svg)]), _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(title.title), 1
             /* TEXT */
             )]), _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-              href: _ctx.route('techUserAdvanced/createDescription', task.id),
+              href: _ctx.route('techUserAdvancedDescription/create', task.id),
               type: "button"
             }, {
               "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -33775,7 +33774,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             }, 1032
             /* PROPS, DYNAMIC_SLOTS */
             , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-              href: _ctx.route('techUserAdvanced/deleteTask', task.id)
+              type: "button",
+              method: "delete",
+              href: _ctx.route('techUserAdvanced/delete', task.id)
             }, {
               "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
                 return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_delete_btn)];
@@ -33798,7 +33799,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_advanced_description_svg)]), _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(description.description), 1
           /* TEXT */
           )]), _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-            href: _ctx.route('techUserAdvanced/editDescription', description.id),
+            href: _ctx.route('techUserAdvancedDescription/edit', description.id),
             type: "button"
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -33810,7 +33811,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, 1032
           /* PROPS, DYNAMIC_SLOTS */
           , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-            href: _ctx.route('techUserAdvanced/deleteDescription', description.id)
+            type: "button",
+            method: "delete",
+            href: _ctx.route('techUserAdvancedDescription/delete', description.id)
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
               return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_delete_btn)];
@@ -33840,7 +33843,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_advanced_title_svg)]), _hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(title.title), 1
             /* TEXT */
             )]), _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-              href: _ctx.route('techUserAdvanced/createDescription', task.id),
+              href: _ctx.route('techUserAdvancedDescription/create', task.id),
               type: "button"
             }, {
               "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -33852,7 +33855,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             }, 1032
             /* PROPS, DYNAMIC_SLOTS */
             , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-              href: _ctx.route('techUserAdvanced/deleteTask', task.id)
+              type: "button",
+              method: "delete",
+              href: _ctx.route('techUserAdvanced/delete', task.id)
             }, {
               "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
                 return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_delete_btn)];
@@ -33875,7 +33880,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_advanced_description_svg)]), _hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_28, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(description.description), 1
           /* TEXT */
           )]), _hoisted_29, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-            href: _ctx.route('techUserAdvanced/editDescription', description.id),
+            href: _ctx.route('techUserAdvancedDescription/edit', description.id),
             type: "button"
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -33887,7 +33892,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, 1032
           /* PROPS, DYNAMIC_SLOTS */
           , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-            href: _ctx.route('techUserAdvanced/deleteDescription', description.id)
+            type: "button",
+            method: "delete",
+            href: _ctx.route('techUserAdvancedDescription/delete', description.id)
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
               return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_delete_btn)];
@@ -33917,7 +33924,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_advanced_title_svg)]), _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(title.title), 1
             /* TEXT */
             )]), _hoisted_35, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-              href: _ctx.route('techUserAdvanced/createDescription', task.id),
+              href: _ctx.route('techUserAdvancedDescription/create', task.id),
               type: "button"
             }, {
               "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -33929,7 +33936,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             }, 1032
             /* PROPS, DYNAMIC_SLOTS */
             , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-              href: _ctx.route('techUserAdvanced/deleteTask', task.id)
+              type: "button",
+              method: "delete",
+              href: _ctx.route('techUserAdvanced/delete', task.id)
             }, {
               "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
                 return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_delete_btn)];
@@ -33952,7 +33961,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_advanced_description_svg)]), _hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_39, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(description.description), 1
           /* TEXT */
           )]), _hoisted_40, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-            href: _ctx.route('techUserAdvanced/editDescription', description.id),
+            href: _ctx.route('techUserAdvancedDescription/edit', description.id),
             type: "button"
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -33964,7 +33973,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, 1032
           /* PROPS, DYNAMIC_SLOTS */
           , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-            href: _ctx.route('techUserAdvanced/deleteDescription', description.id)
+            type: "button",
+            method: "delete",
+            href: _ctx.route('techUserAdvancedDescription/delete', description.id)
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
               return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_delete_btn)];
@@ -33994,7 +34005,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_advanced_title_svg)]), _hoisted_43, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_44, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_45, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(title.title), 1
             /* TEXT */
             )]), _hoisted_46, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-              href: _ctx.route('techUserAdvanced/createDescription', task.id),
+              href: _ctx.route('techUserAdvancedDescription/create', task.id),
               type: "button"
             }, {
               "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -34006,7 +34017,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             }, 1032
             /* PROPS, DYNAMIC_SLOTS */
             , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-              href: _ctx.route('techUserAdvanced/deleteTask', task.id)
+              type: "button",
+              method: "delete",
+              href: _ctx.route('techUserAdvanced/delete', task.id)
             }, {
               "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
                 return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_delete_btn)];
@@ -34029,7 +34042,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_47, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_advanced_description_svg)]), _hoisted_48, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_49, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_50, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(description.description), 1
           /* TEXT */
           )]), _hoisted_51, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-            href: _ctx.route('techUserAdvanced/editDescription', description.id),
+            href: _ctx.route('techUserAdvancedDescription/edit', description.id),
             type: "button"
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -34041,7 +34054,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, 1032
           /* PROPS, DYNAMIC_SLOTS */
           , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-            href: _ctx.route('techUserAdvanced/deleteDescription', description.id)
+            type: "button",
+            method: "delete",
+            href: _ctx.route('techUserAdvancedDescription/delete', description.id)
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
               return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_delete_btn)];
@@ -34224,7 +34239,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_basic_title_svg)]), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(title.title), 1
             /* TEXT */
             )]), _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-              href: _ctx.route('techUserBasic/createDescription', task.id),
+              href: _ctx.route('techUserBasicDescription/create', task.id),
               type: "button"
             }, {
               "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -34261,7 +34276,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_basic_description_svg)]), _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(description.description), 1
           /* TEXT */
           )]), _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-            href: _ctx.route('techUserBasic/editDescription', description.id),
+            href: _ctx.route('techUserBasicDescription/edit', description.id),
             type: "button"
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -34273,7 +34288,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, 1032
           /* PROPS, DYNAMIC_SLOTS */
           , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-            href: _ctx.route('techUserBasic/deleteDescription', description.id)
+            type: "button",
+            method: "delete",
+            href: _ctx.route('techUserBasicDescription/delete', description.id)
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
               return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_delete_btn)];
@@ -34459,7 +34476,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_instrumental_title_svg)]), _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(title.title), 1
             /* TEXT */
             )]), _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-              href: _ctx.route('techUserInstrumental/createDescription', task.id),
+              href: _ctx.route('techUserInstrumentalDescription/create', task.id),
               type: "button"
             }, {
               "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -34471,7 +34488,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             }, 1032
             /* PROPS, DYNAMIC_SLOTS */
             , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-              href: _ctx.route('techUserInstrumental/deleteTask', task.id)
+              type: "button",
+              method: "delete",
+              href: _ctx.route('techUserInstrumental/delete', task.id)
             }, {
               "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
                 return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_delete_btn)];
@@ -34494,7 +34513,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_basic_description_svg)]), _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(description.description), 1
           /* TEXT */
           )]), _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-            href: _ctx.route('techUserInstrumental/editDescription', description.id),
+            href: _ctx.route('techUserInstrumentalDescription/edit', description.id),
             type: "button"
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -34506,7 +34525,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, 1032
           /* PROPS, DYNAMIC_SLOTS */
           , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-            href: _ctx.route('techUserInstrumental/deleteDescription', description.id)
+            type: "button",
+            method: "delete",
+            href: _ctx.route('techUserInstrumentalDescription/delete', description.id)
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
               return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_delete_btn)];

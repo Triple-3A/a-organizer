@@ -237,13 +237,17 @@ class UserAdvancedTaskController extends Controller
     {
         try {
             $task = Task::find($id);
-            $userId = 0;
+            $student = 0;
             $userCollection = $task->users()->get();
+            $descriptionCollection = $task->descriptions()->get();
             foreach ($userCollection as $user) {
-                $userId = $user->id;
+                $student = $user->id;
+            }
+            foreach ($descriptionCollection as $description) {
+                $description->delete();
             }
             $task->delete();
-            return Redirect::route('techUserAdvanced', $userId);
+            return Redirect::route('techUserAdvanced', $student);
         } catch (Exception $error) {
             return $error->getMessage();
         }

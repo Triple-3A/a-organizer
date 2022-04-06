@@ -49,7 +49,7 @@
                     </div>
                     <div class="px-16"></div>
                     <Link
-                      :href="route('techUserBasic/createDescription', task.id)"
+                      :href="route('techUserBasicDescription/create', task.id)"
                       type="button"
                     >
                       <jet-create-btn />
@@ -79,15 +79,16 @@
                   <div class="px-16"></div>
                   <Link
                     :href="
-                      route('techUserBasic/editDescription', description.id)
+                      route('techUserBasicDescription/edit', description.id)
                     "
                     type="button"
                   >
                     <jet-edit-btn />
                   </Link>
-                  <Link 
+                  <Link type="button"
+                      method="delete"
                     :href="
-                      route('techUserBasic/deleteDescription', description.id)
+                      route('techUserBasicDescription/delete', description.id)
                     "
                   >
                     <jet-delete-btn />

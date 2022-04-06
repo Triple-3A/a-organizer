@@ -138,8 +138,12 @@ class UserBasicTaskController extends Controller
             $task = Task::find($id);
             $student = 0;
             $userCollection = $task->users()->get();
+            $descriptionCollection = $task->descriptions()->get();
             foreach ($userCollection as $user) {
                 $student = $user->id;
+            }
+            foreach ($descriptionCollection as $description) {
+                $description->delete();
             }
             $task->delete();
             return Redirect::route('techUserBasic', $student);

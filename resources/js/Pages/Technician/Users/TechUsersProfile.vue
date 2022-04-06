@@ -29,7 +29,6 @@
         />
       </center>
       <jet-title>{{ index.name }}</jet-title>
-    
     <Link class="font-medium" :href="route('techUserBasic', index.id)">
       <jet-card>
         <img src="images/basic.png" alt="Icono de tareas básicas" />
