@@ -19,7 +19,9 @@ class StudentController extends Controller
     {
         try {
             $userId = auth()->id();
-            $currentStudent = Student::where('user_id', $userId)->get();
+            dd($currentStudent = Student::where('user_id', $userId)->get());
+
+            dd($currentStudent->pluck('nickname'));
 
             if ($currentStudent->pluck('nickname')[0] === null) {
                 return Inertia::render('Student/StudentName');
