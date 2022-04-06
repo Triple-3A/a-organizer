@@ -26,7 +26,6 @@
         bg-white
         border border-azul
         drop-shadow-md
-        border
         radius
         mx-auto
         text-azul
@@ -156,9 +155,9 @@
           </select>
         </div>
       </div>
-      <div className="mt-5 flex flex-col justify-center items-center">
-        <jet-submit-btn>Asignar</jet-submit-btn>
-      </div>
+      <div className="mt-4 flex flex-col justify-center items-center">
+        <jet-btn>Asignar</jet-btn >
+        </div>
     </form>
   </app-layout>
 </template>
@@ -166,7 +165,7 @@
 <script>
 import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
-import JetSubmitBtn from "@/Jetstream/SubmitBtn.vue";
+import JetBtn from "@/Jetstream/Btn.vue";
 import JetArrowBackSvg from "@/Jetstream/ArrowBackSvg.vue";
 
 export default {
@@ -178,7 +177,7 @@ export default {
     Head,
     Link,
     AppLayout,
-    JetSubmitBtn,
+    JetBtn,
     JetArrowBackSvg,
   },
   data() {

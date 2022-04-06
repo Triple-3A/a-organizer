@@ -21,7 +21,7 @@
     <div class="flex justify-around">
       <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="flex items-center justify-end">
-          <Link :href="route('instrumentalTitle/create')" type="button">
+          <Link :href="route('basicTitle/create')" type="button">
             <jet-create-btn />
           </Link>
         </div>

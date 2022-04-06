@@ -40,11 +40,11 @@
                 </div>
               </div>
 
-              <div class="flex items-center justify-center">
+              <div class="flex flex-row items-center justify-center">
                 <div class="mt-6">
-                  <jet-submit-btn class="mr-2" type="submit">
+                  <jet-btn class="mr-2 " type="submit">
                     Guardar
-                  </jet-submit-btn>
+                  </jet-btn>
                   <jet-cancel-btn
                     class="ml-6"
                     :href="route('basicTitle')"
@@ -93,9 +93,9 @@
                 </div>
                 <div class="flex items-center justify-center">
                   <div class="mt-6">
-                    <jet-submit-btn class="mr-2" type="submit">
+                    <jet-btn class="mr-4" type="submit">
                       Guardar
-                    </jet-submit-btn>
+                    </jet-btn>
                     <jet-cancel-btn
                       class="ml-6"
                       :href="route('instrumentalTitle')"
@@ -207,10 +207,9 @@
               </div>
               <div class="flex items-center justify-center">
                 <div class="mt-6">
-                  <jet-submit-btn class="mr-4" type="submit">
+                  <jet-btn class="mr-4" type="submit">
                     Guardar
-                  </jet-submit-btn>
-
+                  </jet-btn>
                   <jet-cancel-btn
                     class="ml-4"
                     :href="route('advancedTitle')"
@@ -229,7 +228,7 @@
 <script>
 import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
-import JetSubmitBtn from "@/Jetstream/SubmitBtn.vue";
+import JetBtn from "@/Jetstream/Btn.vue";
 import JetCancelBtn from "@/Jetstream/CancelBtn.vue";
 import JetOwnInput from "@/Jetstream/OwnInput.vue";
 export default {
@@ -275,7 +274,7 @@ export default {
     AppLayout,
     Head,
     Link,
-    JetSubmitBtn,
+    JetBtn,
     JetCancelBtn,
     JetOwnInput,
   },

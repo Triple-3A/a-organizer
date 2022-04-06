@@ -7,8 +7,9 @@ import { InertiaProgress } from '@inertiajs/progress';
 //Import new components
 import  JetCreateBtn  from '@/Jetstream/CreateBtn.vue';
 import JetDeleteBtn from '@/Jetstream/DeleteBtn.vue';
+
+import JetBtn from '@/Jetstream/Btn.vue';
 import JetEditBtn from '@/Jetstream/EditBtn.vue';
-import JetSubmitBtn from '@/Jetstream/SubmitBtn.vue';
 import JetCancelBtn from '@/Jetstream/CancelBtn.vue';
 import JetCard from '@/Jetstream/Card.vue';
 import JetBasicSvg from '@/Jetstream/BasicSvg.vue';
@@ -20,7 +21,6 @@ import JetAdvancedTitleSvg from '@/Jetstream/AdvancedTitleSvg.vue';
 import JetArrowBackSvg from '@/Jetstream/ArrowBackSvg.vue';
 import JetTitle from '@/Jetstream/Title.vue';
 
-// import JetInput from '@/Jetstream/OwnInput.vue';
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
@@ -35,11 +35,14 @@ createInertiaApp({
     },
 });
 
+
 //Globalize new components
 app.component('jet-create-btn', JetCreateBtn);
 app.component('jet-delete-btn', JetDeleteBtn);
+
+app.component('jet-btn', JetBtn);
+
 app.component('jet-edit-btn', JetEditBtn);
-app.component('jet-submit-btn', JetSubmitBtn);
 app.component('jet-cancel-btn', JetCancelBtn);
 app.component('jet-card', JetCard);
 app.component('jet-basic-svg', JetBasicSvg);
