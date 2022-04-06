@@ -178,19 +178,19 @@ export default {
   methods: {
     basicSubmit() {
       this.$inertia.post(
-        route("techUserBasic/storeDescription"),
+        route("techUserBasicDescription/store"),
         this.basicForm
       );
     },
     instrumentalSubmit() {
       this.$inertia.post(
-        route("techUserInstrumental/storeDescription"),
+        route("techUserInstrumentalDescription/store"),
         this.instrumentalForm
       );
     },
     advancedSubmit() {
       this.$inertia.post(
-        route("techUserAdvanced/storeDescription"),
+        route("techUserAdvancedDescription/store"),
         this.advancedForm
       );
     },
