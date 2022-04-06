@@ -173,19 +173,19 @@ export default {
   methods: {
     basicSubmit() {
       this.$inertia.put(
-        route("techUserBasic/updateDescription", this.$props.description.id),
+        route("techUserBasicDescription/update", this.$props.description.id),
         this.basicForm
       );
     },
     instrumentalSubmit() {
       this.$inertia.put(
-        route("techUserInstrumental/updateDescription",  this.$props.description.id),
+        route("techUserInstrumentalDescription/update",  this.$props.description.id),
         this.instrumentalForm
       );
     },
     advancedSubmit() {
       this.$inertia.put(
-        route("techUserAdvanced/updateDescription",  this.$props.description.id),
+        route("techUserAdvancedDescription/update",  this.$props.description.id),
         this.advancedForm
       );
     },
