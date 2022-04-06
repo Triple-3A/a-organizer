@@ -160,7 +160,7 @@ class IconTitleSeeder extends Seeder
         
         DB::table('icon_title')->insert(
             [
-                'icon_id' => Icon::select('id')->where('id', 15)->first()->id,
+                'icon_id' => Icon::select('id')->where('id', 16)->first()->id,
                 'title_id' => Title::select('id')->where('id', 21)->first()->id,
             ]
         );
