@@ -1,7 +1,7 @@
 <template>
   <button
     class="
-      flex
+      inline-flex
       items-center
       px-6
       py-2
@@ -10,6 +10,7 @@
       font-poppings         
       font-semibold
       align-middle
+      tracking-widest
       text-white
       transition
       rounded-md
@@ -17,7 +18,6 @@
       hover:bg-gray-700
       active:bg-gray-900
       disabled:opacity-25
-      mx-auto
     "
   >
     <slot></slot>

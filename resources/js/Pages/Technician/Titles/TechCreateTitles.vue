@@ -40,13 +40,9 @@
                 </div>
               </div>
 
-              <div class="flex items-center justify-center">
+              <div class="flex flex-row items-center justify-center">
                 <div class="mt-6">
-<<<<<<< HEAD
-                  <jet-btn class="mr-4" type="submit">
-=======
-                  <jet-submit-btn class="mr-2" type="submit">
->>>>>>> 16632b610416744a7b419003496e8d54e5d9f0e4
+                  <jet-btn class="mr-2 " type="submit">
                     Guardar
                   </jet-btn>
                   <jet-cancel-btn
@@ -97,11 +93,7 @@
                 </div>
                 <div class="flex items-center justify-center">
                   <div class="mt-6">
-<<<<<<< HEAD
                     <jet-btn class="mr-4" type="submit">
-=======
-                    <jet-submit-btn class="mr-2" type="submit">
->>>>>>> 16632b610416744a7b419003496e8d54e5d9f0e4
                       Guardar
                     </jet-btn>
                     <jet-cancel-btn
@@ -217,13 +209,7 @@
                 <div class="mt-6">
                   <jet-btn class="mr-4" type="submit">
                     Guardar
-<<<<<<< HEAD
                   </jet-btn>
-                   -->
-=======
-                  </jet-submit-btn>
-
->>>>>>> 16632b610416744a7b419003496e8d54e5d9f0e4
                   <jet-cancel-btn
                     class="ml-4"
                     :href="route('advancedTitle')"
