@@ -41,9 +41,9 @@
 
                   <div class="flex items-center justify-center">
                     <div class="mt-6">
-                      <jet-submit-btn class="mr-4" type="submit">
+                      <jet-btn class="mr-4" type="submit">
                         Guardar
-                      </jet-submit-btn>
+                      </jet-btn>
                       <jet-cancel-btn
                         class="ml-4"
                         :href="route('techUserBasic', id)"
@@ -94,9 +94,9 @@
 
                   <div class="flex items-center justify-center">
                     <div class="mt-6">
-                      <jet-submit-btn class="mr-4" type="submit">
+                      <jet-btn class="mr-4" type="submit">
                         Guardar
-                      </jet-submit-btn>
+                      </jet-btn>
                       <jet-cancel-btn
                         class="ml-4"
                         :href="route('techUserInstrumental', id)"
@@ -145,9 +145,9 @@
 
                   <div class="flex items-center justify-center">
                     <div class="mt-6">
-                      <jet-submit-btn class="mr-4" type="submit">
+                      <jet-btn class="mr-4" type="submit">
                         Guardar
-                      </jet-submit-btn>
+                      </jet-btn>
                       <jet-cancel-btn
                         class="ml-4"
                         :href="route('techUserAdvanced/pick', id)"
@@ -170,7 +170,7 @@ import AppLayout from "@/Layouts/NavBar.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 import JetTitle from "@/Jetstream/Title.vue";
 import JetCancelBtn from "@/Jetstream/CancelBtn.vue";
-import JetSubmitBtn from "@/Jetstream/SubmitBtn.vue";
+import JetBtn from "@/Jetstream/Btn.vue";
 
 export default {
   props: {
@@ -191,7 +191,7 @@ export default {
     Link,
     JetTitle,
     JetCancelBtn,
-    JetSubmitBtn,
+    JetBtn,
   },
   data() {
     return {
