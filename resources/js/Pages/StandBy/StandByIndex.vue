@@ -5,7 +5,7 @@
         <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
           <div class="flex items-center justify-center">
             <div class="p-10 bg-white rounded-lg">
-              <h1 class="text-xl font-bold">
+              <h1 class="text-xl noNegro font-bold">
                 Bienvenido, te encuentras en la vista de StandBy!!!
               </h1>
               <br />
