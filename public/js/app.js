@@ -31000,8 +31000,11 @@ var _hoisted_7 = {
 var _hoisted_8 = {
   "class": "block max-w-sm px-12 py-3 bg-white"
 };
+var _hoisted_9 = {
+  "class": "flex items-center justify-center my-8"
+};
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Siguiente");
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Siguiente");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_jet_title = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-title");
@@ -31042,14 +31045,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "class": "block w-full px-6 mt-1 text-xs text-center border-2 rounded shadow-sm border-amarillo"
       }, null, 512
       /* NEED_PATCH */
-      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.nickname]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <jet-own-input class=\"placeholder p-2 mb-6\" v-model= \"form.nickname\"> </jet-own-input> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <Link :href=\"route('studentPic')\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_btn, null, {
+      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.nickname]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <jet-own-input class=\"placeholder p-2 mb-6\" v-model= \"form.nickname\"> </jet-own-input> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <Link :href=\"route('studentPic')\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_btn, null, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_9];
+          return [_hoisted_10];
         }),
         _: 1
         /* STABLE */
 
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </Link> ")], 32
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </Link> ")], 32
       /* HYDRATE_EVENTS */
       )])])])])];
     }),

@@ -39,7 +39,9 @@
                 <!-- <jet-own-input class="placeholder p-2 mb-6" v-model= "form.nickname"> </jet-own-input> -->
               </div>
               <!-- <Link :href="route('studentPic')"> -->
-              <jet-btn>Siguiente</jet-btn>
+              <div class="flex items-center justify-center my-8">
+                <jet-btn>Siguiente</jet-btn>
+              </div>
               <!-- </Link> -->
             </form>
           </div>
