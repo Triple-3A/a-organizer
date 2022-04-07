@@ -1,33 +1,58 @@
 <template>
   <app-layout title="Dashboard">
-    <div class="min-h-screen flex justify-center items-center mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div
+      class="
+        min-h-screen
+        flex
+        justify-center
+        items-center
+        mx-auto
+        max-w-7xl
+        sm:px-6
+        lg:px-8
+      "
+    >
+      <div class="min-h-screen flex flex-col items-center justify-center">
+        <div
+          class="
+            p-10
+            bg-white
+            rounded-lg
+            flex flex-col
+            items-center
+            justify-center
+          "
+        >
+          <jet-title>¡QUEREMOS VERTE!</jet-title>
+          <jet-sub-title>Elige una de estas imágenes</jet-sub-title>
 
-
-        <div class="min-h-screen flex flex-col items-center justify-center">
-          <div class="p-10 bg-white rounded-lg flex flex-col items-center justify-center">
-            <jet-title>¡QUEREMOS VERTE!</jet-title>
-            <jet-sub-title>Elige una de estas imágenes</jet-sub-title>
-
-            <!-- contenedooooooooooooooooooooor imagenesssssssssssssssss -->
-            <div class="flex flex-col justify-center align-middle">
-                <div class="flex flex-row flex-wrap justify-center align-middle max-w-sm p-12 bg-white">
-                    <jet-user-avatar/>
-                    <jet-user-avatar/>
-                    <jet-user-avatar/>
-                    <jet-user-avatar/>
-                </div>
-
-                <div class="flex items-center justify-center">
-                  <jet-btn>Siguiente</jet-btn>
-                </div>
-<!--                 <Link :href="route('studentTasks')">
-                <jet-btn class="mx-auto font-poppings text-base font-semibold text-center align-middle">Siguiente</jet-btn>
-                </Link> -->
-                    
-
+          <!-- contenedooooooooooooooooooooor imagenesssssssssssssssss -->
+          <div class="flex flex-col justify-center align-middle">
+            <div
+              class="
+                flex flex-row flex-wrap
+                justify-center
+                align-middle
+                max-w-sm
+                p-12
+                bg-white
+              "
+            >
+              <jet-user-avatar />
+              <jet-user-avatar />
+              <jet-user-avatar />
+              <jet-user-avatar />
             </div>
+
+            <Link :href="route('studentTasks')">
+              <div class="flex items-center justify-center">
+                <jet-btn>Siguiente</jet-btn>
+              </div>
+            </Link>
+            <!-- <jet-btn class="mx-auto font-poppings text-base font-semibold text-center align-middle">Siguiente</jet-btn>  -->
           </div>
         </div>
+      </div>
     </div>
   </app-layout>
 </template>
@@ -39,7 +64,6 @@ import JetTitle from "@/Jetstream/Title.vue";
 import JetSubTitle from "@/Jetstream/SubTitle.vue";
 import JetBtn from "@/Jetstream/Btn.vue";
 import JetUserAvatar from "@/Jetstream/UserAvatar.vue";
-
 
 export default {
   components: {

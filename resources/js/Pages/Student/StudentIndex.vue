@@ -84,7 +84,6 @@ export default {
     AppLayout,
     JetTitle,
     JetSubTitle,
-    JetOwnInput,
     JetUserAvatar,
     JetButtonRegular,
     JetMedidorTareas,
