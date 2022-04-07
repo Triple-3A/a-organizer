@@ -49,5 +49,60 @@ Proyecto pedagógico realizado por los alumnos de Factioria F5 Asturias:
 - Omar Hevia
 - Raúl Fernández
 
+-----------------------------------------------------------------------------------------
+
+
+# Project description
+
+Project carried out for the Asperger Asturias association that consists of designing a Web application, which can be managed by both the association's technicians and its users, it will serve to manage and create tasks that facilitate the organization of people's daily lives with asperger's.
+
+Later, users will be able to check the tasks to be carried out on their mobile device and mark them as completed.
+
+Three profiles:
+
+ - Administrator (desktop): Assign the roles to the users who access the application, who may be technicians or end users.
+ - Technicians (desktop): Each technician will be assigned a certain number of end users, to whom they will be able to create daily tasks in different categories.
+ - End users (mobile first): Each user will be able to see the tasks to be carried out daily, being able to check when they have been carried out and check their task progress bar.
+
+## IDE (Development Environment) and Stack used
+
+-Visual Studio Code
+- Laravel Jetstream with Inertia
+- Vue
+- Xamp - PhpMyAdmin Data Base
+- Tailwindcss
+
+## Installation after clone (project name a_organizer)
+
+- composer install
+- npm install
+- npm run dev
+
+Create the Database with the name of the project (a_organizer)
+Copy the .env file
+In line 14 .env change the name of the database (from "laravel" to a_organizer)
+
+- Php artisan key:generate
+- Create data in the Database
+- (php artisan migrate:fresh --seed)
+
+## To consider
+
+If you put another name to the Database you will have to modify the name in the following files:
+ - .env
+ - phpunit.xml
+ - database.php
+ - app.js
+
+## Team Composition
+
+Pedagogical project carried out by the students of Factioria F5 Asturias:
+
+-Ileen Fernandez
+- Maria Villaverde
+- Ana Robles
+- Frank Santos
+- Omar Hevia
+- Raul Fernandez
 
 
