@@ -1,7 +1,6 @@
 <template>
   <app-layout title="Dashboard">
-    <div class="mx-auto max-w-7xl py-12 sm:px-6 lg:px-8">
-      <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
+    <div class="min-h-screen flex justify-center items-center mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="flex flex-col items-center justify-center">
           <div
             class="
@@ -13,8 +12,8 @@
               justify-center
             "
           >
-            <jet-title>¡HOLA!</jet-title>
-            <jet-sub-title
+            <jet-title class="mb-8">¡HOLA!</jet-title>
+            <jet-sub-title class="mb-8"
               >Dinos como te gustaría que te llamemos</jet-sub-title
             >
           </div>
@@ -39,14 +38,13 @@
                 <!-- <jet-own-input class="placeholder p-2 mb-6" v-model= "form.nickname"> </jet-own-input> -->
               </div>
               <!-- <Link :href="route('studentPic')"> -->
-              <div class="flex items-center justify-center my-8">
+              <div class="flex items-center justify-center mt-12">
                 <jet-btn>Siguiente</jet-btn>
               </div>
               <!-- </Link> -->
             </form>
           </div>
         </div>
-      </div>
     </div>
   </app-layout>
 </template>
