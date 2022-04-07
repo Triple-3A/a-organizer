@@ -31082,7 +31082,7 @@ var _hoisted_1 = {
   "class": "min-h-screen flex justify-center items-center mx-auto max-w-7xl sm:px-6 lg:px-8"
 };
 var _hoisted_2 = {
-  "class": "flex flex-col items-center justify-center"
+  "class": "min-h-screen flex flex-col items-center justify-center"
 };
 var _hoisted_3 = {
   "class": "p-10 bg-white rounded-lg flex flex-col items-center justify-center"

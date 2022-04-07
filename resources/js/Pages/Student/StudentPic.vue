@@ -3,7 +3,7 @@
     <div class="min-h-screen flex justify-center items-center mx-auto max-w-7xl sm:px-6 lg:px-8">
 
 
-        <div class="flex flex-col items-center justify-center">
+        <div class="min-h-screen flex flex-col items-center justify-center">
           <div class="p-10 bg-white rounded-lg flex flex-col items-center justify-center">
             <jet-title>¡QUEREMOS VERTE!</jet-title>
             <jet-sub-title>Elige una de estas imágenes</jet-sub-title>
