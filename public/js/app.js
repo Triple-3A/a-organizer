@@ -31079,27 +31079,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "mx-auto max-w-7xl py-12 sm:px-6 lg:px-8"
+  "class": "min-h-screen flex justify-center items-center mx-auto max-w-7xl sm:px-6 lg:px-8"
 };
 var _hoisted_2 = {
-  "class": "overflow-hidden bg-white shadow-xl sm:rounded-lg"
-};
-var _hoisted_3 = {
   "class": "flex flex-col items-center justify-center"
 };
-var _hoisted_4 = {
+var _hoisted_3 = {
   "class": "p-10 bg-white rounded-lg flex flex-col items-center justify-center"
 };
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("¡QUEREMOS VERTE!");
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("¡QUEREMOS VERTE!");
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Elige una de estas imágenes");
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Elige una de estas imágenes");
 
-var _hoisted_7 = {
+var _hoisted_6 = {
   "class": "flex flex-col justify-center align-middle"
 };
-var _hoisted_8 = {
+var _hoisted_7 = {
   "class": "flex flex-row flex-wrap justify-center align-middle max-w-sm p-12 bg-white"
+};
+var _hoisted_8 = {
+  "class": "flex items-center justify-center"
 };
 
 var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Siguiente");
@@ -31113,49 +31113,34 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_jet_btn = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-btn");
 
-  var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
-
   var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_app_layout, {
     title: "Dashboard"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_title, null, {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_title, null, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_5];
+          return [_hoisted_4];
         }),
         _: 1
         /* STABLE */
 
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_sub_title, null, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_6];
+          return [_hoisted_5];
         }),
         _: 1
         /* STABLE */
 
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" contenedooooooooooooooooooooor imagenesssssssssssssssss "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_user_avatar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_user_avatar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_user_avatar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_user_avatar)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-        href: _ctx.route('studentTasks')
-      }, {
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" contenedooooooooooooooooooooor imagenesssssssssssssssss "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_user_avatar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_user_avatar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_user_avatar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_user_avatar)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_btn, null, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_btn, {
-            "class": "font-poppings text-base font-semibold text-center align-middle"
-          }, {
-            "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-              return [_hoisted_9];
-            }),
-            _: 1
-            /* STABLE */
-
-          })];
+          return [_hoisted_9];
         }),
         _: 1
         /* STABLE */
 
-      }, 8
-      /* PROPS */
-      , ["href"])])])])])])];
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                 <Link :href=\"route('studentTasks')\">\n                <jet-btn class=\"mx-auto font-poppings text-base font-semibold text-center align-middle\">Siguiente</jet-btn>\n                </Link> ")])])])])];
     }),
     _: 1
     /* STABLE */

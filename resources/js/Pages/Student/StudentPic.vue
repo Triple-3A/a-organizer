@@ -1,7 +1,6 @@
 <template>
   <app-layout title="Dashboard">
-    <div class="mx-auto max-w-7xl py-12 sm:px-6 lg:px-8">
-      <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
+    <div class="min-h-screen flex justify-center items-center mx-auto max-w-7xl sm:px-6 lg:px-8">
 
 
         <div class="flex flex-col items-center justify-center">
@@ -17,17 +16,18 @@
                     <jet-user-avatar/>
                     <jet-user-avatar/>
                 </div>
-                <Link :href="route('studentTasks')">
-                <jet-btn class="font-poppings text-base font-semibold text-center align-middle">Siguiente</jet-btn>
-                </Link>
+
+                <div class="flex items-center justify-center">
+                  <jet-btn>Siguiente</jet-btn>
+                </div>
+<!--                 <Link :href="route('studentTasks')">
+                <jet-btn class="mx-auto font-poppings text-base font-semibold text-center align-middle">Siguiente</jet-btn>
+                </Link> -->
                     
 
             </div>
           </div>
         </div>
-
-
-      </div>
     </div>
   </app-layout>
 </template>
