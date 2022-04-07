@@ -15,36 +15,36 @@
           items-center
         "
       >
-        <jet-arrow-back-svg>Categorias de tareas</jet-arrow-back-svg>
+        <jet-arrow-back-svg>Usuarios Asignados</jet-arrow-back-svg>
        </Link
       >
     <div v-for="index in student" :key="index.id">
-      <h1 class="my-2 text-xl font-bold leading-tight text-center text-noNegro">
+      <h1 class="my-2 text-base font-bold leading-tight text-center text-noNegro">
         Estas viendo el perfil de:
       </h1>
-      <center>
+      <div class="flex justify-center">
         <img
-          class="rounded-full"
+          class="rounded-full w-30 h-30 mt-2"
           src="https://randomuser.me/api/portraits/women/81.jpg"
         />
-      </center>
-      <jet-title>{{ index.name }}</jet-title>
+      </div>
+      <jet-title class="mt-2">{{ index.name }}</jet-title>
     <Link class="font-medium" :href="route('techUserBasic', index.id)">
       <jet-card>
-        <img src="images/basic.png" alt="Icono de tareas básicas" />
-        <h1 class="text-xl font-bold text-center">Tareas Básicas</h1>
+        <img class="w-32 h-32 mb-2" src="images/basic.png" alt="Icono de tareas básicas" />
+        <h1 class="text-lg text-noNegro font-bold text-center">Tareas Básicas</h1>
       </jet-card>
     </Link>
     <Link class="font-medium" :href="route('techUserInstrumental', index.id)">
       <jet-card>
-        <img src="images/instrumental.png" alt="Icono de tareas instrumentales" />
-        <h1 class="text-xl font-bold text-center">Tareas Instrumentales</h1>
+        <img class="w-32 h-32 mb-2" src="images/instrumental.png" alt="Icono de tareas instrumentales" />
+        <h1 class="text-lg text-noNegro font-bold text-center">Tareas Instrumentales</h1>
       </jet-card>
     </Link>
     <Link class="font-medium" :href="route('techUserAdvanced', index.id)">
       <jet-card>
-        <img src="images/advanced.png" alt="Icono de tareas avanzadas" />
-        <h1 class="text-xl font-bold text-center">Tareas Avanzadas</h1>
+        <img class="w-32 h-32 mb-2" src="images/advanced.png" alt="Icono de tareas avanzadas" />
+        <h1 class="text-lg text-noNegro font-bold text-center">Tareas Avanzadas</h1>
       </jet-card>
     </Link>
     </div>
