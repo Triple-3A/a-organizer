@@ -13,7 +13,6 @@
 
             <!-- componente resumen tareas -->
             <jet-medidor-tareas/>
-               <!-- contenedooooooooooooooooooooor imagenesssssssssssssssss -->
 
             <div class="flex justify-start w-8/12">
               <h2 class="font-poppings text-lg font-base text-noNegro text-left mb-4">Estas son tus tareas para hoy</h2>
