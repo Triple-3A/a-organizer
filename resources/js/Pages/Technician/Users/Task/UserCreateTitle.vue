@@ -3,33 +3,48 @@
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div class="flex items-center justify-center">
         <div class="p-10 bg-white rounded-lg flex items-center justify-center">
-          <div class="flex items-center justify-center">
+          <div class="mt-3 flex items-center justify-center">
             <div v-if="basic == 'básico'">
-              <div class="p-10">
-                <jet-title>Viendo form básico -> {{ id }}</jet-title>
+              <jet-title>Añadir Tarea Básica</jet-title>
+
+              <div class="flex items-center justify-center">
+                <img
+                  class="w-32 h-32 mb-2"
+                  src="/images/basic.png"
+                  alt="Icono de tareas básicas"
+                />
               </div>
-              <form @submit.prevent="basicSubmit">
-                <div class="text-center">
-                  <label for="basic">Elige el título básico: </label>
-                  <br />
+              <form
+                @submit.prevent="basicSubmit"
+                class="mt-4 flex justify-center mb-6"
+              >
+              
+                <div class="mb-4 w-280 ">
+                  <label
+                    class="display: block text-noNegro font-bold"
+                    for="basic"
+                    >Elige una tarea básica:
+                  </label>
                   <select
                     v-model="basicForm.title"
                     name="title"
                     id="title"
                     class="
-                      px-3
+                      pl-2
+                      pr-9
                       py-1.5
                       bg-amarillo
-                      text-base
+                      text-base text-noNegro
                       font-bold
                       mt-1
                       rounded
                       select
-                      w-96
+                      w-full
+                      truncate
                     "
                   >
                     <option
-                      class="text-xs bg-orange-100 text-bold"
+                      class="text-xs bg-white text-bold"
                       v-for="basicTitle in basicTitles"
                       :value="basicTitle"
                       :selected="basicTitle"
@@ -41,9 +56,7 @@
 
                   <div class="flex items-center justify-center">
                     <div class="mt-6">
-                      <jet-btn class="mr-4" type="submit">
-                        Guardar
-                      </jet-btn>
+                      <jet-btn class="mr-4" type="submit"> Guardar </jet-btn>
                       <jet-cancel-btn
                         class="ml-4"
                         :href="route('techUserBasic', id)"
@@ -94,9 +107,7 @@
 
                   <div class="flex items-center justify-center">
                     <div class="mt-6">
-                      <jet-btn class="mr-4" type="submit">
-                        Guardar
-                      </jet-btn>
+                      <jet-btn class="mr-4" type="submit"> Guardar </jet-btn>
                       <jet-cancel-btn
                         class="ml-4"
                         :href="route('techUserInstrumental', id)"
@@ -145,9 +156,7 @@
 
                   <div class="flex items-center justify-center">
                     <div class="mt-6">
-                      <jet-btn class="mr-4" type="submit">
-                        Guardar
-                      </jet-btn>
+                      <jet-btn class="mr-4" type="submit"> Guardar </jet-btn>
                       <jet-cancel-btn
                         class="ml-4"
                         :href="route('techUserAdvanced/pick', id)"

@@ -28,7 +28,7 @@
           src="https://randomuser.me/api/portraits/women/81.jpg"
         />
       </div>
-      <jet-title class="mt-4">{{ index.name }}</jet-title>
+      <jet-title class="mt-4 ">{{ index.name }}</jet-title>
     <Link class="font-medium" :href="route('techUserBasic', index.id)">
       <jet-card>
         <img class="w-32 h-32 mb-2" src="/images/basic.png" alt="Icono de tareas básicas" />

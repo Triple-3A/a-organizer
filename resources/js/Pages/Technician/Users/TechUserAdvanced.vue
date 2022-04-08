@@ -15,360 +15,342 @@
           items-center
         "
       >
-        <jet-arrow-back-svg>Tareas</jet-arrow-back-svg></Link
+        <jet-arrow-back-svg>Tareas Usuario</jet-arrow-back-svg></Link
       >
 
-      <div class="py-6 flex justify-around">
+      <div class="flex justify-around">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div class="overflow-hidden">
-            <div class="flex items-center justify-end">
-              <Link
-                :href="route('techUserAdvanced/pick', student.id)"
-                type="button"
-              >
-                <jet-create-btn />
-              </Link>
-            </div>
-            <jet-title class="mt-4"> Tareas Avanzadas del usuario </jet-title>
-            <jet-title class="mt-4"> {{ student.name }} </jet-title>
+          <div class="flex items-center justify-end">
+            <Link
+              :href="route('techUserAdvanced/pick', student.id)"
+              type="button"
+            >
+              <jet-create-btn />
+            </Link>
+          </div>
+          <jet-title>
+            Tareas Avanzadas
+            <h1 class="mt-2 text-lg text-amarillo">
+              {{ student.name }}
+            </h1>
+          </jet-title>
 
-            <h2 class="mb-2">Educación</h2>
-            <div class="mb-10" v-for="array in allEducation" :key="array.id">
-              <div v-for="task in array[0]" :key="task.id">
-                <div
-                  v-for="title in array[1]"
-                  :key="title.id"
-                  class="flex border-4 rounded-lg row border-amarillo"
-                >
-                  <div class="flex items-center justify-start p-4 rounded-lg">
-                    <div
-                      v-for="icon in title.icons"
-                      :key="icon.id"
-                      class="items-center"
-                    >
-                      <img
-                        class="w-28 h-28"
-                        :src="icon.icon"
-                        alt="Icono de tarea"
-                      />
-                    </div>
-                    <div class="px-8"></div>
-                    <div class="flex flex-row">
-                      <h1 class="ml-12 text-xl font-bold">
-                        {{ title.title }}
-                      </h1>
-                    </div>
-                    <div class="px-16"></div>
-                    <Link
-                      :href="
-                        route('techUserAdvancedDescription/create', task.id)
-                      "
-                      type="button"
-                    >
-                      <jet-create-btn />
-                    </Link>
-                    <Link
-                      type="button"
-                      method="delete"
-                      :href="route('techUserAdvanced/delete', task.id)"
-                    >
-                      <jet-delete-btn />
-                    </Link>
-                  </div>
-                </div>
-              </div>
+          <h2 class="mb-2">Educación</h2>
+          <div class="mb-10" v-for="array in allEducation" :key="array.id">
+            <div v-for="task in array[0]" :key="task.id">
               <div
-                v-for="description in array[2]"
-                :key="description.id"
+                v-for="title in array[1]"
+                :key="title.id"
                 class="flex border-4 rounded-lg row border-amarillo"
               >
-                <div class="flex items-center justify-start p-2 rounded-lg">
-                  <div>
-                    <jet-advanced-description-svg />
+                <div class="flex items-center justify-start p-4 rounded-lg">
+                  <div
+                    v-for="icon in title.icons"
+                    :key="icon.id"
+                    class="items-center"
+                  >
+                    <img
+                      class="w-28 h-28"
+                      :src="icon.icon"
+                      alt="Icono de tarea"
+                    />
                   </div>
                   <div class="px-8"></div>
                   <div class="flex flex-row">
                     <h1 class="ml-12 text-xl font-bold">
-                      {{ description.description }}
+                      {{ title.title }}
                     </h1>
                   </div>
                   <div class="px-16"></div>
                   <Link
-                    :href="
-                      route('techUserAdvancedDescription/edit', description.id)
-                    "
+                    :href="route('techUserAdvancedDescription/create', task.id)"
                     type="button"
                   >
-                    <jet-edit-btn />
+                    <jet-create-btn />
                   </Link>
                   <Link
                     type="button"
                     method="delete"
-                    :href="
-                      route(
-                        'techUserAdvancedDescription/delete',
-                        description.id
-                      )
-                    "
+                    :href="route('techUserAdvanced/delete', task.id)"
                   >
                     <jet-delete-btn />
                   </Link>
                 </div>
               </div>
             </div>
-
-            <h2 class="mb-2">Trabajo</h2>
-            <div class="mb-10" v-for="array in allJob" :key="array.id">
-              <div v-for="task in array[0]" :key="task.id">
-                <div
-                  v-for="title in array[1]"
-                  :key="title.id"
-                  class="flex border-4 rounded-lg row border-amarillo"
-                >
-                  <div class="flex items-center justify-start p-4 rounded-lg">
-                    <div
-                      v-for="icon in title.icons"
-                      :key="icon.id"
-                      class="items-center"
-                    >
-                      <img
-                        class="w-28 h-28"
-                        :src="icon.icon"
-                        alt="Icono de tarea"
-                      />
-                    </div>
-                    <div class="px-8"></div>
-                    <div class="flex flex-row">
-                      <h1 class="ml-12 text-xl font-bold">
-                        {{ title.title }}
-                      </h1>
-                    </div>
-                    <div class="px-16"></div>
-                    <Link
-                      :href="
-                        route('techUserAdvancedDescription/create', task.id)
-                      "
-                      type="button"
-                    >
-                      <jet-create-btn />
-                    </Link>
-                    <Link
-                      type="button"
-                      method="delete"
-                      :href="route('techUserAdvanced/delete', task.id)"
-                    >
-                      <jet-delete-btn />
-                    </Link>
-                  </div>
+            <div
+              v-for="description in array[2]"
+              :key="description.id"
+              class="flex border-4 rounded-lg row border-amarillo"
+            >
+              <div class="flex items-center justify-start p-2 rounded-lg">
+                <div>
+                  <jet-advanced-description-svg />
                 </div>
+                <div class="px-8"></div>
+                <div class="flex flex-row">
+                  <h1 class="ml-12 text-xl font-bold">
+                    {{ description.description }}
+                  </h1>
+                </div>
+                <div class="px-16"></div>
+                <Link
+                  :href="
+                    route('techUserAdvancedDescription/edit', description.id)
+                  "
+                  type="button"
+                >
+                  <jet-edit-btn />
+                </Link>
+                <Link
+                  type="button"
+                  method="delete"
+                  :href="
+                    route('techUserAdvancedDescription/delete', description.id)
+                  "
+                >
+                  <jet-delete-btn />
+                </Link>
               </div>
+            </div>
+          </div>
+
+          <h2 class="mb-2">Trabajo</h2>
+          <div class="mb-10" v-for="array in allJob" :key="array.id">
+            <div v-for="task in array[0]" :key="task.id">
               <div
-                v-for="description in array[2]"
-                :key="description.id"
+                v-for="title in array[1]"
+                :key="title.id"
                 class="flex border-4 rounded-lg row border-amarillo"
               >
-                <div class="flex items-center justify-start p-2 rounded-lg">
-                  <div>
-                    <jet-advanced-description-svg />
+                <div class="flex items-center justify-start p-4 rounded-lg">
+                  <div
+                    v-for="icon in title.icons"
+                    :key="icon.id"
+                    class="items-center"
+                  >
+                    <img
+                      class="w-28 h-28"
+                      :src="icon.icon"
+                      alt="Icono de tarea"
+                    />
                   </div>
                   <div class="px-8"></div>
                   <div class="flex flex-row">
                     <h1 class="ml-12 text-xl font-bold">
-                      {{ description.description }}
+                      {{ title.title }}
                     </h1>
                   </div>
                   <div class="px-16"></div>
                   <Link
-                    :href="
-                      route('techUserAdvancedDescription/edit', description.id)
-                    "
+                    :href="route('techUserAdvancedDescription/create', task.id)"
                     type="button"
                   >
-                    <jet-edit-btn />
+                    <jet-create-btn />
                   </Link>
                   <Link
                     type="button"
                     method="delete"
-                    :href="
-                      route(
-                        'techUserAdvancedDescription/delete',
-                        description.id
-                      )
-                    "
+                    :href="route('techUserAdvanced/delete', task.id)"
                   >
                     <jet-delete-btn />
                   </Link>
                 </div>
               </div>
             </div>
-
-            <h2 class="mb-2">Juego</h2>
-            <div class="mb-10" v-for="array in allGame" :key="array.id">
-              <div v-for="task in array[0]" :key="task.id">
-                <div
-                  v-for="title in array[1]"
-                  :key="title.id"
-                  class="flex border-4 rounded-lg row border-amarillo"
-                >
-                  <div class="flex items-center justify-start p-4 rounded-lg">
-                    <div
-                      v-for="icon in title.icons"
-                      :key="icon.id"
-                      class="items-center"
-                    >
-                      <img
-                        class="w-28 h-28"
-                        :src="icon.icon"
-                        alt="Icono de tarea"
-                      />
-                    </div>
-                    <div class="px-8"></div>
-                    <div class="flex flex-row">
-                      <h1 class="ml-12 text-xl font-bold">
-                        {{ title.title }}
-                      </h1>
-                    </div>
-                    <div class="px-16"></div>
-                    <Link
-                      :href="
-                        route('techUserAdvancedDescription/create', task.id)
-                      "
-                      type="button"
-                    >
-                      <jet-create-btn />
-                    </Link>
-                    <Link
-                      type="button"
-                      method="delete"
-                      :href="route('techUserAdvanced/delete', task.id)"
-                    >
-                      <jet-delete-btn />
-                    </Link>
-                  </div>
+            <div
+              v-for="description in array[2]"
+              :key="description.id"
+              class="flex border-4 rounded-lg row border-amarillo"
+            >
+              <div class="flex items-center justify-start p-2 rounded-lg">
+                <div>
+                  <jet-advanced-description-svg />
                 </div>
+                <div class="px-8"></div>
+                <div class="flex flex-row">
+                  <h1 class="ml-12 text-xl font-bold">
+                    {{ description.description }}
+                  </h1>
+                </div>
+                <div class="px-16"></div>
+                <Link
+                  :href="
+                    route('techUserAdvancedDescription/edit', description.id)
+                  "
+                  type="button"
+                >
+                  <jet-edit-btn />
+                </Link>
+                <Link
+                  type="button"
+                  method="delete"
+                  :href="
+                    route('techUserAdvancedDescription/delete', description.id)
+                  "
+                >
+                  <jet-delete-btn />
+                </Link>
               </div>
+            </div>
+          </div>
+
+          <h2 class="mb-2">Juego</h2>
+          <div class="mb-10" v-for="array in allGame" :key="array.id">
+            <div v-for="task in array[0]" :key="task.id">
               <div
-                v-for="description in array[2]"
-                :key="description.id"
+                v-for="title in array[1]"
+                :key="title.id"
                 class="flex border-4 rounded-lg row border-amarillo"
               >
-                <div class="flex items-center justify-start p-2 rounded-lg">
-                  <div>
-                    <jet-advanced-description-svg />
+                <div class="flex items-center justify-start p-4 rounded-lg">
+                  <div
+                    v-for="icon in title.icons"
+                    :key="icon.id"
+                    class="items-center"
+                  >
+                    <img
+                      class="w-28 h-28"
+                      :src="icon.icon"
+                      alt="Icono de tarea"
+                    />
                   </div>
                   <div class="px-8"></div>
                   <div class="flex flex-row">
                     <h1 class="ml-12 text-xl font-bold">
-                      {{ description.description }}
+                      {{ title.title }}
                     </h1>
                   </div>
                   <div class="px-16"></div>
                   <Link
-                    :href="
-                      route('techUserAdvancedDescription/edit', description.id)
-                    "
+                    :href="route('techUserAdvancedDescription/create', task.id)"
                     type="button"
                   >
-                    <jet-edit-btn />
+                    <jet-create-btn />
                   </Link>
                   <Link
                     type="button"
                     method="delete"
-                    :href="
-                      route(
-                        'techUserAdvancedDescription/delete',
-                        description.id
-                      )
-                    "
+                    :href="route('techUserAdvanced/delete', task.id)"
                   >
                     <jet-delete-btn />
                   </Link>
                 </div>
               </div>
             </div>
-
-            <h2 class="mb-2">Tiempo libre</h2>
-            <div class="mb-10" v-for="array in allFreeTime" :key="array.id">
-              <div v-for="task in array[0]" :key="task.id">
-                <div
-                  v-for="title in array[1]"
-                  :key="title.id"
-                  class="flex border-4 rounded-lg row border-amarillo"
-                >
-                  <div class="flex items-center justify-start p-4 rounded-lg">
-                    <div
-                      v-for="icon in title.icons"
-                      :key="icon.id"
-                      class="items-center"
-                    >
-                      <img
-                        class="w-28 h-28"
-                        :src="icon.icon"
-                        alt="Icono de tarea"
-                      />
-                    </div>
-                    <div class="px-8"></div>
-                    <div class="flex flex-row">
-                      <h1 class="ml-12 text-xl font-bold">
-                        {{ title.title }}
-                      </h1>
-                    </div>
-                    <div class="px-16"></div>
-                    <Link
-                      :href="
-                        route('techUserAdvancedDescription/create', task.id)
-                      "
-                      type="button"
-                    >
-                      <jet-create-btn />
-                    </Link>
-                    <Link
-                      type="button"
-                      method="delete"
-                      :href="route('techUserAdvanced/delete', task.id)"
-                    >
-                      <jet-delete-btn />
-                    </Link>
-                  </div>
+            <div
+              v-for="description in array[2]"
+              :key="description.id"
+              class="flex border-4 rounded-lg row border-amarillo"
+            >
+              <div class="flex items-center justify-start p-2 rounded-lg">
+                <div>
+                  <jet-advanced-description-svg />
                 </div>
+                <div class="px-8"></div>
+                <div class="flex flex-row">
+                  <h1 class="ml-12 text-xl font-bold">
+                    {{ description.description }}
+                  </h1>
+                </div>
+                <div class="px-16"></div>
+                <Link
+                  :href="
+                    route('techUserAdvancedDescription/edit', description.id)
+                  "
+                  type="button"
+                >
+                  <jet-edit-btn />
+                </Link>
+                <Link
+                  type="button"
+                  method="delete"
+                  :href="
+                    route('techUserAdvancedDescription/delete', description.id)
+                  "
+                >
+                  <jet-delete-btn />
+                </Link>
               </div>
+            </div>
+          </div>
+
+          <h2 class="mb-2">Tiempo libre</h2>
+          <div class="mb-10" v-for="array in allFreeTime" :key="array.id">
+            <div v-for="task in array[0]" :key="task.id">
               <div
-                v-for="description in array[2]"
-                :key="description.id"
+                v-for="title in array[1]"
+                :key="title.id"
                 class="flex border-4 rounded-lg row border-amarillo"
               >
-                <div class="flex items-center justify-start p-2 rounded-lg">
-                  <div>
-                    <jet-advanced-description-svg />
+                <div class="flex items-center justify-start p-4 rounded-lg">
+                  <div
+                    v-for="icon in title.icons"
+                    :key="icon.id"
+                    class="items-center"
+                  >
+                    <img
+                      class="w-28 h-28"
+                      :src="icon.icon"
+                      alt="Icono de tarea"
+                    />
                   </div>
                   <div class="px-8"></div>
                   <div class="flex flex-row">
                     <h1 class="ml-12 text-xl font-bold">
-                      {{ description.description }}
+                      {{ title.title }}
                     </h1>
                   </div>
                   <div class="px-16"></div>
                   <Link
-                    :href="
-                      route('techUserAdvancedDescription/edit', description.id)
-                    "
+                    :href="route('techUserAdvancedDescription/create', task.id)"
                     type="button"
                   >
-                    <jet-edit-btn />
+                    <jet-create-btn />
                   </Link>
                   <Link
                     type="button"
                     method="delete"
-                    :href="
-                      route(
-                        'techUserAdvancedDescription/delete',
-                        description.id
-                      )
-                    "
+                    :href="route('techUserAdvanced/delete', task.id)"
                   >
                     <jet-delete-btn />
                   </Link>
                 </div>
+              </div>
+            </div>
+            <div
+              v-for="description in array[2]"
+              :key="description.id"
+              class="flex border-4 rounded-lg row border-amarillo"
+            >
+              <div class="flex items-center justify-start p-2 rounded-lg">
+                <div>
+                  <jet-advanced-description-svg />
+                </div>
+                <div class="px-8"></div>
+                <div class="flex flex-row">
+                  <h1 class="ml-12 text-xl font-bold">
+                    {{ description.description }}
+                  </h1>
+                </div>
+                <div class="px-16"></div>
+                <Link
+                  :href="
+                    route('techUserAdvancedDescription/edit', description.id)
+                  "
+                  type="button"
+                >
+                  <jet-edit-btn />
+                </Link>
+                <Link
+                  type="button"
+                  method="delete"
+                  :href="
+                    route('techUserAdvancedDescription/delete', description.id)
+                  "
+                >
+                  <jet-delete-btn />
+                </Link>
               </div>
             </div>
           </div>

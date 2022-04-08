@@ -59,7 +59,7 @@
       </button>
     </div>
 
-    <div class="flex justify-center my-4 mt-8 text-lg">
+    <div class="flex justify-center my-2  text-lg">
       <div class="flex justify-center my-4">
         <p>
           <span class="text-lg text-noNegro font-medium"
@@ -156,8 +156,8 @@
         </div>
       </div>
       <div className="mt-4 flex flex-col justify-center items-center">
-        <jet-btn>Asignar</jet-btn >
-        </div>
+        <jet-btn>Asignar</jet-btn>
+      </div>
     </form>
   </app-layout>
 </template>
