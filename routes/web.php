@@ -97,16 +97,3 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::post('/assignStudentNickname', [StudentController::class, 'assignStudentNickname'])->name('assignStudentNickname');
     });
 });
-
-
-// Views
-
-// -Login ~
-// -Register ~
-
-// -Superadmin (Asignación Técnica(Attach-Detach roles) / Asignados)
-
-// -Usuario (Nombre / Foto de perfil(Attach) /Tareas de la persona)
-
-// -Tutoras (Gestión->Tareas / Tareas generales / Tarea (1 de las 3) CRUD (De los títulos de tareas e iconos)
-//                  ->Usuarios / Tareas generales / Tarea (1 de las 3) CRUD (De la descripciones y tarea conjunta))

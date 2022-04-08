@@ -12,16 +12,6 @@ use Inertia\Inertia;
 class UserInstrumentalDescriptionController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -70,17 +60,6 @@ class UserInstrumentalDescriptionController extends Controller
         } catch (Exception $error) {
             return $error->getMessage();
         }
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**

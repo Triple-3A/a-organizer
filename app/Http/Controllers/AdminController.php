@@ -48,29 +48,23 @@ class AdminController extends Controller
             if ($currentRoleId == 1) {
                 if ($newRoleId == 3) {
                     Technician::create(array('user_id' => $userId));
-
                     return Redirect::back();
                 }
                 if ($newRoleId == 4) {
                     Student::create(array('user_id' => $userId));
-
                     return Redirect::back();
                 }
             }
-
             if ($currentRoleId == 3) {
                 $technician = Technician::where('user_id', $userId)->firstOrFail();
                 $technician->delete();
                 Student::create(array('user_id' => $userId));
-
                 return Redirect::back();
             }
-
             if ($currentRoleId == 4) {
                 $student = Student::where('user_id', $userId)->firstOrFail();
                 $student->delete();
                 Technician::create(array('user_id' => $userId));
-
                 return Redirect::back();
             }
 
@@ -161,77 +155,10 @@ class AdminController extends Controller
                 array_push($arrayGroup, $students);
                 array_push($arrayAll, $arrayGroup);
             }
-            // dd($arrayAll);
 
             return Inertia::render('Admin/AdminTechStudents', compact('arrayAll'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

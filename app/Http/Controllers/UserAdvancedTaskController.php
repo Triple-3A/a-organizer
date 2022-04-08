@@ -152,7 +152,6 @@ class UserAdvancedTaskController extends Controller
     public function pick($id)
     {
         try{
-
             return Inertia::render('Technician/Users/Task/UserPickTypeAdvanced', compact('id'));
         }  catch (Exception $error) {
             return $error->getMessage();
@@ -214,17 +213,6 @@ class UserAdvancedTaskController extends Controller
         } catch (Exception $error) {
             return $error->getMessage();
         }
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
    /**

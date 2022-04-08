@@ -77,8 +77,6 @@ class UserBasicTaskController extends Controller
                 array_push($basicTitles, $title);
             }
 
-            // dd($basicTitles);
-
             return Inertia::render('Technician/Users/Task/UserCreateTitle', compact('basic', 'id', 'basicTitles'));
         } catch (Exception $error) {
             return $error->getMessage();
@@ -112,17 +110,6 @@ class UserBasicTaskController extends Controller
         } catch (Exception $error) {
             return $error->getMessage();
         }
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**

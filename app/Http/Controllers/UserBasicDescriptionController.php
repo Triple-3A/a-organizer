@@ -12,16 +12,6 @@ use Inertia\Inertia;
 class UserBasicDescriptionController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -31,9 +21,7 @@ class UserBasicDescriptionController extends Controller
         try {
             $basic = 'básico';
             $task = Task::find($task);
-
             $userCollection = $task->users()->get();
-
             $id = 0;
 
             foreach ($userCollection as $user) {
@@ -69,17 +57,6 @@ class UserBasicDescriptionController extends Controller
         } catch (Exception $error) {
             return $error->getMessage();
         }
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -120,7 +97,6 @@ class UserBasicDescriptionController extends Controller
     public function update(Request $request, $descriptionId)
     {
         try {
-
             $requested = $request->all();
             $id = $requested['userId'];
             $descriptionString = $requested['descriptions'];;
