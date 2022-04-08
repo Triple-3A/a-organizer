@@ -30,7 +30,7 @@
           </div>
 
           <jet-title class="mt-4"> Tareas Básicas del Usuario </jet-title>
-          
+
           <div class="mb-10" v-for="array in all" :key="array.id">
             <div v-for="task in array[0]" :key="task.id">
               <div
@@ -39,8 +39,16 @@
                 class="flex border-4 rounded-lg row border-amarillo"
               >
                 <div class="flex items-center justify-start p-4 rounded-lg">
-                  <div>
-                    <jet-basic-title-svg />
+                  <div
+                    v-for="icon in title.icons"
+                    :key="icon.id"
+                    class="items-center"
+                  >
+                    <img
+                      class="w-28 h-28"
+                      :src="icon.icon"
+                      alt="Icono de tarea"
+                    />
                   </div>
                   <div class="px-8"></div>
                   <div class="flex flex-row">

@@ -33,6 +33,7 @@ class UserInstrumentalTaskController extends Controller
                 $descriptionsArray = [];
 
                 $titles = $task->titles()->where('type', 'instrumentales')->get();
+                $titles->load('icons');
                 $descriptions = $task->descriptions()->get();
 
                 foreach ($titles as $title) {

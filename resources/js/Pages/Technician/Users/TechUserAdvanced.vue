@@ -41,8 +41,16 @@
                   class="flex border-4 rounded-lg row border-amarillo"
                 >
                   <div class="flex items-center justify-start p-4 rounded-lg">
-                    <div>
-                      <jet-advanced-title-svg />
+                    <div
+                      v-for="icon in title.icons"
+                      :key="icon.id"
+                      class="items-center"
+                    >
+                      <img
+                        class="w-28 h-28"
+                        :src="icon.icon"
+                        alt="Icono de tarea"
+                      />
                     </div>
                     <div class="px-8"></div>
                     <div class="flex flex-row">
@@ -52,13 +60,18 @@
                     </div>
                     <div class="px-16"></div>
                     <Link
-                      :href="route('techUserAdvancedDescription/create', task.id)"
+                      :href="
+                        route('techUserAdvancedDescription/create', task.id)
+                      "
                       type="button"
                     >
                       <jet-create-btn />
                     </Link>
-                    <Link type="button"
-                      method="delete" :href="route('techUserAdvanced/delete', task.id)">
+                    <Link
+                      type="button"
+                      method="delete"
+                      :href="route('techUserAdvanced/delete', task.id)"
+                    >
                       <jet-delete-btn />
                     </Link>
                   </div>
@@ -88,10 +101,14 @@
                   >
                     <jet-edit-btn />
                   </Link>
-                  <Link type="button"
-                      method="delete"
+                  <Link
+                    type="button"
+                    method="delete"
                     :href="
-                      route('techUserAdvancedDescription/delete', description.id)
+                      route(
+                        'techUserAdvancedDescription/delete',
+                        description.id
+                      )
                     "
                   >
                     <jet-delete-btn />
@@ -109,8 +126,16 @@
                   class="flex border-4 rounded-lg row border-amarillo"
                 >
                   <div class="flex items-center justify-start p-4 rounded-lg">
-                    <div>
-                      <jet-advanced-title-svg />
+                    <div
+                      v-for="icon in title.icons"
+                      :key="icon.id"
+                      class="items-center"
+                    >
+                      <img
+                        class="w-28 h-28"
+                        :src="icon.icon"
+                        alt="Icono de tarea"
+                      />
                     </div>
                     <div class="px-8"></div>
                     <div class="flex flex-row">
@@ -120,13 +145,18 @@
                     </div>
                     <div class="px-16"></div>
                     <Link
-                      :href="route('techUserAdvancedDescription/create', task.id)"
+                      :href="
+                        route('techUserAdvancedDescription/create', task.id)
+                      "
                       type="button"
                     >
                       <jet-create-btn />
                     </Link>
-                    <Link type="button"
-                      method="delete" :href="route('techUserAdvanced/delete', task.id)">
+                    <Link
+                      type="button"
+                      method="delete"
+                      :href="route('techUserAdvanced/delete', task.id)"
+                    >
                       <jet-delete-btn />
                     </Link>
                   </div>
@@ -156,10 +186,14 @@
                   >
                     <jet-edit-btn />
                   </Link>
-                  <Link type="button"
-                      method="delete"
+                  <Link
+                    type="button"
+                    method="delete"
                     :href="
-                      route('techUserAdvancedDescription/delete', description.id)
+                      route(
+                        'techUserAdvancedDescription/delete',
+                        description.id
+                      )
                     "
                   >
                     <jet-delete-btn />
@@ -177,8 +211,16 @@
                   class="flex border-4 rounded-lg row border-amarillo"
                 >
                   <div class="flex items-center justify-start p-4 rounded-lg">
-                    <div>
-                      <jet-advanced-title-svg />
+                    <div
+                      v-for="icon in title.icons"
+                      :key="icon.id"
+                      class="items-center"
+                    >
+                      <img
+                        class="w-28 h-28"
+                        :src="icon.icon"
+                        alt="Icono de tarea"
+                      />
                     </div>
                     <div class="px-8"></div>
                     <div class="flex flex-row">
@@ -188,13 +230,18 @@
                     </div>
                     <div class="px-16"></div>
                     <Link
-                      :href="route('techUserAdvancedDescription/create', task.id)"
+                      :href="
+                        route('techUserAdvancedDescription/create', task.id)
+                      "
                       type="button"
                     >
                       <jet-create-btn />
                     </Link>
-                    <Link type="button"
-                      method="delete" :href="route('techUserAdvanced/delete', task.id)">
+                    <Link
+                      type="button"
+                      method="delete"
+                      :href="route('techUserAdvanced/delete', task.id)"
+                    >
                       <jet-delete-btn />
                     </Link>
                   </div>
@@ -224,10 +271,14 @@
                   >
                     <jet-edit-btn />
                   </Link>
-                  <Link type="button"
-                      method="delete"
+                  <Link
+                    type="button"
+                    method="delete"
                     :href="
-                      route('techUserAdvancedDescription/delete', description.id)
+                      route(
+                        'techUserAdvancedDescription/delete',
+                        description.id
+                      )
                     "
                   >
                     <jet-delete-btn />
@@ -245,8 +296,16 @@
                   class="flex border-4 rounded-lg row border-amarillo"
                 >
                   <div class="flex items-center justify-start p-4 rounded-lg">
-                    <div>
-                      <jet-advanced-title-svg />
+                    <div
+                      v-for="icon in title.icons"
+                      :key="icon.id"
+                      class="items-center"
+                    >
+                      <img
+                        class="w-28 h-28"
+                        :src="icon.icon"
+                        alt="Icono de tarea"
+                      />
                     </div>
                     <div class="px-8"></div>
                     <div class="flex flex-row">
@@ -256,13 +315,18 @@
                     </div>
                     <div class="px-16"></div>
                     <Link
-                      :href="route('techUserAdvancedDescription/create', task.id)"
+                      :href="
+                        route('techUserAdvancedDescription/create', task.id)
+                      "
                       type="button"
                     >
                       <jet-create-btn />
                     </Link>
-                    <Link type="button"
-                      method="delete" :href="route('techUserAdvanced/delete', task.id)">
+                    <Link
+                      type="button"
+                      method="delete"
+                      :href="route('techUserAdvanced/delete', task.id)"
+                    >
                       <jet-delete-btn />
                     </Link>
                   </div>
@@ -292,10 +356,14 @@
                   >
                     <jet-edit-btn />
                   </Link>
-                  <Link type="button"
-                      method="delete"
+                  <Link
+                    type="button"
+                    method="delete"
                     :href="
-                      route('techUserAdvancedDescription/delete', description.id)
+                      route(
+                        'techUserAdvancedDescription/delete',
+                        description.id
+                      )
                     "
                   >
                     <jet-delete-btn />

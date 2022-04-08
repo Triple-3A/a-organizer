@@ -44,7 +44,17 @@
                 >
                   <div class="flex items-center justify-start p-4 rounded-lg">
                     <div>
-                      <jet-instrumental-title-svg />
+                      <div
+                        v-for="icon in title.icons"
+                        :key="icon.id"
+                        class="items-center"
+                      >
+                        <img
+                          class="w-28 h-28"
+                          :src="icon.icon"
+                          alt="Icono de tarea"
+                        />
+                      </div>
                     </div>
                     <div class="px-8"></div>
                     <div class="flex flex-row">
@@ -54,12 +64,15 @@
                     </div>
                     <div class="px-16"></div>
                     <Link
-                      :href="route('techUserInstrumentalDescription/create', task.id)"
+                      :href="
+                        route('techUserInstrumentalDescription/create', task.id)
+                      "
                       type="button"
                     >
                       <jet-create-btn />
                     </Link>
-                    <Link type="button"
+                    <Link
+                      type="button"
                       method="delete"
                       :href="route('techUserInstrumental/delete', task.id)"
                     >
@@ -86,16 +99,23 @@
                   <div class="px-16"></div>
                   <Link
                     :href="
-                      route('techUserInstrumentalDescription/edit', description.id)
+                      route(
+                        'techUserInstrumentalDescription/edit',
+                        description.id
+                      )
                     "
                     type="button"
                   >
                     <jet-edit-btn />
                   </Link>
-                  <Link type="button"
-                      method="delete"
+                  <Link
+                    type="button"
+                    method="delete"
                     :href="
-                      route('techUserInstrumentalDescription/delete', description.id)
+                      route(
+                        'techUserInstrumentalDescription/delete',
+                        description.id
+                      )
                     "
                   >
                     <jet-delete-btn />

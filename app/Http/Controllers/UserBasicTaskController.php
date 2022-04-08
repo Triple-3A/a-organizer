@@ -33,6 +33,7 @@ class UserBasicTaskController extends Controller
                 $descriptionsArray = [];
 
                 $titles = $task->titles()->where('type', 'básicos')->get();
+                $titles->load('icons');
                 $descriptions = $task->descriptions()->get();
 
                 foreach ($titles as $title) {
