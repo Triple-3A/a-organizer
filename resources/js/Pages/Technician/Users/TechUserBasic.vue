@@ -29,16 +29,26 @@
             </Link>
           </div>
 
-          <jet-title class="mt-4"> Tareas Básicas del Usuario </jet-title>
+          <jet-title> Tareas Básicas del Usuario </jet-title>
 
           <div class="mb-10" v-for="array in all" :key="array.id">
             <div v-for="task in array[0]" :key="task.id">
               <div
                 v-for="title in array[1]"
                 :key="title.id"
-                class="flex border-4 rounded-lg row border-amarillo"
+                class="
+                  flex
+                  mb-11
+                  border-4
+                  bg-white
+                  rounded-lg
+                  row
+                  border-amarillo
+                  drop-shadow-md
+                  hover:drop-shadow-2xl
+                "
               >
-                <div class="flex items-center justify-start p-4 rounded-lg">
+                <div class="flex items-center justify-start p-4">
                   <div
                     v-for="icon in title.icons"
                     :key="icon.id"
@@ -50,14 +60,16 @@
                       alt="Icono de tarea"
                     />
                   </div>
-                  <div class="px-8"></div>
-                  <div class="flex flex-row">
+              
+                  <div class="pl-9 w-80 ">
                     <h1 class="text-lg text-noNegro font-bold">
                       {{ title.title }}
                     </h1>
                   </div>
-                  <div class="px-16"></div>
+
+                  <div class="ml-10 flex flex-col items-center">
                   <Link
+                  class="mr-1 mb-4"
                     :href="route('techUserBasicDescription/create', task.id)"
                     type="button"
                   >
@@ -70,6 +82,7 @@
                   >
                     <jet-delete-btn />
                   </Link>
+                  </div>
                 </div>
               </div>
             </div>

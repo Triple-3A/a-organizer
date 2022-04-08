@@ -5,11 +5,11 @@
         <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
           <div class="flex items-center justify-center">
             <div class="p-10 bg-white rounded-lg">
-              <h1 class="text-xl noNegro font-bold">
+              <h1 class="text-xl text-noNegro font-bold">
                 Bienvenido, te encuentras en la vista de StandBy!!!
               </h1>
               <br />
-              <h2 class="">Espere a que se le asigne un rol</h2>
+              <h2 class="text-noNegro">Espere a que se le asigne un rol</h2>
             </div>
           </div>
         </div>

@@ -28,22 +28,22 @@
           src="https://randomuser.me/api/portraits/women/81.jpg"
         />
       </div>
-      <jet-title class="mt-2">{{ index.name }}</jet-title>
+      <jet-title class="mt-4">{{ index.name }}</jet-title>
     <Link class="font-medium" :href="route('techUserBasic', index.id)">
       <jet-card>
-        <img class="w-32 h-32 mb-2" src="images/basic.png" alt="Icono de tareas básicas" />
+        <img class="w-32 h-32 mb-2" src="/images/basic.png" alt="Icono de tareas básicas" />
         <h1 class="text-lg text-noNegro font-bold text-center">Tareas Básicas</h1>
       </jet-card>
     </Link>
     <Link class="font-medium" :href="route('techUserInstrumental', index.id)">
       <jet-card>
-        <img class="w-32 h-32 mb-2" src="images/instrumental.png" alt="Icono de tareas instrumentales" />
+        <img class="w-32 h-32 mb-2" src="/images/instrumental.png" alt="Icono de tareas instrumentales" />
         <h1 class="text-lg text-noNegro font-bold text-center">Tareas Instrumentales</h1>
       </jet-card>
     </Link>
     <Link class="font-medium" :href="route('techUserAdvanced', index.id)">
       <jet-card>
-        <img class="w-32 h-32 mb-2" src="images/advanced.png" alt="Icono de tareas avanzadas" />
+        <img class="w-32 h-32 mb-2" src="/images/advanced.png" alt="Icono de tareas avanzadas" />
         <h1 class="text-lg text-noNegro font-bold text-center">Tareas Avanzadas</h1>
       </jet-card>
     </Link>

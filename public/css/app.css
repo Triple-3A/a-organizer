@@ -1098,6 +1098,9 @@ select {
 .mr-4 {
   margin-right: 24px;
 }
+.mb-1 {
+  margin-bottom: 8px;
+}
 .block {
   display: block;
 }
