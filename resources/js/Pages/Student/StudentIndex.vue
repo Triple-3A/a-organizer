@@ -77,8 +77,9 @@ import JetCard from "@/Jetstream/Card.vue";
 
 export default {
     props: {
-    username: String,
-    tasks: Array,
+    userTasks: Array,
+    totalTasks: Number,
+    totalDoneTasks: Number,
   },
   components: {
     AppLayout,
@@ -96,3 +97,4 @@ export default {
   },
 };
 </script>
+
