@@ -15,9 +15,6 @@
       <div class="min-h-screen flex flex-col items-center justify-center">
         <div
           class="
-            p-10
-            bg-white
-            rounded-lg
             flex flex-col
             items-center
             justify-center

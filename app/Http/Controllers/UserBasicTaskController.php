@@ -23,7 +23,6 @@ class UserBasicTaskController extends Controller
         try {
             $student = User::find($id);
             $tasks = $student->tasks()->get();
-            $allTasks = [];
             $all = [];
 
             foreach ($tasks as $task) {

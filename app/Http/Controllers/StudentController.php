@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use App\Models\Student;
+use App\Models\User;
 
 class StudentController extends Controller
 {
@@ -33,6 +34,9 @@ class StudentController extends Controller
 
     public function assignStudentNickname(Request $request)
     {
+        $request->validate([
+            'nickname' => 'required',
+        ]);
         $userId = auth()->id();
         $currentStudent = Student::where('user_id', $userId)->get();
         foreach ($currentStudent as $student) {
@@ -62,6 +66,9 @@ class StudentController extends Controller
 
     public function assignStudentPic(Request $request)
     {
+        // $request->validate([
+        //     'pic' => 'required',
+        // ]);
         $userId = auth()->id();
         $currentStudent = Student::where('user_id', $userId)->get();
         foreach ($currentStudent as $student) {
@@ -75,7 +82,39 @@ class StudentController extends Controller
     public function studentTasks()
     {
         try {
-            return Inertia::render('Student/StudentIndex');
+            $user = auth()->user();
+            $tasksUser = $user->tasks()->get();
+            $all = [];
+            foreach ($tasksUser as $taskUser) {
+                $arrayGroup = [];
+                $taskArray = [];
+                $titlesArray = [];
+                $descriptionsArray = [];
+
+                $titles = $taskUser->titles()->get();
+                $descriptions = $taskUser->descriptions()->get();
+
+                foreach ($titles as $title) {
+                    array_push($taskArray, $taskUser);
+                    array_push($arrayGroup, $taskArray);
+                    array_push($titlesArray, $title);
+                    array_push($arrayGroup, $titlesArray);
+
+                    foreach ($descriptions as $description) {
+                        array_push($descriptionsArray, $description);
+                    }
+                    array_push($arrayGroup, $descriptionsArray);
+                    array_push($all, $arrayGroup);
+                }
+            }
+
+            $currentStudent = Student::where('user_id', $user->id)->get();
+            foreach ($currentStudent as $student) {
+                $student = $student;
+            }
+            $username = $student->nickname;
+
+            return Inertia::render('Student/StudentIndex', compact('username', 'all'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
