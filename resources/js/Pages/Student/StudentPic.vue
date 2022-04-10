@@ -1,5 +1,6 @@
 <template>
   <app-layout title="Dashboard">
+    <form @submit.prevent="updateProfileInformation">
     <div
       class="
         min-h-screen
@@ -13,13 +14,7 @@
       "
     >
       <div class="min-h-screen flex flex-col items-center justify-center">
-        <div
-          class="
-            flex flex-col
-            items-center
-            justify-center
-          "
-        >
+        <div class="flex flex-col items-center justify-center">
           <jet-title>¡QUEREMOS VERTE!</jet-title>
           <jet-sub-title>Elige una de estas imágenes</jet-sub-title>
 
@@ -35,10 +30,10 @@
                 bg-white
               "
             >
-              <jet-user-avatar />
-              <jet-user-avatar />
-              <jet-user-avatar />
-              <jet-user-avatar />
+              <jet-user-avatar v-model="photo" value="photo 1"/>
+              <jet-user-avatar v-model="photo" value="photo 2"/>
+              <jet-user-avatar v-model="photo" value="photo 3"/>
+              <jet-user-avatar v-model="photo" value="photo 4"/>
             </div>
 
             <Link :href="route('studentTasks')">
@@ -51,6 +46,7 @@
         </div>
       </div>
     </div>
+    </form>
   </app-layout>
 </template>
 
@@ -71,6 +67,31 @@ export default {
     JetUserAvatar,
     Head,
     Link,
+  },
+  props: ["user"],
+
+  data() {
+    return {
+      form: this.$inertia.form({
+        _method: "PUT",
+        photo: null,
+      }),
+
+      photoPreview: null,
+    };
+  },
+  methods: {
+    updateProfileInformation() {
+      if (this.$refs.photo) {
+        this.form.photo = this.$refs.photo.files[0];
+      }
+
+      this.form.post(route("user-profile-information.update"), {
+        errorBag: "updateProfileInformation",
+        preserveScroll: true,
+        onSuccess: () => this.clearPhotoFileInput(),
+      });
+    },
   },
 };
 </script>
