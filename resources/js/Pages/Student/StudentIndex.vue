@@ -33,7 +33,7 @@
               </h2>
             </div>
             <!--  PROBANDO LA CARD -->
-            <jet-card class="w-8/12"></jet-card>
+            <!-- <jet-card class="w-8/12"></jet-card> -->
             <!-- ATENCIÓN CAGADA INCOMINGGGGGGGGGGGG --- PELIGRO PELIGROOOOOOOO-->
             <!--cambiar argumentos en v-for -->
             <!-- cómo pasamos las tareas creadas y asignadas por el tutor? -->
