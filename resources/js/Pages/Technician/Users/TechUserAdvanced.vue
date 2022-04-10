@@ -35,8 +35,8 @@
             </h1>
           </jet-title>
 
-          <h2 class="mb-2">Educación</h2>
           <div class="mb-10" v-for="array in allEducation" :key="array.id">
+          <h2 class="mb-2">Educación</h2>
             <div v-for="task in array[0]" :key="task.id">
               <div
                 v-for="title in array[1]"
@@ -115,8 +115,8 @@
             </div>
           </div>
 
-          <h2 class="mb-2">Trabajo</h2>
           <div class="mb-10" v-for="array in allJob" :key="array.id">
+          <h2 class="mb-2">Trabajo</h2>
             <div v-for="task in array[0]" :key="task.id">
               <div
                 v-for="title in array[1]"
@@ -195,8 +195,8 @@
             </div>
           </div>
 
-          <h2 class="mb-2">Juego</h2>
           <div class="mb-10" v-for="array in allGame" :key="array.id">
+          <h2 class="mb-2">Juego</h2>
             <div v-for="task in array[0]" :key="task.id">
               <div
                 v-for="title in array[1]"
@@ -275,8 +275,8 @@
             </div>
           </div>
 
-          <h2 class="mb-2">Tiempo libre</h2>
           <div class="mb-10" v-for="array in allFreeTime" :key="array.id">
+          <h2 class="mb-2">Tiempo libre</h2>
             <div v-for="task in array[0]" :key="task.id">
               <div
                 v-for="title in array[1]"
