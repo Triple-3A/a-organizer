@@ -30989,6 +30989,27 @@ var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "w-3/4 mx-auto flex-column"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "bg-amarillo flex items-center bg-white justify-center px-10 py-6 mb-12 border-4 rounded-xl border-amarillo drop-shadow-md hover:drop-shadow-2xl"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "columns-1"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "pl-9 w-80"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+  "class": "text-lg text-white font-bold"
+}, " Tareas completadas ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "w-full bg-gray-200 rounded-full"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "bg-azul text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full px-4",
+  style: {
+    "width": "40%"
+  }
+}, " 2/5 ")])])])], -1
+/* HOISTED */
+);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_jet_title = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-title");
 
@@ -31049,7 +31070,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         ))]);
       }), 128
       /* KEYED_FRAGMENT */
-      ))])])])])];
+      ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"w-3/4 mx-auto lg:w-2/5 flex-column\">\r\n      <div\r\n        class=\"bg-amarillo flex items-center bg-white justify-center px-10 py-6 mb-12 border-4 rounded-xl border-amarillo drop-shadow-md hover:drop-shadow-2xl\"\r\n      >\r\n      <div class=\"text-white\">\r\n      <h1>Tareas completadas</h1>\r\n      </div>\r\n            <div class=\"w-full bg-gray-200 rounded-full\">\r\n  <div class=\"bg-azul text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full px-4\" style=\"width: 50%\">2/5</div>\r\n</div>\r\n         <slot></slot>\r\n        </div>\r\n      </div> "), _hoisted_17])])])];
     }),
     _: 1
     /* STABLE */
