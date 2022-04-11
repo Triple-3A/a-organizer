@@ -17,13 +17,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('migrate:fresh --seed')->everyMinute();
         $schedule->call(function () {
             $tasks = Task::get();
             foreach ($tasks as $task) {
-                $task->update(["done" => true]);
+                $task->update(["done" => false]);
             }
-        })->dailyAt('2:00');;
+        })->dailyAt('2:00');
     }
 
     /**
