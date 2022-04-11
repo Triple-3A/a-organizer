@@ -52,12 +52,13 @@
                 </div>
               </div>
             </div> -->
+
             <div class="mb-10" v-for="array in all" :key="array.id">
               <div v-for="task in array[0]" :key="task.id">
                 <div
                   v-for="title in array[1]"
                   :key="title.id"
-                  class="flex border-4 rounded-lg row border-amarillo"
+                  class="flex flex-row w-8/12 border-4 rounded-lg row border-amarillo"
                 >
                   <div class="flex items-center justify-start p-4 rounded-lg">
                     <div class="px-8"></div>
