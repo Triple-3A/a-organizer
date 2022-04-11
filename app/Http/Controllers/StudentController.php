@@ -25,7 +25,7 @@ class StudentController extends Controller
             if ($currentStudent->pluck('nickname')[0] === null) {
                 return Inertia::render('Student/StudentName');
             } else {
-                return Redirect::route('studentPic');
+                return Redirect::route('studentTasks');
             }
         } catch (Exception $error) {
             return $error->getMessage();
@@ -44,40 +44,40 @@ class StudentController extends Controller
         }
         $studentOne->update($request->all());
 
-        return Redirect::route('studentPic');
-    }
-
-    public function studentPic()
-    {
-
-        try {
-            $userId = auth()->id();
-            $currentStudent = Student::where('user_id', $userId)->get();
-
-            if ($currentStudent->pluck('avatar')[0] === null) {
-                return Inertia::render('Student/StudentPic');
-            } else {
-                return Redirect::route('studentTasks');
-            }
-        } catch (Exception $error) {
-            return $error->getMessage();
-        }
-    }
-
-    public function assignStudentPic(Request $request)
-    {
-        // $request->validate([
-        //     'pic' => 'required',
-        // ]);
-        $userId = auth()->id();
-        $currentStudent = Student::where('user_id', $userId)->get();
-        foreach ($currentStudent as $student) {
-            $studentOne = $student;
-        }
-        $studentOne->update($request->all());
-
         return Redirect::route('studentTasks');
     }
+
+    // public function studentPic()
+    // {
+
+    //     try {
+    //         $userId = auth()->id();
+    //         $currentStudent = Student::where('user_id', $userId)->get();
+
+    //         if ($currentStudent->pluck('avatar')[0] === null) {
+    //             return Inertia::render('Student/StudentPic');
+    //         } else {
+    //             return Redirect::route('studentTasks');
+    //         }
+    //     } catch (Exception $error) {
+    //         return $error->getMessage();
+    //     }
+    // }
+
+    // public function assignStudentPic(Request $request)
+    // {
+    //     // $request->validate([
+    //     //     'pic' => 'required',
+    //     // ]);
+    //     $userId = auth()->id();
+    //     $currentStudent = Student::where('user_id', $userId)->get();
+    //     foreach ($currentStudent as $student) {
+    //         $studentOne = $student;
+    //     }
+    //     $studentOne->update($request->all());
+
+    //     return Redirect::route('studentTasks');
+    // }
 
     public function studentTasks()
     {
