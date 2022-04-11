@@ -18,8 +18,7 @@
                 @submit.prevent="basicSubmit"
                 class="mt-4 flex justify-center mb-6"
               >
-              
-                <div class="mb-4 w-280 ">
+                <div class="mb-4 mt-2 w-280">
                   <label
                     class="display: block text-noNegro font-bold"
                     for="basic"
@@ -69,33 +68,46 @@
             </div>
 
             <div v-if="instrumental == 'instrumental'">
-              <div class="p-10">
-                <jet-title>Viendo form instrumental -> {{ id }}</jet-title>
+              <jet-title>Añadir Tarea Instrumental</jet-title>
+
+              <div class="flex items-center justify-center">
+                <img
+                  class="w-32 h-32 mb-2"
+                  src="/images/instrumental.png"
+                  alt="Icono de tareas básicas"
+                />
               </div>
-              <form @submit.prevent="instrumentalSubmit">
-                <div class="text-center">
-                  <label for="Instrumental"
-                    >Elige el título instrumental:
+              <form
+                @submit.prevent="instrumentalSubmit"
+                class="mt-4 flex justify-center mb-6"
+              >
+                <div class="mb-4 mt-2 w-280">
+                  <label 
+                    class="display: block text-noNegro font-bold"
+                    for="Instrumental"
+                    >Elige una tarea instrumental:
                   </label>
-                  <br />
+                 
                   <select
                     v-model="instrumentalForm.title"
                     name="title"
                     id="title"
                     class="
-                      px-3
+                      pl-2
+                      pr-9
                       py-1.5
                       bg-amarillo
-                      text-base
+                      text-base text-noNegro
                       font-bold
                       mt-1
                       rounded
                       select
-                      w-96
+                      w-full
+                      truncate
                     "
                   >
                     <option
-                      class="text-xs bg-orange-100 text-bold"
+                      class="text-xs bg-white text-bold"
                       v-for="instrumentalTitle in instrumentalTitles"
                       :value="instrumentalTitle"
                       :selected="instrumentalTitle"
@@ -144,7 +156,7 @@
                     "
                   >
                     <option
-                      class="text-xs bg-orange-100 text-bold"
+                      class="text-xs bg-white text-bold"
                       v-for="advancedTitle in advancedTitles"
                       :value="advancedTitle"
                       :selected="advancedTitle"

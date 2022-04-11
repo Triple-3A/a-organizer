@@ -3,50 +3,71 @@
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div class="flex items-center justify-center">
         <div class="p-10 bg-white rounded-lg flex items-center justify-center">
-          <div class="flex items-center justify-center">
-            <form @submit.prevent="submit">
-              <div class="text-center">
-                <label for="Instrumental">Elige el tipo: </label>
-                <br />
+          <div class="mt-3 flex items-center">
+            <jet-title>Añadir Tarea Avanzada</jet-title>
+
+            
+
+            <div class="flex items-center justify-center">
+              <img
+                class="w-32 h-32 mb-2"
+                src="/images/advanced.png"
+                alt="Icono de tareas básicas"
+              />
+            </div>
+
+            <form
+              @submit.prevent="submit"
+              class="mt-4 flex justify-center mb-6"
+            >
+              <div class="mb-4 mt-2 w-280">
+                <label
+                  class="display: block text-noNegro font-bold"
+                  for="Instrumental"
+                  >Elige el tipo de tarea:
+                </label>
+
                 <select
                   v-model="advanced.type"
                   name="type"
                   id="type"
                   class="
-                    px-3
-                    py-1.5
-                    bg-amarillo
-                    text-base
-                    font-bold
-                    mt-1
-                    rounded
-                    select
-                    w-96
+                    pl-2
+                      pr-9
+                      py-1.5
+                      bg-amarillo
+                      text-base text-noNegro
+                      font-bold
+                      mt-1
+                      rounded
+                      select
+                      w-full
+                      truncate
                   "
                 >
                   <option
-                    class="text-xs bg-orange-100 text-bold"
+                    class="text-xs bg-white text-bold"
                     value="educación"
                     selected="educación"
                   >
                     Educación
                   </option>
                   <option
-                    class="text-xs bg-orange-100 text-bold"
+                    class="text-xs bg-white text-bold"
                     value="trabajo"
                     selected="trabajo"
                   >
                     Trabajo
                   </option>
                   <option
-                    class="text-xs bg-orange-100 text-bold"
+                    class="text-xs bg-white text-bold"
                     value="juego"
                     selected="juego"
                   >
                     Juego
                   </option>
                   <option
-                    class="text-xs bg-orange-100 text-bold"
+                    class="text-xs bg-white text-bold"
                     value="tiempo libre"
                     selected="tiempoLibre"
                   >
@@ -56,9 +77,7 @@
 
                 <div class="flex items-center justify-center">
                   <div class="mt-6">
-                    <jet-btn class="mr-4" type="submit">
-                      Guardar
-                    </jet-btn>
+                    <jet-btn class="mr-4" type="submit"> Guardar </jet-btn>
                     <jet-cancel-btn
                       class="ml-4"
                       :href="route('techUserAdvanced', id)"
