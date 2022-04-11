@@ -41,6 +41,7 @@
                     w-full
                     truncate
                   "
+                  required
                 >
                   <option
                     class="text-xs bg-white text-bold"

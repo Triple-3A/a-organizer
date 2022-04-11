@@ -82,12 +82,12 @@
                 class="mt-4 flex justify-center mb-6"
               >
                 <div class="mb-4 mt-2 w-280">
-                  <label 
+                  <label
                     class="display: block text-noNegro font-bold"
                     for="Instrumental"
                     >Elige una tarea instrumental:
                   </label>
-                 
+
                   <select
                     v-model="instrumentalForm.title"
                     name="title"
@@ -141,25 +141,35 @@
                   alt="Icono de tareas avanzadas"
                 />
               </div>
-              <form @submit.prevent="advancedSubmit">
-                <div class="text-center">
-                  <label for="avanzado">Elige el título avanzado: </label>
-                  <br />
+              <form
+                @submit.prevent="advancedSubmit"
+                class="mt-4 flex justify-center mb-6"
+              >
+                <div class="mb-4 mt-2 w-280">
+                  <label
+                    class="display: block text-noNegro font-bold"
+                    for="avanzado"
+                    >Elige el título avanzado:
+                  </label>
+
                   <select
                     v-model="advancedForm.title"
                     name="title"
                     id="title"
                     class="
-                      px-3
+                      pl-2
+                      pr-9
                       py-1.5
                       bg-amarillo
-                      text-base
+                      text-base text-noNegro
                       font-bold
                       mt-1
                       rounded
                       select
-                      w-96
+                      w-full
+                      truncate
                     "
+                    required
                   >
                     <option
                       class="text-xs bg-white text-bold"

@@ -5,35 +5,33 @@
         <div class="p-10 bg-white rounded-lg flex items-center justify-center">
           <div v-if="basic == 'básico'">
             <div class="flex items-center justify-center mt-3">
-              <jet-title> Creación de Tareas Básicas </jet-title>
+              <jet-title>Creación de Tarea Básica</jet-title>
             </div>
             <div class="flex items-center justify-center">
               <img
-                class="w-32 h-32 mb-2"
+                class="w-32 h-32 mb-5"
                 src="/images/basic.png"
                 alt="Icono de tareas básicas"
               />
             </div>
 
             <form @submit.prevent="basicSubmit">
-              <div class="flex justify-center mt-2">
-                <div class="block max-w-md p-4 bg-white">
-                  <input
-                    placeholder="Introduce el nombre de la tarea"
-                    id="title"
-                    v-model="basicForm.title"
-                    class="
-                      text-center
-                      h-10
-                      w-96
-                      text-xs
-                      border-2
-                      rounded
-                      shadow-sm
-                      border-amarillo
-                    "
-                  />
-                </div>
+              <div class=" max-w-md py-4 bg-white">
+                <input
+                  placeholder="Introduce el título de la tarea"
+                  id="title"
+                  v-model="basicForm.title"
+                  class="
+                    text-center
+                    h-10
+                    text-xs
+                    border-2
+                    rounded
+                    shadow-sm
+                    border-amarillo
+                    w-full
+                  "
+                />
               </div>
 
               <div class="flex flex-row items-center justify-center">
@@ -50,39 +48,38 @@
 
           <div v-if="instrumental === 'instrumental'">
             <div class="flex items-center justify-center mt-3">
-              <jet-title> Creación de Tareas Instrumentales </jet-title>
+              <jet-title> Creación de Tarea Instrumental </jet-title>
             </div>
 
             <div class="flex items-center justify-center">
               <img
-                class="w-32 h-32 mb-2"
+                class="w-32 h-32 mb-6"
                 src="/images/instrumental.png"
                 alt="Icono de tareas instrumentales"
               />
             </div>
             <form @submit.prevent="instrumentalSubmit">
-              <div class="flex justify-center mt-2">
-                <div class="block max-w-md p-4 bg-white">
-                  <input
-                    placeholder="Introduce el nombre de la tarea"
-                    id="title"
-                    v-model="instrumentalForm.title"
-                    class="
-                      text-center
-                      h-10
-                      w-96
-                      text-xs
-                      border-2
-                      rounded
-                      shadow-sm
-                      border-amarillo
-                    "
-                  />
-                </div>
+              <div class="max-w-md py-4 bg-white">
+                <input
+                  placeholder="Introduce el título de la tarea"
+                  id="title"
+                  v-model="instrumentalForm.title"
+                  class="
+                    text-center
+                    h-10
+                    text-xs
+                    border-2
+                    rounded
+                    shadow-sm
+                    border-amarillo
+                    w-full
+                  "
+                />
               </div>
-              <div class="flex items-center justify-center">
+
+              <div class="flex flex-row items-center justify-center">
                 <div class="mt-4">
-                  <jet-btn class="mr-4" type="submit"> Guardar </jet-btn>
+                  <jet-btn class="mr-2" type="submit"> Guardar </jet-btn>
                   <jet-cancel-btn
                     class="ml-6"
                     :href="route('instrumentalTitle')"
@@ -94,18 +91,18 @@
 
           <div v-if="advanced === 'avanzado'">
             <div class="flex items-center justify-center mt-3">
-              <jet-title> Creación de Tareas Avanzadas </jet-title>
+              <jet-title> Creación de Tarea Avanzada </jet-title>
             </div>
 
             <div class="flex items-center justify-center">
               <img
-                class="w-32 h-32 mb-2"
+                class="w-32 h-32 mb-4"
                 src="/images/advanced.png"
                 alt="Icono de tareas avanzadas"
               />
             </div>
             <form @submit.prevent="advancedSubmit">
-              <div class="flex flex-col items-center mb-3 mt-4">
+              <div class=" mb-3 mt-4">
                 <label
                   class="display: block text-noNegro font-bold"
                   for="advanced"
@@ -126,9 +123,10 @@
                     mt-1
                     rounded
                     select
-                    w-96
+                    w-full
                     truncate
                   "
+                  required
                 >
                   <option
                     class="text-xs bg-white text-bold"
@@ -160,25 +158,27 @@
                   </option>
                 </select>
               </div>
-              <div class="flex justify-center">
-                <div class="block max-w-md p-4 bg-white">
+            
+                <div class="max-w-md py-4 bg-white">
                   <input
-                    placeholder="Introduce el nombre de la tarea"
+                    placeholder="Introduce el título de la tarea"
                     id="title"
                     v-model="advancedForm.title"
                     class="
                       text-center
                       h-10
-                      w-96
+                      
                       text-xs
                       border-2
                       rounded
                       shadow-sm
                       border-amarillo
+                      w-full
                     "
+                    required
                   />
                 </div>
-              </div>
+              
 
               <div class="flex items-center justify-center">
                 <div class="mt-4">

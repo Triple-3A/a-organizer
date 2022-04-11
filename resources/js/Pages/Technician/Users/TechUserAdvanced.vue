@@ -35,8 +35,10 @@
             </h1>
           </jet-title>
 
-          <div class="mb-10" v-for="array in allEducation" :key="array.id">
+          <div v-if="allEducation[0]">
             <h2 class="mb-2 text-noNegro font-bold">Educación</h2>
+          </div>
+          <div class="mb-10" v-for="array in allEducation" :key="array.id">
             <div v-for="task in array[0]" :key="task.id">
               <div
                 v-for="title in array[1]"
@@ -130,8 +132,10 @@
             </div>
           </div>
 
-          <div class="mb-10" v-for="array in allJob" :key="array.id">
+          <div v-if="allJob[0]">
             <h2 class="mb-2 text-noNegro font-bold">Trabajo</h2>
+          </div>
+          <div class="mb-10" v-for="array in allJob" :key="array.id">
             <div v-for="task in array[0]" :key="task.id">
               <div
                 v-for="title in array[1]"
@@ -225,14 +229,16 @@
             </div>
           </div>
 
+          <div v-if="allGame[0]">
+            <h2 v-if="allGame" class="mb-2 text-noNegro font-bold">Juego</h2>
+          </div>
           <div class="mb-10" v-for="array in allGame" :key="array.id">
-            <h2 class="mb-2 text-noNegro font-bold">Juego</h2>
             <div v-for="task in array[0]" :key="task.id">
               <div
                 v-for="title in array[1]"
                 :key="title.id"
                 class="
-                 flex
+                  flex
                   mb-11
                   border-4
                   bg-white
@@ -243,7 +249,7 @@
                   hover:drop-shadow-2xl
                 "
               >
-                  <div class="flex items-center justify-start p-4">
+                <div class="flex items-center justify-start p-4">
                   <div
                     v-for="icon in title.icons"
                     :key="icon.id"
@@ -255,29 +261,31 @@
                       alt="Icono de tarea"
                     />
                   </div>
-                 
-                   <div class="pl-9 w-80">
+
+                  <div class="pl-9 w-80">
                     <h1 class="text-lg text-noNegro font-bold">
                       {{ title.title }}
                     </h1>
                   </div>
-                  
+
                   <div class="ml-10 flex flex-col items-center">
-                  <Link
-                  class="mr-1 mb-1"
-                    :href="route('techUserAdvancedDescription/create', task.id)"
-                    type="button"
-                  >
-                    <jet-add-btn />
-                  </Link>
-                  <Link
-                    type="button"
-                    method="delete"
-                    :href="route('techUserAdvanced/delete', task.id)"
-                  >
-                    <jet-delete-btn />
-                  </Link>
-                </div>
+                    <Link
+                      class="mr-1 mb-1"
+                      :href="
+                        route('techUserAdvancedDescription/create', task.id)
+                      "
+                      type="button"
+                    >
+                      <jet-add-btn />
+                    </Link>
+                    <Link
+                      type="button"
+                      method="delete"
+                      :href="route('techUserAdvanced/delete', task.id)"
+                    >
+                      <jet-delete-btn />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -316,16 +324,19 @@
                 </Link>
               </div>
             </div>
+          </div>
+
+          <div v-if="allFreeTime[0]">
+            <h2 class="mb-2 text-noNegro font-bold">Tiempo libre</h2>
           </div>
 
           <div class="mb-10" v-for="array in allFreeTime" :key="array.id">
-            <h2 class="mb-2 text-noNegro font-bold">Tiempo libre</h2>
             <div v-for="task in array[0]" :key="task.id">
               <div
                 v-for="title in array[1]"
                 :key="title.id"
                 class="
-                 flex
+                  flex
                   mb-11
                   border-4
                   bg-white
@@ -336,8 +347,7 @@
                   hover:drop-shadow-2xl
                 "
               >
-                  <div class="flex items-center justify-start p-4">
-
+                <div class="flex items-center justify-start p-4">
                   <div
                     v-for="icon in title.icons"
                     :key="icon.id"
@@ -349,28 +359,30 @@
                       alt="Icono de tarea"
                     />
                   </div>
-                  
+
                   <div class="pl-9 w-80">
                     <h1 class="text-lg text-noNegro font-bold">
                       {{ title.title }}
                     </h1>
                   </div>
-                  
-                   <div class="ml-10 flex flex-col items-center">
-                  <Link
-                   class="mr-1 mb-1"
-                    :href="route('techUserAdvancedDescription/create', task.id)"
-                    type="button"
-                  >
-                    <jet-add-btn />
-                  </Link>
-                  <Link
-                    type="button"
-                    method="delete"
-                    :href="route('techUserAdvanced/delete', task.id)"
-                  >
-                    <jet-delete-btn />
-                  </Link>
+
+                  <div class="ml-10 flex flex-col items-center">
+                    <Link
+                      class="mr-1 mb-1"
+                      :href="
+                        route('techUserAdvancedDescription/create', task.id)
+                      "
+                      type="button"
+                    >
+                      <jet-add-btn />
+                    </Link>
+                    <Link
+                      type="button"
+                      method="delete"
+                      :href="route('techUserAdvanced/delete', task.id)"
+                    >
+                      <jet-delete-btn />
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -447,10 +459,13 @@ export default {
     JetAdvancedTitleSvg,
     JetAddBtn,
   },
-  // computed: {
-  //   cardRepeated() {
-  //     this.isRepeated = 
-  //   }
-  // }
+  data() {
+    return {
+      question: null,
+      answer: null,
+      img: null,
+      isValidQuestion: false,
+    };
+  },
 };
 </script>
