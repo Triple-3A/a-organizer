@@ -23,7 +23,7 @@ class Kernel extends ConsoleKernel
             foreach ($tasks as $task) {
                 $task->update(["done" => true]);
             }
-        })->everyDay();
+        })->dailyAt('2:00');;
     }
 
     /**
