@@ -32,60 +32,43 @@
                 Estas son tus tareas para hoy
               </h2>
             </div>
-            <!--  PROBANDO LA CARD -->
-            <!-- <jet-card class="w-8/12"></jet-card> -->
-            <!-- ATENCIÓN CAGADA INCOMINGGGGGGGGGGGG --- PELIGRO PELIGROOOOOOOO-->
-            <!--cambiar argumentos en v-for -->
-            <!-- cómo pasamos las tareas creadas y asignadas por el tutor? -->
-            <!-- <div v-for="task in tasks" :key="task.id">
-              <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
-                <div class="flex items-center justify-start p-4 rounded-lg">
-                  <div>
-                    <jet-card />
-                  </div>
-                  <div class="px-8"></div>
-                  <div class="flex flex-row">
-                    <h1 class="ml-12 text-xl font-bold">
-                      {{ task }}
-                    </h1>
-                  </div>
-                </div>
-              </div>
-            </div> -->
 
-            <div class="mb-10" v-for="array in all" :key="array.id">
+
+            <div class="mb-10 w-8/12" v-for="array in all" :key="array.id">
               <div v-for="task in array[0]" :key="task.id">
                 <div
                   v-for="title in array[1]"
                   :key="title.id"
-                  class="flex flex-row w-8/12 border-4 rounded-lg row border-amarillo"
+                  id="tarea"
+                  class="flex flex-row items-center justify-start p-4 border-4 rounded-lg row border-amarillo"
                 >
-                  <div class="flex items-center justify-start p-4 rounded-lg">
-                    <div class="px-8"></div>
-                    <div class="flex flex-row">
-                      <h1 class="ml-12 text-xl font-bold">
+                  <!-- icono -->  <div class="px-8"></div>
+                  <!-- -->   <div class="flex flex-row">
+                  <!-- -->     <h1 class="ml-12 text-xl font-bold">
                         {{ title.title }}
                       </h1>
                     </div>
-                    <div class="px-16"></div>
-                  </div>
+                  <!-- boton -->   <div class="px-16"></div>
                 </div>
               </div>
+
+
               <div
                 v-for="description in array[2]"
                 :key="description.id"
-                class="flex border-4 rounded-lg row border-amarillo"
+                class= "bg-amarillo opacity-50"
               >
                 <div class="flex items-center justify-start p-2 rounded-lg">
                   <div class="px-8"></div>
                   <div class="flex flex-row">
-                    <h1 class="ml-12 text-xl font-bold">
-                      {{ description.description }}
+                    <h1 class="ml-12 text-xl font-bold opacity-100">
+                      · {{ description.description }}
                     </h1>
                   </div>
                   <div class="px-16"></div>
                 </div>
               </div>
+              
             </div>
           </div>
         </div>
