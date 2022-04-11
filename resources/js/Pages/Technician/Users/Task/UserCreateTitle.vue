@@ -74,7 +74,7 @@
                 <img
                   class="w-32 h-32 mb-2"
                   src="/images/instrumental.png"
-                  alt="Icono de tareas básicas"
+                  alt="Icono de tareas instrumentales"
                 />
               </div>
               <form
@@ -132,8 +132,14 @@
             </div>
 
             <div v-if="advanced == 'avanzado'">
-              <div class="p-10">
-                <jet-title>Viendo form avanzado -> {{ id }}</jet-title>
+              <jet-title>Añadir Tarea Avanzada</jet-title>
+
+              <div class="flex items-center justify-center">
+                <img
+                  class="w-32 h-32 mb-2"
+                  src="/images/advanced.png"
+                  alt="Icono de tareas avanzadas"
+                />
               </div>
               <form @submit.prevent="advancedSubmit">
                 <div class="text-center">

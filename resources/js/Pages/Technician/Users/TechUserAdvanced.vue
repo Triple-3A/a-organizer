@@ -447,5 +447,10 @@ export default {
     JetAdvancedTitleSvg,
     JetAddBtn,
   },
+  // computed: {
+  //   cardRepeated() {
+  //     this.isRepeated = 
+  //   }
+  // }
 };
 </script>

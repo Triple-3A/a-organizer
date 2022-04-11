@@ -3,11 +3,8 @@
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div class="flex items-center justify-center">
         <div class="p-10 bg-white rounded-lg flex items-center justify-center">
-          <div class="mt-3 flex items-center">
+          <div class="mt-3">
             <jet-title>Añadir Tarea Avanzada</jet-title>
-
-            
-
             <div class="flex items-center justify-center">
               <img
                 class="w-32 h-32 mb-2"
@@ -33,16 +30,16 @@
                   id="type"
                   class="
                     pl-2
-                      pr-9
-                      py-1.5
-                      bg-amarillo
-                      text-base text-noNegro
-                      font-bold
-                      mt-1
-                      rounded
-                      select
-                      w-full
-                      truncate
+                    pr-9
+                    py-1.5
+                    bg-amarillo
+                    text-base text-noNegro
+                    font-bold
+                    mt-1
+                    rounded
+                    select
+                    w-full
+                    truncate
                   "
                 >
                   <option
@@ -77,7 +74,7 @@
 
                 <div class="flex items-center justify-center">
                   <div class="mt-6">
-                    <jet-btn class="mr-4" type="submit"> Guardar </jet-btn>
+                    <jet-btn class="mr-4" type="submit"> Siguiente </jet-btn>
                     <jet-cancel-btn
                       class="ml-4"
                       :href="route('techUserAdvanced', id)"
