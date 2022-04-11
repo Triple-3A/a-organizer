@@ -21,6 +21,9 @@ class Kernel extends ConsoleKernel
             $tasks = Task::get();
             foreach ($tasks as $task) {
                 $task->update(["done" => false]);
+                if ($task->finalDate > date("Y-m-d")) {
+                    $task->delete();
+                }
             }
         })->dailyAt('2:00');
     }
