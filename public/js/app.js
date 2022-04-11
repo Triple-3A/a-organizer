@@ -23888,8 +23888,7 @@ __webpack_require__.r(__webpack_exports__);
       form: this.$inertia.form({
         _method: "PUT",
         photo: null
-      }),
-      photoPreview: null
+      })
     };
   },
   methods: {

@@ -69,15 +69,12 @@ export default {
     Link,
   },
   props: ["user"],
-
   data() {
     return {
       form: this.$inertia.form({
         _method: "PUT",
         photo: null,
       }),
-
-      photoPreview: null,
     };
   },
   methods: {
