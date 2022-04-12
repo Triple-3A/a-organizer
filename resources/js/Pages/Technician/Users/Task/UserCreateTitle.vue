@@ -8,8 +8,17 @@
               <div class="p-10">
                 <jet-title>Viendo form básico -> {{ id }}</jet-title>
               </div>
+              <div class="text-center">
+              <label for="basic">Elige si es una tarea diaria: </label>
+                  <br />
+              <button
+                @click="basicRepeatable"
+                class="bg-azul hover:bg-blue-800"
+              >
+                Diaria
+              </button>
               <form @submit.prevent="basicSubmit">
-                <div class="text-center">
+                
                   <label for="basic">Elige el título básico: </label>
                   <br />
                   <select
@@ -39,15 +48,6 @@
                     </option>
                   </select>
                   <br />
-                  <label for="basic">Elige si es una tarea diaria: </label>
-                  <br />
-                  <button
-                    @click="basicRepeatable"
-                    class="bg-azul hover:bg-blue-800"
-                  >
-                    Diaria
-                  </button>
-                  <br />
                   <label for="basic">Elige una fecha de inicio: </label>
                   <br />
                   <input type="date" v-model="basicForm.startDate" />
@@ -65,9 +65,9 @@
                       >
                     </div>
                   </div>
-                </div>
               </form>
             </div>
+                </div>
 
             <div v-if="instrumental == 'instrumental'">
               <div class="p-10">
@@ -212,21 +212,21 @@ export default {
       basicForm: {
         id: this.id,
         title: null,
-        repeatable: true,
+        repeatable: false,
         startDate: null,
         finishDate: null,
       },
       instrumentalForm: {
         id: this.id,
         title: null,
-        repeatable: true,
+        repeatable: false,
         startDate: null,
         finishDate: null,
       },
       advancedForm: {
         id: this.id,
         title: null,
-        repeatable: true,
+        repeatable: false,
         startDate: null,
         finishDate: null,
       },
@@ -245,15 +245,12 @@ export default {
     advancedSubmit() {
       this.$inertia.post(route("techUserAdvanced/store"), this.advancedForm);
     },
-    // basicRepeatable() {
-    //   this.repeatV = 1;
-      // if (this.repeat == null) {
-      //   this.repeat = 1;
-      // } else {
-      //   this.repeat = 0;
-      // }
-      // this.basicForm.repeatable == !this.basicForm.repeatable?this.basicForm.repeatable = this.basicForm.repeatable:this.basicForm.repeatable = !this.basicForm.repeatable
-    // },
+    basicRepeatable() {
+      console.log(this.basicForm.repeatable);
+      this.basicForm.repeatable == false
+        ? (this.basicForm.repeatable = true)
+        : (this.basicForm.repeatable = false);
+    },
   },
 };
 </script>
