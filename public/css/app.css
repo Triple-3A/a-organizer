@@ -1240,6 +1240,9 @@ select {
 .w-9\/12 {
   width: 75%;
 }
+.w-10\/12 {
+  width: 83.333333%;
+}
 .min-w-0 {
   min-width: 0px;
 }
