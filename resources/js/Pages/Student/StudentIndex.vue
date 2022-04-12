@@ -1,8 +1,7 @@
 <template>
   <app-layout title="Dashboard">
-    <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-      <section id="pantalla-3-daily-user">
-        <div class="flex flex-col items-center justify-center">
+<!--     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8"> -->
+        <div class="flex flex-col items-center justify-center pt-10">
           <jet-title>¡HOLA {{ username }}!</jet-title>
           <jet-sub-title>Este es tu progreso de hoy</jet-sub-title>
           <!-- componente resumen tareas -->
@@ -12,7 +11,7 @@
             <h2
               class="
                 font-poppings
-                text-lg
+                text-sm
                 font-base
                 text-noNegro text-left
                 mb-4
@@ -22,7 +21,19 @@
             </h2>
           </div>
 
-          <div class="mb-10 w-8/12" v-for="array in all" :key="array.id">
+
+
+
+
+
+
+
+
+
+            <!-- TAREAS -->
+
+
+          <div class="mb-10 w-9/12" v-for="array in all" :key="array.id">
             <div v-for="task in array[0]" :key="task.id">
               <div
                 v-for="title in array[1]"
@@ -31,46 +42,47 @@
                 class="
                   flex flex-row
                   items-center
-                  justify-start
+                  justify-between 
+                  px-2
                   p-4
                   border-4
                   rounded-lg
-                  row
                   border-amarillo
                 "
               >
-                <!-- icono -->
-                <div class="px-8"></div>
-                <!-- -->
+                <!-- ICONO -->
+                <div/>
+                <!-- TÍTULO -->
                 <div class="flex flex-row">
-                  <!-- -->
-                  <h1 class="ml-12 text-xl font-bold">
+                  <h1 class="text-xl font-bold">
                     {{ title.title }}
                   </h1>
                 </div>
                 <!-- boton -->
-                <div class="px-16"></div>
+                <div/>
               </div>
             </div>
 
+
+               <!-- SUBTAREAS -->
             <div
               v-for="description in array[2]"
               :key="description.id"
-              class="bg-amarillo opacity-50"
+              class="bg-amarilloMedio"
             >
-              <div class="flex items-center justify-start p-2 rounded-lg">
-                <div class="px-8"></div>
+              <div class="flex items-center justify-between px-2 p-2 rounded-lg">
                 <div class="flex flex-row">
-                  <h1 class="ml-12 text-xl font-bold opacity-100">
+                  <h1 class="ml-12 text-lg font-medium opacity-100">
                     · {{ description.description }}
                   </h1>
                 </div>
-                <div class="px-16"></div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+
+
+
+        <!-- </div> -->
     </div>
   </app-layout>
 </template>
