@@ -30930,7 +30930,7 @@ var _hoisted_3 = {
   "class": "flex flex-col items-center justify-center"
 };
 var _hoisted_4 = {
-  "class": "p-10 bg-white rounded-lg flex flex-col items-center justify-center w-9/12"
+  "class": "p-10"
 };
 
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Este es tu progreso de hoy");

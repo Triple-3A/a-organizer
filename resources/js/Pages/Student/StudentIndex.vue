@@ -3,17 +3,7 @@
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
       <section id="pantalla-3-daily-user">
         <div class="flex flex-col items-center justify-center">
-          <div
-            class="
-              p-10
-              bg-white
-              rounded-lg
-              flex flex-col
-              items-center
-              justify-center
-              w-9/12
-            "
-          >
+          <div class="p-10">
             <jet-title>¡HOLA {{ username }}!</jet-title>
             <jet-sub-title>Este es tu progreso de hoy</jet-sub-title>
             <!-- componente resumen tareas -->

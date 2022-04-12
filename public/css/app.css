@@ -1222,9 +1222,6 @@ select {
 .w-96 {
   width: 24rem;
 }
-.w-9\/12 {
-  width: 75%;
-}
 .w-32 {
   width: 8rem;
 }
@@ -1239,6 +1236,9 @@ select {
 }
 .w-5\/12 {
   width: 41.666667%;
+}
+.w-9\/12 {
+  width: 75%;
 }
 .min-w-0 {
   min-width: 0px;
@@ -1599,6 +1599,9 @@ select {
 .p-4 {
   padding: 24px;
 }
+.p-1 {
+  padding: 8px;
+}
 .px-4 {
   padding-left: 24px;
   padding-right: 24px;
@@ -1727,6 +1730,9 @@ select {
 }
 .pl-9 {
   padding-left: 2.25rem;
+}
+.pt-10 {
+  padding-top: 2.5rem;
 }
 .text-left {
   text-align: left;
