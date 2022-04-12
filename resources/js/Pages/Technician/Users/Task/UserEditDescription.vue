@@ -29,7 +29,7 @@
                     <input
                       placeholder="Introduce la tarea"
                       id="description"
-                      v-model="basicForm.descriptions"
+                      v-model="basicForm.description"
                       class="
                         text-left
                         h-10
@@ -82,7 +82,7 @@
                     <input
                       placeholder="Introduce la tarea"
                       id="description"
-                      v-model="instrumentalForm.descriptions"
+                      v-model="instrumentalForm.description"
                       class="
                         text-left
                         h-10
@@ -135,7 +135,7 @@
                     <input
                       placeholder="Introduce la tarea"
                       id="description"
-                      v-model="advancedForm.descriptions"
+                      v-model="advancedForm.description"
                       class="
                         text-left
                         h-10
@@ -197,15 +197,15 @@ export default {
       userId: this.userId,
       basicForm: {
         userId: this.userId,
-        descriptions: this.$props.description.description,
+        description: this.$props.description.description,
       },
       instrumentalForm: {
         userId: this.userId,
-        descriptions: this.$props.description.description,
+        description: this.$props.description.description,
       },
       advancedForm: {
         userId: this.userId,
-        descriptions: this.$props.description.description,
+        description: this.$props.description.description,
       },
     };
   },

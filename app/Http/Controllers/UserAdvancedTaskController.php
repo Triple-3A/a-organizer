@@ -29,7 +29,7 @@ class UserAdvancedTaskController extends Controller
             $allGame = [];
             $allFreeTime = [];
 
-            
+
             foreach ($tasks as $task) {
                 $arrayGroup = [];
                 $taskArray = [];
@@ -155,15 +155,14 @@ class UserAdvancedTaskController extends Controller
      */
     public function pick($id)
     {
-        try{
-
+        try {
             return Inertia::render('Technician/Users/Task/UserPickTypeAdvanced', compact('id'));
-        }  catch (Exception $error) {
+        } catch (Exception $error) {
             return $error->getMessage();
         }
     }
 
-     /**
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -172,7 +171,10 @@ class UserAdvancedTaskController extends Controller
     public function create(Request $request)
     {
         try {
-
+            $request->validate([
+                'id' => 'required',
+                'type' => 'required',
+            ]);
             $requested = $request->all();
             $id = $requested['id'];
             $type = $requested['type'];
@@ -200,8 +202,14 @@ class UserAdvancedTaskController extends Controller
     public function store(Request $request)
     {
         try {
+            $request->validate([
+                'id' => 'required',
+                'title' => 'required',
+                'repeatable' => 'required',
+                'startDate' => 'required',
+                'finishDate' => 'required',
+            ]);
             $requested = $request->all();
-
             $id = $requested['id'];
             $titleArray = $requested['title'];
             $titleId = $titleArray['id'];
@@ -221,17 +229,6 @@ class UserAdvancedTaskController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-   /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id

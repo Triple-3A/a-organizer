@@ -24469,15 +24469,15 @@ __webpack_require__.r(__webpack_exports__);
       userId: this.userId,
       basicForm: {
         userId: this.userId,
-        descriptions: this.$props.description.description
+        description: this.$props.description.description
       },
       instrumentalForm: {
         userId: this.userId,
-        descriptions: this.$props.description.description
+        description: this.$props.description.description
       },
       advancedForm: {
         userId: this.userId,
-        descriptions: this.$props.description.description
+        description: this.$props.description.description
       }
     };
   },
@@ -33637,13 +33637,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         placeholder: "Introduce la tarea",
         id: "description",
         "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-          return $data.basicForm.descriptions = $event;
+          return $data.basicForm.description = $event;
         }),
         "class": "text-left h-10 px-2 text-xs border-2 rounded shadow-sm border-amarillo w-full",
         required: ""
       }, null, 512
       /* NEED_PATCH */
-      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.basicForm.descriptions]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_btn, {
+      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.basicForm.description]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_btn, {
         "class": "mr-3",
         type: "submit"
       }, {
@@ -33683,13 +33683,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         placeholder: "Introduce la tarea",
         id: "description",
         "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
-          return $data.instrumentalForm.descriptions = $event;
+          return $data.instrumentalForm.description = $event;
         }),
         "class": "text-left h-10 px-2 text-xs border-2 rounded shadow-sm border-amarillo w-full",
         required: ""
       }, null, 512
       /* NEED_PATCH */
-      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.instrumentalForm.descriptions]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_btn, {
+      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.instrumentalForm.description]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_btn, {
         "class": "mr-3",
         type: "submit"
       }, {
@@ -33729,13 +33729,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         placeholder: "Introduce la tarea",
         id: "description",
         "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
-          return $data.advancedForm.descriptions = $event;
+          return $data.advancedForm.description = $event;
         }),
         "class": "text-left h-10 px-2 text-xs border-2 rounded shadow-sm border-amarillo w-full",
         required: ""
       }, null, 512
       /* NEED_PATCH */
-      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.advancedForm.descriptions]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_btn, {
+      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.advancedForm.description]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_btn, {
         "class": "mr-3",
         type: "submit"
       }, {
