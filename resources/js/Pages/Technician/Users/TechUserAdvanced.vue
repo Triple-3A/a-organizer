@@ -45,7 +45,6 @@
                 :key="title.id"
                 class="
                   flex
-                  mb-11
                   border-4
                   bg-white
                   rounded-lg
@@ -98,19 +97,27 @@
             <div
               v-for="description in array[2]"
               :key="description.id"
-              class="flex border-4 rounded-lg row border-amarillo"
+              class="
+                flex
+                items-center
+                border-2
+                rounded-lg
+                bg-white
+                p-4
+                mt-2
+                mb-2
+                border-azul
+                drop-shadow-md
+                hover:drop-shadow-2xl
+              "
             >
-              <div class="flex items-center justify-start p-2 rounded-lg">
-                <div>
-                  <jet-advanced-description-svg />
-                </div>
-                <div class="px-8"></div>
-                <div class="flex flex-row">
-                  <h1 class="ml-12 text-xl font-bold">
-                    {{ description.description }}
-                  </h1>
-                </div>
-                <div class="px-16"></div>
+              <div class="flex justify-start items-center w-82">
+                <h1 class="text-base text-noNegro">
+                  {{ description.description }}
+                </h1>
+              </div>
+
+              <div class="ml-8 flex justify-end">
                 <Link
                   :href="
                     route('techUserAdvancedDescription/edit', description.id)
@@ -120,6 +127,7 @@
                   <jet-edit-btn />
                 </Link>
                 <Link
+                  class="ml-2"
                   type="button"
                   method="delete"
                   :href="
@@ -142,7 +150,6 @@
                 :key="title.id"
                 class="
                   flex
-                  mb-11
                   border-4
                   bg-white
                   rounded-lg
@@ -195,19 +202,27 @@
             <div
               v-for="description in array[2]"
               :key="description.id"
-              class="flex border-4 rounded-lg row border-amarillo"
+              class="
+                flex
+                items-center
+                border-2
+                rounded-lg
+                bg-white
+                p-4
+                mt-2
+                mb-2
+                border-azul
+                drop-shadow-md
+                hover:drop-shadow-2xl
+              "
             >
-              <div class="flex items-center justify-start p-2 rounded-lg">
-                <div>
-                  <jet-advanced-description-svg />
-                </div>
-                <div class="px-8"></div>
-                <div class="flex flex-row">
-                  <h1 class="ml-12 text-xl font-bold">
-                    {{ description.description }}
-                  </h1>
-                </div>
-                <div class="px-16"></div>
+              <div class="flex justify-start items-center w-82">
+                <h1 class="text-base text-noNegro">
+                  {{ description.description }}
+                </h1>
+              </div>
+
+              <div class="ml-8 flex justify-end">
                 <Link
                   :href="
                     route('techUserAdvancedDescription/edit', description.id)
@@ -217,6 +232,7 @@
                   <jet-edit-btn />
                 </Link>
                 <Link
+                  class="ml-2"
                   type="button"
                   method="delete"
                   :href="
@@ -239,7 +255,6 @@
                 :key="title.id"
                 class="
                   flex
-                  mb-11
                   border-4
                   bg-white
                   rounded-lg
@@ -292,19 +307,27 @@
             <div
               v-for="description in array[2]"
               :key="description.id"
-              class="flex border-4 rounded-lg row border-amarillo"
+              class="
+                flex
+                items-center
+                border-2
+                rounded-lg
+                bg-white
+                p-4
+                mt-2
+                mb-2
+                border-azul
+                drop-shadow-md
+                hover:drop-shadow-2xl
+              "
             >
-              <div class="flex items-center justify-start p-2 rounded-lg">
-                <div>
-                  <jet-advanced-description-svg />
-                </div>
-                <div class="px-8"></div>
-                <div class="flex flex-row">
-                  <h1 class="ml-12 text-xl font-bold">
-                    {{ description.description }}
-                  </h1>
-                </div>
-                <div class="px-16"></div>
+              <div class="flex justify-start items-center w-82">
+                <h1 class="text-base text-noNegro">
+                  {{ description.description }}
+                </h1>
+              </div>
+
+              <div class="ml-8 flex justify-end">
                 <Link
                   :href="
                     route('techUserAdvancedDescription/edit', description.id)
@@ -314,6 +337,7 @@
                   <jet-edit-btn />
                 </Link>
                 <Link
+                  class="ml-2"
                   type="button"
                   method="delete"
                   :href="
@@ -337,7 +361,6 @@
                 :key="title.id"
                 class="
                   flex
-                  mb-11
                   border-4
                   bg-white
                   rounded-lg
@@ -390,19 +413,27 @@
             <div
               v-for="description in array[2]"
               :key="description.id"
-              class="flex border-4 rounded-lg row border-amarillo"
+              class="
+                flex
+                items-center
+                border-2
+                rounded-lg
+                bg-white
+                p-4
+                mt-2
+                mb-2
+                border-azul
+                drop-shadow-md
+                hover:drop-shadow-2xl
+              "
             >
-              <div class="flex items-center justify-start p-2 rounded-lg">
-                <div>
-                  <jet-advanced-description-svg />
-                </div>
-                <div class="px-8"></div>
-                <div class="flex flex-row">
-                  <h1 class="ml-12 text-xl font-bold">
-                    {{ description.description }}
-                  </h1>
-                </div>
-                <div class="px-16"></div>
+              <div class="flex justify-start items-center w-82">
+                <h1 class="text-base text-noNegro">
+                  {{ description.description }}
+                </h1>
+              </div>
+
+              <div class="ml-8 flex justify-end">
                 <Link
                   :href="
                     route('techUserAdvancedDescription/edit', description.id)
@@ -412,6 +443,7 @@
                   <jet-edit-btn />
                 </Link>
                 <Link
+                  class="ml-2"
                   type="button"
                   method="delete"
                   :href="

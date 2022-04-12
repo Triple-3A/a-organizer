@@ -97,21 +97,24 @@
               class="
                 flex
                 items-center
-               
                 border-2
+                rounded-lg
+                bg-white
                 p-4
-                border-amarillo
+                mt-2
+                mb-2
+                border-azul
+                drop-shadow-md
+                hover:drop-shadow-2xl
               "
             >
-              
-
-              <div class="flex justify-start items-center mr-12 w-82">
+              <div class="flex justify-start items-center w-82">
                 <h1 class="text-base text-noNegro">
                   {{ description.description }}
                 </h1>
               </div>
-              
-              <div class="ml-10 flex justify-end">
+
+              <div class="ml-8 flex justify-end">
                 <Link
                   :href="route('techUserBasicDescription/edit', description.id)"
                   type="button"
@@ -129,12 +132,11 @@
                   <jet-delete-btn />
                 </Link>
               </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
-   
+    </div>
   </app-layout>
 </template>
 
