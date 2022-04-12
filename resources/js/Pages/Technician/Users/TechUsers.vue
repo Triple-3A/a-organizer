@@ -17,46 +17,48 @@
       >
         <jet-arrow-back-svg>Inicio</jet-arrow-back-svg></Link
       >
-      <div class="flex justify-around py-6">
+      <div class="flex justify-around">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div class="overflow-hidden">
-            <jet-title> Estos son tus Usuarios </jet-title>
-            <div v-for="studentsUser in studentsUsers" :key="studentsUser.id">
+          <jet-title> Usuarios Asignados </jet-title>
+          <div
+            class="items-center"
+            v-for="studentsUser in studentsUsers"
+            :key="studentsUser.id"
+          >
+            <Link
+              class="font-medium"
+              :href="route('technicianUsersProfile', studentsUser.id)"
+            >
               <div
                 class="
-                  my-10
-                  p-4
                   flex
-                  justify-between
-                  items-center
-                  row
+                  mb-11
                   border-4
+                  bg-white
                   rounded-lg
+                  row
                   border-amarillo
+                  drop-shadow-md
+                  hover:drop-shadow-2xl
+                  items-center
+                  justify-start
+                  p-4
                 "
               >
-                <div class="w-1/5">
-                  <img
-                    class="rounded-full"
-                    src="https://randomuser.me/api/portraits/women/81.jpg"
-                  />
-                </div>
-                <div class="flex flex-row flex-wrap w-5/12">
-                  <h1 class="text-xl font-bold">
+                <img
+                  class="rounded-full w-20 h-20 mt-2"
+                  :src="studentsUser.profile_photo_url"
+                />
+
+                <div class="pl-9 w-80">
+                  <h1 class="text-lg text-noNegro font-bold">
                     {{ studentsUser.name }}
                   </h1>
                 </div>
 
-                <div>
-                  <Link
-                    class="font-medium"
-                    :href="route('technicianUsersProfile', studentsUser.id)"
-                  >
-                    <jet-arrow-next-svg />
-                  </Link>
-                </div>
+                <jet-arrow-next-svg />
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

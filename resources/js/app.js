@@ -7,6 +7,7 @@ import { InertiaProgress } from '@inertiajs/progress';
 //Import new components
 import  JetCreateBtn  from '@/Jetstream/CreateBtn.vue';
 import JetDeleteBtn from '@/Jetstream/DeleteBtn.vue';
+import JetAddBtn from '@/Jetstream/AddBtn.vue';
 
 import JetBtn from '@/Jetstream/Btn.vue';
 import JetEditBtn from '@/Jetstream/EditBtn.vue';
@@ -44,6 +45,7 @@ app.component('jet-btn', JetBtn);
 
 app.component('jet-edit-btn', JetEditBtn);
 app.component('jet-cancel-btn', JetCancelBtn);
+app.component('jet-add-btn', JetAddBtn);
 app.component('jet-card', JetCard);
 app.component('jet-basic-svg', JetBasicSvg);
 app.component('jet-arrow-next-svg', JetArrowNextSvg);

@@ -1,5 +1,5 @@
-const tailwindcss = require('tailwindcss');
-const defaultTheme = require('tailwindcss/defaultTheme');
+const tailwindcss = require("tailwindcss");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
     content: [
@@ -31,34 +31,34 @@ module.exports = {
                 6: "48px",
             },
             fontSize: {
-                'xs': '16px',
-                'sm': '18px',
-                'base': '20px',
-                'lg': '24px',
-                'xl': '30px',
-                'xxl':'36px',
+                xs: "16px",
+                sm: "18px",
+                base: "20px",
+                lg: "24px",
+                xl: "30px",
+                xxl: "36px",
             },
             margin: {
-                '10px': '10px',
-                '20px': '20px',
-                '30px': '30px',
-                '40px': '40px',
-                '60px': '60px',
-                '80px': '80px',
-
+                "10px": "10px",
+                "20px": "20px",
+                "30px": "30px",
+                "40px": "40px",
+                "60px": "60px",
+                "80px": "80px",
             },
             padding: {
-                '10px': '10px',
-                '20px': '20px',
-                '30px': '30px',
-                '40px': '40px',
-                '60px': '60px',
-                '100px':'100px',
-            }
+                "10px": "10px",
+                "20px": "20px",
+                "30px": "30px",
+                "40px": "40px",
+                "60px": "60px",
+                "100px": "100px",
+            },
+            width: {
+                82: "25.2rem",
+            },
         },
-        plugins: [
-            require('@tailwindcss/typography'),
-        ]
+        plugins: [require("@tailwindcss/typography")],
     },
 
     plugins: [

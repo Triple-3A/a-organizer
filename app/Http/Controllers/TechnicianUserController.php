@@ -43,7 +43,6 @@ class TechnicianUserController extends Controller
     {
         try {
             $student = User::where('id', $id)->get();
-
             return Inertia::render('Technician/Users/TechUsersProfile', compact('student'));
         } catch (Exception $error) {
             return $error->getMessage();

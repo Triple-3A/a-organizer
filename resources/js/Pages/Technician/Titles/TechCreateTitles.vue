@@ -4,200 +4,151 @@
       <div class="flex items-center justify-center">
         <div class="p-10 bg-white rounded-lg flex items-center justify-center">
           <div v-if="basic == 'básico'">
-            <div class="flex items-center justify-center">
-              <div class="p-10">
-                <h1 class="text-xl font-bold text-azul">
-                  Creación de Tareas Básicas
-                </h1>
-              </div>
+            <div class="flex items-center justify-center mt-3">
+              <jet-title>Creación de Tarea Básica</jet-title>
             </div>
             <div class="flex items-center justify-center">
               <img
-                class="w-32 h-32 mb-2"
-                src="images/basic.png"
+                class="w-32 h-32 mb-5"
+                src="/images/basic.png"
                 alt="Icono de tareas básicas"
               />
             </div>
 
             <form @submit.prevent="basicSubmit">
-              <div class="flex justify-center">
-                <div class="block max-w-md p-4 bg-white">
-                  <input
-                    placeholder="Introduce el nombre de la tarea"
-                    id="title"
-                    v-model="basicForm.title"
-                    class="
-                      text-center
-                      h-10
-                      w-96
-                      text-xs
-                      border-2
-                      rounded
-                      shadow-sm
-                      border-amarillo
-                    "
-                  />
-                </div>
+              <div class="max-w-md py-4 bg-white">
+                <input
+                  placeholder="Introduce el título de la tarea"
+                  id="title"
+                  v-model="basicForm.title"
+                  class="
+                    text-center
+                    h-10
+                    text-xs
+                    border-2
+                    rounded
+                    shadow-sm
+                    border-amarillo
+                    w-full
+                  "
+                  required
+                />
               </div>
 
-              <div class="flex flex-row items-center justify-center">
-                <div class="mt-6">
-                  <jet-btn class="mr-2 " type="submit">
-                    Guardar
-                  </jet-btn>
-                  <jet-cancel-btn
-                    class="ml-6"
-                    :href="route('basicTitle')"
-                  ></jet-cancel-btn>
-                </div>
+              <div class="flex flex-row items-center justify-center mt-4">
+                <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
+                <jet-cancel-btn
+                  class="ml-3"
+                  :href="route('basicTitle')"
+                ></jet-cancel-btn>
               </div>
             </form>
           </div>
 
-          <div>
-            <div v-if="instrumental === 'instrumental'">
-              <div class="flex items-center justify-center">
-                <div class="p-10 bg-white rounded-lg">
-                  <jet-create-btn class="text-xl font-bold text-azul" />
-                  <h1 class="text-xl font-bold text-azul">
-                    Creación de Tareas Instrumentales
-                  </h1>
-                </div>
-              </div>
-              <div class="flex items-center justify-center">
-                <img
-                  class="w-32 h-32 mb-2"
-                  src="images/instrumental.png"
-                  alt="Icono de tareas instrumentales"
+          <div v-if="instrumental === 'instrumental'">
+            <div class="flex items-center justify-center mt-3">
+              <jet-title> Creación  Tarea Instrumental </jet-title>
+            </div>
+
+            <div class="flex items-center justify-center">
+              <img
+                class="w-32 h-32 mb-6"
+                src="/images/instrumental.png"
+                alt="Icono de tareas instrumentales"
+              />
+            </div>
+            <form @submit.prevent="instrumentalSubmit">
+              <div class="max-w-md py-4 bg-white">
+                <input
+                  placeholder="Introduce el título de la tarea"
+                  id="title"
+                  v-model="instrumentalForm.title"
+                  class="
+                    text-center
+                    h-10
+                    text-xs
+                    border-2
+                    rounded
+                    shadow-sm
+                    border-amarillo
+                    w-full
+                  "
+                  required
                 />
               </div>
-              <form @submit.prevent="instrumentalSubmit">
-                <div class="flex justify-center">
-                  <div class="block max-w-md p-4 bg-white">
-                    <input
-                      placeholder="Introduce el nombre de la tarea"
-                      id="title"
-                      v-model="instrumentalForm.title"
-                      class="
-                        text-center
-                        h-10
-                        w-96
-                        text-xs
-                        border-2
-                        rounded
-                        shadow-sm
-                        border-amarillo
-                      "
-                    />
-                  </div>
-                </div>
-                <div class="flex items-center justify-center">
-                  <div class="mt-6">
-                    <jet-btn class="mr-4" type="submit">
-                      Guardar
-                    </jet-btn>
-                    <jet-cancel-btn
-                      class="ml-6"
-                      :href="route('instrumentalTitle')"
-                    ></jet-cancel-btn>
-                  </div>
-                </div>
-              </form>
-            </div>
+
+              <div class="flex flex-row items-center justify-center mt-4">
+                <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
+                <jet-cancel-btn
+                  class="ml-3"
+                  :href="route('instrumentalTitle')"
+                ></jet-cancel-btn>
+              </div>
+            </form>
           </div>
 
           <div v-if="advanced === 'avanzado'">
-            <div class="flex items-center justify-center">
-              <div class="p-10 bg-white rounded-lg">
-                <jet-create-btn class="text-xl font-bold text-azul" />
-                <h1 class="text-xl font-bold text-azul">
-                  Creación de Tareas Avanzadas
-                </h1>
-              </div>
+            <div class="flex items-center justify-center mt-3">
+              <jet-title> Creación Tarea Avanzada </jet-title>
             </div>
-            <div>
-              <center>
-                <svg
-                  class="h-16 w-16 text-azul"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" />
-                  <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
-                  <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
-                  <line x1="3" y1="6" x2="3" y2="19" />
-                  <line x1="12" y1="6" x2="12" y2="19" />
-                  <line x1="21" y1="6" x2="21" y2="19" />
-                </svg>
-              </center>
+
+            <div class="flex items-center justify-center">
+              <img
+                class="w-32 h-32 mb-4"
+                src="/images/advanced.png"
+                alt="Icono de tareas avanzadas"
+              />
             </div>
             <form @submit.prevent="advancedSubmit">
-              <div class="flex justify-center">
-                <div class="block max-w-sm p-12 bg-white">
-                  <input
-                    placeholder="Introducir tarea"
-                    id="title"
-                    v-model="advancedForm.title"
-                    class="
-                      text-center
-                      px-6
-                      text-xs
-                      border-2
-                      rounded
-                      shadow-sm
-                      border-amarillo
-                    "
-                  />
-                </div>
-              </div>
-              <div class="text-center">
-                <label for="advanced">Elige el tipo de tarea: </label>
-                <br />
+              <div class="mb-3 mt-4">
+                <label
+                  class="display: block text-noNegro font-bold"
+                  for="advanced"
+                  >Elige el tipo de tarea:
+                </label>
+
                 <select
                   v-model="advancedForm.type"
                   name="advanced"
                   id="advanced"
                   class="
-                    px-3
+                    pl-2
+                    pr-9
                     py-1.5
                     bg-amarillo
-                    text-base
+                    text-noNegro text-base
                     font-bold
                     mt-1
                     rounded
                     select
-                    w-96
+                    w-full
+                    truncate
                   "
+                  required
                 >
                   <option
-                    class="text-xs bg-orange-100 text-bold"
+                    class="text-xs bg-white text-bold"
                     :selected="game"
                     value="juego"
                   >
                     Juego
                   </option>
                   <option
-                    class="text-xs bg-orange-100 text-bold"
+                    class="text-xs bg-white text-bold"
                     :selected="trabajo"
                     value="trabajo"
                   >
                     Trabajo
                   </option>
                   <option
-                    class="text-xs bg-orange-100 text-bold"
+                    class="text-xs bg-white text-bold"
                     :selected="Educación"
                     value="educación"
                   >
                     Educación
                   </option>
                   <option
-                    class="text-xs bg-orange-100 text-bold"
+                    class="text-xs bg-white text-bold"
                     :selected="tiempoLibre"
                     value="tiempo libre"
                   >
@@ -205,16 +156,32 @@
                   </option>
                 </select>
               </div>
-              <div class="flex items-center justify-center">
-                <div class="mt-6">
-                  <jet-btn class="mr-4" type="submit">
-                    Guardar
-                  </jet-btn>
-                  <jet-cancel-btn
-                    class="ml-4"
-                    :href="route('advancedTitle')"
-                  ></jet-cancel-btn>
-                </div>
+
+              <div class="max-w-md py-4 bg-white">
+                <input
+                  placeholder="Introduce el título de la tarea"
+                  id="title"
+                  v-model="advancedForm.title"
+                  class="
+                    text-center
+                    h-10
+                    text-xs
+                    border-2
+                    rounded
+                    shadow-sm
+                    border-amarillo
+                    w-full
+                  "
+                  required
+                />
+              </div>
+
+              <div class="flex items-center justify-center mt-4">
+                <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
+                <jet-cancel-btn
+                  class="ml-3"
+                  :href="route('advancedTitle')"
+                ></jet-cancel-btn>
               </div>
             </form>
             <br />
@@ -231,6 +198,7 @@ import { Head, Link } from "@inertiajs/inertia-vue3";
 import JetBtn from "@/Jetstream/Btn.vue";
 import JetCancelBtn from "@/Jetstream/CancelBtn.vue";
 import JetOwnInput from "@/Jetstream/OwnInput.vue";
+import JetTitle from "@/Jetstream/Title.vue";
 export default {
   props: {
     basic: String,
@@ -277,6 +245,7 @@ export default {
     JetBtn,
     JetCancelBtn,
     JetOwnInput,
+    JetTitle,
   },
 };
 </script>
