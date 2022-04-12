@@ -91,20 +91,22 @@ class StudentController extends Controller
                 $titlesArray = [];
                 $descriptionsArray = [];
 
-                $titles = $taskUser->titles()->get();
-                $descriptions = $taskUser->descriptions()->get();
+                if ($taskUser->startDate <= date("Y-m-d") || $taskUser->repeatable == true) {
+                    $titles = $taskUser->titles()->get();
+                    $descriptions = $taskUser->descriptions()->get();
 
-                foreach ($titles as $title) {
-                    array_push($taskArray, $taskUser);
-                    array_push($arrayGroup, $taskArray);
-                    array_push($titlesArray, $title);
-                    array_push($arrayGroup, $titlesArray);
+                    foreach ($titles as $title) {
+                        array_push($taskArray, $taskUser);
+                        array_push($arrayGroup, $taskArray);
+                        array_push($titlesArray, $title);
+                        array_push($arrayGroup, $titlesArray);
 
-                    foreach ($descriptions as $description) {
-                        array_push($descriptionsArray, $description);
+                        foreach ($descriptions as $description) {
+                            array_push($descriptionsArray, $description);
+                        }
+                        array_push($arrayGroup, $descriptionsArray);
+                        array_push($all, $arrayGroup);
                     }
-                    array_push($arrayGroup, $descriptionsArray);
-                    array_push($all, $arrayGroup);
                 }
             }
 
@@ -113,7 +115,7 @@ class StudentController extends Controller
                 $student = $student;
             }
             $username = $student->nickname;
-            
+
             return Inertia::render('Student/StudentIndex', compact('username', 'all'));
         } catch (Exception $error) {
             return $error->getMessage();

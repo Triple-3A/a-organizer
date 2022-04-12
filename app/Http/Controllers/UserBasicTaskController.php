@@ -99,11 +99,11 @@ class UserBasicTaskController extends Controller
             $titleArray = $requested['title'];
             $titleId = $titleArray['id'];
             $taskRequested = array_slice($requested, 2);
-
+            
             $title = Title::find($titleId);
             $task = Task::create($taskRequested);
             $studentUser = User::find($studentId);
-
+            
             $title->tasks()->attach($task->id);
             $studentUser->tasks()->attach($task->id);
 

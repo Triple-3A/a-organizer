@@ -38,7 +38,17 @@
                       {{ basicTitle.title }}
                     </option>
                   </select>
-
+                  <br/>
+                  <label for="basic">Elige si es repetible: </label>
+                  <br/>
+                  <button></button>
+                  <label for="basic">Elige una fecha de inicio: </label>
+                  <br/>
+                  <input type="date" v-model="basicForm.startDate">
+                  <br/>
+                  <label for="basic">Elige una fecha de final: </label>
+                  <br/>
+                  <input type="date" v-model="basicForm.finishDate">
                   <div class="flex items-center justify-center">
                     <div class="mt-6">
                       <jet-btn class="mr-4" type="submit">
@@ -202,26 +212,23 @@ export default {
       basicForm: {
         id: this.id,
         title: null,
-        // repeatable: false,
-        // time: null,
-        // date: null,
-        // done: null,
+        repeatable: false,
+        startDate: null,
+        finishDate: null,
       },
       instrumentalForm: {
         id: this.id,
         title: null,
-        // repeatable: false,
-        // time: null,
-        // date: null,
-        // done: null,
+        repeatable: false,
+        startDate: null,
+        finishDate: null,
       },
       advancedForm: {
         id: this.id,
         title: null,
-        // repeatable: false,
-        // time: null,
-        // date: null,
-        // done: null,
+        repeatable: false,
+        startDate: null,
+        finishDate: null,
       },
     };
   },
