@@ -33,19 +33,21 @@
             "
           >
             <!-- ICONO -->
-            <div
-            class="items-center"
-          >
-            <img class="w-28 h-28" :src="array[1][0].icons[0].icon" alt="Icono de tarea" />
-          </div>
-            <div />
+            <div class="items-center">
+              <img
+                class="w-28 h-28"
+                :src="array[1][0].icons[0].icon"
+                alt="Icono de tarea"
+              />
+            </div>
             <!-- TÍTULO -->
             <div class="flex flex-row">
-              <h1 class="text-xl font-bold">
+              <h1 class="text-lg font-bold">
                 {{ title.title }}
               </h1>
             </div>
-            <!-- boton -->
+            <!-- BOTON -->
+            <jet-button-done />
             <div />
           </div>
         </div>
@@ -81,6 +83,7 @@ import JetButtonRegular from "@/Jetstream/ButtonRegular.vue";
 import JetBtn from "@/Jetstream/Btn.vue";
 import JetProgressBar from "@/Jetstream/ProgressBar.vue";
 import JetCard from "@/Jetstream/Card.vue";
+import JetButtonDone from "@/Jetstream/ButtonDone.vue";
 
 export default {
   props: {
@@ -104,6 +107,7 @@ export default {
     JetProgressBar,
     JetBtn,
     JetCard,
+    JetButtonDone,
 
     Head,
     Link,
