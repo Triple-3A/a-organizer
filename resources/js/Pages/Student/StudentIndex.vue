@@ -60,7 +60,8 @@
                     {{ title.title }}
                   </h1>
                 </div>
-                <!-- boton -->
+                  <jet-button-done/>
+                  <!-- boton -->
                 <div/>
               </div>
             </div>
@@ -99,6 +100,7 @@ import JetButtonRegular from "@/Jetstream/ButtonRegular.vue";
 import JetBtn from "@/Jetstream/Btn.vue";
 import JetProgressBar from "@/Jetstream/ProgressBar.vue";
 import JetCard from "@/Jetstream/Card.vue";
+import JetButtonDone from "@/Jetstream/ButtonDone.vue";
 
 export default {
   props: {
@@ -122,6 +124,7 @@ export default {
     JetProgressBar,
     JetBtn,
     JetCard,
+    JetButtonDone,
 
     Head,
     Link,
