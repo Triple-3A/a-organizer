@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-amarillo rounded-lg w-3/4 mx-auto lg:w-2/5 flex flex-col p-5 mb-4"
+    class="bg-amarillo rounded-lg w-9/12 lg:w-2/5 flex flex-col p-5 mb-4"
   >
     <div class="flex flex-row justify-between mb-4 align-middle">
       <h2

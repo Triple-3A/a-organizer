@@ -20,6 +20,18 @@
             </h2>
           </div>
 
+
+
+
+
+
+
+
+
+
+            <!-- TAREAS -->
+
+
           <div class="mb-10 w-9/12" v-for="array in all" :key="array.id">
             <div v-for="task in array[0]" :key="task.id">
               <div
@@ -29,44 +41,46 @@
                 class="
                   flex flex-row
                   items-center
-                  justify-start
+                  justify-between 
+                  px-2
                   p-4
                   border-4
                   rounded-lg
-                  row
                   border-amarillo
                 "
               >
-                <!-- icono -->
-                <div class="px-8"></div>
-                <!-- -->
+                <!-- ICONO -->
+                <div/>
+                <!-- TÍTULO -->
                 <div class="flex flex-row">
-                  <!-- -->
-                  <h1 class="ml-12 text-xl font-bold">
+                  <h1 class="text-xl font-bold">
                     {{ title.title }}
                   </h1>
                 </div>
                 <!-- boton -->
-                <div class="px-16"></div>
+                <div/>
               </div>
             </div>
 
+
+               <!-- SUBTAREAS -->
             <div
               v-for="description in array[2]"
               :key="description.id"
-              class="bg-amarillo opacity-50"
+              class="bg-amarilloMedio"
             >
-              <div class="flex items-center justify-start p-2 rounded-lg">
-                <div class="px-8"></div>
+              <div class="flex items-center justify-between px-2 p-2 rounded-lg">
                 <div class="flex flex-row">
-                  <h1 class="ml-12 text-xl font-bold opacity-100">
+                  <h1 class="ml-12 text-lg font-medium opacity-100">
                     · {{ description.description }}
                   </h1>
                 </div>
-                <div class="px-16"></div>
               </div>
             </div>
           </div>
+
+
+
         <!-- </div> -->
     </div>
   </app-layout>
