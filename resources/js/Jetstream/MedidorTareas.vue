@@ -27,11 +27,11 @@
       </h1>
     </div>
     <div>
-      <div class="w-full bg-white h-4 rounded-full">
+      <div class="w-full bg-white h-3 rounded-full">
         <div
           class="
             bg-azul
-            h-4
+            h-3
             font-medium
             text-blue-100 text-center
             p-0.5

@@ -1,18 +1,16 @@
 <template>
   <app-layout title="Dashboard">
-    <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-      <section id="pantalla-3-daily-user">
-        <div class="flex flex-col items-center justify-center">
+<!--     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8"> -->
+        <div class="flex flex-col items-center justify-center pt-10">
           <jet-title>¡HOLA {{ username }}!</jet-title>
           <jet-sub-title>Este es tu progreso de hoy</jet-sub-title>
-          <!-- componente resumen tareas -->
           <jet-medidor-tareas />
 
           <div class="flex justify-start w-8/12">
             <h2
               class="
                 font-poppings
-                text-lg
+                text-sm
                 font-base
                 text-noNegro text-left
                 mb-4
@@ -22,7 +20,7 @@
             </h2>
           </div>
 
-          <div class="mb-10 w-8/12" v-for="array in all" :key="array.id">
+          <div class="mb-10 w-9/12" v-for="array in all" :key="array.id">
             <div v-for="task in array[0]" :key="task.id">
               <div
                 v-for="title in array[1]"
@@ -69,8 +67,7 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        <!-- </div> -->
     </div>
   </app-layout>
 </template>
