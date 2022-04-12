@@ -38,18 +38,29 @@
                       {{ basicTitle.title }}
                     </option>
                   </select>
+                  
                   <br/>
                   <label for="basic">Elige si es repetible: </label>
                   <br/>
                   <button></button>
-                  <label for="basic">Elige una fecha de inicio: </label>
-                  <br/>
-                  <input type="date" v-model="basicForm.startDate">
-                  <br/>
-                  <label for="basic">Elige una fecha de final: </label>
-                  <br/>
-                  <input type="date" v-model="basicForm.finishDate">
-                  <div class="flex items-center justify-center">
+                  <div class="flex justify-evenly">
+                  <div>
+                  <div class="mb-4">
+                  <label for="basic">Elige una fecha de inicio </label>
+                  </div>
+                  
+                  <input class="rounded-md" type="date" v-model="basicForm.startDate">
+                  
+                  </div>
+                  <div>
+                  <div class="mb-4">
+                  <label for="basic">Elige una fecha de final </label>
+                  </div>
+                  
+                  <input class="rounded-md" type="date" v-model="basicForm.finishDate">
+                  </div>
+                  </div>
+                  <!-- <div class="flex items-center"> -->
                     <div class="mt-6">
                       <jet-btn class="mr-4" type="submit">
                         Guardar
@@ -59,9 +70,10 @@
                         :href="route('techUserBasic', id)"
                         >Cancelar</jet-cancel-btn
                       >
+                      
                     </div>
                   </div>
-                </div>
+                <!-- </div> -->
               </form>
             </div>
 

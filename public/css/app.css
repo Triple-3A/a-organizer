@@ -1353,6 +1353,9 @@ select {
 .justify-around {
   justify-content: space-around;
 }
+.justify-evenly {
+  justify-content: space-evenly;
+}
 .justify-items-center {
   justify-items: center;
 }
@@ -1566,6 +1569,10 @@ select {
 .bg-orange-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(255 237 213 / var(--tw-bg-opacity));
+}
+.bg-rojo {
+  --tw-bg-opacity: 1;
+  background-color: rgb(246 105 87 / var(--tw-bg-opacity));
 }
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
