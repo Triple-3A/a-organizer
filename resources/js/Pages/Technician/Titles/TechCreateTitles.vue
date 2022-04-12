@@ -16,7 +16,7 @@
             </div>
 
             <form @submit.prevent="basicSubmit">
-              <div class=" max-w-md py-4 bg-white">
+              <div class="max-w-md py-4 bg-white">
                 <input
                   placeholder="Introduce el título de la tarea"
                   id="title"
@@ -31,24 +31,23 @@
                     border-amarillo
                     w-full
                   "
+                  required
                 />
               </div>
 
-              <div class="flex flex-row items-center justify-center">
-                <div class="mt-4">
-                  <jet-btn class="mr-2" type="submit"> Guardar </jet-btn>
-                  <jet-cancel-btn
-                    class="ml-6"
-                    :href="route('basicTitle')"
-                  ></jet-cancel-btn>
-                </div>
+              <div class="flex flex-row items-center justify-center mt-4">
+                <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
+                <jet-cancel-btn
+                  class="ml-3"
+                  :href="route('basicTitle')"
+                ></jet-cancel-btn>
               </div>
             </form>
           </div>
 
           <div v-if="instrumental === 'instrumental'">
             <div class="flex items-center justify-center mt-3">
-              <jet-title> Creación de Tarea Instrumental </jet-title>
+              <jet-title> Creación  Tarea Instrumental </jet-title>
             </div>
 
             <div class="flex items-center justify-center">
@@ -74,24 +73,23 @@
                     border-amarillo
                     w-full
                   "
+                  required
                 />
               </div>
 
-              <div class="flex flex-row items-center justify-center">
-                <div class="mt-4">
-                  <jet-btn class="mr-2" type="submit"> Guardar </jet-btn>
-                  <jet-cancel-btn
-                    class="ml-6"
-                    :href="route('instrumentalTitle')"
-                  ></jet-cancel-btn>
-                </div>
+              <div class="flex flex-row items-center justify-center mt-4">
+                <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
+                <jet-cancel-btn
+                  class="ml-3"
+                  :href="route('instrumentalTitle')"
+                ></jet-cancel-btn>
               </div>
             </form>
           </div>
 
           <div v-if="advanced === 'avanzado'">
             <div class="flex items-center justify-center mt-3">
-              <jet-title> Creación de Tarea Avanzada </jet-title>
+              <jet-title> Creación Tarea Avanzada </jet-title>
             </div>
 
             <div class="flex items-center justify-center">
@@ -102,7 +100,7 @@
               />
             </div>
             <form @submit.prevent="advancedSubmit">
-              <div class=" mb-3 mt-4">
+              <div class="mb-3 mt-4">
                 <label
                   class="display: block text-noNegro font-bold"
                   for="advanced"
@@ -158,36 +156,32 @@
                   </option>
                 </select>
               </div>
-            
-                <div class="max-w-md py-4 bg-white">
-                  <input
-                    placeholder="Introduce el título de la tarea"
-                    id="title"
-                    v-model="advancedForm.title"
-                    class="
-                      text-center
-                      h-10
-                      
-                      text-xs
-                      border-2
-                      rounded
-                      shadow-sm
-                      border-amarillo
-                      w-full
-                    "
-                    required
-                  />
-                </div>
-              
 
-              <div class="flex items-center justify-center">
-                <div class="mt-4">
-                  <jet-btn class="mr-4" type="submit"> Guardar </jet-btn>
-                  <jet-cancel-btn
-                    class="ml-4"
-                    :href="route('advancedTitle')"
-                  ></jet-cancel-btn>
-                </div>
+              <div class="max-w-md py-4 bg-white">
+                <input
+                  placeholder="Introduce el título de la tarea"
+                  id="title"
+                  v-model="advancedForm.title"
+                  class="
+                    text-center
+                    h-10
+                    text-xs
+                    border-2
+                    rounded
+                    shadow-sm
+                    border-amarillo
+                    w-full
+                  "
+                  required
+                />
+              </div>
+
+              <div class="flex items-center justify-center mt-4">
+                <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
+                <jet-cancel-btn
+                  class="ml-3"
+                  :href="route('advancedTitle')"
+                ></jet-cancel-btn>
               </div>
             </form>
             <br />

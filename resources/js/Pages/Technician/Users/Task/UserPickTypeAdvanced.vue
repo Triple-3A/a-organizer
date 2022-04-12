@@ -33,7 +33,8 @@
                     pr-9
                     py-1.5
                     bg-amarillo
-                    text-base text-noNegro
+                    text-base 
+                    text-noNegro
                     font-bold
                     mt-1
                     rounded
@@ -73,15 +74,13 @@
                   </option>
                 </select>
 
-                <div class="flex items-center justify-center">
-                  <div class="mt-6">
-                    <jet-btn class="mr-4" type="submit"> Siguiente </jet-btn>
-                    <jet-cancel-btn
-                      class="ml-4"
-                      :href="route('techUserAdvanced', id)"
-                      >Cancelar</jet-cancel-btn
-                    >
-                  </div>
+                <div class="flex items-center justify-center mt-6">
+                  <jet-btn class="mr-3" type="submit"> Siguiente </jet-btn>
+                  <jet-cancel-btn
+                    class="ml-3"
+                    :href="route('techUserAdvanced', id)"
+                    >Cancelar</jet-cancel-btn
+                  >
                 </div>
               </div>
             </form>

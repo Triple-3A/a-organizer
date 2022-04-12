@@ -54,7 +54,10 @@ module.exports = {
                 '40px': '40px',
                 '60px': '60px',
                 '100px':'100px',
-            }
+            },
+            width: {
+                '82': '21rem',
+              }
         },
         plugins: [
             require('@tailwindcss/typography'),

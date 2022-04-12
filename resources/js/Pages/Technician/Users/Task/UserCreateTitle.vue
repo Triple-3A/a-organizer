@@ -53,15 +53,13 @@
                     </option>
                   </select>
 
-                  <div class="flex items-center justify-center">
-                    <div class="mt-6">
-                      <jet-btn class="mr-4" type="submit"> Guardar </jet-btn>
-                      <jet-cancel-btn
-                        class="ml-4"
-                        :href="route('techUserBasic', id)"
-                        >Cancelar</jet-cancel-btn
-                      >
-                    </div>
+                  <div class="flex items-center justify-center mt-6">
+                    <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
+                    <jet-cancel-btn
+                      class="ml-3"
+                      :href="route('techUserBasic', id)"
+                      >Cancelar</jet-cancel-btn
+                    >
                   </div>
                 </div>
               </form>
@@ -117,15 +115,13 @@
                     </option>
                   </select>
 
-                  <div class="flex items-center justify-center">
-                    <div class="mt-6">
-                      <jet-btn class="mr-4" type="submit"> Guardar </jet-btn>
-                      <jet-cancel-btn
-                        class="ml-4"
-                        :href="route('techUserInstrumental', id)"
-                        >Cancelar</jet-cancel-btn
-                      >
-                    </div>
+                  <div class="flex items-center justify-center mt-6">
+                    <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
+                    <jet-cancel-btn
+                      class="ml-3"
+                      :href="route('techUserInstrumental', id)"
+                      >Cancelar</jet-cancel-btn
+                    >
                   </div>
                 </div>
               </form>
@@ -182,15 +178,13 @@
                     </option>
                   </select>
 
-                  <div class="flex items-center justify-center">
-                    <div class="mt-6">
-                      <jet-btn class="mr-4" type="submit"> Guardar </jet-btn>
-                      <jet-cancel-btn
-                        class="ml-4"
-                        :href="route('techUserAdvanced/pick', id)"
-                        >Cancelar</jet-cancel-btn
-                      >
-                    </div>
+                  <div class="flex items-center justify-center mt-6">
+                    <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
+                    <jet-cancel-btn
+                      class="ml-3"
+                      :href="route('techUserAdvanced/pick', id)"
+                      >Cancelar</jet-cancel-btn
+                    >
                   </div>
                 </div>
               </form>
