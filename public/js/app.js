@@ -26239,10 +26239,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "bg-amarillo rounded-lg w-8/12 flex flex-col p-5 mb-4"
+  "class": "bg-amarillo rounded-lg w-3/4 mx-auto lg:w-2/5 flex flex-col p-5 mb-4"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"flex flex-row justify-between mb-4 align-middle\"><h2 class=\"font-poppings text-xl font-bold text-white text-center\">Tareas completadas</h2><h1 class=\"font-poppings text-xxl font-bold text-white text-right\">1/4</h1></div><div><div class=\"w-full bg-white h-4 rounded-full\"><div class=\"bg-azul w-1/4\"></div></div></div>", 2);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"flex flex-row justify-between mb-4 align-middle\"><h2 class=\"font-poppings text-medium sm:text-xl font-bold text-white text-center\"> Tareas completadas </h2><h1 class=\"font-poppings text-bold font-bold sm:text-xxl text-white text-right\"> 1/4 </h1></div><div><div class=\"w-full bg-white h-4 rounded-full\"><div class=\"bg-azul h-4 font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full px-4\" style=\"width:33%;\"></div></div></div>", 2);
 
 var _hoisted_4 = [_hoisted_2];
 function render(_ctx, _cache) {
@@ -30930,66 +30930,90 @@ var _hoisted_3 = {
   "class": "flex flex-col items-center justify-center"
 };
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "flex justify-start"
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Este es tu progreso de hoy");
+
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "flex justify-start w-8/12"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "font-poppings text-lg font-base text-noNegro text-left mb-4"
 }, " Estas son tus tareas para hoy ")], -1
 /* HOISTED */
 );
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "px-8"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_6 = {
+var _hoisted_7 = {
   "class": "flex flex-row"
 };
-var _hoisted_7 = {
+var _hoisted_8 = {
   "class": "ml-12 text-xl font-bold"
 };
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "px-16"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_9 = {
+var _hoisted_10 = {
   "class": "flex items-center justify-start p-2 rounded-lg"
 };
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "px-8"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_11 = {
+var _hoisted_12 = {
   "class": "flex flex-row"
 };
-var _hoisted_12 = {
+var _hoisted_13 = {
   "class": "ml-12 text-xl font-bold opacity-100"
 };
 
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "px-16"
 }, null, -1
 /* HOISTED */
 );
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_jet_title = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-title");
+
+  var _component_jet_sub_title = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-sub-title");
+
+  var _component_jet_medidor_tareas = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-medidor-tareas");
+
   var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_app_layout, {
     title: "Dashboard"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" componente resumen tareas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" componente resumen tareas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" componente resumen tareas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" componente resumen tareas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" componente resumen tareas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" componente resumen tareas "), _hoisted_4, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.all, function (array) {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_title, null, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("¡HOLA " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.username) + "!", 1
+          /* TEXT */
+          )];
+        }),
+        _: 1
+        /* STABLE */
+
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_sub_title, null, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_4];
+        }),
+        _: 1
+        /* STABLE */
+
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" componente resumen tareas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_medidor_tareas), _hoisted_5, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.all, function (array) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
-          "class": "mb-10 w-9/12",
+          "class": "mb-10 w-8/12",
           key: array.id
         }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(array[0], function (task) {
           return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
@@ -30999,9 +31023,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               key: title.id,
               id: "tarea",
               "class": "flex flex-row items-center justify-start p-4 border-4 rounded-lg row border-amarillo"
-            }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" icono "), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(title.title), 1
+            }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" icono "), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(title.title), 1
             /* TEXT */
-            )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" boton "), _hoisted_8]);
+            )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" boton "), _hoisted_9]);
           }), 128
           /* KEYED_FRAGMENT */
           ))]);
@@ -31011,9 +31035,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
             key: description.id,
             "class": "bg-amarillo opacity-50"
-          }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_12, " · " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(description.description), 1
+          }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_13, " · " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(description.description), 1
           /* TEXT */
-          )]), _hoisted_13])]);
+          )]), _hoisted_14])]);
         }), 128
         /* KEYED_FRAGMENT */
         ))]);
