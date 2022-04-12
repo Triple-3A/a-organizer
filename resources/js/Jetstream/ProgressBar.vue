@@ -1,19 +1,76 @@
 <template>
-    <div class="w-3/4 mx-auto lg:w-2/5 flex-column">
-      <div
-        class="bg-amarillo flex items-center bg-white justify-center px-10 py-6 mb-12 border-4 rounded-xl border-amarillo drop-shadow-md hover:drop-shadow-2xl"
+  <div
+    class="bg-amarillo rounded-lg w-3/4 mx-auto lg:w-2/5 flex flex-col p-5 mb-4"
+  >
+    <div class="flex flex-row justify-between mb-4 align-middle">
+      <h2
+        class="
+          font-poppings
+          text-medium
+          sm:text-xl
+          font-bold
+          text-white text-center
+        "
       >
-      <div class="text-white">
-      <h1>Tareas completadas</h1>
+        Tareas completadas
+      </h2>
+      <h1
+        class="
+          font-poppings
+          text-bold
+          font-bold
+          sm:text-xxl
+          text-white text-right
+        "
+      >
+        {{ doneTasks }}/{{ totalTasks }}
+      </h1>
+    </div>
+    <div>
+      <div class="w-full bg-white h-4 rounded-full">
+        <div
+          class="
+            bg-azul
+            h-4
+            font-medium
+            text-blue-100 text-center
+            p-0.5
+            leading-none
+            rounded-l-full rounded-r-full
+            px-4
+          "
+          :style="progressBarClass"
+        ></div>
+        {{ progressBarClass }}
       </div>
-            <div class="w-full bg-gray-200 rounded-full">
-  <div class="bg-azul text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full px-4" style="width: 50%">50%</div>
-</div>
-         <slot></slot>
-        </div>
-      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-    
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  props: ["totalTasks", "doneTasks"],
+
+  data() {
+    return {
+      singleTaskPercentage: 0,
+      progressPercentage: 0,
+      progressBarClass: "",
+    };
+  },
+
+  mounted() {
+    this.checkProgressPercentage();
+  },
+
+  methods: {
+    checkProgressPercentage() {
+      this.singleTaskPercentage = 100 / this.totalTasks;
+      this.progressPercentage = this.singleTaskPercentage * this.doneTasks;
+      this.progressBarClass = "width: " + this.progressPercentage + "%";
+    },
+  },
+});
 </script>
