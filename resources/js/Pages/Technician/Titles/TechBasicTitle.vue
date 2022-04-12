@@ -71,16 +71,10 @@
           </div>
         </div>
       </div>
+      
     </div>
-
-
-    
-
-  
-            
-          
-
-
+    <button @click="basicRepeatable()" class="bg-azul hover:bg-blue-800">Diaria</button>
+    <button @click="repV()" class="bg-azul hover:bg-blue-800">Diaria</button>
   </app-layout>
 </template>
 <script>
@@ -108,5 +102,25 @@ export default {
     JetTitle,
     JetArrowBackSvg,
   },
+  data() {
+    return {
+      repV: 0,
+    }
+  },
+  methods: {
+    basicRepeatable() {
+      // this.repV = 1;
+      console.log(this.repV);
+      // if (this.repV == 0) {
+      //   this.repV = 1;
+      // } else {
+      //   this.repV = 0;
+      // }
+      // this.basicForm.repeatable == !this.basicForm.repeatable?this.basicForm.repeatable = this.basicForm.repeatable:this.basicForm.repeatable = !this.basicForm.repeatable
+    },
+    repV() {
+      console.log(this.repV);
+    },
+  }
 };
 </script>

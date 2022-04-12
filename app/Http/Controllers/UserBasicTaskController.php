@@ -98,12 +98,18 @@ class UserBasicTaskController extends Controller
             $studentId = $requested['id'];
             $titleArray = $requested['title'];
             $titleId = $titleArray['id'];
+            $taskRepeatable = $requested['repeatable'];
             $taskRequested = array_slice($requested, 2);
             
             $title = Title::find($titleId);
-            $task = Task::create($taskRequested);
             $studentUser = User::find($studentId);
-            
+
+            if ($taskRepeatable == true){
+                $task = Task::create(["repeatable" => true]);
+            } else if ($taskRepeatable == false) {
+                $task = Task::create($taskRequested);
+            }
+                        
             $title->tasks()->attach($task->id);
             $studentUser->tasks()->attach($task->id);
 

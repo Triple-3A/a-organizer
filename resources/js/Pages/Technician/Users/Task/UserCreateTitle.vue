@@ -38,22 +38,26 @@
                       {{ basicTitle.title }}
                     </option>
                   </select>
-                  <br/>
-                  <label for="basic">Elige si es repetible: </label>
-                  <br/>
-                  <button></button>
+                  <br />
+                  <label for="basic">Elige si es una tarea diaria: </label>
+                  <br />
+                  <button
+                    @click="basicRepeatable"
+                    class="bg-azul hover:bg-blue-800"
+                  >
+                    Diaria
+                  </button>
+                  <br />
                   <label for="basic">Elige una fecha de inicio: </label>
-                  <br/>
-                  <input type="date" v-model="basicForm.startDate">
-                  <br/>
+                  <br />
+                  <input type="date" v-model="basicForm.startDate" />
+                  <br />
                   <label for="basic">Elige una fecha de final: </label>
-                  <br/>
-                  <input type="date" v-model="basicForm.finishDate">
+                  <br />
+                  <input type="date" v-model="basicForm.finishDate" />
                   <div class="flex items-center justify-center">
                     <div class="mt-6">
-                      <jet-btn class="mr-4" type="submit">
-                        Guardar
-                      </jet-btn>
+                      <jet-btn class="mr-4" type="submit"> Guardar </jet-btn>
                       <jet-cancel-btn
                         class="ml-4"
                         :href="route('techUserBasic', id)"
@@ -104,9 +108,7 @@
 
                   <div class="flex items-center justify-center">
                     <div class="mt-6">
-                      <jet-btn class="mr-4" type="submit">
-                        Guardar
-                      </jet-btn>
+                      <jet-btn class="mr-4" type="submit"> Guardar </jet-btn>
                       <jet-cancel-btn
                         class="ml-4"
                         :href="route('techUserInstrumental', id)"
@@ -155,9 +157,7 @@
 
                   <div class="flex items-center justify-center">
                     <div class="mt-6">
-                      <jet-btn class="mr-4" type="submit">
-                        Guardar
-                      </jet-btn>
+                      <jet-btn class="mr-4" type="submit"> Guardar </jet-btn>
                       <jet-cancel-btn
                         class="ml-4"
                         :href="route('techUserAdvanced/pick', id)"
@@ -212,21 +212,21 @@ export default {
       basicForm: {
         id: this.id,
         title: null,
-        repeatable: false,
+        repeatable: true,
         startDate: null,
         finishDate: null,
       },
       instrumentalForm: {
         id: this.id,
         title: null,
-        repeatable: false,
+        repeatable: true,
         startDate: null,
         finishDate: null,
       },
       advancedForm: {
         id: this.id,
         title: null,
-        repeatable: false,
+        repeatable: true,
         startDate: null,
         finishDate: null,
       },
@@ -245,6 +245,15 @@ export default {
     advancedSubmit() {
       this.$inertia.post(route("techUserAdvanced/store"), this.advancedForm);
     },
+    // basicRepeatable() {
+    //   this.repeatV = 1;
+      // if (this.repeat == null) {
+      //   this.repeat = 1;
+      // } else {
+      //   this.repeat = 0;
+      // }
+      // this.basicForm.repeatable == !this.basicForm.repeatable?this.basicForm.repeatable = this.basicForm.repeatable:this.basicForm.repeatable = !this.basicForm.repeatable
+    // },
   },
 };
 </script>
