@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->boolean('repeatable')->default(false);
-            $table->date('date')->nullable();
-            $table->time('time')->nullable();
+            $table->date('startDate')->nullable();
+            $table->date('finishDate')->nullable();
             $table->boolean('done')->default(false);
             $table->timestamps();
         });
