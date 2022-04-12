@@ -115,7 +115,6 @@ class StudentController extends Controller
                 $student = $student;
             }
             $username = $student->nickname;
-
             return Inertia::render('Student/StudentIndex', compact('username', 'all'));
         } catch (Exception $error) {
             return $error->getMessage();

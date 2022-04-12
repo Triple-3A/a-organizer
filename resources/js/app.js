@@ -21,6 +21,8 @@ import JetInstrumentalTitleSvg from '@/Jetstream/InstrumentalTitleSvg.vue';
 import JetAdvancedTitleSvg from '@/Jetstream/AdvancedTitleSvg.vue';
 import JetArrowBackSvg from '@/Jetstream/ArrowBackSvg.vue';
 import JetTitle from '@/Jetstream/Title.vue';
+import JetProgressBar from '@/Jetstream/ProgressBar.vue';
+import JetButtonDone from "@/Jetstream/ButtonDone.vue";
 
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
@@ -55,5 +57,7 @@ app.component('jet-instrumental-title-svg', JetInstrumentalTitleSvg);
 app.component('jet-advanced-title-svg', JetAdvancedTitleSvg);
 app.component('jet-arrow-back-svg', JetArrowBackSvg);
 app.component('jet-title', JetTitle);
+app.component('jet-progress-bar', JetProgressBar);
+app.component('jet-button-done' , JetButtonDone);
 
 InertiaProgress.init({ color: '#4B5563' });
