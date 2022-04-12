@@ -1,88 +1,72 @@
 <template>
   <app-layout title="Dashboard">
-<!--     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8"> -->
-        <div class="flex flex-col items-center justify-center pt-10">
-          <jet-title>¡HOLA {{ username }}!</jet-title>
-          <jet-sub-title>Este es tu progreso de hoy</jet-sub-title>
-          <!-- componente resumen tareas -->
-          <jet-progress-bar :totalTasks="totalTasks" :doneTasks="doneTasks" />
+    <!--     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8"> -->
+    <div class="flex flex-col items-center justify-center pt-10">
+      <jet-title>¡HOLA {{ username }}!</jet-title>
+      <jet-sub-title>Este es tu progreso de hoy</jet-sub-title>
+      <!-- componente resumen tareas -->
+      <jet-progress-bar :totalTasks="totalTasks" :doneTasks="doneTasks" />
 
-          <div class="flex justify-start w-8/12">
-            <h2
-              class="
-                font-poppings
-                text-sm
-                font-base
-                text-noNegro text-left
-                mb-4
-              "
-            >
-              Estas son tus tareas para hoy
-            </h2>
-          </div>
+      <div class="flex justify-start w-8/12">
+        <h2 class="font-poppings text-sm font-base text-noNegro text-left mb-4">
+          Estas son tus tareas para hoy
+        </h2>
+      </div>
 
+      <!-- TAREAS -->
 
-
-
-
-
-
-
-
-
-            <!-- TAREAS -->
-
-
-          <div class="mb-10 w-9/12" v-for="array in all" :key="array.id">
-            <div v-for="task in array[0]" :key="task.id">
-              <div
-                v-for="title in array[1]"
-                :key="title.id"
-                id="tarea"
-                class="
-                  flex flex-row
-                  items-center
-                  justify-between 
-                  px-2
-                  p-4
-                  border-4
-                  rounded-lg
-                  border-amarillo
-                "
-              >
-                <!-- ICONO -->
-                <div/>
-                <!-- TÍTULO -->
-                <div class="flex flex-row">
-                  <h1 class="text-xl font-bold">
-                    {{ title.title }}
-                  </h1>
-                </div>
-                <!-- boton -->
-                <div/>
-              </div>
-            </div>
-
-
-               <!-- SUBTAREAS -->
+      <div class="mb-10 w-9/12" v-for="array in all" :key="array.id">
+        <div v-for="task in array[0]" :key="task.id">
+          <div
+            v-for="title in array[1]"
+            :key="title.id"
+            id="tarea"
+            class="
+              flex flex-row
+              items-center
+              justify-between
+              px-2
+              p-4
+              border-4
+              rounded-lg
+              border-amarillo
+            "
+          >
+            <!-- ICONO -->
             <div
-              v-for="description in array[2]"
-              :key="description.id"
-              class="bg-amarilloMedio"
-            >
-              <div class="flex items-center justify-between px-2 p-2 rounded-lg">
-                <div class="flex flex-row">
-                  <h1 class="ml-12 text-lg font-medium opacity-100">
-                    · {{ description.description }}
-                  </h1>
-                </div>
-              </div>
+            class="items-center"
+          >
+            <img class="w-28 h-28" :src="array[1][0].icons[0].icon" alt="Icono de tarea" />
+          </div>
+            <div />
+            <!-- TÍTULO -->
+            <div class="flex flex-row">
+              <h1 class="text-xl font-bold">
+                {{ title.title }}
+              </h1>
+            </div>
+            <!-- boton -->
+            <div />
+          </div>
+        </div>
+
+        <!-- SUBTAREAS -->
+        <div
+          v-for="description in array[2]"
+          :key="description.id"
+          class="bg-amarilloMedio"
+        >
+          <div class="flex items-center justify-between px-2 p-2 rounded-lg">
+            <div class="flex flex-row">
+              <h1 class="ml-12 text-lg font-medium opacity-100">
+                · {{ description.description }}
+              </h1>
             </div>
           </div>
+        </div>
+      </div>
 
-
-
-        <!-- </div> -->
+      <!-- </div> -->
     </div>
   </app-layout>
 </template>

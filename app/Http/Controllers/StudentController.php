@@ -92,6 +92,7 @@ class StudentController extends Controller
                 $descriptionsArray = [];
 
                 $titles = $taskUser->titles()->get();
+                $titles->load('icons');
                 $descriptions = $taskUser->descriptions()->get();
 
                 foreach ($titles as $title) {
