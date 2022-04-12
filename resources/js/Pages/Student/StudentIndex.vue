@@ -4,7 +4,8 @@
         <div class="flex flex-col items-center justify-center pt-10">
           <jet-title>¡HOLA {{ username }}!</jet-title>
           <jet-sub-title>Este es tu progreso de hoy</jet-sub-title>
-          <jet-medidor-tareas />
+          <!-- componente resumen tareas -->
+          <jet-progress-bar :totalTasks="totalTasks" :doneTasks="doneTasks" />
 
           <div class="flex justify-start w-8/12">
             <h2
@@ -55,7 +56,7 @@
                 <div/>
                 <!-- TÍTULO -->
                 <div class="flex flex-row">
-                  <h1 class="text-xl font-bold">
+                  <h1 class="text-lg font-bold">
                     {{ title.title }}
                   </h1>
                 </div>
@@ -96,7 +97,7 @@ import JetSubTitle from "@/Jetstream/SubTitle.vue";
 import JetUserAvatar from "@/Jetstream/UserAvatar.vue";
 import JetButtonRegular from "@/Jetstream/ButtonRegular.vue";
 import JetBtn from "@/Jetstream/Btn.vue";
-import JetMedidorTareas from "@/Jetstream/MedidorTareas.vue";
+import JetProgressBar from "@/Jetstream/ProgressBar.vue";
 import JetCard from "@/Jetstream/Card.vue";
 
 export default {
@@ -104,18 +105,41 @@ export default {
     all: Array,
     username: String,
   },
+
+  data() {
+    return {
+      totalTasks: 0,
+      doneTasks: 0,
+    };
+  },
+
   components: {
     AppLayout,
     JetTitle,
     JetSubTitle,
     JetUserAvatar,
     JetButtonRegular,
-    JetMedidorTareas,
+    JetProgressBar,
     JetBtn,
     JetCard,
 
     Head,
     Link,
+  },
+
+  beforeMount() {
+    this.checkTotalTasks();
+  },
+
+  methods: {
+    checkTotalTasks() {
+      this.all.forEach((task) => {
+        this.totalTasks++;
+        if (task[0][0]["done"] === 1) {
+          this.doneTasks++;
+        }
+      });
+    },
   },
 };
 </script>
