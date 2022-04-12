@@ -12,8 +12,8 @@ class Task extends Model
     protected $fillable = [
         'id',
         'repeatable',
-        'date',
-        'time',
+        'startDate',
+        'finishDate',
         'done',
     ];
 

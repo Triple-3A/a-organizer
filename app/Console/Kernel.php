@@ -21,7 +21,7 @@ class Kernel extends ConsoleKernel
             $tasks = Task::get();
             foreach ($tasks as $task) {
                 $task->update(["done" => false]);
-                if ($task->finalDate > date("Y-m-d")) {
+                if ($task->finishDate < date("Y-m-d")) {
                     $task->delete();
                 }
             }
