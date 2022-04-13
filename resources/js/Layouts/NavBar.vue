@@ -2,8 +2,7 @@
     <div>
         <Head :title="title" />
 
-        <div class="min-h-screen bg-white">
-            <nav class="bg-azul">
+            <nav class="relative w-full bg-azul">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
@@ -272,10 +271,9 @@
             </header>
 
             <!-- Page Content -->
-            <main>
+            <main class="min-h-screen">
                 <slot></slot>
             </main>
-        </div>
     </div>
 </template>
 

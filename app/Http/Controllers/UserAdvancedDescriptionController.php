@@ -12,16 +12,6 @@ use Inertia\Inertia;
 class UserAdvancedDescriptionController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -55,6 +45,10 @@ class UserAdvancedDescriptionController extends Controller
     public function store(Request $request)
     {
         try {
+            $request->validate([
+                'id' => 'required',
+                'task' => 'required',
+            ]);
             $requested = $request->all();
             $studentId = $requested['id'];
             $task = $requested['task'];
@@ -69,17 +63,6 @@ class UserAdvancedDescriptionController extends Controller
         } catch (Exception $error) {
             return $error->getMessage();
         }
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -120,10 +103,13 @@ class UserAdvancedDescriptionController extends Controller
     public function update(Request $request, $descriptionId)
     {
         try {
-
+            $request->validate([
+                'userId' => 'required',
+                'description' => 'required',
+            ]);
             $requested = $request->all();
             $id = $requested['userId'];
-            $descriptionString = $requested['descriptions'];;
+            $descriptionString = $requested['description'];;
             $description = Description::Find($descriptionId);
 
             $description->update(array('description' => $descriptionString));
@@ -144,17 +130,17 @@ class UserAdvancedDescriptionController extends Controller
     {
         try {
             $description = Description::find($id);
-            $userId = 0;
+            $student = 0;
             $taskCollection = $description->tasks()->get();
             foreach ($taskCollection as $task) {
                 $userCollection = $task->users()->get();
 
                 foreach ($userCollection as $user) {
-                    $userId = $user->id;
+                    $student = $user->id;
                 }
             }
             $description->delete();
-            return Redirect::route('techUserAdvanced', $userId);
+            return Redirect::route('techUserAdvanced', $student);
         } catch (Exception $error) {
             return $error->getMessage();
         }

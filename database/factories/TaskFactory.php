@@ -18,8 +18,7 @@ class TaskFactory extends Factory
     {
         return [
             'repeatable' => $this->faker->boolean(),
-            'date' => $this->faker->date(),
-            'time' => $this->faker->time(),
+            'finishDate' => $this->faker->date(),
             'done' => $this->faker->boolean(),
         ];
     }

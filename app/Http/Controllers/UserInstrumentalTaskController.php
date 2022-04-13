@@ -33,6 +33,7 @@ class UserInstrumentalTaskController extends Controller
                 $descriptionsArray = [];
 
                 $titles = $task->titles()->where('type', 'instrumentales')->get();
+                $titles->load('icons');
                 $descriptions = $task->descriptions()->get();
 
                 foreach ($titles as $title) {
@@ -94,8 +95,14 @@ class UserInstrumentalTaskController extends Controller
     public function store(Request $request)
     {
         try {
+            $request->validate([
+                'id' => 'required',
+                'title' => 'required',
+                'repeatable' => 'required',
+                'startDate' => 'required',
+                'finishDate' => 'required',
+            ]);
             $requested = $request->all();
-
             $studentId = $requested['id'];
             $titleArray = $requested['title'];
             $titleId = $titleArray['id'];
@@ -115,17 +122,6 @@ class UserInstrumentalTaskController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
@@ -135,13 +131,17 @@ class UserInstrumentalTaskController extends Controller
     {
         try {
             $task = Task::find($id);
-            $userId = 0;
+            $student = 0;
             $userCollection = $task->users()->get();
+            $descriptionCollection = $task->descriptions()->get();
             foreach ($userCollection as $user) {
-                $userId = $user->id;
+                $student = $user->id;
+            }
+            foreach ($descriptionCollection as $description) {
+                $description->delete();
             }
             $task->delete();
-            return Redirect::route('techUserInstrumental', $userId);
+            return Redirect::route('techUserInstrumental', $student);
         } catch (Exception $error) {
             return $error->getMessage();
         }

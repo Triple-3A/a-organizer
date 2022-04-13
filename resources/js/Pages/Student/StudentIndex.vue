@@ -1,65 +1,74 @@
 <template>
-  <app-layout title="Dashboard">
-    <div class="mx-auto max-w-7xl py-12 sm:px-6 lg:px-8">
-      <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
+  <app-layout title="Tareas">
+    <!--     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8"> -->
+    <div class="flex flex-col items-center justify-center pt-10">
+      <jet-title>¡HOLA {{ username }}!</jet-title>
+      <jet-sub-title>Este es tu progreso de hoy</jet-sub-title>
+      <!-- componente resumen tareas -->
+      <jet-progress-bar :totalTasks="totalTasks" :doneTasks="doneTasks" />
 
+      <div class="flex justify-start w-8/12">
+        <h2 class="font-poppings text-sm font-base text-noNegro text-left mb-4">
+          Estas son tus tareas para hoy
+        </h2>
+      </div>
 
-        <section id="pantalla-3-daily-user">
-        <div class="flex flex-col items-center justify-center">
-          <div class="p-10 bg-white rounded-lg flex flex-col items-center justify-center w-9/12">
+      <!-- TAREAS -->
 
-            <jet-title>¡HOLA {{ username }}!</jet-title>
-            <jet-sub-title>Este es tu progreso de hoy</jet-sub-title>
-
-            <!-- componente resumen tareas -->
-            <jet-medidor-tareas/>
-               <!-- contenedooooooooooooooooooooor imagenesssssssssssssssss -->
-
-            <div class="flex justify-start w-8/12">
-              <h2 class="font-poppings text-lg font-base text-noNegro text-left mb-4">Estas son tus tareas para hoy</h2>
-          </div>
-
-            <!--  PROBANDO LA CARD -->
-            <jet-card class="w-8/12"></jet-card>
-
-
-            <!-- ATENCIÓN CAGADA INCOMINGGGGGGGGGGGG --- PELIGRO PELIGROOOOOOOO-->
-
-
-            <!--cambiar argumentos en v-for -->
-            <!-- cómo pasamos las tareas creadas y asignadas por el tutor? -->
-
-            <!--<div v-for="task in tasks" :key="basic.id">
-            <div class="flex mb-10 border-4 rounded-lg row border-amarillo">
-              <div class="flex items-center justify-start p-4 rounded-lg">
-                <div>
-                  <jet-card/>
-                </div>
-                <div class="px-8"></div>
-                <div class="flex flex-row">
-                  <h1 class="ml-12 text-xl font-bold">
-                    {{ basic.title }}
-                  </h1>
-                </div>
-                <div class="px-16"></div>
-                <Link
-                  as="button"
-                  type="button"
-                  method="delete"
-                  :href="route('basicTitle/delete', basic.id)"
-                >
-                  <jet-delete-btn />
-                </Link>
-              </div>
+      <div class="mb-10 w-9/12" v-for="array in all" :key="array.id">
+        <div v-for="task in array[0]" :key="task.id">
+          <div
+            v-for="title in array[1]"
+            :key="title.id"
+            id="tarea"
+            class="
+              flex flex-row
+              items-center
+              justify-between
+              px-2
+              p-4
+              border-4
+              rounded-lg
+              border-amarillo
+            "
+          >
+            <!-- ICONO -->
+            <div class="items-center">
+              <img
+                class="w-28 h-28"
+                :src="array[1][0].icons[0].icon"
+                alt="Icono de tarea"
+              />
             </div>
-          </div> -->
-
-
+            <!-- TÍTULO -->
+            <div class="flex flex-row">
+              <h1 class="text-lg font-bold">
+                {{ title.title }}
+              </h1>
+            </div>
+            <!-- BOTON -->
+            <jet-button-done />
+            <div />
           </div>
         </div>
-        </section>
 
+        <!-- SUBTAREAS -->
+        <div
+          v-for="description in array[2]"
+          :key="description.id"
+          class="bg-amarilloMedio"
+        >
+          <div class="flex items-center justify-between px-2 p-2 rounded-lg">
+            <div class="flex flex-row">
+              <h1 class="ml-12 text-lg font-medium opacity-100">
+                · {{ description.description }}
+              </h1>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- </div> -->
     </div>
   </app-layout>
 </template>
@@ -72,27 +81,51 @@ import JetSubTitle from "@/Jetstream/SubTitle.vue";
 import JetUserAvatar from "@/Jetstream/UserAvatar.vue";
 import JetButtonRegular from "@/Jetstream/ButtonRegular.vue";
 import JetBtn from "@/Jetstream/Btn.vue";
-import JetMedidorTareas from "@/Jetstream/MedidorTareas.vue";
+import JetProgressBar from "@/Jetstream/ProgressBar.vue";
 import JetCard from "@/Jetstream/Card.vue";
+import JetButtonDone from "@/Jetstream/ButtonDone.vue";
 
 export default {
-    props: {
+  props: {
+    all: Array,
     username: String,
-    tasks: Array,
   },
+
+  data() {
+    return {
+      totalTasks: 0,
+      doneTasks: 0,
+    };
+  },
+
   components: {
     AppLayout,
     JetTitle,
     JetSubTitle,
-    JetOwnInput,
     JetUserAvatar,
     JetButtonRegular,
-    JetMedidorTareas,
+    JetProgressBar,
     JetBtn,
     JetCard,
-    
+    JetButtonDone,
+
     Head,
     Link,
+  },
+
+  beforeMount() {
+    this.checkTotalTasks();
+  },
+
+  methods: {
+    checkTotalTasks() {
+      this.all.forEach((task) => {
+        this.totalTasks++;
+        if (task[0][0]["done"] === 1) {
+          this.doneTasks++;
+        }
+      });
+    },
   },
 };
 </script>

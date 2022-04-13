@@ -10,6 +10,7 @@ use Tests\TestCase;
 
 class UserTest extends TestCase
 {
+    // use RefreshDatabase;
     /**
      * A basic feature test example.
      *
@@ -37,7 +38,7 @@ class UserTest extends TestCase
             'role' => 'admin',
         ]);
 
-        $response->assertRedirect('/');
+        $response->assertRedirect('/dashboard');
     }
 
     public function test_user_duplication()

@@ -1,9 +1,9 @@
 <template>
   <input
     class="
-      block
       w-full
-      px-6
+      h-10
+      px-2
       mt-1
       text-xs text-center
       border-2
@@ -11,6 +11,7 @@
       shadow-sm
       border-amarillo
     "
+    required
   />
 </template>
 

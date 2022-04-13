@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use App\Models\Technician;
+use App\Models\Student;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 
@@ -55,6 +57,10 @@ class UserSeeder extends Seeder
 
         $technician->roles()->sync([3]);
 
+        $technicianRoleTable = Technician::create(array(
+            'user_id' => 13,
+        ));
+
         $student = User::create(array(
             'name' => "student",
             'email' => "student@gmail.com",
@@ -64,5 +70,11 @@ class UserSeeder extends Seeder
         ));
 
         $student->roles()->sync([4]);
+
+        $studentRoleTable = Student::create(array(
+            'nickname' => NULL,
+            'user_id' => 14,
+            'technician_id' => NULL,
+        ));
     }
 }

@@ -29,7 +29,7 @@ class UserAdvancedTaskController extends Controller
             $allGame = [];
             $allFreeTime = [];
 
-            
+
             foreach ($tasks as $task) {
                 $arrayGroup = [];
                 $taskArray = [];
@@ -37,6 +37,7 @@ class UserAdvancedTaskController extends Controller
                 $descriptionsArray = [];
 
                 $titles = $task->titles()->where('type', 'educación')->get();
+                $titles->load('icons');
                 $descriptions = $task->descriptions()->get();
 
                 foreach ($titles as $title) {
@@ -64,6 +65,7 @@ class UserAdvancedTaskController extends Controller
                 $descriptionsArray = [];
 
                 $titles = $task->titles()->where('type', 'trabajo')->get();
+                $titles->load('icons');
                 $descriptions = $task->descriptions()->get();
 
                 foreach ($titles as $title) {
@@ -91,6 +93,7 @@ class UserAdvancedTaskController extends Controller
                 $descriptionsArray = [];
 
                 $titles = $task->titles()->where('type', 'juego')->get();
+                $titles->load('icons');
                 $descriptions = $task->descriptions()->get();
 
                 foreach ($titles as $title) {
@@ -118,6 +121,7 @@ class UserAdvancedTaskController extends Controller
                 $descriptionsArray = [];
 
                 $titles = $task->titles()->where('type', 'tiempo libre')->get();
+                $titles->load('icons');
                 $descriptions = $task->descriptions()->get();
 
                 foreach ($titles as $title) {
@@ -151,15 +155,14 @@ class UserAdvancedTaskController extends Controller
      */
     public function pick($id)
     {
-        try{
-
+        try {
             return Inertia::render('Technician/Users/Task/UserPickTypeAdvanced', compact('id'));
-        }  catch (Exception $error) {
+        } catch (Exception $error) {
             return $error->getMessage();
         }
     }
 
-     /**
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -168,7 +171,10 @@ class UserAdvancedTaskController extends Controller
     public function create(Request $request)
     {
         try {
-
+            $request->validate([
+                'id' => 'required',
+                'type' => 'required',
+            ]);
             $requested = $request->all();
             $id = $requested['id'];
             $type = $requested['type'];
@@ -196,8 +202,14 @@ class UserAdvancedTaskController extends Controller
     public function store(Request $request)
     {
         try {
+            $request->validate([
+                'id' => 'required',
+                'title' => 'required',
+                'repeatable' => 'required',
+                'startDate' => 'required',
+                'finishDate' => 'required',
+            ]);
             $requested = $request->all();
-
             $id = $requested['id'];
             $titleArray = $requested['title'];
             $titleId = $titleArray['id'];
@@ -217,17 +229,6 @@ class UserAdvancedTaskController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-   /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
@@ -237,13 +238,17 @@ class UserAdvancedTaskController extends Controller
     {
         try {
             $task = Task::find($id);
-            $userId = 0;
+            $student = 0;
             $userCollection = $task->users()->get();
+            $descriptionCollection = $task->descriptions()->get();
             foreach ($userCollection as $user) {
-                $userId = $user->id;
+                $student = $user->id;
+            }
+            foreach ($descriptionCollection as $description) {
+                $description->delete();
             }
             $task->delete();
-            return Redirect::route('techUserAdvanced', $userId);
+            return Redirect::route('techUserAdvanced', $student);
         } catch (Exception $error) {
             return $error->getMessage();
         }
