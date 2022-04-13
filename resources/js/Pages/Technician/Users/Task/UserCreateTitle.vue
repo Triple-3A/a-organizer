@@ -62,189 +62,210 @@
                         {{ basicTitle.title }}
                       </option>
                     </select>
-                    <br />
-                    <label for="basic">Elige una fecha de inicio: </label>
-                    <br />
-                    <input type="date" v-model="basicForm.startDate" />
-                    <br />
-                    <label for="basic">Elige una fecha de final: </label>
-                    <br />
-                    <input type="date" v-model="basicForm.finishDate" />
 
-                    <div class="flex items-center justify-center mt-6">
-                      <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
-                      <jet-cancel-btn
-                        class="ml-3"
-                        :href="route('techUserBasic', id)"
-                        >Cancelar</jet-cancel-btn
-                      >
+                    <br />
+                    <label for="basic">Elige si es repetible: </label>
+                    <br />
+                    <button></button>
+                    <div class="flex justify-evenly">
+                      <div>
+                        <div class="mb-4">
+                          <label for="basic">Elige una fecha de inicio </label>
+                        </div>
+
+                        <input
+                          class="rounded-md"
+                          type="date"
+                          v-model="basicForm.startDate"
+                        />
+                      </div>
+                      <div>
+                        <div class="mb-4">
+                          <label for="basic">Elige una fecha de final </label>
+                        </div>
+
+                        <input
+                          class="rounded-md"
+                          type="date"
+                          v-model="basicForm.finishDate"
+                        />
+                      </div>
+                    </div>
+                    <!-- <div class="flex items-center"> -->
+                    <div class="mt-6">
+                      <div class="flex items-center justify-center mt-6">
+                        <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
+                        <jet-cancel-btn
+                          class="ml-3"
+                          :href="route('techUserBasic', id)"
+                          >Cancelar</jet-cancel-btn
+                        >
+                      </div>
                     </div>
                   </div>
                 </form>
               </div>
             </div>
+          </div>
 
-            <div v-if="instrumental == 'instrumental'">
-              <jet-title>Añadir Tarea Instrumental</jet-title>
+          <div v-if="instrumental == 'instrumental'">
+            <jet-title>Añadir Tarea Instrumental</jet-title>
 
-              <div class="flex items-center justify-center">
-                <img
-                  class="w-32 h-32 mb-2"
-                  src="/images/instrumental.png"
-                  alt="Icono de tareas instrumentales"
-                />
-              </div>
-              <div class="text-center">
-                <label for="basic">Elige si es una tarea diaria: </label>
-                <br />
-                <button
-                  @click="instrumentalRepeatable"
-                  class="bg-azul hover:bg-blue-800"
-                >
-                  Diaria
-                </button>
-
-                <form
-                  @submit.prevent="instrumentalSubmit"
-                  class="mt-4 flex justify-center mb-6"
-                >
-                  <div class="mb-4 mt-2 w-280">
-                    <label
-                      class="display: block text-noNegro font-bold"
-                      for="Instrumental"
-                      >Elige una tarea instrumental:
-                    </label>
-
-                    <select
-                      v-model="instrumentalForm.title"
-                      name="title"
-                      id="title"
-                      class="
-                        pl-2
-                        pr-9
-                        py-1.5
-                        bg-amarillo
-                        text-base text-noNegro
-                        font-bold
-                        mt-1
-                        rounded
-                        select
-                        w-full
-                        truncate
-                      "
-                    >
-                      <option
-                        class="text-xs bg-white text-bold"
-                        v-for="instrumentalTitle in instrumentalTitles"
-                        :value="instrumentalTitle"
-                        :selected="instrumentalTitle"
-                        :key="instrumentalTitle.id"
-                      >
-                        {{ instrumentalTitle.title }}
-                      </option>
-                    </select>
-                    <br />
-                    <label for="instrumental"
-                      >Elige una fecha de inicio:
-                    </label>
-                    <br />
-                    <input type="date" v-model="instrumentalForm.startDate" />
-                    <br />
-                    <label for="instrumental">Elige una fecha de final: </label>
-                    <br />
-                    <input type="date" v-model="instrumentalForm.finishDate" />
-
-                    <div class="flex items-center justify-center mt-6">
-                      <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
-                      <jet-cancel-btn
-                        class="ml-3"
-                        :href="route('techUserInstrumental', id)"
-                        >Cancelar</jet-cancel-btn
-                      >
-                    </div>
-                  </div>
-                </form>
-              </div>
+            <div class="flex items-center justify-center">
+              <img
+                class="w-32 h-32 mb-2"
+                src="/images/instrumental.png"
+                alt="Icono de tareas instrumentales"
+              />
             </div>
-            <div v-if="advanced == 'avanzado'">
-              <jet-title>Añadir Tarea Avanzada</jet-title>
+            <div class="text-center">
+              <label for="basic">Elige si es una tarea diaria: </label>
+              <br />
+              <button
+                @click="instrumentalRepeatable"
+                class="bg-azul hover:bg-blue-800"
+              >
+                Diaria
+              </button>
 
-              <div class="flex items-center justify-center">
-                <img
-                  class="w-32 h-32 mb-2"
-                  src="/images/advanced.png"
-                  alt="Icono de tareas avanzadas"
-                />
-              </div>
-              <div class="text-center">
-                <label for="basic">Elige si es una tarea diaria: </label>
-                <br />
-                <button
-                  @click="basicRepeatable"
-                  class="bg-azul hover:bg-blue-800"
-                >
-                  Diaria
-                </button>
-                <form
-                  @submit.prevent="advancedSubmit"
-                  class="mt-4 flex justify-center mb-6"
-                >
-                  <div class="mb-4 mt-2 w-280">
-                    <label
-                      class="display: block text-noNegro font-bold"
-                      for="avanzado"
-                      >Elige el título avanzado:
-                    </label>
+              <form
+                @submit.prevent="instrumentalSubmit"
+                class="mt-4 flex justify-center mb-6"
+              >
+                <div class="mb-4 mt-2 w-280">
+                  <label
+                    class="display: block text-noNegro font-bold"
+                    for="Instrumental"
+                    >Elige una tarea instrumental:
+                  </label>
 
-                    <select
-                      v-model="advancedForm.title"
-                      name="title"
-                      id="title"
-                      class="
-                        pl-2
-                        pr-9
-                        py-1.5
-                        bg-amarillo
-                        text-base text-noNegro
-                        font-bold
-                        mt-1
-                        rounded
-                        select
-                        w-full
-                        truncate
-                      "
-                      required
+                  <select
+                    v-model="instrumentalForm.title"
+                    name="title"
+                    id="title"
+                    class="
+                      pl-2
+                      pr-9
+                      py-1.5
+                      bg-amarillo
+                      text-base text-noNegro
+                      font-bold
+                      mt-1
+                      rounded
+                      select
+                      w-full
+                      truncate
+                    "
+                  >
+                    <option
+                      class="text-xs bg-white text-bold"
+                      v-for="instrumentalTitle in instrumentalTitles"
+                      :value="instrumentalTitle"
+                      :selected="instrumentalTitle"
+                      :key="instrumentalTitle.id"
                     >
-                      <option
-                        class="text-xs bg-white text-bold"
-                        v-for="advancedTitle in advancedTitles"
-                        :value="advancedTitle"
-                        :selected="advancedTitle"
-                        :key="advancedTitle.id"
-                      >
-                        {{ advancedTitle.title }}
-                      </option>
-                    </select>
-                    <br />
-                    <label for="advanced">Elige una fecha de inicio: </label>
-                    <br />
-                    <input type="date" v-model="advancedForm.startDate" />
-                    <br />
-                    <label for="advanced">Elige una fecha de final: </label>
-                    <br />
-                    <input type="date" v-model="advancedForm.finishDate" />
+                      {{ instrumentalTitle.title }}
+                    </option>
+                  </select>
+                  <br />
+                  <label for="instrumental">Elige una fecha de inicio: </label>
+                  <br />
+                  <input type="date" v-model="instrumentalForm.startDate" />
+                  <br />
+                  <label for="instrumental">Elige una fecha de final: </label>
+                  <br />
+                  <input type="date" v-model="instrumentalForm.finishDate" />
 
-                    <div class="flex items-center justify-center mt-6">
-                      <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
-                      <jet-cancel-btn
-                        class="ml-3"
-                        :href="route('techUserAdvanced/pick', id)"
-                        >Cancelar</jet-cancel-btn
-                      >
-                    </div>
+                  <div class="flex items-center justify-center mt-6">
+                    <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
+                    <jet-cancel-btn
+                      class="ml-3"
+                      :href="route('techUserInstrumental', id)"
+                      >Cancelar</jet-cancel-btn
+                    >
                   </div>
-                </form>
-              </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div v-if="advanced == 'avanzado'">
+            <jet-title>Añadir Tarea Avanzada</jet-title>
+
+            <div class="flex items-center justify-center">
+              <img
+                class="w-32 h-32 mb-2"
+                src="/images/advanced.png"
+                alt="Icono de tareas avanzadas"
+              />
+            </div>
+            <div class="text-center">
+              <label for="basic">Elige si es una tarea diaria: </label>
+              <br />
+              <button
+                @click="basicRepeatable"
+                class="bg-azul hover:bg-blue-800"
+              >
+                Diaria
+              </button>
+              <form
+                @submit.prevent="advancedSubmit"
+                class="mt-4 flex justify-center mb-6"
+              >
+                <div class="mb-4 mt-2 w-280">
+                  <label
+                    class="display: block text-noNegro font-bold"
+                    for="avanzado"
+                    >Elige el título avanzado:
+                  </label>
+
+                  <select
+                    v-model="advancedForm.title"
+                    name="title"
+                    id="title"
+                    class="
+                      pl-2
+                      pr-9
+                      py-1.5
+                      bg-amarillo
+                      text-base text-noNegro
+                      font-bold
+                      mt-1
+                      rounded
+                      select
+                      w-full
+                      truncate
+                    "
+                    required
+                  >
+                    <option
+                      class="text-xs bg-white text-bold"
+                      v-for="advancedTitle in advancedTitles"
+                      :value="advancedTitle"
+                      :selected="advancedTitle"
+                      :key="advancedTitle.id"
+                    >
+                      {{ advancedTitle.title }}
+                    </option>
+                  </select>
+                  <br />
+                  <label for="advanced">Elige una fecha de inicio: </label>
+                  <br />
+                  <input type="date" v-model="advancedForm.startDate" />
+                  <br />
+                  <label for="advanced">Elige una fecha de final: </label>
+                  <br />
+                  <input type="date" v-model="advancedForm.finishDate" />
+
+                  <div class="flex items-center justify-center mt-6">
+                    <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
+                    <jet-cancel-btn
+                      class="ml-3"
+                      :href="route('techUserAdvanced/pick', id)"
+                      >Cancelar</jet-cancel-btn
+                    >
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
