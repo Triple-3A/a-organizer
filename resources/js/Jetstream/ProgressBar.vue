@@ -64,9 +64,13 @@ export default defineComponent({
 
   methods: {
     checkProgressPercentage() {
+      if (totalTasks > 0) {
       this.singleTaskPercentage = 100 / this.totalTasks;
       this.progressPercentage = this.singleTaskPercentage * this.doneTasks;
       this.progressBarClass = "width: " + this.progressPercentage + "%";
+      } else {
+        this.progressBarClass = "width: 0%";
+      }
     },
   },
 });

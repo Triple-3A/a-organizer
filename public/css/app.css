@@ -2233,9 +2233,12 @@ select {
 }
 .ml-8 {
   margin-left: 2rem;
+<<<<<<< HEAD
 }
 .mb-0 {
   margin-bottom: 0px;
+=======
+>>>>>>> a503f713c0cb09034268cd7deef52063b4b9413f
 }
 .block {
   display: block;
@@ -2344,6 +2347,12 @@ select {
 }
 .w-9 {
   width: 2.25rem;
+<<<<<<< HEAD
+=======
+}
+.w-3 {
+  width: 16px;
+>>>>>>> a503f713c0cb09034268cd7deef52063b4b9413f
 }
 .w-3 {
   width: 16px;
@@ -2363,6 +2372,15 @@ select {
 .w-96 {
   width: 24rem;
 }
+<<<<<<< HEAD
+=======
+.w-8\/12 {
+  width: 66.666667%;
+}
+.w-10\/12 {
+  width: 83.333333%;
+}
+>>>>>>> a503f713c0cb09034268cd7deef52063b4b9413f
 .w-2\/6 {
   width: 33.333333%;
 }
