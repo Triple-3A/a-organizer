@@ -15,7 +15,7 @@
             items-center
           "
         >
-          Asignación técnico/a
+          Asignación técnico-a
           <svg
             class="fill-amarillo mr-1 ml-2 w-5 h-5"
             fill="currentColor"
@@ -48,7 +48,7 @@
                 pl-5
               "
             >
-              Técnicos/as
+              Técnicos-as
             </td>
           </tr>
         </thead>
@@ -64,9 +64,6 @@
             mt-2
           "
         >
-          <div>
-            <td>Nombre</td>
-          </div>
         </tr>
         <tr
           class="
@@ -104,7 +101,7 @@
                 pl-5
               "
             >
-              Usuarios/as
+              Usuarios-as
             </td>
           </tr>
         </thead>
@@ -120,9 +117,6 @@
             mt-2
           "
         >
-          <div>
-            <td>Nombre</td>
-          </div>
         </tr>
         <tr
           class="
@@ -177,9 +171,6 @@
             mt-2
           "
         >
-          <div>
-            <td>Nombre</td>
-          </div>
         </tr>
         <tr
           class="

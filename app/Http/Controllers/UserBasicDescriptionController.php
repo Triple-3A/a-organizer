@@ -107,7 +107,7 @@ class UserBasicDescriptionController extends Controller
             ]);
             $requested = $request->all();
             $id = $requested['userId'];
-            $descriptionString = $requested['descriptions'];;
+            $descriptionString = $requested['description'];;
             $description = Description::Find($descriptionId);
 
             $description->update(array('description' => $descriptionString));

@@ -9,7 +9,7 @@
                 Bienvenido, te has registrado correctamente
               </h1>
               <br />
-              <h2 class="text-noNegro">Espere a que se le asigne un rol</h2>
+              <h2 class="text-noNegro">Espera a que te asignen un rol</h2>
             </div>
           </div>
         </div>
