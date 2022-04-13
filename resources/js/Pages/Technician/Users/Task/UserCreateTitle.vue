@@ -2,7 +2,7 @@
   <app-layout title="Dashboard">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div class="flex items-center justify-center">
-        <div class="p-10 bg-white rounded-lg flex items-center justify-center">
+        <div class="pt-10 bg-white rounded-lg flex items-center justify-center">
           <div class="mt-3 flex items-center justify-center">
             <div v-if="basic == 'básico'">
               <jet-title>Añadir Tarea Básica</jet-title>
@@ -14,7 +14,7 @@
                   alt="Icono de tareas básicas"
                 />
               </div>
-              <div class="text-center">
+              <div class="text-center mt-4">
                 <label for="basic"> Tarea diaria : </label>
 
                 <button
@@ -26,6 +26,7 @@
                     h-4
                     w-4
                     rounded-md
+                    ml-2
                   "
                 >
                   Si
@@ -71,8 +72,8 @@
                     </select>
 
                     <div class="flex justify-between">
-                      <div>
-                        <div class="mb-2 mt-4">
+                      <div class="mt-4">
+                        <div class="mb-2">
                           <label for="basic">Fecha inicio </label>
                         </div>
 
@@ -82,8 +83,8 @@
                           v-model="basicForm.startDate"
                         />
                       </div>
-                      <div>
-                        <div class="mb-2 mt-4">
+                      <div class="mt-4">
+                        <div class="mb-2">
                           <label for="basic">Fecha final </label>
                         </div>
 
@@ -94,12 +95,12 @@
                         />
                       </div>
                     </div>
-                    <!-- <div class="flex items-center"> -->
+
                     <div class="mt-6">
                       <div class="flex items-center justify-center mt-6">
-                        <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
+                        <jet-btn class="mr-4" type="submit"> Guardar </jet-btn>
                         <jet-cancel-btn
-                          class="ml-3"
+                          class="text-center ml-4"
                           :href="route('techUserBasic', id)"
                           >Cancelar</jet-cancel-btn
                         >
