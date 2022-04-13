@@ -59,11 +59,11 @@ module.exports = {
                 82: "25.2rem",
             },
         },
-        plugins: [require("@tailwindcss/typography")],
     },
 
     plugins: [
         require("@tailwindcss/forms"),
         require("@tailwindcss/typography"),
+        require('tw-elements/dist/plugin'),
     ],
 };
