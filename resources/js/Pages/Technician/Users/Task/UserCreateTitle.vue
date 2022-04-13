@@ -123,13 +123,14 @@
               />
             </div>
             <div class="text-center">
-              <label for="basic">Elige si es una tarea diaria: </label>
-              <br />
+              <label for="basic">Tarea diaria : </label>
+              
               <button
                 @click="instrumentalRepeatable"
-                class="bg-azul hover:bg-blue-800"
+                class="bg-azul hover:bg-gray-700 text-white h-4 w-4 rounded-md
+                    ml-2"
               >
-                Diaria
+                Sí
               </button>
 
               <form
@@ -171,22 +172,34 @@
                       {{ instrumentalTitle.title }}
                     </option>
                   </select>
-                  <br />
-                  <label for="instrumental">Elige una fecha de inicio: </label>
-                  <br />
-                  <input type="date" v-model="instrumentalForm.startDate" />
-                  <br />
-                  <label for="instrumental">Elige una fecha de final: </label>
-                  <br />
-                  <input type="date" v-model="instrumentalForm.finishDate" />
 
-                  <div class="flex items-center justify-center mt-6">
-                    <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
+                  <div class="flex justify-between">
+                      <div class="mt-4">
+                        <div class="mb-2">
+                  <label for="instrumental">Fecha inicio </label>
+                  </div>
+
+                  <input class="rounded-md" type="date" v-model="instrumentalForm.startDate" />
+
+                      </div>
+                     <div class="mt-4">
+                        <div class="mb-2">
+ 
+                  <label for="instrumental">Fecha final </label>
+                  </div>
+                  <input class="rounded-md" type="date" v-model="instrumentalForm.finishDate" />
+                     </div>
+                     </div>
+
+                    <div class="mt-6">
+                    <div class="flex items-center justify-center mt-6">
+                    <jet-btn class="mr-4" type="submit"> Guardar </jet-btn>
                     <jet-cancel-btn
-                      class="ml-3"
+                      class="ml-4"
                       :href="route('techUserInstrumental', id)"
                       >Cancelar</jet-cancel-btn
                     >
+                    </div>
                   </div>
                 </div>
               </form>
@@ -203,8 +216,8 @@
               />
             </div>
             <div class="text-center">
-              <label for="basic">Elige si es una tarea diaria: </label>
-              <br />
+              <label for="basic">Tarea diaria : </label>
+              
               <button
                 @click="basicRepeatable"
                 class="bg-azul hover:bg-blue-800"
