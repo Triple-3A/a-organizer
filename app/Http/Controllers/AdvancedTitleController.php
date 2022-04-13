@@ -33,7 +33,7 @@ class AdvancedTitleController extends Controller
                     array_push($jobs, $titleTask);
                 } else if ($titleTask->type == 'juego') {
                     array_push($games, $titleTask);
-                } else if ($titleTask->type == 'tiempo libre'){
+                } else if ($titleTask->type == 'tiempo libre') {
                     array_push($freeTime, $titleTask);
                 }
             }
@@ -78,40 +78,6 @@ class AdvancedTitleController extends Controller
         } catch (Exception $error) {
             return $error->getMessage();
         }
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     /**

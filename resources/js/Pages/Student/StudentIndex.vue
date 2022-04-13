@@ -1,5 +1,5 @@
 <template>
-  <app-layout title="Dashboard">
+  <app-layout title="Tareas">
     <!--     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8"> -->
     <div class="flex flex-col items-center justify-center pt-10">
       <jet-title>¡HOLA {{ username }}!</jet-title>

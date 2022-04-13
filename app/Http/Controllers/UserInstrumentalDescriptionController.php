@@ -12,16 +12,6 @@ use Inertia\Inertia;
 class UserInstrumentalDescriptionController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -55,8 +45,11 @@ class UserInstrumentalDescriptionController extends Controller
     public function store(Request $request)
     {
         try {
+            $request->validate([
+                'id' => 'required',
+                'task' => 'required',
+            ]);
             $requested = $request->all();
-
             $studentId = $requested['id'];
             $task = $requested['task'];
             $taskId = $task['id'];
@@ -70,17 +63,6 @@ class UserInstrumentalDescriptionController extends Controller
         } catch (Exception $error) {
             return $error->getMessage();
         }
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -121,10 +103,13 @@ class UserInstrumentalDescriptionController extends Controller
     public function update(Request $request, $descriptionId)
     {
         try {
-
+            $request->validate([
+                'userId' => 'required',
+                'description' => 'required',
+            ]);
             $requested = $request->all();
             $id = $requested['userId'];
-            $descriptionString = $requested['descriptions'];;
+            $descriptionString = $requested['description'];;
             $description = Description::Find($descriptionId);
 
             $description->update(array('description' => $descriptionString));

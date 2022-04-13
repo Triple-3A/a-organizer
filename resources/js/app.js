@@ -7,6 +7,7 @@ import { InertiaProgress } from '@inertiajs/progress';
 //Import new components
 import  JetCreateBtn  from '@/Jetstream/CreateBtn.vue';
 import JetDeleteBtn from '@/Jetstream/DeleteBtn.vue';
+import JetAddBtn from '@/Jetstream/AddBtn.vue';
 
 import JetBtn from '@/Jetstream/Btn.vue';
 import JetEditBtn from '@/Jetstream/EditBtn.vue';
@@ -27,7 +28,7 @@ import JetButtonDone from "@/Jetstream/ButtonDone.vue";
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
 createInertiaApp({
-    title: (title) => `${title} - ${appName}`,
+    title: (title) => `${title}`,
     resolve: (name) => require(`./Pages/${name}.vue`),
     setup({ el, app, props, plugin }) {
         return createApp({ render: () => h(app, props) })
@@ -46,6 +47,7 @@ app.component('jet-btn', JetBtn);
 
 app.component('jet-edit-btn', JetEditBtn);
 app.component('jet-cancel-btn', JetCancelBtn);
+app.component('jet-add-btn', JetAddBtn);
 app.component('jet-card', JetCard);
 app.component('jet-basic-svg', JetBasicSvg);
 app.component('jet-arrow-next-svg', JetArrowNextSvg);

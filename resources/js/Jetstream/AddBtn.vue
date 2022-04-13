@@ -1,0 +1,18 @@
+<template>
+  <svg
+    class="w-9 h-9 text-azul hover:text-gray-700 active:text-gray-900"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    aria-hidden="true"
+    role="img"
+    width="1em"
+    height="1em"
+    preserveAspectRatio="xMidYMid meet"
+    viewBox="0 0 512 512"
+  >
+    <path
+      fill="currentColor"
+      d="M256 152h208v32H256zm-80 104h288v32H176zm0 104h288v32H176zm16-208h-64V88H96v64H32v32h64v64h32v-64h64v-32z"
+    />
+  </svg>
+</template>

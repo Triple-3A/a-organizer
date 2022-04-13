@@ -12,16 +12,6 @@ use Inertia\Inertia;
 class UserBasicDescriptionController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -31,9 +21,7 @@ class UserBasicDescriptionController extends Controller
         try {
             $basic = 'básico';
             $task = Task::find($task);
-
             $userCollection = $task->users()->get();
-
             $id = 0;
 
             foreach ($userCollection as $user) {
@@ -55,6 +43,10 @@ class UserBasicDescriptionController extends Controller
     public function store(Request $request)
     {
         try {
+            $request->validate([
+                'id' => 'required',
+                'task' => 'required',
+            ]);
             $requested = $request->all();
             $studentId = $requested['id'];
             $task = $requested['task'];
@@ -69,17 +61,6 @@ class UserBasicDescriptionController extends Controller
         } catch (Exception $error) {
             return $error->getMessage();
         }
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -120,10 +101,13 @@ class UserBasicDescriptionController extends Controller
     public function update(Request $request, $descriptionId)
     {
         try {
-
+            $request->validate([
+                'userId' => 'required',
+                'description' => 'required',
+            ]);
             $requested = $request->all();
             $id = $requested['userId'];
-            $descriptionString = $requested['descriptions'];;
+            $descriptionString = $requested['description'];;
             $description = Description::Find($descriptionId);
 
             $description->update(array('description' => $descriptionString));

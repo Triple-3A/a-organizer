@@ -1,5 +1,5 @@
 <template>
-  <app-layout title="Dashboard">
+  <app-layout title="Títulos avanzadas">
     <div class="mt-4 ml-10px">
       <Link
         :href="route('categories')"
@@ -31,7 +31,7 @@
           <jet-title>Tareas Avanzadas</jet-title>
         </div>
 
-        <h2 class="mb-2">Educación</h2>
+        <h2 class="mb-2 text-noNegro font-bold">Educación</h2>
         <div v-for="education in educations" :key="education.id">
           <div
             class="
@@ -73,7 +73,7 @@
             </div>
           </div>
         </div>
-        <h2 class="mb-2">Trabajo</h2>
+        <h2 class="mb-2 text-noNegro font-bold">Trabajo</h2>
         <div v-for="job in jobs" :key="job.id">
           <div
             class="
@@ -115,7 +115,7 @@
             </div>
           </div>
         </div>
-        <h2 class="mb-2">Juego</h2>
+        <h2 class="mb-2 text-noNegro font-bold">Juego</h2>
         <div v-for="game in games" :key="game.id">
           <div
             class="
@@ -157,7 +157,7 @@
             </div>
           </div>
         </div>
-        <h2 class="mb-2">Tiempo libre</h2>
+        <h2 class="mb-2 text-noNegro font-bold">Tiempo libre</h2>
         <div v-for="free in freeTime" :key="free.id">
           <div
             class="

@@ -34,17 +34,21 @@ class StudentController extends Controller
 
     public function assignStudentNickname(Request $request)
     {
-        $request->validate([
-            'nickname' => 'required',
-        ]);
-        $userId = auth()->id();
-        $currentStudent = Student::where('user_id', $userId)->get();
-        foreach ($currentStudent as $student) {
-            $studentOne = $student;
-        }
-        $studentOne->update($request->all());
+        try {
+            $request->validate([
+                'nickname' => 'required',
+            ]);
+            $userId = auth()->id();
+            $currentStudent = Student::where('user_id', $userId)->get();
+            foreach ($currentStudent as $student) {
+                $studentOne = $student;
+            }
+            $studentOne->update($request->all());
 
-        return Redirect::route('studentTasks');
+            return Redirect::route('studentTasks');
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
     }
 
     // public function studentPic()
@@ -91,21 +95,23 @@ class StudentController extends Controller
                 $titlesArray = [];
                 $descriptionsArray = [];
 
-                $titles = $taskUser->titles()->get();
-                $titles->load('icons');
-                $descriptions = $taskUser->descriptions()->get();
+                if ($taskUser->startDate <= date("Y-m-d") || $taskUser->repeatable == true) {
+                    $titles = $taskUser->titles()->get();
+                    $titles->load('icons');
+                    $descriptions = $taskUser->descriptions()->get();
 
-                foreach ($titles as $title) {
-                    array_push($taskArray, $taskUser);
-                    array_push($arrayGroup, $taskArray);
-                    array_push($titlesArray, $title);
-                    array_push($arrayGroup, $titlesArray);
+                    foreach ($titles as $title) {
+                        array_push($taskArray, $taskUser);
+                        array_push($arrayGroup, $taskArray);
+                        array_push($titlesArray, $title);
+                        array_push($arrayGroup, $titlesArray);
 
-                    foreach ($descriptions as $description) {
-                        array_push($descriptionsArray, $description);
+                        foreach ($descriptions as $description) {
+                            array_push($descriptionsArray, $description);
+                        }
+                        array_push($arrayGroup, $descriptionsArray);
+                        array_push($all, $arrayGroup);
                     }
-                    array_push($arrayGroup, $descriptionsArray);
-                    array_push($all, $arrayGroup);
                 }
             }
 
@@ -114,76 +120,9 @@ class StudentController extends Controller
                 $student = $student;
             }
             $username = $student->nickname;
-            
             return Inertia::render('Student/StudentIndex', compact('username', 'all'));
         } catch (Exception $error) {
             return $error->getMessage();
         }
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

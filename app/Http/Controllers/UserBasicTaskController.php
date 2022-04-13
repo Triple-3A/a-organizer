@@ -32,6 +32,7 @@ class UserBasicTaskController extends Controller
                 $descriptionsArray = [];
 
                 $titles = $task->titles()->where('type', 'básicos')->get();
+                $titles->load('icons');
                 $descriptions = $task->descriptions()->get();
 
                 foreach ($titles as $title) {
@@ -76,8 +77,6 @@ class UserBasicTaskController extends Controller
                 array_push($basicTitles, $title);
             }
 
-            // dd($basicTitles);
-
             return Inertia::render('Technician/Users/Task/UserCreateTitle', compact('basic', 'id', 'basicTitles'));
         } catch (Exception $error) {
             return $error->getMessage();
@@ -93,17 +92,28 @@ class UserBasicTaskController extends Controller
     public function store(Request $request)
     {
         try {
+            $request->validate([
+                'id' => 'required',
+                'title' => 'required',
+                'repeatable' => 'required',
+                'startDate' => 'required',
+                'finishDate' => 'required',
+            ]);
             $requested = $request->all();
-
             $studentId = $requested['id'];
             $titleArray = $requested['title'];
             $titleId = $titleArray['id'];
+            $taskRepeatable = $requested['repeatable'];
             $taskRequested = array_slice($requested, 2);
-
+            
             $title = Title::find($titleId);
-            $task = Task::create($taskRequested);
             $studentUser = User::find($studentId);
 
+            if ($taskRepeatable == true){
+                $task = Task::create(["repeatable" => true]);
+            } else if ($taskRepeatable == false) {
+                $task = Task::create($taskRequested);
+            }      
             $title->tasks()->attach($task->id);
             $studentUser->tasks()->attach($task->id);
 
@@ -111,17 +121,6 @@ class UserBasicTaskController extends Controller
         } catch (Exception $error) {
             return $error->getMessage();
         }
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
