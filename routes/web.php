@@ -41,6 +41,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     })->name('dashboard');
 
     Route::get('attach', [AttachRoleController::class, 'index'])->name('attach');
+    Route::middleware(['standBy'])->get('fromProfile', function () {
+        return Redirect::back();
+    })->name('fromProfile');
     Route::middleware(['standBy'])->get('standBy', [StandByController::class, 'index'])->name('standBy');
 
     Route::middleware(['admin'])->group(function () {
@@ -91,7 +94,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::middleware(['student'])->group(function () {
         Route::get('/student', [StudentController::class, 'index'])->name('student');
-        // Route::get('/studentPic', [StudentController::class, 'studentPic'])->name('studentPic');
         Route::post('/assignStudentNickname', [StudentController::class, 'assignStudentNickname'])->name('assignStudentNickname');
         Route::get('/studentTasks', [StudentController::class, 'studentTasks'])->name('studentTasks');
     });
