@@ -1,5 +1,5 @@
 <template>
-  <app-layout title="Dashboard">
+  <app-layout title="Títulos básicos">
     <div class="mt-4 ml-10px">
       <Link
         :href="route('categories')"
@@ -52,7 +52,7 @@
                 <img class="w-28 h-28" :src="icon.icon" alt="Icono de tarea" />
               </div>
 
-              <div class="pl-9 w-80">
+              <div class="pl-9 w-80  ">
                 <h1 class="text-lg text-noNegro font-bold">
                   {{ basic.title }}
                 </h1>

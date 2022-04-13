@@ -1,48 +1,48 @@
 <template>
-  <app-layout title="Dashboard">
-    <div class="mx-auto max-w-7xl py-12 sm:px-6 lg:px-8">
-      <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
+  <app-layout title="Nombre">
+    <div
+      class="
+        min-h-screen
+        flex
+        justify-center
+        items-center
+        mx-auto
+        max-w-7xl
+        sm:px-6
+        lg:px-8
+      "
+    >
+      <div class="flex flex-col items-center justify-center">
+        <jet-title class="mb-8">¡HOLA!</jet-title>
+        <jet-sub-title class="mb-8"
+          >¿Cómo te gustaría que te llamemos?</jet-sub-title
+        >
         <div class="flex flex-col items-center justify-center">
-          <div
-            class="
-              px-10
-              bg-white
-              rounded-lg
-              flex flex-col
-              items-center
-              justify-center
-            "
-          >
-            <jet-title>¡HOLA!</jet-title>
-            <jet-sub-title
-              >Dinos como te gustaría que te llamemos</jet-sub-title
-            >
-          </div>
-          <div class="flex flex-col items-center justify-center">
-            <form @submit.prevent="submit">
-              <div class="block max-w-sm px-12 py-3 bg-white">
-                <input
-                  placeholder="Introduce tu nombre"
-                  v-model="form.nickname"
-                  class="
-                    block
-                    w-full
-                    px-6
-                    mt-1
-                    text-xs text-center
-                    border-2
-                    rounded
-                    shadow-sm
-                    border-amarillo
-                  "
-                />
-                <!-- <jet-own-input class="placeholder p-2 mb-6" v-model= "form.nickname"> </jet-own-input> -->
-              </div>
-              <!-- <Link :href="route('studentPic')"> -->
+          <form @submit.prevent="submit">
+            <div class="block max-w-sm px-12 py-3 bg-white">
+              <input
+                placeholder="Introduce tu nombre"
+                v-model="form.nickname"
+                class="
+                  w-full
+                  h-10
+                  px-2
+                  mt-1
+                  text-xs text-center
+                  border-2
+                  rounded
+                  shadow-sm
+                  border-amarillo
+                "
+                required
+              />
+              <!-- <jet-own-input placeholder="Introduce tu nombre w"
+                  v-model="form.nickname"/> -->
+            </div>
+            <div class="flex items-center justify-center mt-12">
               <jet-btn>Siguiente</jet-btn>
-              <!-- </Link> -->
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import AppLayout from "@/Layouts/NavBar.vue";
+import AppLayout from "@/Layouts/AppLayout.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 import JetTitle from "@/Jetstream/Title.vue";
 import JetSubTitle from "@/Jetstream/SubTitle.vue";

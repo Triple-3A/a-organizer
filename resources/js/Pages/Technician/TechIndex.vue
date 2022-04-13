@@ -1,5 +1,5 @@
 <template>
-  <app-layout title="Dashboard">
+  <app-layout title="Gestiones">
     <div class="mt-16">
       <jet-title>
         ¡Hola {{ username }}!
@@ -11,13 +11,13 @@
     <Link class="font-medium" :href="route('categories')">
       <jet-card>
         <img class="w-32 h-32 mb-4 text-azul" src="images/tasks.png" alt="Icono de tareas avanzadas" />
-        <h1 class="text-lg text-noNegro font-bold text-center">Gestión de tareas</h1>
+        <h1 class="text-lg text-noNegro font-bold text-center">Gestión de Tareas</h1>
       </jet-card>
     </Link>
     <Link class="font-medium" :href="route('technicianUsers')">
       <jet-card>
         <img class="w-32 h-32 mb-4 text-azul" src="images/users.png" alt="Icono de tareas avanzadas" />
-        <h1 class="text-lg text-noNegro font-bold text-center">Gestión de usuarios</h1>
+        <h1 class="text-lg text-noNegro font-bold text-center">Gestión de Usuarios/as</h1>
       </jet-card>
     </Link>
   </app-layout>

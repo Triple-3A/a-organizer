@@ -1,5 +1,5 @@
 <template>
-  <app-layout title="Dashboard">
+  <app-layout title="Categorías">
     <div class="mt-4 ml-10px">
       <Link
         :href="route('technician')"

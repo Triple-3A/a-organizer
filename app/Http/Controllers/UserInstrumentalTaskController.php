@@ -33,6 +33,7 @@ class UserInstrumentalTaskController extends Controller
                 $descriptionsArray = [];
 
                 $titles = $task->titles()->where('type', 'instrumentales')->get();
+                $titles->load('icons');
                 $descriptions = $task->descriptions()->get();
 
                 foreach ($titles as $title) {
@@ -94,8 +95,14 @@ class UserInstrumentalTaskController extends Controller
     public function store(Request $request)
     {
         try {
+            $request->validate([
+                'id' => 'required',
+                'title' => 'required',
+                'repeatable' => 'required',
+                'startDate' => 'required',
+                'finishDate' => 'required',
+            ]);
             $requested = $request->all();
-
             $studentId = $requested['id'];
             $titleArray = $requested['title'];
             $titleId = $titleArray['id'];
@@ -112,17 +119,6 @@ class UserInstrumentalTaskController extends Controller
         } catch (Exception $error) {
             return $error->getMessage();
         }
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**

@@ -1,5 +1,5 @@
 <template>
-  <app-layout>
+  <app-layout title="Asignación">
     <div class="mt-3 ml-10px">
       <Link
         :href="route('admin')"
@@ -19,20 +19,17 @@
       >
     </div>
 
-    <div class="py-2">
-      <div class="mx-auto mt-4 max-w-7xl sm:px-6 lg:px-8">
-        <div class="flex text-lg justify-center my-4">
-          <p>
-            <Link
-              :href="route('assignment')"
-              class="text-lg font-bold text-azul"
-              >Asignación técnico</Link
-            >
-            / <span class="text-lg text-noNegro font-medium">Asignados</span>
-          </p>
-        </div>
+    <div class="mx-auto max-w-7xl sm:px-6 lg:px-8 py-4">
+      <div class="flex text-lg justify-center my-2">
+        <p>
+          <Link :href="route('assignment')" class="text-lg font-bold text-azul"
+            >Asignación técnico/a</Link
+          >
+          / <span class="text-lg text-noNegro font-medium">Asignados/as</span>
+        </p>
       </div>
     </div>
+
     <div>
       <div
         class="block border border-azul-500 md:border-none md:table-row"
@@ -107,7 +104,7 @@
                 md:border md:border-white md:table-cell
               "
             >
-              Técnico
+              Técnico/a
             </th>
             <th
               class="
@@ -134,7 +131,7 @@
                 md:border md:border-white md:table-cell
               "
             >
-              Usuarios Asignados
+              Usuarios/as Asignados
             </th>
           </tr>
         </thead>
@@ -153,8 +150,7 @@
                 block
                 p-2
                 font-bold
-                text-left
-                text-noNegro
+                text-left text-noNegro
                 md:border md:border-azul-500 md:table-cell
               "
             >
@@ -164,8 +160,7 @@
               class="
                 block
                 p-2
-                text-left
-                text-noNegro
+                text-left text-noNegro
                 md:border md:border-azul-500 md:table-cell
               "
             >
@@ -176,8 +171,7 @@
               class="
                 block
                 p-2
-                text-left
-                text-noNegro
+                text-left text-noNegro
                 md:border md:border-azul-500 md:table-cell
               "
             >
