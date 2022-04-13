@@ -285,14 +285,31 @@
                       {{ advancedTitle.title }}
                     </option>
                   </select>
-                  <br />
-                  <label for="advanced">Elige una fecha de inicio: </label>
-                  <br />
-                  <input type="date" v-model="advancedForm.startDate" />
-                  <br />
-                  <label for="advanced">Elige una fecha de final: </label>
-                  <br />
-                  <input type="date" v-model="advancedForm.finishDate" />
+
+                  <div class="flex justify-between">
+                    <div class="mt-4">
+                      <div class="mb-2">
+                        <label for="advanced">Fecha inicio </label>
+                      </div>
+
+                      <input
+                        class="rounded-md"
+                        type="date"
+                        v-model="advancedForm.startDate"
+                      />
+                    </div>
+
+                    <div class="mt-4">
+                      <div class="mb-2">
+                        <label for="advanced">Fecha final </label>
+                      </div>
+                      <input
+                        class="rounded-md"
+                        type="date"
+                        v-model="advancedForm.finishDate"
+                      />
+                    </div>
+                  </div>
 
                   <div class="flex items-center justify-center mt-6">
                     <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
