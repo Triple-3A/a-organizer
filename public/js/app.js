@@ -31087,6 +31087,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         _: 1
         /* STABLE */
 
+<<<<<<< HEAD
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" componente resumen tareas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_progress_bar, {
         totalTasks: $data.totalTasks,
         doneTasks: $data.doneTasks
@@ -31130,6 +31131,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }), 128
       /* KEYED_FRAGMENT */
       )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div> ")])];
+=======
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" componente resumen tareas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_medidor_tareas), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" contenedooooooooooooooooooooor imagenesssssssssssssssss "), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("  PROBANDO LA CARD "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_card, {
+        "class": "w-8/12"
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ATENCIÓN CAGADA INCOMINGGGGGGGGGGGG --- PELIGRO PELIGROOOOOOOO"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("cambiar argumentos en v-for "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" cómo pasamos las tareas creadas y asignadas por el tutor? "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<div v-for=\"task in tasks\" :key=\"basic.id\">\n            <div class=\"flex mb-10 border-4 rounded-lg row border-amarillo\">\n              <div class=\"flex items-center justify-start p-4 rounded-lg\">\n                <div>\n                  <jet-card/>\n                </div>\n                <div class=\"px-8\"></div>\n                <div class=\"flex flex-row\">\n                  <h1 class=\"ml-12 text-xl font-bold\">\n                    {{ basic.title }}\n                  </h1>\n                </div>\n                <div class=\"px-16\"></div>\n                <Link\n                  as=\"button\"\n                  type=\"button\"\n                  method=\"delete\"\n                  :href=\"route('basicTitle/delete', basic.id)\"\n                >\n                  <jet-delete-btn />\n                </Link>\n              </div>\n            </div>\n          </div> ")])])])])])];
+>>>>>>> develop
     }),
     _: 1
     /* STABLE */
@@ -60174,6 +60180,7 @@ __webpack_require__.r(__webpack_exports__);
 
 ;
 const __exports__ = /*#__PURE__*/(0,_Users_uve_Desktop_F5_Fullstack_PROYECTOS_Grupo_Asperger_a_organizer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Button_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Button_vue_vue_type_template_id_afb94134__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Jetstream/Button.vue"]])
+<<<<<<< HEAD
 /* hot reload */
 if (false) {}
 
@@ -60200,6 +60207,8 @@ const script = {}
 
 ;
 const __exports__ = /*#__PURE__*/(0,_Users_uve_Desktop_F5_Fullstack_PROYECTOS_Grupo_Asperger_a_organizer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_ButtonDone_vue_vue_type_template_id_e3a781f0__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Jetstream/ButtonDone.vue"]])
+=======
+>>>>>>> develop
 /* hot reload */
 if (false) {}
 
@@ -60720,6 +60729,35 @@ __webpack_require__.r(__webpack_exports__);
 
 ;
 const __exports__ = /*#__PURE__*/(0,_Users_uve_Desktop_F5_Fullstack_PROYECTOS_Grupo_Asperger_a_organizer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Label_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Label_vue_vue_type_template_id_812c3520__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Jetstream/Label.vue"]])
+<<<<<<< HEAD
+=======
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/Jetstream/MedidorTareas.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/Jetstream/MedidorTareas.vue ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _MedidorTareas_vue_vue_type_template_id_ce8fb690__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MedidorTareas.vue?vue&type=template&id=ce8fb690 */ "./resources/js/Jetstream/MedidorTareas.vue?vue&type=template&id=ce8fb690");
+/* harmony import */ var _Users_uve_Desktop_F5_Fullstack_PROYECTOS_Grupo_Asperger_a_organizer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+const script = {}
+
+;
+const __exports__ = /*#__PURE__*/(0,_Users_uve_Desktop_F5_Fullstack_PROYECTOS_Grupo_Asperger_a_organizer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_MedidorTareas_vue_vue_type_template_id_ce8fb690__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Jetstream/MedidorTareas.vue"]])
+>>>>>>> develop
 /* hot reload */
 if (false) {}
 
@@ -60802,6 +60840,7 @@ const script = {}
 
 ;
 const __exports__ = /*#__PURE__*/(0,_Users_uve_Desktop_F5_Fullstack_PROYECTOS_Grupo_Asperger_a_organizer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_OwnInput_vue_vue_type_template_id_d79057d0__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Jetstream/OwnInput.vue"]])
+<<<<<<< HEAD
 /* hot reload */
 if (false) {}
 
@@ -60830,6 +60869,8 @@ __webpack_require__.r(__webpack_exports__);
 
 ;
 const __exports__ = /*#__PURE__*/(0,_Users_uve_Desktop_F5_Fullstack_PROYECTOS_Grupo_Asperger_a_organizer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ProgressBar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ProgressBar_vue_vue_type_template_id_5493b922__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Jetstream/ProgressBar.vue"]])
+=======
+>>>>>>> develop
 /* hot reload */
 if (false) {}
 
