@@ -1,5 +1,5 @@
 <template>
-  <app-layout title="Dashboard">
+  <app-layout title="Perfil de usuario/a">
     <div class="mt-4 ml-10px">
       <Link
         :href="route('technicianUsers')"
@@ -15,7 +15,7 @@
           items-center
         "
       >
-        <jet-arrow-back-svg>Usuarios Asignados</jet-arrow-back-svg>
+        <jet-arrow-back-svg>Usuarios/as Asignados</jet-arrow-back-svg>
       </Link>
       <div v-for="index in student" :key="index.id">
         <h1

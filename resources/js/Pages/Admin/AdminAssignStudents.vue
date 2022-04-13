@@ -1,5 +1,5 @@
 <template>
-  <app-layout>
+  <app-layout title="Asignación estudiantes">
     <div class="mt-4 ml-10px">
       <Link
         :href="route('admin')"
@@ -39,7 +39,7 @@
       <p class="font-bold">Asignación realizada con éxito</p>
       <p class="text-xs">
         Puedes continuar o acceder a todas las asignaciones pulsando en
-        "Asignados"
+        "Asignados/as"
       </p>
       <button
         @click="isShow = !isShow"
@@ -63,7 +63,7 @@
       <div class="flex justify-center my-4">
         <p>
           <span class="text-lg text-noNegro font-medium"
-            >Asignación técnico</span
+            >Asignación técnico/a</span
           >
           /
           <Link
@@ -82,7 +82,7 @@
             class="display: block text-noNegro font-bold"
             forInput="role"
             value="Role"
-            >Selección de Técnico</label
+            >Selección de Técnico/a</label
           >
           <select
             v-model="form.technician"
@@ -122,7 +122,7 @@
             class="display: block text-noNegro font-bold"
             forInput="role"
             value="Role"
-            >Selección de Usuarios</label
+            >Selección de Usuarios/as</label
           >
           <select
             v-model="form.student"

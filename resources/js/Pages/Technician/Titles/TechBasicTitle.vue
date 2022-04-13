@@ -1,5 +1,5 @@
 <template>
-  <app-layout title="Dashboard">
+  <app-layout title="Títulos básicos">
     <div class="mt-4 ml-10px">
       <Link
         :href="route('categories')"

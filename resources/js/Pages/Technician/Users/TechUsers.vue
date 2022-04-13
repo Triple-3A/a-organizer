@@ -1,5 +1,5 @@
 <template>
-  <app-layout title="Dashboard">
+  <app-layout title="Usuarios/As">
     <div class="mt-4 ml-10px">
       <Link
         :href="route('technician')"
@@ -19,7 +19,7 @@
       >
       <div class="flex justify-around">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <jet-title> Usuarios Asignados </jet-title>
+          <jet-title> Usuarios/as Asignados </jet-title>
           <div
             class="items-center"
             v-for="studentsUser in studentsUsers"

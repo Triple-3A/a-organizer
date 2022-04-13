@@ -62,11 +62,6 @@
                         {{ basicTitle.title }}
                       </option>
                     </select>
-
-                    <br />
-                    <label for="basic">Elige si es repetible: </label>
-                    <br />
-                    <button></button>
                     <div class="flex justify-evenly">
                       <div>
                         <div class="mb-4">
@@ -345,22 +340,22 @@ export default {
       this.$inertia.post(route("techUserAdvanced/store"), this.advancedForm);
     },
     basicRepeatable() {
-      console.log(this.basicForm.repeatable);
       this.basicForm.repeatable == false
         ? (this.basicForm.repeatable = true)
         : (this.basicForm.repeatable = false);
+      console.log(this.basicForm.repeatable);
     },
     instrumentalRepeatable() {
-      console.log(this.instrumentalForm.repeatable);
       this.instrumentalForm.repeatable == false
         ? (this.instrumentalForm.repeatable = true)
         : (this.instrumentalForm.repeatable = false);
+      console.log(this.instrumentalForm.repeatable);
     },
     advancedRepeatable() {
-      console.log(this.advancedForm.repeatable);
       this.advancedForm.repeatable == false
         ? (this.advancedForm.repeatable = true)
         : (this.advancedForm.repeatable = false);
+      console.log(this.advancedForm.repeatable);
     },
   },
 };

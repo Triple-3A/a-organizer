@@ -1,5 +1,5 @@
 <template>
-  <app-layout title="Dashboard">
+  <app-layout title="Tareas avanzadas">
     <div class="mt-4 ml-10px">
       <Link
         :href="route('technicianUsersProfile', student.id)"

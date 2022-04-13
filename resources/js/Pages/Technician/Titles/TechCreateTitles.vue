@@ -1,5 +1,5 @@
 <template>
-  <app-layout title="Dashboard">
+  <app-layout title="Creación de títulos">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div class="flex items-center justify-center">
         <div class="p-10 bg-white rounded-lg flex items-center justify-center">

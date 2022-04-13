@@ -1,5 +1,5 @@
 <template>
-  <app-layout>
+  <app-layout title="Asignación">
     <div class="mt-3 ml-10px">
       <Link
         :href="route('admin')"
@@ -23,9 +23,9 @@
       <div class="flex text-lg justify-center my-2">
         <p>
           <Link :href="route('assignment')" class="text-lg font-bold text-azul"
-            >Asignación técnico</Link
+            >Asignación técnico/a</Link
           >
-          / <span class="text-lg text-noNegro font-medium">Asignados</span>
+          / <span class="text-lg text-noNegro font-medium">Asignados/as</span>
         </p>
       </div>
     </div>
@@ -104,7 +104,7 @@
                 md:border md:border-white md:table-cell
               "
             >
-              Técnico
+              Técnico/a
             </th>
             <th
               class="
@@ -131,7 +131,7 @@
                 md:border md:border-white md:table-cell
               "
             >
-              Usuarios Asignados
+              Usuarios/as Asignados
             </th>
           </tr>
         </thead>

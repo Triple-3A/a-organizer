@@ -1,5 +1,5 @@
 <template>
-  <app-layout title="Dashboard">
+  <app-layout title="Control de roles">
     <div class="dashboard_container flex">
       <div class="mt-4 flex justify-end">
         <Link
@@ -15,7 +15,7 @@
             items-center
           "
         >
-          Asignación técnico
+          Asignación técnico/a
           <svg
             class="fill-amarillo mr-1 ml-2 w-5 h-5"
             fill="currentColor"
@@ -48,7 +48,7 @@
                 pl-5
               "
             >
-              Técnicos
+              Técnicos/as
             </td>
           </tr>
         </thead>
@@ -104,7 +104,7 @@
                 pl-5
               "
             >
-              Usuarios
+              Usuarios/as
             </td>
           </tr>
         </thead>

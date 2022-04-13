@@ -97,6 +97,7 @@ class StudentController extends Controller
 
                 if ($taskUser->startDate <= date("Y-m-d") || $taskUser->repeatable == true) {
                     $titles = $taskUser->titles()->get();
+                    $titles->load('icons');
                     $descriptions = $taskUser->descriptions()->get();
 
                     foreach ($titles as $title) {

@@ -1,5 +1,5 @@
 <template>
-  <app-layout title="Dashboard">
+  <app-layout title="Tareas">
     <!--     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8"> -->
     <div class="flex flex-col items-center justify-center pt-10">
       <jet-title>¡HOLA {{ username }}!</jet-title>
@@ -33,13 +33,13 @@
             "
           >
             <!-- ICONO -->
-            <!-- <div class="items-center">
+            <div class="items-center">
               <img
                 class="w-28 h-28"
                 :src="array[1][0].icons[0].icon"
                 alt="Icono de tarea"
               />
-            </div> -->
+            </div>
             <!-- TÍTULO -->
             <div class="flex flex-row">
               <h1 class="text-lg font-bold">
