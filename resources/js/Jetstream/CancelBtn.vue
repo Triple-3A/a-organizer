@@ -6,16 +6,14 @@
       items-center
       px-6
       py-2
-      text-base
-      text-center
-      font-poppings 
-      font-semibold
+      text-base text-center
+      font-poppings font-semibold
       align-middle
       tracking-widest
       text-white
       transition
       rounded-md
-     bg-red-500
+      bg-red-500
       hover:bg-gray-700
       active:bg-gray-900
       disabled:opacity-25

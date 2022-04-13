@@ -15,13 +15,20 @@
                 />
               </div>
               <div class="text-center">
-                <label for="basic">Elige si es una tarea diaria: </label>
-                <br />
+                <label for="basic"> Tarea diaria : </label>
+
                 <button
                   @click="basicRepeatable"
-                  class="bg-azul hover:bg-blue-800"
+                  class="
+                    bg-azul
+                    hover:bg-gray-700
+                    text-white
+                    h-4
+                    w-4
+                    rounded-md
+                  "
                 >
-                  Diaria
+                  Si
                 </button>
 
                 <form
@@ -62,10 +69,11 @@
                         {{ basicTitle.title }}
                       </option>
                     </select>
-                    <div class="flex justify-evenly">
+
+                    <div class="flex justify-between">
                       <div>
-                        <div class="mb-4">
-                          <label for="basic">Elige una fecha de inicio </label>
+                        <div class="mb-2 mt-4">
+                          <label for="basic">Fecha inicio </label>
                         </div>
 
                         <input
@@ -75,8 +83,8 @@
                         />
                       </div>
                       <div>
-                        <div class="mb-4">
-                          <label for="basic">Elige una fecha de final </label>
+                        <div class="mb-2 mt-4">
+                          <label for="basic">Fecha final </label>
                         </div>
 
                         <input

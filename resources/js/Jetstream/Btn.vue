@@ -5,10 +5,8 @@
       items-center
       px-6
       py-2
-      text-base
-      text-center
-      font-poppings         
-      font-semibold
+      text-base text-center
+      font-poppings font-semibold
       align-middle
       tracking-widest
       text-white
