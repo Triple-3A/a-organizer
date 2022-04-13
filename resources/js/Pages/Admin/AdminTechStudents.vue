@@ -23,9 +23,9 @@
       <div class="flex text-lg justify-center my-2">
         <p>
           <Link :href="route('assignment')" class="text-lg font-bold text-azul"
-            >Asignación técnico/a</Link
+            >Asignación técnico-a</Link
           >
-          / <span class="text-lg text-noNegro font-medium">Asignados/as</span>
+          / <span class="text-lg text-noNegro font-medium">Asignados-as</span>
         </p>
       </div>
     </div>
@@ -104,7 +104,7 @@
                 md:border md:border-white md:table-cell
               "
             >
-              Técnico/a
+              Técnico-a
             </th>
             <th
               class="
@@ -131,7 +131,7 @@
                 md:border md:border-white md:table-cell
               "
             >
-              Usuarios/as Asignados
+              Usuarios-as Asignados-as
             </th>
           </tr>
         </thead>
