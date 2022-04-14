@@ -157,8 +157,10 @@
                 </h1>
               </div>
               <!-- BOTON -->
-              <jet-button-done />
-                          
+              <jet-button-done
+                :id="task.id"
+                :done="task.done"
+              />
             </div>
         </div>
 

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use App\Models\Student;
 use App\Models\User;
+use App\Models\Task;
 
 class StudentController extends Controller
 {
@@ -121,6 +122,27 @@ class StudentController extends Controller
             }
             $username = $student->nickname;
             return Inertia::render('Student/StudentIndex', compact('username', 'all'));
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
+    }
+
+    public function doneTask(Request $request)
+    {
+        try {
+            $request->validate([
+                'task_id' => 'required',
+                'done' => 'required',
+            ]);
+            $allRequest =  $request->all();
+            $taskId = $allRequest['task_id'];
+            $slicedRequest = array_slice($allRequest, 1);
+
+            $task = Task::where('id', $taskId)->get();
+
+            $task[0]->update(["done" => true]);
+            
+            return Redirect::back();
         } catch (Exception $error) {
             return $error->getMessage();
         }
