@@ -2,7 +2,7 @@
   <app-layout title="Dashboard">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div class="flex items-center justify-center">
-        <div class="p-10 bg-white rounded-lg flex items-center justify-center">
+        <div class="pt-10 bg-white rounded-lg flex items-center justify-center">
           <div class="mt-3 flex items-center justify-center">
             <div v-if="basic == 'básico'">
               <jet-title>Añadir Tarea Básica</jet-title>
@@ -14,14 +14,22 @@
                   alt="Icono de tareas básicas"
                 />
               </div>
-              <div class="text-center">
-                <label for="basic">Elige si es una tarea diaria: </label>
-                <br />
+              <div class="text-center mt-4">
+                <label for="basic"> Tarea diaria : </label>
+
                 <button
                   @click="basicRepeatable"
-                  class="bg-azul hover:bg-blue-800"
+                  class="
+                    bg-azul
+                    hover:bg-gray-700
+                    text-white
+                    h-4
+                    w-4
+                    rounded-md
+                    ml-2
+                  "
                 >
-                  Diaria
+                  Si
                 </button>
 
                 <form
@@ -62,10 +70,11 @@
                         {{ basicTitle.title }}
                       </option>
                     </select>
-                    <div class="flex justify-evenly">
-                      <div>
-                        <div class="mb-4">
-                          <label for="basic">Elige una fecha de inicio </label>
+
+                    <div class="flex justify-between">
+                      <div class="mt-4">
+                        <div class="mb-2">
+                          <label for="basic">Fecha inicio </label>
                         </div>
 
                         <input
@@ -74,9 +83,9 @@
                           v-model="basicForm.startDate"
                         />
                       </div>
-                      <div>
-                        <div class="mb-4">
-                          <label for="basic">Elige una fecha de final </label>
+                      <div class="mt-4">
+                        <div class="mb-2">
+                          <label for="basic">Fecha final </label>
                         </div>
 
                         <input
@@ -86,12 +95,12 @@
                         />
                       </div>
                     </div>
-                    <!-- <div class="flex items-center"> -->
+
                     <div class="mt-6">
                       <div class="flex items-center justify-center mt-6">
-                        <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
+                        <jet-btn class="mr-4" type="submit"> Guardar </jet-btn>
                         <jet-cancel-btn
-                          class="ml-3"
+                          class="text-center ml-4"
                           :href="route('techUserBasic', id)"
                           >Cancelar</jet-cancel-btn
                         >
@@ -114,13 +123,21 @@
               />
             </div>
             <div class="text-center">
-              <label for="basic">Elige si es una tarea diaria: </label>
-              <br />
+              <label for="basic">Tarea diaria : </label>
+
               <button
                 @click="instrumentalRepeatable"
-                class="bg-azul hover:bg-blue-800"
+                class="
+                  bg-azul
+                  hover:bg-gray-700
+                  text-white
+                  h-4
+                  w-4
+                  rounded-md
+                  ml-2
+                "
               >
-                Diaria
+                Sí
               </button>
 
               <form
@@ -162,22 +179,40 @@
                       {{ instrumentalTitle.title }}
                     </option>
                   </select>
-                  <br />
-                  <label for="instrumental">Elige una fecha de inicio: </label>
-                  <br />
-                  <input type="date" v-model="instrumentalForm.startDate" />
-                  <br />
-                  <label for="instrumental">Elige una fecha de final: </label>
-                  <br />
-                  <input type="date" v-model="instrumentalForm.finishDate" />
 
-                  <div class="flex items-center justify-center mt-6">
-                    <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
-                    <jet-cancel-btn
-                      class="ml-3"
-                      :href="route('techUserInstrumental', id)"
-                      >Cancelar</jet-cancel-btn
-                    >
+                  <div class="flex justify-between">
+                    <div class="mt-4">
+                      <div class="mb-2">
+                        <label for="instrumental">Fecha inicio </label>
+                      </div>
+
+                      <input
+                        class="rounded-md"
+                        type="date"
+                        v-model="instrumentalForm.startDate"
+                      />
+                    </div>
+                    <div class="mt-4">
+                      <div class="mb-2">
+                        <label for="instrumental">Fecha final </label>
+                      </div>
+                      <input
+                        class="rounded-md"
+                        type="date"
+                        v-model="instrumentalForm.finishDate"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="mt-6">
+                    <div class="flex items-center justify-center mt-6">
+                      <jet-btn class="mr-4" type="submit"> Guardar </jet-btn>
+                      <jet-cancel-btn
+                        class="ml-4"
+                        :href="route('techUserInstrumental', id)"
+                        >Cancelar</jet-cancel-btn
+                      >
+                    </div>
                   </div>
                 </div>
               </form>
@@ -194,13 +229,21 @@
               />
             </div>
             <div class="text-center">
-              <label for="basic">Elige si es una tarea diaria: </label>
-              <br />
+              <label for="basic">Tarea diaria : </label>
+
               <button
-                @click="basicRepeatable"
-                class="bg-azul hover:bg-blue-800"
+                @click="advancedRepeatable"
+                class="
+                  bg-azul
+                  hover:bg-gray-700
+                  text-white
+                  h-4
+                  w-4
+                  rounded-md
+                  ml-2
+                "
               >
-                Diaria
+                Si
               </button>
               <form
                 @submit.prevent="advancedSubmit"
@@ -242,14 +285,31 @@
                       {{ advancedTitle.title }}
                     </option>
                   </select>
-                  <br />
-                  <label for="advanced">Elige una fecha de inicio: </label>
-                  <br />
-                  <input type="date" v-model="advancedForm.startDate" />
-                  <br />
-                  <label for="advanced">Elige una fecha de final: </label>
-                  <br />
-                  <input type="date" v-model="advancedForm.finishDate" />
+
+                  <div class="flex justify-between">
+                    <div class="mt-4">
+                      <div class="mb-2">
+                        <label for="advanced">Fecha inicio </label>
+                      </div>
+
+                      <input
+                        class="rounded-md"
+                        type="date"
+                        v-model="advancedForm.startDate"
+                      />
+                    </div>
+
+                    <div class="mt-4">
+                      <div class="mb-2">
+                        <label for="advanced">Fecha final </label>
+                      </div>
+                      <input
+                        class="rounded-md"
+                        type="date"
+                        v-model="advancedForm.finishDate"
+                      />
+                    </div>
+                  </div>
 
                   <div class="flex items-center justify-center mt-6">
                     <jet-btn class="mr-3" type="submit"> Guardar </jet-btn>
