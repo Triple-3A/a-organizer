@@ -30865,12 +30865,7 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "accordion w-10/12 mb-10",
-  id: "accordionExample"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" AQUÍ IRÍAN LAS TAREAS  "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "accordion-item bg-white border-4 border-amarillo"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "accordion-header mb-0",
   id: "headingOne"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
@@ -30880,34 +30875,38 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "data-bs-target": "#collapseOne",
   "aria-expanded": "true",
   "aria-controls": "collapseOne"
-}, " Accordion Item #1 ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" AQUÍ IRÍAN LAS SUBTAREAS "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+}, " Accordion Item #1 ")], -1
+/* HOISTED */
+);
+
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   id: "collapseOne",
   "class": "accordion-collapse collapse show w-10/12 mb-10",
   "aria-labelledby": "headingOne",
   "data-bs-parent": "#accordionExample"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "accordion-body py-4 px-5"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "This is the first item's accordion body."), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("code", null, ".accordion-body"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(", though the transition does limit overflow. ")])])])], -1
+}, " This is the first item's accordion body ")], -1
 /* HOISTED */
 );
 
-var _hoisted_5 = {
+var _hoisted_6 = {
   "class": "items-center w-2/6 h-1/3"
 };
-var _hoisted_6 = ["src"];
-var _hoisted_7 = {
+var _hoisted_7 = ["src"];
+var _hoisted_8 = {
   "class": "flex flex-row pl-9 w-80"
 };
-var _hoisted_8 = {
+var _hoisted_9 = {
   "class": "text-sm text-noNegro font-bold"
 };
-var _hoisted_9 = {
+var _hoisted_10 = {
   "class": "flex items-center justify-between px-2 p-2 rounded-lg"
 };
-var _hoisted_10 = {
+var _hoisted_11 = {
   "class": "flex flex-row"
 };
-var _hoisted_11 = {
+var _hoisted_12 = {
   "class": "ml-12 text-base font-medium opacity-100"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -30946,7 +30945,22 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         doneTasks: $data.doneTasks
       }, null, 8
       /* PROPS */
-      , ["totalTasks", "doneTasks"]), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ACORDEON PRUEBA "), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TAREAS "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.all, function (array) {
+      , ["totalTasks", "doneTasks"]), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ACORDEON PRUEBA "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.all, function (array) {
+        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+          id: "accordionExample",
+          "class": "accordion w-10/12 mb-10",
+          key: array.id
+        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" AQUÍ IRÍAN LAS TAREAS  "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(array[0], function (task) {
+          return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+            "class": "accordion-item bg-white border-4 border-amarillo",
+            key: task.id
+          }, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" AQUÍ IRÍAN LAS SUBTAREAS "), _hoisted_5]);
+        }), 128
+        /* KEYED_FRAGMENT */
+        ))]);
+      }), 128
+      /* KEYED_FRAGMENT */
+      )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TAREAS "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.all, function (array) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
           "class": "mb-10 w-10/12",
           key: array.id
@@ -30958,12 +30972,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               key: title.id,
               id: "tarea",
               "class": "flex flex-row items-center justify-between p-4 border-4 rounded-lg border-amarillo bg-white drop-shadow-md hover:drop-shadow-2xl"
-            }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ICONO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+            }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ICONO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
               src: array[1][0].icons[0].icon,
               alt: "Icono de tarea"
             }, null, 8
             /* PROPS */
-            , _hoisted_6)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TÍTULO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(title.title), 1
+            , _hoisted_7)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TÍTULO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(title.title), 1
             /* TEXT */
             )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" BOTON "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button_done)]);
           }), 128
@@ -30975,7 +30989,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
             key: description.id,
             "class": "bg-amarilloMedio"
-          }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_11, " · " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(description.description), 1
+          }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_12, " · " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(description.description), 1
           /* TEXT */
           )])])]);
         }), 128
