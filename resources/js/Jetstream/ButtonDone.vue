@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="submit">
+  <form class="mr-2" @submit.prevent="submit">
     <button type="submit" :class="buttonClass" @click="updateButton()">
       <!-- ml-10 -->
       <!-- <slot></slot> -->
@@ -47,8 +47,8 @@ export default defineComponent({
       if (this.done === 0) {
         this.form.done = 1;
         this.form.post(this.route("doneTask"));
+        window.location.reload();
       }
-      window.location.reload();
     },
   },
 });

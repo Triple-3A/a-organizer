@@ -24,6 +24,7 @@ import JetArrowBackSvg from '@/Jetstream/ArrowBackSvg.vue';
 import JetTitle from '@/Jetstream/Title.vue';
 import JetProgressBar from '@/Jetstream/ProgressBar.vue';
 import JetButtonDone from "@/Jetstream/ButtonDone.vue";
+import JetStudentTaskCard from "@/Jetstream/StudentTaskCard.vue";
 
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
@@ -60,5 +61,7 @@ app.component('jet-arrow-back-svg', JetArrowBackSvg);
 app.component('jet-title', JetTitle);
 app.component('jet-progress-bar', JetProgressBar);
 app.component('jet-button-done' , JetButtonDone);
+app.component('jet-student-task-card' , JetStudentTaskCard);
+
 
 InertiaProgress.init({ color: '#4B5563' });

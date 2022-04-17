@@ -21607,9 +21607,8 @@ __webpack_require__.r(__webpack_exports__);
       if (this.done === 0) {
         this.form.done = 1;
         this.form.post(this.route("doneTask"));
+        window.location.reload();
       }
-
-      window.location.reload();
     }
   }
 }));
@@ -22349,6 +22348,36 @@ __webpack_require__.r(__webpack_exports__);
       type: String,
       "default": 'button'
     }
+  }
+}));
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Jetstream/StudentTaskCard.vue?vue&type=script&lang=js":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Jetstream/StudentTaskCard.vue?vue&type=script&lang=js ***!
+  \********************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _Jetstream_ButtonDone_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Jetstream/ButtonDone.vue */ "./resources/js/Jetstream/ButtonDone.vue");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
+  props: ["wholeTask"],
+  data: function data() {
+    return {
+      accordionId: "collapse" + this.wholeTask[0][0].id,
+      accordionTargetId: "#" + "collapse" + this.wholeTask[0][0].id
+    };
+  },
+  components: {
+    JetButtonDone: _Jetstream_ButtonDone_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 }));
 
@@ -23836,7 +23865,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Jetstream_Btn_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Jetstream/Btn.vue */ "./resources/js/Jetstream/Btn.vue");
 /* harmony import */ var _Jetstream_ProgressBar_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Jetstream/ProgressBar.vue */ "./resources/js/Jetstream/ProgressBar.vue");
 /* harmony import */ var _Jetstream_Card_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Jetstream/Card.vue */ "./resources/js/Jetstream/Card.vue");
-/* harmony import */ var _Jetstream_ButtonDone_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @/Jetstream/ButtonDone.vue */ "./resources/js/Jetstream/ButtonDone.vue");
+/* harmony import */ var _Jetstream_StudentTaskCard_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @/Jetstream/StudentTaskCard.vue */ "./resources/js/Jetstream/StudentTaskCard.vue");
 
 
 
@@ -23867,7 +23896,7 @@ __webpack_require__.r(__webpack_exports__);
     JetProgressBar: _Jetstream_ProgressBar_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
     JetBtn: _Jetstream_Btn_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
     JetCard: _Jetstream_Card_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
-    JetButtonDone: _Jetstream_ButtonDone_vue__WEBPACK_IMPORTED_MODULE_9__["default"],
+    JetStudentTaskCard: _Jetstream_StudentTaskCard_vue__WEBPACK_IMPORTED_MODULE_9__["default"],
     Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
     Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Link
   },
@@ -25453,6 +25482,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("form", {
+    "class": "mr-2",
     onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return _ctx.submit && _ctx.submit.apply(_ctx, arguments);
     }, ["prevent"]))
@@ -26675,6 +26705,103 @@ var _hoisted_5 = {
 };
 function render(_ctx, _cache) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "title")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "description")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "aside")])]);
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Jetstream/StudentTaskCard.vue?vue&type=template&id=3309fde8":
+/*!************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Jetstream/StudentTaskCard.vue?vue&type=template&id=3309fde8 ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = ["data-bs-target", "aria-controls"];
+var _hoisted_2 = {
+  "class": "items-center w-2/6 h-1/3"
+};
+var _hoisted_3 = ["src"];
+var _hoisted_4 = {
+  "class": "flex flex-row pl-9 w-80"
+};
+var _hoisted_5 = {
+  "class": "text-sm text-noNegro font-bold"
+};
+var _hoisted_6 = ["id"];
+var _hoisted_7 = {
+  "class": "accordion-body py-4 px-5"
+};
+var _hoisted_8 = {
+  "class": "flex items-center justify-between"
+};
+var _hoisted_9 = {
+  "class": "flex flex-row"
+};
+var _hoisted_10 = {
+  "class": "ml-6 text-base font-medium opacity-100"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_jet_button_done = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-button-done");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" AQUÍ IRÍAN LAS TAREAS  "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.wholeTask[0], function (task) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+      "class": "accordion-item bg-white border-4 border-amarillo",
+      key: task.id
+    }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.wholeTask[1], function (title) {
+      return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("h2", {
+        key: title.id,
+        id: "tarea",
+        "class": "accordion-header mb-0 flex flex-row items-center justify-between p-4 bg-white rounded-lg drop-shadow-md hover:drop-shadow-2xl"
+      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("id=\"headingOne\" id original del h2"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+        "class": "accordion-button relative flex items-center w-full text-base text-gray-800 text-left bg-white transition focus:outline-none collapsed",
+        type: "button",
+        "data-bs-toggle": "collapse",
+        "data-bs-target": _ctx.accordionTargetId,
+        "aria-expanded": "true",
+        "aria-controls": _ctx.accordionId
+      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ICONO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+        src: _ctx.wholeTask[1][0].icons[0].icon,
+        alt: "Icono de tarea"
+      }, null, 8
+      /* PROPS */
+      , _hoisted_3)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TÍTULO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(title.title), 1
+      /* TEXT */
+      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" BOTON "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button_done, {
+        id: task.id,
+        done: task.done
+      }, null, 8
+      /* PROPS */
+      , ["id", "done"])], 8
+      /* PROPS */
+      , _hoisted_1)]);
+    }), 128
+    /* KEYED_FRAGMENT */
+    )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" AQUÍ IRÍAN LAS SUBTAREAS "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.wholeTask[2], function (subtask) {
+      return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+        id: _ctx.accordionId,
+        "class": "accordion-collapse collapse w-10/12 mb-10",
+        "aria-labelledby": "headingOne",
+        "data-bs-parent": "#accordionExample",
+        key: subtask.id
+      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_10, " · " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(subtask.description), 1
+      /* TEXT */
+      )])])])], 8
+      /* PROPS */
+      , _hoisted_6);
+    }), 128
+    /* KEYED_FRAGMENT */
+    ))]);
+  }), 128
+  /* KEYED_FRAGMENT */
+  ))], 2112
+  /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
+  );
 }
 
 /***/ }),
@@ -30885,36 +31012,6 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_4 = {
-  "class": "accordion-button relative flex items-center w-full text-base text-gray-800 text-left bg-white transition focus:outline-none",
-  type: "button",
-  "data-bs-toggle": "collapse",
-  "data-bs-target": "#collapseOne",
-  "aria-expanded": "true",
-  "aria-controls": "collapseOne"
-};
-var _hoisted_5 = {
-  "class": "items-center w-2/6 h-1/3"
-};
-var _hoisted_6 = ["src"];
-var _hoisted_7 = {
-  "class": "flex flex-row pl-9 w-80"
-};
-var _hoisted_8 = {
-  "class": "text-sm text-noNegro font-bold"
-};
-
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  id: "collapseOne",
-  "class": "accordion-collapse collapse show w-10/12 mb-10",
-  "aria-labelledby": "headingOne",
-  "data-bs-parent": "#accordionExample"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "accordion-body py-4 px-5"
-}, " This is the first item's accordion body ")], -1
-/* HOISTED */
-);
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_jet_title = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-title");
 
@@ -30922,7 +31019,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_jet_progress_bar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-progress-bar");
 
-  var _component_jet_button_done = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-button-done");
+  var _component_jet_student_task_card = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-student-task-card");
 
   var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
 
@@ -30951,37 +31048,19 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         doneTasks: $data.doneTasks
       }, null, 8
       /* PROPS */
-      , ["totalTasks", "doneTasks"]), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ACORDEON PRUEBA "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.all, function (array) {
+      , ["totalTasks", "doneTasks"]), _hoisted_3, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.all, function (array) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
           id: "accordionExample",
           "class": "accordion w-10/12 mb-10",
           key: array.id
-        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" AQUÍ IRÍAN LAS TAREAS  "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(array[0], function (task) {
-          return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
-            "class": "accordion-item bg-white border-4 border-amarillo",
-            key: task.id
-          }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(array[1], function (title) {
-            return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("h2", {
-              key: title.id,
-              id: "tarea",
-              "class": "accordion-header mb-0 flex flex-row items-center justify-between p-4 bg-white drop-shadow-md hover:drop-shadow-2xl"
-            }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("id=\"headingOne\" id original del h2"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ICONO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-              src: array[1][0].icons[0].icon,
-              alt: "Icono de tarea"
-            }, null, 8
-            /* PROPS */
-            , _hoisted_6)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TÍTULO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(title.title), 1
-            /* TEXT */
-            )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" BOTON "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button_done)])]);
-          }), 128
-          /* KEYED_FRAGMENT */
-          )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" AQUÍ IRÍAN LAS SUBTAREAS "), _hoisted_9]);
-        }), 128
-        /* KEYED_FRAGMENT */
-        ))]);
+        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_student_task_card, {
+          wholeTask: array
+        }, null, 8
+        /* PROPS */
+        , ["wholeTask"])]);
       }), 128
       /* KEYED_FRAGMENT */
-      )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TAREAS "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"mb-10 w-10/12\" v-for=\"array in all\" :key=\"array.id\">\r\n        <div v-for=\"task in array[0]\" :key=\"task.id\">\r\n          <div\r\n            v-for=\"title in array[1]\"\r\n            :key=\"title.id\"\r\n            id=\"tarea\"\r\n            class=\"\r\n              flex flex-row\r\n              items-center\r\n              justify-between\r\n              p-4\r\n              border-4\r\n              rounded-lg\r\n              border-amarillo\r\n              bg-white\r\n              drop-shadow-md\r\n              hover:drop-shadow-2xl\r\n            \"\r\n          > "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ICONO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"items-center w-2/6 h-1/3\">\r\n              <img :src=\"array[1][0].icons[0].icon\" alt=\"Icono de tarea\" />\r\n            </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TÍTULO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"flex flex-row pl-9 w-80\">\r\n              <h1 class=\"text-sm text-noNegro font-bold\">\r\n                {{ title.title }}\r\n              </h1>\r\n            </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" BOTON "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <jet-button-done :id=\"task.id\" :done=\"task.done\" />\r\n          </div>\r\n        </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" SUBTAREAS "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div\r\n          v-for=\"description in array[2]\"\r\n          :key=\"description.id\"\r\n          class=\"bg-amarilloMedio\"\r\n        >\r\n          <div class=\"flex items-center justify-between px-2 p-2 rounded-lg\">\r\n            <div class=\"flex flex-row\">\r\n              <h1 class=\"ml-12 text-base font-medium opacity-100\">\r\n                · {{ description.description }}\r\n              </h1>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div> ")])];
+      )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ACORDEON PRUEBA "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div\r\n        id=\"accordionExample\"\r\n        class=\"accordion w-10/12 mb-10\"\r\n        v-for=\"array in all\"\r\n        :key=\"array.id\"\r\n      > "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" AQUÍ IRÍAN LAS TAREAS  "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div\r\n          class=\"accordion-item bg-white border-4 border-amarillo\"\r\n          v-for=\"task in array[0]\"\r\n          :key=\"task.id\"\r\n        >\r\n          <h2\r\n            v-for=\"title in array[1]\"\r\n            :key=\"title.id\"\r\n            id=\"tarea\"\r\n            class=\"\r\n              accordion-header\r\n              mb-0\r\n              flex flex-row\r\n              items-center\r\n              justify-between\r\n              p-4\r\n              bg-white\r\n              rounded-lg\r\n              drop-shadow-md\r\n              hover:drop-shadow-2xl\r\n            \"\r\n          > "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("id=\"headingOne\" id original del h2"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button\r\n              class=\"\r\n                accordion-button\r\n                relative\r\n                flex\r\n                items-center\r\n                w-full\r\n                text-base text-gray-800 text-left\r\n                bg-white\r\n                transition\r\n                focus:outline-none\r\n              \"\r\n              type=\"button\"\r\n              data-bs-toggle=\"collapse\"\r\n              data-bs-target=\"#collapseOne\"\r\n              aria-expanded=\"true\"\r\n              aria-controls=\"collapseOne\"\r\n            > "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ICONO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"items-center w-2/6 h-1/3\">\r\n                <img :src=\"array[1][0].icons[0].icon\" alt=\"Icono de tarea\" />\r\n              </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TÍTULO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"flex flex-row pl-9 w-80\">\r\n                <h1 class=\"text-sm text-noNegro font-bold\">\r\n                  {{ title.title }}\r\n                </h1>\r\n              </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" BOTON "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <jet-button-done :id=\"task.id\" :done=\"task.done\" />\r\n            </button>\r\n          </h2> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" AQUÍ IRÍAN LAS SUBTAREAS "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div\r\n            id=\"collapseOne\"\r\n            class=\"accordion-collapse collapse show bg-amarilloMedio\"\r\n            aria-labelledby=\"headingOne\"\r\n            data-bs-parent=\"#accordionExample\"\r\n            v-for=\"subtask in array[2]\"\r\n            :key=\"subtask.id\"\r\n          >\r\n            <div class=\"accordion-body py-4 px-5\">\r\n              <div class=\"flex items-center justify-between\">\r\n                <div class=\"flex flex-row\">\r\n                  <h1 class=\"text-base font-medium opacity-100\">\r\n                    · {{ subtask.description }}\r\n                  </h1>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TAREAS "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"mb-10 w-10/12\" v-for=\"array in all\" :key=\"array.id\">\r\n        <div v-for=\"task in array[0]\" :key=\"task.id\">\r\n          <div\r\n            v-for=\"title in array[1]\"\r\n            :key=\"title.id\"\r\n            id=\"tarea\"\r\n            class=\"\r\n              flex flex-row\r\n              items-center\r\n              justify-between\r\n              p-4\r\n              border-4\r\n              rounded-lg\r\n              border-amarillo\r\n              bg-white\r\n              drop-shadow-md\r\n              hover:drop-shadow-2xl\r\n            \"\r\n          > "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ICONO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"items-center w-2/6 h-1/3\">\r\n              <img :src=\"array[1][0].icons[0].icon\" alt=\"Icono de tarea\" />\r\n            </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TÍTULO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"flex flex-row pl-9 w-80\">\r\n              <h1 class=\"text-sm text-noNegro font-bold\">\r\n                {{ title.title }}\r\n              </h1>\r\n            </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" BOTON "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <jet-button-done :id=\"task.id\" :done=\"task.done\" />\r\n          </div>\r\n        </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" SUBTAREAS "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div\r\n          v-for=\"description in array[2]\"\r\n          :key=\"description.id\"\r\n          class=\"bg-amarilloMedio\"\r\n        >\r\n          <div class=\"flex items-center justify-between px-2 p-2 rounded-lg\">\r\n            <div class=\"flex flex-row\">\r\n              <h1 class=\"text-base font-medium opacity-100\">\r\n                · {{ description.description }}\r\n              </h1>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div> ")])];
     }),
     _: 1
     /* STABLE */
@@ -35255,6 +35334,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Jetstream_Title_vue__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @/Jetstream/Title.vue */ "./resources/js/Jetstream/Title.vue");
 /* harmony import */ var _Jetstream_ProgressBar_vue__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @/Jetstream/ProgressBar.vue */ "./resources/js/Jetstream/ProgressBar.vue");
 /* harmony import */ var _Jetstream_ButtonDone_vue__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @/Jetstream/ButtonDone.vue */ "./resources/js/Jetstream/ButtonDone.vue");
+/* harmony import */ var _Jetstream_StudentTaskCard_vue__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @/Jetstream/StudentTaskCard.vue */ "./resources/js/Jetstream/StudentTaskCard.vue");
 var _window$document$getE;
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
@@ -35263,6 +35343,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
  //Import new components
+
 
 
 
@@ -35323,6 +35404,7 @@ app.component('jet-arrow-back-svg', _Jetstream_ArrowBackSvg_vue__WEBPACK_IMPORTE
 app.component('jet-title', _Jetstream_Title_vue__WEBPACK_IMPORTED_MODULE_18__["default"]);
 app.component('jet-progress-bar', _Jetstream_ProgressBar_vue__WEBPACK_IMPORTED_MODULE_19__["default"]);
 app.component('jet-button-done', _Jetstream_ButtonDone_vue__WEBPACK_IMPORTED_MODULE_20__["default"]);
+app.component('jet-student-task-card', _Jetstream_StudentTaskCard_vue__WEBPACK_IMPORTED_MODULE_21__["default"]);
 _inertiajs_progress__WEBPACK_IMPORTED_MODULE_2__.InertiaProgress.init({
   color: '#4B5563'
 });
@@ -61014,6 +61096,34 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/Jetstream/StudentTaskCard.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/Jetstream/StudentTaskCard.vue ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _StudentTaskCard_vue_vue_type_template_id_3309fde8__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StudentTaskCard.vue?vue&type=template&id=3309fde8 */ "./resources/js/Jetstream/StudentTaskCard.vue?vue&type=template&id=3309fde8");
+/* harmony import */ var _StudentTaskCard_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./StudentTaskCard.vue?vue&type=script&lang=js */ "./resources/js/Jetstream/StudentTaskCard.vue?vue&type=script&lang=js");
+/* harmony import */ var C_xampp_htdocs_a_organizer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,C_xampp_htdocs_a_organizer_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_StudentTaskCard_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_StudentTaskCard_vue_vue_type_template_id_3309fde8__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Jetstream/StudentTaskCard.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/Jetstream/SubTitle.vue":
 /*!*********************************************!*\
   !*** ./resources/js/Jetstream/SubTitle.vue ***!
@@ -62764,6 +62874,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Jetstream/StudentTaskCard.vue?vue&type=script&lang=js":
+/*!****************************************************************************!*\
+  !*** ./resources/js/Jetstream/StudentTaskCard.vue?vue&type=script&lang=js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_StudentTaskCard_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_StudentTaskCard_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./StudentTaskCard.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Jetstream/StudentTaskCard.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/Jetstream/ValidationErrors.vue?vue&type=script&lang=js":
 /*!*****************************************************************************!*\
   !*** ./resources/js/Jetstream/ValidationErrors.vue?vue&type=script&lang=js ***!
@@ -64184,6 +64310,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SectionTitle_vue_vue_type_template_id_63bb8527__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_SectionTitle_vue_vue_type_template_id_63bb8527__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./SectionTitle.vue?vue&type=template&id=63bb8527 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Jetstream/SectionTitle.vue?vue&type=template&id=63bb8527");
+
+
+/***/ }),
+
+/***/ "./resources/js/Jetstream/StudentTaskCard.vue?vue&type=template&id=3309fde8":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/Jetstream/StudentTaskCard.vue?vue&type=template&id=3309fde8 ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_StudentTaskCard_vue_vue_type_template_id_3309fde8__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_StudentTaskCard_vue_vue_type_template_id_3309fde8__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./StudentTaskCard.vue?vue&type=template&id=3309fde8 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Jetstream/StudentTaskCard.vue?vue&type=template&id=3309fde8");
 
 
 /***/ }),
