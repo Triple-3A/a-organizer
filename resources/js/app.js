@@ -3,6 +3,7 @@ require('./bootstrap');
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
+import 'tw-elements';
 
 //Import new components
 import  JetCreateBtn  from '@/Jetstream/CreateBtn.vue';
