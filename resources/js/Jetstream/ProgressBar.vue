@@ -71,6 +71,7 @@ export default defineComponent({
       if (this.totalTasks > 0) {
       this.singleTaskPercentage = 100 / this.totalTasks;
       this.progressPercentage = this.singleTaskPercentage * this.doneTasks;
+      console.log(this.totalTasks);
       this.progressBarClass = "width: " + this.progressPercentage + "%";
       } else {
         this.progressBarClass = "width: 0%";
