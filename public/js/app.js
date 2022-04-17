@@ -30865,21 +30865,26 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
-  "class": "accordion-header mb-0",
-  id: "headingOne"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "accordion-button relative flex items-center w-full py-4 px-5 text-base text-gray-800 text-left bg-white border-0 rounded-none transition focus:outline-none",
+var _hoisted_4 = {
+  "class": "accordion-button relative flex items-center w-full text-base text-gray-800 text-left bg-white transition focus:outline-none",
   type: "button",
   "data-bs-toggle": "collapse",
   "data-bs-target": "#collapseOne",
   "aria-expanded": "true",
   "aria-controls": "collapseOne"
-}, " Accordion Item #1 ")], -1
-/* HOISTED */
-);
+};
+var _hoisted_5 = {
+  "class": "items-center w-2/6 h-1/3"
+};
+var _hoisted_6 = ["src"];
+var _hoisted_7 = {
+  "class": "flex flex-row pl-9 w-80"
+};
+var _hoisted_8 = {
+  "class": "text-sm text-noNegro font-bold"
+};
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   id: "collapseOne",
   "class": "accordion-collapse collapse show w-10/12 mb-10",
   "aria-labelledby": "headingOne",
@@ -30890,23 +30895,23 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_6 = {
+var _hoisted_10 = {
   "class": "items-center w-2/6 h-1/3"
 };
-var _hoisted_7 = ["src"];
-var _hoisted_8 = {
+var _hoisted_11 = ["src"];
+var _hoisted_12 = {
   "class": "flex flex-row pl-9 w-80"
 };
-var _hoisted_9 = {
+var _hoisted_13 = {
   "class": "text-sm text-noNegro font-bold"
 };
-var _hoisted_10 = {
+var _hoisted_14 = {
   "class": "flex items-center justify-between px-2 p-2 rounded-lg"
 };
-var _hoisted_11 = {
+var _hoisted_15 = {
   "class": "flex flex-row"
 };
-var _hoisted_12 = {
+var _hoisted_16 = {
   "class": "ml-12 text-base font-medium opacity-100"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -30954,7 +30959,22 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
             "class": "accordion-item bg-white border-4 border-amarillo",
             key: task.id
-          }, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" AQUÍ IRÍAN LAS SUBTAREAS "), _hoisted_5]);
+          }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(array[1], function (title) {
+            return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("h2", {
+              key: title.id,
+              id: "tarea",
+              "class": "accordion-header mb-0 flex flex-row items-center justify-between p-4 bg-white drop-shadow-md hover:drop-shadow-2xl"
+            }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("id=\"headingOne\" id original del h2"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ICONO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+              src: array[1][0].icons[0].icon,
+              alt: "Icono de tarea"
+            }, null, 8
+            /* PROPS */
+            , _hoisted_6)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TÍTULO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(title.title), 1
+            /* TEXT */
+            )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" BOTON "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button_done)])]);
+          }), 128
+          /* KEYED_FRAGMENT */
+          )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" AQUÍ IRÍAN LAS SUBTAREAS "), _hoisted_9]);
         }), 128
         /* KEYED_FRAGMENT */
         ))]);
@@ -30972,12 +30992,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               key: title.id,
               id: "tarea",
               "class": "flex flex-row items-center justify-between p-4 border-4 rounded-lg border-amarillo bg-white drop-shadow-md hover:drop-shadow-2xl"
-            }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ICONO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+            }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ICONO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
               src: array[1][0].icons[0].icon,
               alt: "Icono de tarea"
             }, null, 8
             /* PROPS */
-            , _hoisted_7)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TÍTULO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(title.title), 1
+            , _hoisted_11)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TÍTULO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(title.title), 1
             /* TEXT */
             )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" BOTON "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button_done)]);
           }), 128
@@ -30989,7 +31009,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
             key: description.id,
             "class": "bg-amarilloMedio"
-          }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_12, " · " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(description.description), 1
+          }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_16, " · " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(description.description), 1
           /* TEXT */
           )])])]);
         }), 128

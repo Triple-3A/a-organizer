@@ -21,25 +21,45 @@
 <div id="accordionExample" class="accordion w-10/12 mb-10" v-for="array in all" :key="array.id" >
        <!-- AQUÍ IRÍAN LAS TAREAS  -->
   <div class="accordion-item bg-white border-4 border-amarillo" v-for="task in array[0]" :key="task.id">
-    <h2 class="accordion-header mb-0" id="headingOne">
+    <h2 v-for="title in array[1]"
+            :key="title.id"
+            id="tarea" class="accordion-header mb-0 flex flex-row
+              items-center
+              justify-between
+              p-4
+              bg-white
+              drop-shadow-md
+              hover:drop-shadow-2xl
+            " > <!--id="headingOne" id original del h2-->
       <button class="
         accordion-button
         relative
         flex
         items-center
         w-full
-        py-4
-        px-5
         text-base text-gray-800 text-left
         bg-white
-        border-0
-        rounded-none
         transition
         focus:outline-none
       " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
         aria-controls="collapseOne">
-        Accordion Item #1
+         <!-- ICONO -->
+              <div class="items-center w-2/6 h-1/3">
+                <img
+                  :src="array[1][0].icons[0].icon"
+                  alt="Icono de tarea"
+                />
+              </div>
+              <!-- TÍTULO -->
+              <div class="flex flex-row pl-9 w-80">
+                <h1 class="text-sm text-noNegro font-bold">
+                  {{ title.title }}
+                </h1>
+              </div>
+              <!-- BOTON -->
+              <jet-button-done />
       </button>
+      
     </h2>
 
             <!-- AQUÍ IRÍAN LAS SUBTAREAS -->
