@@ -95,6 +95,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::middleware(['student'])->group(function () {
         Route::get('/student', [StudentController::class, 'index'])->name('student');
         Route::post('/assignStudentNickname', [StudentController::class, 'assignStudentNickname'])->name('assignStudentNickname');
+        Route::post('/doneTask', [StudentController::class, 'doneTask'])->name('doneTask');
         Route::get('/studentTasks', [StudentController::class, 'studentTasks'])->name('studentTasks');
     });
 });

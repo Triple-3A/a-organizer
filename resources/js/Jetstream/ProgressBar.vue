@@ -62,6 +62,10 @@ export default defineComponent({
     this.checkProgressPercentage();
   },
 
+  updated() {
+    this.checkProgressPercentage();
+  },
+
   methods: {
     checkProgressPercentage() {
       if (this.totalTasks > 0) {

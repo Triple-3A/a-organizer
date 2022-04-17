@@ -1,11 +1,8 @@
 <template>
-  <form @submit.prevent="submit">
-    <button
-      type="button"
-      :class="buttonClass"
-    >
+  <form class="mr-2" @submit.prevent="submit">
+    <button type="submit" :class="buttonClass" @click="updateButton()">
       <!-- ml-10 -->
-      <slot></slot>
+      <!-- <slot></slot> -->
     </button>
   </form>
 </template>
@@ -21,24 +18,37 @@ export default defineComponent({
       buttonClass: "",
       form: this.$inertia.form({
         task_id: this.id,
-        done: !this.done,
+        done: 0,
       }),
     };
   },
 
   mounted() {
-    if ((this.done = 0)) {
-      this.buttonClass =
-        "flex justify-end items-center w-3  rounded-lg bg-white border-4 border-noNegro hover:bg-azul active:bg-azul disabled:opacity-25 transition";
-    } else {
-      this.buttonClass =
-        "flex justify-end items-center w-3  rounded-lg bg-white border-4 border-noNegro hover:bg-azul active:bg-azul disabled:opacity-25 transition";
-    }
+    this.checkTaskDoneState();
   },
 
   methods: {
+    checkTaskDoneState() {
+      if (this.done === 0) {
+        this.buttonClass =
+          "flex justify-end items-center w-4 h-4 rounded-xl bg-white border-4 border-noNegro hover:bg-azul disabled:opacity-25 transition";
+      } else {
+        this.buttonClass =
+          "flex justify-end items-center w-4 h-4 rounded-xl bg-azul border-4 border-noNegro disabled:opacity-25 transition";
+      }
+    },
+    // updateButton() {
+    //   if (this.form.done === 0) {
+    //     this.buttonClass =
+    //       "flex justify-end items-center w-4 h-4 rounded-xl bg-azul border-4 border-noNegro disabled:opacity-25 transition";
+    //   }
+    // },
     submit() {
-      this.form.post(this.route("doneTask"));
+      if (this.done === 0) {
+        this.form.done = 1;
+        this.form.post(this.route("doneTask"));
+        window.location.reload();
+      }
     },
   },
 });
