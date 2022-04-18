@@ -6,11 +6,12 @@ use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Tests\TestCase;
 
-class DatabaseTest extends TestCase
+class DatabaseUsersTest extends TestCase
 {
-    // use RefreshDatabase;
+    use RefreshDatabase;
 
     /**
      * A basic feature test example.
@@ -24,7 +25,7 @@ class DatabaseTest extends TestCase
             'email' => "standBy@gmail.com",
             'email_verified_at' => now(),
             'password' => Hash::make('12345678'),
-            'remember_token' => String::random(10),
+            'remember_token' => Str::random(10),
         ));
 
         $this->assertDatabaseHas('users', [
@@ -40,7 +41,7 @@ class DatabaseTest extends TestCase
             'email' => "admin@gmail.com",
             'email_verified_at' => now(),
             'password' => Hash::make('12345678'),
-            'remember_token' => String::random(10),
+            'remember_token' => Str::random(10),
         ));
 
         $this->assertDatabaseHas('users', [
@@ -56,7 +57,7 @@ class DatabaseTest extends TestCase
             'email' => "student@gmail.com",
             'email_verified_at' => now(),
             'password' => Hash::make('12345678'),
-            'remember_token' => String::random(10),
+            'remember_token' => Str::random(10),
         ));
 
         $this->assertDatabaseHas('users', [
@@ -72,7 +73,7 @@ class DatabaseTest extends TestCase
             'email' => "technician@gmail.com",
             'email_verified_at' => now(),
             'password' => Hash::make('12345678'),
-            'remember_token' => String::random(10),
+            'remember_token' => Str::random(10),
         ));
 
         $this->assertDatabaseHas('users', [

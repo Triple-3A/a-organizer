@@ -57,7 +57,7 @@ class UserSeeder extends Seeder
 
         $technician->roles()->sync([3]);
 
-        $technicianRoleTable = Technician::create(array(
+        Technician::create(array(
             'user_id' => 13,
         ));
 
@@ -71,7 +71,7 @@ class UserSeeder extends Seeder
 
         $student->roles()->sync([4]);
 
-        $studentRoleTable = Student::create(array(
+        Student::create(array(
             'nickname' => NULL,
             'user_id' => 14,
             'technician_id' => NULL,
