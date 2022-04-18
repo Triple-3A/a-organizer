@@ -7,7 +7,8 @@ use Tests\TestCase;
 
 class RoutesTest extends TestCase
 {
-    // use RefreshDatabase;
+    use RefreshDatabase;
+    
     /**
      * A basic feature test example.
      *
@@ -195,7 +196,7 @@ class RoutesTest extends TestCase
     public function test_technician_user_basic_task_create()
     {
         $this->withSession(['role' => 'technician'])
-            ->get('/techUserBasic/create/1')
+            ->get('techUserBasic/1/create')
             ->assertStatus(302);
     }
 
@@ -244,7 +245,7 @@ class RoutesTest extends TestCase
     public function test_technician_user_basic_description_create()
     {
         $this->withSession(['role' => 'technician'])
-            ->delete('/techUserBasicDescription/create/1')
+            ->delete('/techUserBasicDescription/1/create')
             ->assertStatus(302);
     }
 
@@ -258,7 +259,7 @@ class RoutesTest extends TestCase
     public function test_technician_user_instrumental_task_create()
     {
         $this->withSession(['role' => 'technician'])
-            ->get('/techUserInstrumental/create/1')
+            ->get('/techUserInstrumental/1/create')
             ->assertStatus(302);
     }
 
@@ -332,15 +333,6 @@ class RoutesTest extends TestCase
             ->assertStatus(302);
     }
 
-    public function test_technician_student_true()
-    {
-        $response = $this->get('/login');
-
-        $response->assertSuccessful()
-            ->assertStatus(200);
-    }
-
-
     public function test_technician_user_advanced_task_store()
     {
         $this->withSession(['role' => 'technician'])
@@ -383,18 +375,18 @@ class RoutesTest extends TestCase
             ->assertStatus(302);
     }
 
+    public function test_technician_user_advanced_description_pick()
+    {
+        $this->withSession(['role' => 'technician'])
+            ->delete('/techUserAdvanced/1/pick')
+            ->assertStatus(302);
+    }
+
     public function test_technician_user_advanced_description_create()
     {
         $this->withSession(['role' => 'technician'])
-            ->delete('/techUserAdvancedDescription/create/1')
+            ->delete('/techUserAdvancedDescription/create')
             ->assertStatus(302);
-    }
-    public function test_technician_user_advanced_description_create_true()
-    {
-        $response = $this->get('/login');
-
-        $response->assertSuccessful()
-            ->assertStatus(200);
     }
 
     public function test_technician_student()
@@ -408,13 +400,6 @@ class RoutesTest extends TestCase
     {
         $this->withSession(['role' => 'student'])
             ->post('/assignStudentNickname')
-            ->assertStatus(302);
-    }
-
-    public function test_technician_student_pic()
-    {
-        $this->withSession(['role' => 'student'])
-            ->get('/studentPic')
             ->assertStatus(302);
     }
 
