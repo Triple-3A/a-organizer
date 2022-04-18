@@ -34307,7 +34307,7 @@ var _hoisted_5 = {
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Tareas Básicas ");
 
 var _hoisted_7 = {
-  "class": "mt-2 text-lg text-amarillo w-160"
+  "class": "mt-2 text-lg text-center text-amarillo w-160"
 };
 var _hoisted_8 = {
   "class": "flex items-center justify-start p-4"

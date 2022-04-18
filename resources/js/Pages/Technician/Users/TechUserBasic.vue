@@ -31,7 +31,7 @@
 
           <jet-title>
             Tareas Básicas
-            <h1 class="mt-2 text-lg text-amarillo w-160">
+            <h1 class="mt-2 text-lg text-center text-amarillo w-160">
               {{ student.name }}
             </h1>
           </jet-title>
