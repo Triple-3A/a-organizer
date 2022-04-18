@@ -36,7 +36,7 @@
             :class="studentButtonClass"
             :type="studentButtonType"
           >
-            Estu.
+            User
           </button>
         </div>
       </form>

@@ -19,13 +19,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(10)->create();
-
-        $this->call([
-            StandBySeeder::class,
-            // TechnicianSeeder::class,
-            // StudentSeeder::class,
-        ]);
 
         $standBy = User::create(array(
             'name' => "standBy",
@@ -57,8 +50,8 @@ class UserSeeder extends Seeder
 
         $technician->roles()->sync([3]);
 
-        $technicianRoleTable = Technician::create(array(
-            'user_id' => 13,
+        Technician::create(array(
+            'user_id' => 3,
         ));
 
         $student = User::create(array(
@@ -71,10 +64,13 @@ class UserSeeder extends Seeder
 
         $student->roles()->sync([4]);
 
-        $studentRoleTable = Student::create(array(
-            'nickname' => NULL,
-            'user_id' => 14,
-            'technician_id' => NULL,
+        Student::create(array(
+            'user_id' => 4,
+            'technician_id' => 1,
         ));
+
+        $this->call([
+                StandBySeeder::class,
+        ]);
     }
 }

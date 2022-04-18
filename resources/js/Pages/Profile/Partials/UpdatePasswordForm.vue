@@ -1,29 +1,33 @@
 <template>
     <jet-form-section @submitted="updatePassword">
         <template #title>
+            <h1 class="text-noNegro">
             Actualizar tu contraseña
+            </h1>
         </template>
 
         <template #description>
+            <h2 class="text-noNegro">
            Asegúrate de que tu cuenta esté usando una contraseña larga y aleatoria para mantenerse seguro.
+            </h2>
         </template>
 
         <template #form>
             <div class="col-span-6 sm:col-span-4">
-                <jet-label for="current_password" value="Contraseña actual" />
-                <jet-input id="current_password" type="password" class="mt-1 block w-full" v-model="form.current_password" ref="current_password" autocomplete="current-password" />
+                <jet-label for="current_password" value="Contraseña actual" class="text-noNegro"/>
+                <jet-input id="current_password" type="password" class="mt-1 block w-full text-noNegro" v-model="form.current_password" ref="current_password" autocomplete="current-password" />
                 <jet-input-error :message="form.errors.current_password" class="mt-2" />
             </div>
 
             <div class="col-span-6 sm:col-span-4">
-                <jet-label for="password" value="Contraseña nueva" />
-                <jet-input id="password" type="password" class="mt-1 block w-full" v-model="form.password" ref="password" autocomplete="new-password" />
+                <jet-label for="password" value="Contraseña nueva" class="text-noNegro"/>
+                <jet-input id="password" type="password" class="mt-1 block w-full text-noNegro" v-model="form.password" ref="password" autocomplete="new-password" />
                 <jet-input-error :message="form.errors.password" class="mt-2" />
             </div>
 
             <div class="col-span-6 sm:col-span-4">
-                <jet-label for="password_confirmation" value="Confirma tu contraseña" />
-                <jet-input id="password_confirmation" type="password" class="mt-1 block w-full" v-model="form.password_confirmation" autocomplete="new-password" />
+                <jet-label for="password_confirmation" value="Confirma tu contraseña" class="text-noNegro"/>
+                <jet-input id="password_confirmation" type="password" class="mt-1 block w-full text-noNegro" v-model="form.password_confirmation" autocomplete="new-password" />
                 <jet-input-error :message="form.errors.password_confirmation" class="mt-2" />
             </div>
         </template>
