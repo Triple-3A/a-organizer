@@ -22,7 +22,6 @@
         hover:drop-shadow-2xl
       "
     >
-      <!--METER AQUI BOTON CHECK -->
       <!-- BOTON -->
       <jet-button-done :id="task.id" :done="task.done" />
       <!-- ICONO -->
@@ -49,8 +48,8 @@
           <img :src="wholeTask[1][0].icons[0].icon" alt="Icono de tarea" />
         </div>
         <!-- TÍTULO -->
-        <div class="flex-row pl-9 w-4/6">
-          <h1 class="text-sm text-noNegro font-bold">
+        <div class="flex-row pl5 w-4/6">
+          <h1 class="text-base text-noNegro font-bold">
             {{ title.title }}
           </h1>
         </div>

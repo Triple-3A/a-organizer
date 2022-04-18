@@ -26672,10 +26672,10 @@ var _hoisted_2 = {
 };
 var _hoisted_3 = ["src"];
 var _hoisted_4 = {
-  "class": "flex-row pl-9 w-4/6"
+  "class": "flex-row pl5 w-4/6"
 };
 var _hoisted_5 = {
-  "class": "text-sm text-noNegro font-bold"
+  "class": "text-base text-noNegro font-bold"
 };
 var _hoisted_6 = ["id"];
 var _hoisted_7 = {
@@ -26699,7 +26699,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         key: title.id,
         id: "tarea",
         "class": "accordion-header flex flex-row items-center justify-between w-full p-2 bg-white rounded-lg drop-shadow-md hover:drop-shadow-2xl"
-      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("METER AQUI BOTON CHECK "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" BOTON "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button_done, {
+      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" BOTON "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button_done, {
         id: task.id,
         done: task.done
       }, null, 8
