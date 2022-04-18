@@ -2698,10 +2698,6 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(135 155 171 / var(--tw-bg-opacity));
 }
-.bg-amarilloMedio {
-  --tw-bg-opacity: 1;
-  background-color: rgb(247 225 171 / var(--tw-bg-opacity));
-}
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }

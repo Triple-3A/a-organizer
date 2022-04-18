@@ -23,8 +23,6 @@ class UserSeeder extends Seeder
 
         $this->call([
             StandBySeeder::class,
-            // TechnicianSeeder::class,
-            // StudentSeeder::class,
         ]);
 
         $standBy = User::create(array(
@@ -74,7 +72,7 @@ class UserSeeder extends Seeder
         $studentRoleTable = Student::create(array(
             'nickname' => NULL,
             'user_id' => 14,
-            'technician_id' => NULL,
+            'technician_id' => 13,
         ));
     }
 }
