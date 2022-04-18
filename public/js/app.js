@@ -31651,7 +31651,7 @@ var _hoisted_5 = {
   "class": "flex items-center justify-end"
 };
 var _hoisted_6 = {
-  "class": "flex items-center justify-center"
+  "class": "flex items-center justify-center w-260"
 };
 
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Tareas Básicas");
@@ -33701,7 +33701,7 @@ var _hoisted_5 = {
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Tareas Avanzadas ");
 
 var _hoisted_7 = {
-  "class": "mt-2 text-lg text-amarillo"
+  "class": "mt-2 text-lg text-amarillo w-160"
 };
 var _hoisted_8 = {
   key: 0
@@ -34318,7 +34318,7 @@ var _hoisted_5 = {
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Tareas Básicas ");
 
 var _hoisted_7 = {
-  "class": "mt-2 text-lg text-amarillo"
+  "class": "mt-2 text-lg text-amarillo w-160"
 };
 var _hoisted_8 = {
   "class": "flex items-center justify-start p-4"
@@ -34541,7 +34541,7 @@ var _hoisted_5 = {
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Tareas Instrumentales ");
 
 var _hoisted_7 = {
-  "class": "mt-2 text-lg text-amarillo"
+  "class": "mt-2 text-lg text-amarillo w-160"
 };
 var _hoisted_8 = {
   "class": "flex items-center justify-start p-4"

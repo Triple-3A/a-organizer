@@ -2375,6 +2375,9 @@ select {
 .w-82 {
   width: 25.2rem;
 }
+.w-160 {
+  width: 32.2rem;
+}
 .min-w-0 {
   min-width: 0px;
 }

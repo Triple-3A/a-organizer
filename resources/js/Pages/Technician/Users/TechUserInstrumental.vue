@@ -31,7 +31,7 @@
 
           <jet-title
             >Tareas Instrumentales
-            <h1 class="mt-2 text-lg text-amarillo">{{ student.name }}</h1>
+            <h1 class="mt-2 text-lg text-amarillo w-160">{{ student.name }}</h1>
           </jet-title>
 
           <div class="mb-10" v-for="array in all" :key="array.id">

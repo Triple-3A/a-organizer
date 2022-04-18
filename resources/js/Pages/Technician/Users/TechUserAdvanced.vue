@@ -30,7 +30,7 @@
           </div>
           <jet-title>
             Tareas Avanzadas
-            <h1 class="mt-2 text-lg text-amarillo">
+            <h1 class="mt-2 text-lg text-amarillo w-160">
               {{ student.name }}
             </h1>
           </jet-title>
