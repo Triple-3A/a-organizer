@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use App\Models\Student;
 use App\Models\User;
+use App\Models\Task;
 
 class StudentController extends Controller
 {
@@ -51,38 +52,6 @@ class StudentController extends Controller
         }
     }
 
-    // public function studentPic()
-    // {
-
-    //     try {
-    //         $userId = auth()->id();
-    //         $currentStudent = Student::where('user_id', $userId)->get();
-
-    //         if ($currentStudent->pluck('avatar')[0] === null) {
-    //             return Inertia::render('Student/StudentPic');
-    //         } else {
-    //             return Redirect::route('studentTasks');
-    //         }
-    //     } catch (Exception $error) {
-    //         return $error->getMessage();
-    //     }
-    // }
-
-    // public function assignStudentPic(Request $request)
-    // {
-    //     // $request->validate([
-    //     //     'pic' => 'required',
-    //     // ]);
-    //     $userId = auth()->id();
-    //     $currentStudent = Student::where('user_id', $userId)->get();
-    //     foreach ($currentStudent as $student) {
-    //         $studentOne = $student;
-    //     }
-    //     $studentOne->update($request->all());
-
-    //     return Redirect::route('studentTasks');
-    // }
-
     public function studentTasks()
     {
         try {
@@ -121,6 +90,27 @@ class StudentController extends Controller
             }
             $username = $student->nickname;
             return Inertia::render('Student/StudentIndex', compact('username', 'all'));
+        } catch (Exception $error) {
+            return $error->getMessage();
+        }
+    }
+
+    public function doneTask(Request $request)
+    {
+        try {
+            $request->validate([
+                'task_id' => 'required',
+                'done' => 'required',
+            ]);
+            $allRequest =  $request->all();
+            $taskId = $allRequest['task_id'];
+            $slicedRequest = array_slice($allRequest, 1);
+
+            $task = Task::where('id', $taskId)->get();
+
+            $task[0]->update(["done" => true]);
+            
+            return Redirect::back();
         } catch (Exception $error) {
             return $error->getMessage();
         }

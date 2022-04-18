@@ -26,7 +26,7 @@
           </Link>
         </div>
 
-        <div class="flex items-center justify-center">
+        <div class="flex items-center justify-center w-260">
           <jet-title>Tareas Básicas</jet-title>
         </div>
         <div v-for="basic in basics" :key="basic.id">

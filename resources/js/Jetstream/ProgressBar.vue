@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-amarillo rounded-lg w-9/12 flex flex-col p-5 mb-4"
+    class="bg-amarillo rounded-lg w-10/12 flex flex-col p-5 mb-4"
   >
     <div class="flex flex-row justify-between mb-4 align-middle">
       <h2
@@ -62,11 +62,20 @@ export default defineComponent({
     this.checkProgressPercentage();
   },
 
+  updated() {
+    this.checkProgressPercentage();
+  },
+
   methods: {
     checkProgressPercentage() {
+      if (this.totalTasks > 0) {
       this.singleTaskPercentage = 100 / this.totalTasks;
       this.progressPercentage = this.singleTaskPercentage * this.doneTasks;
+      console.log(this.totalTasks);
       this.progressBarClass = "width: " + this.progressPercentage + "%";
+      } else {
+        this.progressBarClass = "width: 0%";
+      }
     },
   },
 });

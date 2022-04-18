@@ -3,12 +3,11 @@
     class="
       inline-flex
       items-center
-      px-6
+      w-48
       py-2
-      text-base
-      text-center
-      font-poppings         
-      font-semibold
+      px-6
+      text-base text-center
+      font-poppings font-semibold
       align-middle
       tracking-widest
       text-white
