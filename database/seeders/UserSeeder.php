@@ -70,7 +70,11 @@ class UserSeeder extends Seeder
         ));
 
         $this->call([
+<<<<<<< HEAD
                 StandBySeeder::class,
+=======
+            // StandBySeeder::class,
+>>>>>>> 0811294bc1230e37594ce634f2cef1bfed127bee
         ]);
     }
 }

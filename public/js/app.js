@@ -21597,12 +21597,6 @@ __webpack_require__.r(__webpack_exports__);
         this.buttonClass = "flex justify-end items-center w-4 h-4 rounded-xl bg-azul border-4 border-noNegro disabled:opacity-25 transition";
       }
     },
-    // updateButton() {
-    //   if (this.form.done === 0) {
-    //     this.buttonClass =
-    //       "flex justify-end items-center w-4 h-4 rounded-xl bg-azul border-4 border-noNegro disabled:opacity-25 transition";
-    //   }
-    // },
     submit: function submit() {
       if (this.done === 0) {
         this.form.done = 1;
@@ -25436,7 +25430,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return _ctx.updateButton();
     })
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ml-10 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <slot></slot> ")], 2
+  }, null, 2
   /* CLASS */
   )], 32
   /* HYDRATE_EVENTS */
@@ -26668,32 +26662,29 @@ __webpack_require__.r(__webpack_exports__);
 
 var _hoisted_1 = ["data-bs-target", "aria-controls"];
 var _hoisted_2 = {
-  "class": "items-center w-2/6 h-1/3"
+  "class": "items-center w-1/5 h-1/3"
 };
 var _hoisted_3 = ["src"];
 var _hoisted_4 = {
-  "class": "flex flex-row pl-9 w-80"
+  "class": "flex-row pl-5 w-4/6"
 };
 var _hoisted_5 = {
-  "class": "text-sm text-noNegro font-bold"
+  "class": "text-base text-noNegro font-bold"
 };
 var _hoisted_6 = ["id"];
 var _hoisted_7 = {
-  "class": "accordion-body py-4 px-5"
+  "class": "accordion-body py-3 px-4"
 };
 var _hoisted_8 = {
-  "class": "flex items-center justify-between"
+  "class": "flex items-center justify-start"
 };
 var _hoisted_9 = {
-  "class": "flex flex-row"
-};
-var _hoisted_10 = {
-  "class": "ml-6 text-base font-medium opacity-100"
+  "class": "text-base font-medium opacity-100"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_jet_button_done = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-button-done");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" AQUÍ IRÍAN LAS TAREAS  "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.wholeTask[0], function (task) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.wholeTask[0], function (task) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       "class": "accordion-item bg-white border-4 border-amarillo",
       key: task.id
@@ -26701,13 +26692,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("h2", {
         key: title.id,
         id: "tarea",
-        "class": "accordion-header mb-0 flex flex-row items-center justify-between p-4 bg-white rounded-lg drop-shadow-md hover:drop-shadow-2xl"
-      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("id=\"headingOne\" id original del h2"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" BOTON "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button_done, {
+        "class": "accordion-header flex flex-row items-center justify-between w-full p-2 bg-white rounded-lg drop-shadow-md hover:drop-shadow-2xl"
+      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button_done, {
         id: task.id,
         done: task.done
       }, null, 8
       /* PROPS */
-      , ["id", "done"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ICONO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+      , ["id", "done"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
         "class": "accordion-button relative flex items-center w-full text-base text-gray-800 text-left bg-white transition focus:outline-none collapsed",
         type: "button",
         "data-bs-toggle": "collapse",
@@ -26719,23 +26710,23 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         alt: "Icono de tarea"
       }, null, 8
       /* PROPS */
-      , _hoisted_3)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TÍTULO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(title.title), 1
+      , _hoisted_3)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(title.title), 1
       /* TEXT */
       )])], 8
       /* PROPS */
       , _hoisted_1)]);
     }), 128
     /* KEYED_FRAGMENT */
-    )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" AQUÍ IRÍAN LAS SUBTAREAS "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.wholeTask[2], function (subtask) {
+    )), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.wholeTask[2], function (subtask) {
       return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
         id: _ctx.accordionId,
-        "class": "accordion-collapse collapse w-10/12 mb-10",
+        "class": "accordion-collapse collapse w-full bg-amarilloMedio",
         "aria-labelledby": "headingOne",
         "data-bs-parent": "#accordionExample",
         key: subtask.id
-      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_10, " · " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(subtask.description), 1
+      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_9, " · " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(subtask.description), 1
       /* TEXT */
-      )])])])], 8
+      )])])], 8
       /* PROPS */
       , _hoisted_6);
     }), 128
@@ -26743,8 +26734,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     ))]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))], 2112
-  /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
   );
 }
 

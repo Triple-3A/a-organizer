@@ -1,8 +1,6 @@
 <template>
   <form class="mr-2" @submit.prevent="submit">
     <button type="submit" :class="buttonClass" @click="updateButton()">
-      <!-- ml-10 -->
-      <!-- <slot></slot> -->
     </button>
   </form>
 </template>
@@ -37,12 +35,7 @@ export default defineComponent({
           "flex justify-end items-center w-4 h-4 rounded-xl bg-azul border-4 border-noNegro disabled:opacity-25 transition";
       }
     },
-    // updateButton() {
-    //   if (this.form.done === 0) {
-    //     this.buttonClass =
-    //       "flex justify-end items-center w-4 h-4 rounded-xl bg-azul border-4 border-noNegro disabled:opacity-25 transition";
-    //   }
-    // },
+
     submit() {
       if (this.done === 0) {
         this.form.done = 1;
