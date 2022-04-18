@@ -36,7 +36,7 @@ class UserTaskSeeder extends Seeder
             DB::table('task_user')->insert(
                 [
                     'task_id' => Task::select('id')->orderByRaw("RAND()")->first()->id,
-                    'user_id' => User::select('id')->where('id', $id)->first()->id,
+                    'user_id' => User::select('id')->where('id', $id + 4)->first()->id,
                 ]
             );
         }

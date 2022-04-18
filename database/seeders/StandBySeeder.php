@@ -21,7 +21,7 @@ class StandBySeeder extends Seeder
 
         User::factory(10)->create();
 
-        for ($id = 1; $id <= 10; $id++) {
+        for ($id = 5; $id <= 14; $id++) {
             DB::table('role_user')->insert(
                 [
                     'role_id' => Role::select('id')->where('id', 1)->first()->id,
