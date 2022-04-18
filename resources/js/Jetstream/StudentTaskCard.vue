@@ -11,18 +11,21 @@
       id="tarea"
       class="
         accordion-header
-        mb-0
         flex flex-row
         items-center
         justify-between
-        p-4
+        w-full
+        p-2
         bg-white
         rounded-lg
         drop-shadow-md
         hover:drop-shadow-2xl
       "
     >
-      <!--id="headingOne" id original del h2-->
+      <!--METER AQUI BOTON CHECK -->
+      <!-- BOTON -->
+      <jet-button-done :id="task.id" :done="task.done" />
+      <!-- ICONO -->
       <button
         class="
           accordion-button
@@ -42,37 +45,34 @@
         aria-expanded="true"
         :aria-controls="accordionId"
       >
-        <!-- ICONO -->
-        <div class="items-center w-2/6 h-1/3">
+        <div class="items-center w-1/5 h-1/3">
           <img :src="wholeTask[1][0].icons[0].icon" alt="Icono de tarea" />
         </div>
         <!-- TÍTULO -->
-        <div class="flex flex-row pl-9 w-80">
+        <div class="flex-row pl-9 w-4/6">
           <h1 class="text-sm text-noNegro font-bold">
             {{ title.title }}
           </h1>
         </div>
-        <!-- BOTON -->
-        <jet-button-done :id="task.id" :done="task.done" />
       </button>
     </h2>
 
     <!-- AQUÍ IRÍAN LAS SUBTAREAS -->
     <div
       :id="accordionId"
-      class="accordion-collapse collapse w-10/12 mb-10"
+      class="accordion-collapse collapse w-full bg-amarilloMedio"
       aria-labelledby="headingOne"
       data-bs-parent="#accordionExample"
       v-for="subtask in wholeTask[2]"
       :key="subtask.id"
     >
-      <div class="accordion-body py-4 px-5">
-        <div class="flex items-center justify-between">
-          <div class="flex flex-row">
-            <h1 class="ml-6 text-base font-medium opacity-100">
+      <div class="accordion-body py-3 px-4">
+        <div class="flex items-center justify-start">
+          
+            <h1 class="text-base font-medium opacity-100">
               · {{ subtask.description }}
             </h1>
-          </div>
+          
         </div>
       </div>
     </div>

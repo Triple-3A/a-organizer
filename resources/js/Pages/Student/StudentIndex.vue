@@ -17,11 +17,8 @@
         v-for="array in all"
         :key="array.id"
       >
-        <jet-student-task-card
-          :wholeTask="array"
-        />
+        <jet-student-task-card :wholeTask="array" />
       </div>
-      
     </div>
   </app-layout>
 </template>

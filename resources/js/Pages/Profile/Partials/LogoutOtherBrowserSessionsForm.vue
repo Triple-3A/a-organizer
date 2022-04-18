@@ -1,11 +1,15 @@
 <template>
     <jet-action-section>
         <template #title>
+            <h1 class="text-noNegro">
             Browser Sessions
+            </h1>
         </template>
 
         <template #description>
+            <h1 class="text-noNegro">
             Manage and log out your active sessions on other browsers and devices.
+            </h1>
         </template>
 
         <template #content>
@@ -56,11 +60,15 @@
             <!-- Log Out Other Devices Confirmation Modal -->
             <jet-dialog-modal :show="confirmingLogout" @close="closeModal">
                 <template #title>
+                    <h1 class="text-noNegro">
                     Log Out Other Browser Sessions
+                    </h1>
                 </template>
 
                 <template #content>
+                    <h2 class="text-noNegro">
                     Please enter your password to confirm you would like to log out of your other browser sessions across all of your devices.
+                    </h2>
 
                     <div class="mt-4">
                         <jet-input type="password" class="mt-1 block w-3/4" placeholder="Password"
