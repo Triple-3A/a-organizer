@@ -19,6 +19,8 @@ class StandBySeeder extends Seeder
     public function run()
     {
 
+        User::factory(10)->create();
+
         for ($id = 1; $id <= 10; $id++) {
             DB::table('role_user')->insert(
                 [
