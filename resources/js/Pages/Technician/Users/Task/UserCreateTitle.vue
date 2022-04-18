@@ -29,7 +29,7 @@
                     ml-2
                   "
                 >
-                  Si
+                  {{ dailyState }}
                 </button>
 
                 <form
@@ -59,6 +59,7 @@
                         w-full
                         truncate
                       "
+                      required
                     >
                       <option
                         class="text-xs bg-white text-bold"
@@ -81,6 +82,7 @@
                           class="rounded-md"
                           type="date"
                           v-model="basicForm.startDate"
+                          required
                         />
                       </div>
                       <div class="mt-4">
@@ -92,6 +94,7 @@
                           class="rounded-md"
                           type="date"
                           v-model="basicForm.finishDate"
+                          required
                         />
                       </div>
                     </div>
@@ -137,7 +140,7 @@
                   ml-2
                 "
               >
-                Sí
+                {{ dailyState }}
               </button>
 
               <form
@@ -168,6 +171,7 @@
                       w-full
                       truncate
                     "
+                    required
                   >
                     <option
                       class="text-xs bg-white text-bold"
@@ -190,6 +194,7 @@
                         class="rounded-md"
                         type="date"
                         v-model="instrumentalForm.startDate"
+                        required
                       />
                     </div>
                     <div class="mt-4">
@@ -200,6 +205,7 @@
                         class="rounded-md"
                         type="date"
                         v-model="instrumentalForm.finishDate"
+                        required
                       />
                     </div>
                   </div>
@@ -243,7 +249,7 @@
                   ml-2
                 "
               >
-                Si
+                {{ dailyState }}
               </button>
               <form
                 @submit.prevent="advancedSubmit"
@@ -296,6 +302,7 @@
                         class="rounded-md"
                         type="date"
                         v-model="advancedForm.startDate"
+                        required
                       />
                     </div>
 
@@ -307,6 +314,7 @@
                         class="rounded-md"
                         type="date"
                         v-model="advancedForm.finishDate"
+                        required
                       />
                     </div>
                   </div>
@@ -363,6 +371,7 @@ export default {
       basic: this.basic,
       instrumental: this.instrumental,
       advanced: this.advanced,
+      dailyState: "No",
       basicForm: {
         id: this.id,
         title: null,
@@ -401,20 +410,20 @@ export default {
     },
     basicRepeatable() {
       this.basicForm.repeatable == false
-        ? (this.basicForm.repeatable = true)
-        : (this.basicForm.repeatable = false);
-      console.log(this.basicForm.repeatable);
+        ? ((this.basicForm.repeatable = true), (this.dailyState = "Si"))
+        : ((this.basicForm.repeatable = false), (this.dailyState = "No"));
     },
     instrumentalRepeatable() {
       this.instrumentalForm.repeatable == false
-        ? (this.instrumentalForm.repeatable = true)
-        : (this.instrumentalForm.repeatable = false);
+        ? ((this.instrumentalForm.repeatable = true), (this.dailyState = "Si"))
+        : ((this.instrumentalForm.repeatable = false),
+          (this.dailyState = "No"));
       console.log(this.instrumentalForm.repeatable);
     },
     advancedRepeatable() {
       this.advancedForm.repeatable == false
-        ? (this.advancedForm.repeatable = true)
-        : (this.advancedForm.repeatable = false);
+        ? ((this.advancedForm.repeatable = true), (this.dailyState = "Si"))
+        : ((this.advancedForm.repeatable = false), (this.dailyState = "No"));
       console.log(this.advancedForm.repeatable);
     },
   },

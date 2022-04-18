@@ -36,8 +36,6 @@
                 "
                 required
               />
-              <!-- <jet-own-input placeholder="Introduce tu nombre w"
-                  v-model="form.nickname"/> -->
             </div>
             <div class="flex items-center justify-center mt-12">
               <jet-btn>Siguiente</jet-btn>
@@ -83,5 +81,3 @@ export default {
   },
 };
 </script>
-
-<!-- REVISAR V-MODEL, NO ESTÁ FUNCIONANDO-->

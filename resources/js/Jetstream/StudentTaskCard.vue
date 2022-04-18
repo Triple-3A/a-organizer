@@ -23,6 +23,9 @@
       "
     >
       <!--id="headingOne" id original del h2-->
+      <!-- BOTON -->
+      <jet-button-done :id="task.id" :done="task.done" />
+      <!-- ICONO -->
       <button
         class="
           accordion-button
@@ -42,7 +45,6 @@
         aria-expanded="true"
         :aria-controls="accordionId"
       >
-        <!-- ICONO -->
         <div class="items-center w-2/6 h-1/3">
           <img :src="wholeTask[1][0].icons[0].icon" alt="Icono de tarea" />
         </div>
@@ -52,8 +54,6 @@
             {{ title.title }}
           </h1>
         </div>
-        <!-- BOTON -->
-        <jet-button-done :id="task.id" :done="task.done" />
       </button>
     </h2>
 

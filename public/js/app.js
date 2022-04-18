@@ -24440,6 +24440,7 @@ __webpack_require__.r(__webpack_exports__);
       basic: this.basic,
       instrumental: this.instrumental,
       advanced: this.advanced,
+      dailyState: "No",
       basicForm: {
         id: this.id,
         title: null,
@@ -24474,15 +24475,14 @@ __webpack_require__.r(__webpack_exports__);
       this.$inertia.post(route("techUserAdvanced/store"), this.advancedForm);
     },
     basicRepeatable: function basicRepeatable() {
-      this.basicForm.repeatable == false ? this.basicForm.repeatable = true : this.basicForm.repeatable = false;
-      console.log(this.basicForm.repeatable);
+      this.basicForm.repeatable == false ? (this.basicForm.repeatable = true, this.dailyState = "Si") : (this.basicForm.repeatable = false, this.dailyState = "No");
     },
     instrumentalRepeatable: function instrumentalRepeatable() {
-      this.instrumentalForm.repeatable == false ? this.instrumentalForm.repeatable = true : this.instrumentalForm.repeatable = false;
+      this.instrumentalForm.repeatable == false ? (this.instrumentalForm.repeatable = true, this.dailyState = "Si") : (this.instrumentalForm.repeatable = false, this.dailyState = "No");
       console.log(this.instrumentalForm.repeatable);
     },
     advancedRepeatable: function advancedRepeatable() {
-      this.advancedForm.repeatable == false ? this.advancedForm.repeatable = true : this.advancedForm.repeatable = false;
+      this.advancedForm.repeatable == false ? (this.advancedForm.repeatable = true, this.dailyState = "Si") : (this.advancedForm.repeatable = false, this.dailyState = "No");
       console.log(this.advancedForm.repeatable);
     }
   }
@@ -26614,7 +26614,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(_ctx.studentButtonClass),
     type: _ctx.studentButtonType
-  }, " Estu. ", 10
+  }, " User ", 10
   /* CLASS, PROPS */
   , _hoisted_7)])], 32
   /* HYDRATE_EVENTS */
@@ -26765,26 +26765,26 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         key: title.id,
         id: "tarea",
         "class": "accordion-header mb-0 flex flex-row items-center justify-between p-4 bg-white rounded-lg drop-shadow-md hover:drop-shadow-2xl"
-      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("id=\"headingOne\" id original del h2"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("id=\"headingOne\" id original del h2"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" BOTON "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button_done, {
+        id: task.id,
+        done: task.done
+      }, null, 8
+      /* PROPS */
+      , ["id", "done"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ICONO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
         "class": "accordion-button relative flex items-center w-full text-base text-gray-800 text-left bg-white transition focus:outline-none collapsed",
         type: "button",
         "data-bs-toggle": "collapse",
         "data-bs-target": _ctx.accordionTargetId,
         "aria-expanded": "true",
         "aria-controls": _ctx.accordionId
-      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ICONO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
         src: _ctx.wholeTask[1][0].icons[0].icon,
         alt: "Icono de tarea"
       }, null, 8
       /* PROPS */
       , _hoisted_3)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TÍTULO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(title.title), 1
       /* TEXT */
-      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" BOTON "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button_done, {
-        id: task.id,
-        done: task.done
-      }, null, 8
-      /* PROPS */
-      , ["id", "done"])], 8
+      )])], 8
       /* PROPS */
       , _hoisted_1)]);
     }), 128
@@ -33165,7 +33165,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $options.basicRepeatable && $options.basicRepeatable.apply($options, arguments);
         }),
         "class": "bg-azul hover:bg-gray-700 text-white h-4 w-4 rounded-md ml-2"
-      }, " Si "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+      }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.dailyState), 1
+      /* TEXT */
+      ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
         onSubmit: _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
           return $options.basicSubmit && $options.basicSubmit.apply($options, arguments);
         }, ["prevent"])),
@@ -33242,7 +33244,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $options.instrumentalRepeatable && $options.instrumentalRepeatable.apply($options, arguments);
         }),
         "class": "bg-azul hover:bg-gray-700 text-white h-4 w-4 rounded-md ml-2"
-      }, " Sí "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+      }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.dailyState), 1
+      /* TEXT */
+      ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
         onSubmit: _cache[9] || (_cache[9] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
           return $options.instrumentalSubmit && $options.instrumentalSubmit.apply($options, arguments);
         }, ["prevent"])),
@@ -33319,7 +33323,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $options.advancedRepeatable && $options.advancedRepeatable.apply($options, arguments);
         }),
         "class": "bg-azul hover:bg-gray-700 text-white h-4 w-4 rounded-md ml-2"
-      }, " Si "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+      }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.dailyState), 1
+      /* TEXT */
+      ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
         onSubmit: _cache[14] || (_cache[14] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
           return $options.advancedSubmit && $options.advancedSubmit.apply($options, arguments);
         }, ["prevent"])),
